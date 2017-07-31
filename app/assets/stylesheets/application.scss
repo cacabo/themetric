@@ -21,6 +21,11 @@
 .page-content {
   min-height: calc(100vh - 50px);
 }
+
+.hidden {
+  display: none;
+}
+
 /*
 ** FONTS AND COLORS
 */
@@ -66,6 +71,8 @@ a {
   font-weight: bold;
   display: inline;
   width: auto;
+  cursor: hand;
+  cursor: pointer;
 }
 
 .btn-black {

@@ -15,23 +15,19 @@
       </div>
 
       <div class="field">
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %>
-          characters minimum)</em>
-        <% end %><br/>
         <%= f.password_field :password, autocomplete: "off", required: true %>
       </div>
 
-      <div class="field">
+      <div class="field marg-bot-1">
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
-      <%= button_tag(type: 'submit', class: "btn btn-secondary marg-top-25") do %>
+      <%= button_tag(type: 'submit', class: "btn-black") do %>
       Sign up
       <% end %>
       <% end %>
 
-      <div class="space"></div>
+      <div class="space-1"></div>
 
       <%= render "devise/shared/links" %>
     </div>
