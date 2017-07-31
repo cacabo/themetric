@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :authenticate_admin!, except: [:index, :show]
-    before_action :correct_admin,   only: [:edit, :update, :destroy]
+    before_action :correct_admin, only: [:edit, :update, :destroy]
 
     def index
         if (params[:tag])

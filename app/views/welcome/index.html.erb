@@ -1,15 +1,31 @@
-<div class="container marg-top-2 marg-bot-2">
-  <h1 class="serif">
-    Hi there!
-  </h1>
+<div class="container marg-bot-2">
+  <div class="row">
+    <div class="col-12">
+      <div class="popup black">
+        <i class="fa fa-lg fa-times x"></i>
+        <h1 class="special marg-bot-1">
+          Welcome to the Youth Journal
+        </h1>
+        <p>
+          We aim to make new interactive, informative, and actionable. Through a global network of young, dedicated talent, we try to collect the right resources and information to accomplish this aim.
+        </p>
+      </div>
 
-  <p>
-    Why is this not showing up?
-  </p>
+      <div class="space-1"></div>
 
-  <%= link_to articles_path do %>
-    <div class="btn-black">
-      View all articles <i class="fa fa-chevron-right"></i>
+      <h1 class="serif">
+        Hi there!
+      </h1>
+
+      <p>
+        Why is this not showing up?
+      </p>
+
+      <%= link_to articles_path do %>
+      <div class="btn-black">
+        View all articles <i class="fa fa-chevron-right"></i>
+      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
