@@ -16,3 +16,7 @@
  */
 
 @import "bootstrap"; // general formatting
+
+.page-content {
+  min-height: calc(100vh - 50px);
+}
