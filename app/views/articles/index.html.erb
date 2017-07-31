@@ -11,8 +11,6 @@
 
       <% if params[:tag] %>
       <h2 class="title sans">Listing articles tagged with "<%=params[:tag]%>"</h2>
-    <% else %>
-      <h2 class="title sans">Listing all articles</h2>
       <% end %>
 
       <% if current_admin %>
@@ -67,7 +65,7 @@
       <% end %>
     <% else %>
       <%= link_to root_path do %>
-      <button class="btn btn-outline-primary">
+      <button class="btn-black">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
         &nbsp;Back to home</button>
       <% end %>

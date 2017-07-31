@@ -1,0 +1,111 @@
+$blue: #0275d8;
+
+.navbar {
+  background: white !important;
+  border-bottom: 2px solid black;
+  font-family: 'Palanquin Dark', sans-serif;
+  transition: all 0.2s ease;
+  overflow: hidden !important;
+  width: 100%;
+
+  .navbar-brand {
+    transition: all 0.2s ease;
+    font-size: 2rem;
+  }
+
+  .nav-item a.nav-link {
+    color: black;
+    font-size: 1.25rem;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.navbar.top {
+  border-bottom: 2px solid transparent;
+
+  .navbar-brand {
+    font-size: 3rem;
+  }
+
+  .navbar-toggler {
+    height: 98px;
+  }
+}
+
+.navbar-text {
+  padding: 0 !important;
+}
+
+.navbar-toggler {
+  height: 74px;
+  display: table-cell;
+  text-align: middle;
+  vertical-align: middle;
+  top: 0;
+}
+
+.navbar-toggler .icon-bar {
+  background-color: black !important;
+  display: block;
+  width: 33px;
+  height: 3px;
+}
+
+.navbar-toggler .icon-bar + .icon-bar {
+  margin-top: 6px;
+}
+
+.navbar-toggler,
+.navbar-toggler:active,
+.navbar-toggler:visited {
+  border: 0 solid transparent !important;
+  outline: 0 !important;
+}
+
+.nav-link {
+  margin-bottom: 0;
+}
+
+.navbar-toggler {
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 33px;
+    transition: all 0.2s;
+  }
+
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .middle-bar {
+    opacity: 0;
+  }
+
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggler.collapsed {
+  .top-bar {
+    transform: rotate(0);
+  }
+
+  .middle-bar {
+    opacity: 1;
+  }
+
+  .bottom-bar {
+    transform: rotate(0);
+  }
+}

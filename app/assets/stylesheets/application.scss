@@ -14,9 +14,76 @@
  *= require prism
  *= require_tree '.'
  */
-
 @import "bootstrap"; // general formatting
-
+/*
+** GENERAL
+*/
 .page-content {
   min-height: calc(100vh - 50px);
+}
+/*
+** FONTS AND COLORS
+*/
+// NOTE only regular, bold, italic
+.serif {
+  font-family: 'PT Serif', serif;
+}
+
+// NOTE only regular
+.special {
+  font-family: 'Palanquin Dark', sans-serif;
+  font-weight: bold;
+}
+
+.sans {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*
+** BUTTONS
+*/
+
+.btn-black,
+.btn-white {
+  border-radius: 0px;
+  background: transparent;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0.25rem 0.75rem;
+  font-family: 'Palanquin Dark', sans-serif;
+  font-weight: bold;
+  display: inline;
+  width: auto;
+}
+
+.btn-black {
+  color: black;
+  border: 2px solid black !important;
+
+  &:hover {
+    color: white;
+    background: black;
+  }
+}
+
+.btn-white {
+  color: white;
+  border: 2px solid white !important;
+
+  &:hover {
+    background: white;
+    color: black;
+  }
 }
