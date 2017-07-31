@@ -1,33 +1,26 @@
 <head>
-    <title>Cameron Cabo | Unlock Instructions</title>
+  <title>Youth Journal | Unlock Instructions</title>
 </head>
 
-<div class="gray">
-    <div class="space pad-top-50"></div>
-    <div class="container">
-        <div class="row pad-top-25 pad-bot-25">
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 bubble">
-                <h2 class="bubble-title">Resend unlock instructions</h2>
-                <div class="line"></div>
-                <div class="content">
+<div class="container marg-top-2 marg-bot-2">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      <h2>Resend unlock instructions</h2>
 
-                    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-                    <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
 
-                    <div class="field">
-                        <%= f.label :email %><br/>
-                        <%= f.email_field :email, autofocus: true %>
-                    </div>
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
 
-                    <div class="actions">
-                        <%= f.submit "Resend unlock instructions" %>
-                    </div>
-                    <% end %>
+      <div class="actions">
+        <%= f.submit "Resend unlock instructions" %>
+      </div>
+      <% end %>
 
-                    <%= render "devise/shared/links" %>
-                </div>
-            </div>
-        </div>
+      <%= render "devise/shared/links" %>
     </div>
-    <div class="line"></div>
+  </div>
 </div>

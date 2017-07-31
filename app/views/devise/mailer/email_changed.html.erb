@@ -1,26 +1,19 @@
 <head>
-    <title>Cameron Cabo | Change Email</title>
+  <title>Youth Journal | Change Email</title>
 </head>
 
-<div class="gray">
-    <div class="space pad-top-50"></div>
-    <div class="container">
-        <div class="row pad-top-25 pad-bot-25">
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 bubble">
-                <h2 class="bubble-title">Hello
-                    <%= @email %>!</h2>
-                <div class="line"></div>
-                <div class="content">
-                    <% if @resource.try(:unconfirmed_email?) %>
-                    <p>We're contacting you to notify you that your email is being changed to
-                        <%= @resource.unconfirmed_email %>.</p>
-                <% else %>
-                    <p>We're contacting you to notify you that your email has been changed to
-                        <%= @resource.email %>.</p>
-                    <% end %>
-                </div>
-            </div>
-        </div>
+<div class="container marg-top-2 marg-bot-2">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      <h2>Hello
+        <%= @email %>!</h2>
+      <% if @resource.try(:unconfirmed_email?) %>
+      <p>We're contacting you to notify you that your email is being changed to
+        <%= @resource.unconfirmed_email %>.</p>
+    <% else %>
+      <p>We're contacting you to notify you that your email has been changed to
+        <%= @resource.email %>.</p>
+      <% end %>
     </div>
-    <div class="space"></div>
+  </div>
 </div>

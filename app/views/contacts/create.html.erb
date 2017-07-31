@@ -1,40 +1,17 @@
 <head>
-    <% title 'Cameron Cabo | Thanks for Reaching Out' %>
-    <% description"Thank you for reaching out! I will get back to you as soon as possible." %>
+  <% title 'Youth Journal | Thanks for Reaching Out' %>
+  <% description"Thank you for reaching out. We will get back to you as soon as possible." %>
 </head>
 
-<div class="blue-backer bg border-bot"></div>
-<div class="gray min-height-60">
-    <div class="space pad-top-50"></div>
-    <div class="container">
-        <div class="row pad-top-25 pad-bot-25">
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 bubble">
-                <h2 class="bubble-title">Thank you for your message</h2>
-                <div class="line" id="separator"></div>
-                <div class="content">
-                    <p>
-                        I'll get back to you as soon as possible. While you're waiting, read some <%= link_to 'blog posts', articles_path %> or <%= link_to 'learn more about me.', root_path %>
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="gray">
+  <div class="container marg-top-2 marg-bot-2">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <h2>Thank you for your message</h2>
+        <p>
+          Thank you for reaching out to us. We will get back to you as soon as possible.
+        </p>
+      </div>
     </div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
+  </div>
 </div>
-
-<script type="text/javascript">
-    function sizeBlue() {
-        var $b = $('.blue-backer');
-        var h = $('#separator').offset().top + 1;
-        $b.css('height', h);
-    }
-    $(document).ready(function() {
-        sizeBlue();
-    });
-
-    $(window).resize(function() {
-        sizeBlue();
-    });
-</script>

@@ -1,43 +1,21 @@
 <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @article.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@article.errors.count, "error") %>
+    prohibited this article from being saved:
+  </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <p>
-      <%= f.text_field :title, placeholder: "Pick your title...", required: true %>
-  </p>
-
-  <p>
-      <%= f.text_area :text, class: "no-scroll animate min-30", placeholder: "Write your article here...", required: true %>
-  </p>
-
-  <p>
-      <%= f.text_field :tag_list, label: "Tags (separated by commas)", value: @article.tag_list.join(", "), placeholder: "Categorize your piece with tags..." %>
-  </p>
-
-  <p>
-      <%= f.file_field :image %>
-  </p>
-
-  <div class="space"></div>
-
-  <p>
-      <%= f.submit "Submit Article", class: "btn btn-outline-primary" %>
-  </p>
-  <script>
-      $('textarea').autogrow({
-          vertical: true,
-          horizontal: false
-      });
-  </script>
+<%= f.text_field :title, hide_label: true, placeholder: "Title", required: true %>
+<%= f.text_field :tag_list, hide_label: true, value: @article.tag_list.join(", "), placeholder: "Tags (separated by commas)" %>
+<%= f.text_area :text, hide_label: true, placeholder: "Write your article here...", required: true %>
+<%= f.file_field :image %>
+<%= f.submit "Submit Article", class: "btn btn-outline-primary" %>
 <% end %>

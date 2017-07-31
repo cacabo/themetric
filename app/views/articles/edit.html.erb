@@ -1,28 +1,29 @@
 <head>
-    <% title 'Cameron Cabo | Edit Article' %>
-    <% description 'Edit a previously written blogpost' %>
+  <% title 'Youth Journal | Edit Article' %>
+  <% description 'Edit a previously written blogpost' %>
 </head>
 
 <div class="gray">
-    <div class="space pad-top-50"></div>
-    <div class="container">
-        <div class="row pad-top-25 pad-bot-25">
-            <div class="col-12 col-md-8 offset-md-2 bubble">
-                <h2 class="bubble-title">Edit article</h2>
-                <div class="line"></div>
+  <div class="space pad-top-50"></div>
+  <div class="container">
+    <div class="row pad-top-25 pad-bot-25">
+      <div class="col-12 col-md-8 offset-md-2 bubble">
+        <h2 class="bubble-title">Edit article</h2>
+        <div class="line"></div>
 
-                <div class="content">
+        <div class="content">
 
-                    <%= render 'form' %>
-                    <div class="space"></div>
-                    <%= link_to @article do %>
-                    <button class="btn btn-outline-primary btn-sm">
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                        &nbsp;Back to article</button>
-                    <% end %>
-                </div>
-            </div>
+          <%= render 'form' %>
+          <div class="space"></div>
+          <%= link_to @article do %>
+          <button class="btn btn-outline-primary btn-sm">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            &nbsp;Back to article
+          </button>
+          <% end %>
         </div>
+      </div>
     </div>
-    <div class="space"></div>
+  </div>
+  <div class="space"></div>
 </div>

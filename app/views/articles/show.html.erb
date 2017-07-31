@@ -1,190 +1,198 @@
 <head>
-    <% title @article.title %>
-    <% description "#{@article.text[0..160]}..." %>
-    <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},Cameron Cabo,Penn,M&T,Jerome Fisher Program,cameroncabo,upenn,penn,web developer,Cameron,Cabo" %>
-    <% image "#{image_url @article.image}" unless @article.image.nil? %>
+  <% title @article.title %>
+  <% description "#{@article.text[0..160]}..." %>
+  <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},Youth,Journal,news" %>
+  <% image "#{image_url @article.image}" unless @article.image.nil? %>
 </head>
 
 <div class="container serif">
-    <div class="row">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <div class="space"></div>
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="space"></div>
 
-            <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-                <%= image_tag @article.image.url(:large), class: 'img-fluid' %>
-            <% end %>
+      <% if not @article.image.nil? and not @article.image_file_name.nil? %>
+      <%= image_tag @article.image.url(:large), class: 'img-fluid' %>
+      <% end %>
 
-            <div class="space"></div>
+      <div class="space"></div>
 
-            <h1 class="title sans">
-                <%= @article.title %>
-            </h1>
+      <h1 class="title sans">
+        <%= @article.title %>
+      </h1>
 
-            <% if admin_signed_in? %>
-                <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
-                        <div class="buttons-right">
-                        <%= link_to edit_article_path(@article) do %>
-                            <button class="btn btn-sm btn-outline-primary">Edit</button>
-                        <% end %>
-                        <%= link_to article_path(@article),
+      <% if admin_signed_in? %>
+      <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
+      <div class="buttons-right">
+        <%= link_to edit_article_path(@article) do %>
+        <button class="btn btn-sm btn-outline-primary">Edit</button>
+        <% end %>
+        <%= link_to article_path(@article),
                                   method: :delete,
                                   data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
-                            <button class="btn btn-sm btn-outline-danger">Delete</button>
-                        <% end %>
-                    </div>
-                <% end %>
-            <% end %>
-            <div class="empty-spacer"></div>
-            <p class="time inline sans"><%= time_ago_in_words(@article.created_at) %> ago</p>
-            <% if @article.tag_list %>
-                <p class="inline tags">
-                    <% @article.tag_list.each do |t| %>
-                        <%= link_to tag_path(t) do %>
-                            <button class="btn btn-outline-primary btn-sm tag"><%= t %></button>
-                        <% end %>
-                    <% end %>
-                </p>
-            <% end %>
-            <div class="line marg-top-0"></div>
+        <button class="btn btn-sm btn-outline-danger">Delete</button>
+        <% end %>
+      </div>
+      <% end %>
+      <% end %>
+      <div class="empty-spacer"></div>
+      <p class="time inline sans"><%= time_ago_in_words(@article.created_at) %>
+        ago</p>
+      <% if @article.tag_list %>
+      <p class="inline tags">
+        <% @article.tag_list.each do |t| %>
+        <%= link_to tag_path(t) do %>
+        <button class="btn btn-outline-primary btn-sm tag"><%= t %></button>
+        <% end %>
+        <% end %>
+      </p>
+      <% end %>
+      <div class="line marg-top-0"></div>
 
-<div class="article-wrapper">
-            <% components = @article.text.split(/\n+/) %>
-            <% code_enabled = false %>
-        <% components.each do |comp| %><% if comp.start_with?('[IMAGE]') %><% comp.slice! '[IMAGE]' %><img src="<%= comp %>" class="img-fluid"><% elsif comp.start_with?('[CODE]') %><% comp.slice! '[CODE]' %>
-<% code_enabled = true %><%=comp.html_safe%><% elsif code_enabled %><% if comp.include? "</pre>" %><% code_enabled = false %><%=comp.html_safe%><% else %><%=comp%>
-    <% end %>
-<% elsif comp.start_with?('### ') %>
-    <% comp.slice! ('### ') %>
-    <h5><strong><%=comp%></strong></h5>
-<% elsif comp.start_with?('## ') %>
-    <% comp.slice! ('## ') %>
-    <h3><strong><%=comp%></strong></h3>
-<% elsif comp.start_with?('# ') %>
-    <% comp.slice! ('# ') %>
-    <h2><strong><%=comp%></strong></h2>
-<% elsif comp.start_with?('[QUOTE]') %>
-    <% comp.slice! ('[QUOTE]') %>
-    <div class="quote">
-        <%= comp.html_safe %>
-    </div>
-<% elsif comp.start_with?('[LINE]') %>
-    <div class="line"></div>
-<% elsif comp.start_with?('[DASH]') %>
-    <div class="col-2 push-5 dash"></div>
-<% elsif comp.start_with?('[SPACE]') %>
-    <div class="space"></div>
-<% elsif comp.start_with?('[HALF-SPACE]') %>
-    <div class="half-space"></div>
-<% elsif comp.start_with?('[CAPTION]') %>
-    <% comp.slice! ('[CAPTION]') %>
-    <div class="caption"><%= comp %></div>
-<% else %>
-<p>
-    <!-- HTML Safe to allow for links, styling -->
-    <%= comp.html_safe %>
-</p>
-<% end %>
-<% end %>
-</div>
-
-<div class="space"></div>
-<div class="space"></div>
-
+      <div class="article-wrapper">
+        <% components = @article.text.split(/\n+/) %>
+        <% components.each do |comp| %><% if comp.start_with?('[IMAGE]') %><% comp.slice! '[IMAGE]' %><img src="<%= comp %>" class="img-fluid">
+        <% elsif comp.start_with?('### ') %>
+        <% comp.slice! ('### ') %>
+        <h5>
+          <strong><%=comp%></strong>
+        </h5>
+        <% elsif comp.start_with?('## ') %>
+        <% comp.slice! ('## ') %>
+        <h3>
+          <strong><%=comp%></strong>
+        </h3>
+        <% elsif comp.start_with?('# ') %>
+        <% comp.slice! ('# ') %>
+        <h2>
+          <strong><%=comp%></strong>
+        </h2>
+        <% elsif comp.start_with?('[QUOTE]') %>
+        <% comp.slice! ('[QUOTE]') %>
+        <div class="quote">
+          <%= comp.html_safe %>
         </div>
-        <!-- close col -->
+        <% elsif comp.start_with?('[LINE]') %>
+        <div class="line"></div>
+        <% elsif comp.start_with?('[DASH]') %>
+        <div class="col-2 push-5 dash"></div>
+        <% elsif comp.start_with?('[SPACE]') %>
+        <div class="space"></div>
+        <% elsif comp.start_with?('[HALF-SPACE]') %>
+        <div class="half-space"></div>
+        <% elsif comp.start_with?('[CAPTION]') %>
+        <% comp.slice! ('[CAPTION]') %>
+        <div class="caption"><%= comp %></div>
+      <% else %>
+        <p>
+          <!-- HTML Safe to allow for links, styling -->
+          <%= comp.html_safe %>
+        </p>
+        <% end %>
+        <% end %>
+      </div>
+
+      <div class="space"></div>
+      <div class="space"></div>
+
     </div>
-    <!-- close row -->
+    <!-- close col -->
+  </div>
+  <!-- close row -->
 </div>
 <!-- close container -->
 
 <div class="gray no-pad">
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+  <div class="space"></div>
+  <div class="space"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 
-                <h4>Responses</h4>
-                <div class="line marg-bot-50"></div>
+        <h4>Responses</h4>
+        <div class="line marg-bot-50"></div>
 
-                <% if @article.comments %>
-                    <% @comments = [] %>
-                    <% @hidden_comments = [] %>
-                    <% if @article.comments.size > 5 %>
-                        <% @comments = @article.comments.last(5) %>
-                        <% @hidden_comments = @article.comments.limit(@article.comments.size - 3) %>
-                        <button class='btn btn-secondary btn-sm shade' id="show-all">
-                            See all <%= @article.comments.size %> comments
-                        </button>
-                    <% else %>
-                        <% @comments = @article.comments %>
-                    <% end %>
+        <% if @article.comments %>
+        <% @comments = [] %>
+        <% @hidden_comments = [] %>
+        <% if @article.comments.size > 5 %>
+        <% @comments = @article.comments.last(5) %>
+        <% @hidden_comments = @article.comments.limit(@article.comments.size - 3) %>
+        <button class='btn btn-secondary btn-sm shade' id="show-all">
+          See all
+          <%= @article.comments.size %>
+          comments
+        </button>
+      <% else %>
+        <% @comments = @article.comments %>
+        <% end %>
 
-                    <% if @hidden_comments and @hidden_comments.size > 0 %>
-                        <div class="no-display" id="hidden_comments">
-                            <%= render @hidden_comments, article: @article %>
-                        </div>
-                    <% end %>
-                    <div id="comments_<%= @article.id %>">
-                        <%= render @comments, article: @article %>
-                    </div>
-                <% end %>
-
-                <div class="space"></div>
-
-                <h4 class="animate">Join the discussion</h4>
-                <div class="line animate"></div>
-
-                <%= bootstrap_form_for([@article, @article.comments.new], remote: true) do |f| %>
-                    <p><%= f.text_field :name, placeholder: 'Your name', class: 'shade', id: 'comment_name', required: true %></p>
-                    <p><%= f.text_area :content, placeholder: 'Add a comment...', class: 'shade no-scroll animate min-3', id: 'comment_content', required: true %></p>
-                    <%= button_tag(type: 'submit', class: "btn btn-secondary shade marg-top-25") do %>
-                        Post response
-                    <% end %>
-                <% end %>
-
-                <div class="space"></div>
-                <div class="space"></div>
-
-                <div class="buttons">
-                    <% if @previous %>
-                        <%= link_to @previous do %>
-                            <button class="btn btn-outline-primary"><i class="fa fa-chevron-left"></i> &nbsp;Previous article</button>
-                        <% end %>
-                    <% else %>
-                        <%= link_to articles_path do %>
-                            <button class="btn btn-outline-primary"><i class="fa fa-chevron-left"></i> &nbsp;Back to all articles</button>
-                        <% end %>
-                    <% end %>
-                    <% if @next %>
-                        <%= link_to @next do %>
-                            <button class="btn btn-outline-primary">Next article &nbsp;<i class="fa fa-chevron-right"></i></button>
-                        <% end %>
-                    <% end %>
-                </div>
-
-            </div>
-            <!-- close col -->
+        <% if @hidden_comments and @hidden_comments.size > 0 %>
+        <div class="no-display" id="hidden_comments">
+          <%= render @hidden_comments, article: @article %>
         </div>
-        <!-- close row -->
-    </div>
-    <!-- close container -->
+        <% end %>
+        <div id="comments_<%= @article.id %>">
+          <%= render @comments, article: @article %>
+        </div>
+        <% end %>
 
-    <div class="space"></div>
-    <div class="space"></div>
+        <div class="space"></div>
+
+        <h4 class="animate">Join the discussion</h4>
+        <div class="line animate"></div>
+
+        <%= bootstrap_form_for([@article, @article.comments.new], remote: true) do |f| %>
+        <p><%= f.text_field :name, placeholder: 'Your name', class: 'shade', id: 'comment_name', required: true %></p>
+        <p><%= f.text_area :content, placeholder: 'Add a comment...', class: 'shade no-scroll animate min-3', id: 'comment_content', required: true %></p>
+        <%= button_tag(type: 'submit', class: "btn btn-secondary shade marg-top-25") do %>
+        Post response
+        <% end %>
+        <% end %>
+
+        <div class="space"></div>
+        <div class="space"></div>
+
+        <div class="buttons">
+          <% if @previous %>
+          <%= link_to @previous do %>
+          <button class="btn btn-outline-primary">
+            <i class="fa fa-chevron-left"></i>
+            &nbsp;Previous article</button>
+          <% end %>
+        <% else %>
+          <%= link_to articles_path do %>
+          <button class="btn btn-outline-primary">
+            <i class="fa fa-chevron-left"></i>
+            &nbsp;Back to all articles</button>
+          <% end %>
+          <% end %>
+          <% if @next %>
+          <%= link_to @next do %>
+          <button class="btn btn-outline-primary">Next article &nbsp;<i class="fa fa-chevron-right"></i>
+          </button>
+          <% end %>
+          <% end %>
+        </div>
+
+      </div>
+      <!-- close col -->
+    </div>
+    <!-- close row -->
+  </div>
+  <!-- close container -->
+
+  <div class="space"></div>
+  <div class="space"></div>
 </div>
 <!-- close gray -->
 
 <script>
-    $(document).ready(function() {
-        $('#show-all').click(function() {
-            $(this).hide(200);
-            $('#hidden_comments').slideDown(200);
-        });
+  $(document).ready(function () {
+    $('#show-all').click(function () {
+      $(this).hide(200);
+      $('#hidden_comments').slideDown(200);
     });
+  });
 
-    $('textarea').autogrow({
-        vertical: true,
-        horizontal: false
-    });
+  $('textarea').autogrow({vertical: true, horizontal: false});
 </script>

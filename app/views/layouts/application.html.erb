@@ -3,27 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="author" content="Cameron Cabo">
+        <meta name="author" content="Youth Journal">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="<%= content_for?(:description) ? content_for(:description) : 'Cameron is a driven learner, web developer, and product builder. He studies in the Jerome Fisher Program in Management and Technology at the University of Pennsylvania and lives in Los Angeles.' %>">
-        <meta name="keywords" content="<%= content_for?(:keywords) ? content_for(:keywords) : 'Cameron Cabo,M&T,Jerome Fisher Program,cameroncabo,upenn,penn,web developer,Cameron,Cabo' %>">
+        <meta name="description" content="<%= content_for?(:description) ? content_for(:description) : 'The Youth Journal strives to make news accessible, opinionated, diversified, and progressive.' %>">
+        <meta name="keywords" content="<%= content_for?(:keywords) ? content_for(:keywords) : 'Youth, Journal, news' %>">
 
         <!-- open graph -->
-        <meta property="og:image" content="<%= content_for?(:image) ? content_for(:image) : 'http://i.imgur.com/auz4at0.png' %>">
+        <meta property="og:image" content="<%= content_for?(:image) ? content_for(:image) : '' %>">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="<%= content_for?(:title) ? content_for(:title) : 'Cameron Cabo' %>">
-        <meta property="og:description" content="<%= content_for?(:description) ? content_for(:description) : 'Cameron is a driven learner, web developer, and product builder. He studies in the Jerome Fisher Program in Management and Technology at the University of Pennsylvania and lives in Los Angeles.' %>">
-        <meta property="og:site_name" content="cameroncabo.com">
+        <meta property="og:title" content="<%= content_for?(:title) ? content_for(:title) : 'Youth Journal' %>">
+        <meta property="og:description" content="<%= content_for?(:description) ? content_for(:description) : 'The Youth Journal strives to make news accessible, opinionated, diversified, and progressive.' %>">
+        <meta property="og:site_name" content="">
 
         <!-- twitter -->
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@cameron_cabo" />
-        <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
-        <meta property="og:title" content="<%= content_for?(:title) ? content_for(:title) : 'Cameron Cabo' %>" />
-        <meta property="og:description" content="<%= content_for?(:description) ? content_for(:description) : 'Cameron is a driven learner, web developer, and product builder. He studies in the Jerome Fisher Program in Management and Technology at the University of Pennsylvania and lives in Los Angeles.' %>" />
-        <meta property="og:image" content="<%= content_for?(:image) ? content_for(:image) : 'http://i.imgur.com/auz4at0.png' %>" />
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="<%= content_for?(:title) ? content_for(:title) : 'Youth Journal' %>" />
+        <meta property="og:description" content="<%= content_for?(:description) ? content_for(:description) : 'The Youth Journal strives to make news accessible, opinionated, diversified, and progressive.' %>" />
+        <meta property="og:image" content="<%= content_for?(:image) ? content_for(:image) : '' %>" />
 
-        <title><%= content_for?(:title) ? content_for(:title) : "Cameron Cabo" %></title>
+        <title><%= content_for?(:title) ? content_for(:title) : "Youth Journal" %></title>
 
         <%= csrf_meta_tags %>
 
@@ -31,26 +30,6 @@
         <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-
-        <%= favicon_link_tag 'favicon.ico' %>
     </head>
 
     <body>
@@ -80,68 +59,11 @@
 
         <%= render 'shared/footer' %>
 
-        <!-- smoothscroll: https://stackoverflow.com/questions/4198041/jquery-smooth-scroll-to-an-anchor -->
-        <script>
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                //calculate destination place
-                var dest = 0;
-                if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-                    dest = $(document).height() - $(window).height();
-                } else {
-                    dest = $(this.hash).offset().top - 50;
-                }
-                //go to destination
-                $('html,body').animate({
-                    scrollTop: dest
-                }, 500, 'swing');
-            });
-
-            function positionBack() {
-                var bot = $(window).scrollTop() + $(window).height();
-                var foot = $('footer').offset().top;
-                if (bot >= foot) {
-                    $('#back').removeClass('back-to-top-fixed');
-                    $('#back').addClass('back-to-top-absolute');
-                } else {
-                    $('#back').addClass('back-to-top-fixed');
-                    $('#back').removeClass('back-to-top-absolute');
-                }
-            }
-
-            $(window).scroll(function () {
-                positionBack();
-            });
-            $(window).resize(function () {
-                positionBack();
-            });
-        </script>
-
         <% if notice or alert %>
         <script>
             $(document).ready(function () {
                 $('#alert-container').delay(200).slideDown(200).delay(1600).slideUp(200);
             });
-        </script>
-        <% end %>
-
-        <% if Rails.env.production? %>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                },
-                i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-90344765-1', 'auto');
-            ga('send', 'pageview');
         </script>
         <% end %>
 

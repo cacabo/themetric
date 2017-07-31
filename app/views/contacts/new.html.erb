@@ -1,62 +1,65 @@
 <head>
-    <% title 'Cameron Cabo | Contact' %>
-    <% description "Please reach out!" %>
+  <% title 'Youth Journal | Contact' %>
+  <% description "Please reach out" %>
 </head>
 
 <div class="blue-backer bg border-bot"></div>
 <div class="gray">
-    <div class="space pad-top-50"></div>
-    <div class="container">
-        <div class="row pad-top-25 pad-bot-25">
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 bubble">
-                <h2 class="bubble-title">Contact me</h2>
-                <div class="line" id="separator"></div>
-                <div class="content">
-                    <p>
-                        Whether you have a project, potential employment or internship inquiry, design or website commission, or just want to talk, feel free to send me an email or add me on appropriate social media&mdash;I love meeting new people.
-                    </p>
-                    <p>
-                        <a href="tel:1-781-296-0345"><i class="fa fa-phone fa-fw" aria-hidden="true"></i> &nbsp;(781)296-0345</a>
-                        <br>
-                        <a href="mailto:ccabo@wharton.upenn.edu?subject=Hi%Cameron"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i> &nbsp;ccabo@wharton.upenn.edu</a>
-                        <br>
-                        <a href="#"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> &nbsp;Los Angeles &amp; Philadelphia</a>
-                    </p>
-                    <div class="line"></div>
-                    <%= bootstrap_form_for @contact do |f| %>
-                        <%= f.text_field :name, placeholder: 'John Doe', required: true %>
-                        <%= f.email_field :email, placeholder: 'example@domain.com', required: true %>
-                        <%= f.text_area :message, placeholder: 'Be as brief or long as you wish...', required: true, class: 'animate no-scroll' %>
-                        <div class="no-display">
-                            <%= f.text_field :nickname, hint: 'leave this field blank' %>
-                        </div>
+  <div class="space pad-top-50"></div>
+  <div class="container">
+    <div class="row pad-top-25 pad-bot-25">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 bubble">
+        <h2 class="bubble-title">Contact me</h2>
+        <div class="line" id="separator"></div>
+        <div class="content">
+          <p>
+            Whether you have a project, potential employment or internship inquiry, design or website commission, or just want to talk, feel free to send me an email or add me on appropriate social media&mdash;I love meeting new people.
+          </p>
+          <p>
+            <a href="tel:1-781-296-0345">
+              <i class="fa fa-phone fa-fw" aria-hidden="true"></i>
+              &nbsp;(781)296-0345</a>
+            <br>
+            <a href="mailto:ccabo@wharton.upenn.edu?subject=Hi%Cameron">
+              <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+              &nbsp;ccabo@wharton.upenn.edu</a>
+            <br>
+            <a href="#">
+              <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+              &nbsp;Los Angeles &amp; Philadelphia</a>
+          </p>
+          <div class="line"></div>
+          <%= bootstrap_form_for @contact do |f| %>
+          <%= f.text_field :name, placeholder: 'John Doe', required: true %>
+          <%= f.email_field :email, placeholder: 'example@domain.com', required: true %>
+          <%= f.text_area :message, placeholder: 'Be as brief or long as you wish...', required: true, class: 'animate no-scroll' %>
+          <div class="no-display">
+            <%= f.text_field :nickname, hint: 'leave this field blank' %>
+          </div>
 
-                        <%= f.submit 'Send message', class: 'btn btn-secondary' %>
-                    <% end %>
-                </div>
-            </div>
+          <%= f.submit 'Send message', class: 'btn btn-secondary' %>
+          <% end %>
         </div>
+      </div>
     </div>
-    <div class="space"></div>
-    <div class="space"></div>
+  </div>
+  <div class="space"></div>
+  <div class="space"></div>
 </div>
 
 <script type="text/javascript">
-    function sizeBlue() {
-        var $b = $('.blue-backer');
-        var h = $('#separator').offset().top + 1;
-        $b.css('height', h);
-    }
-    $(document).ready(function() {
-        sizeBlue();
-    });
+  function sizeBlue() {
+    var $b = $('.blue-backer');
+    var h = $('#separator').offset().top + 1;
+    $b.css('height', h);
+  }
+  $(document).ready(function () {
+    sizeBlue();
+  });
 
-    $(window).resize(function() {
-        sizeBlue();
-    });
+  $(window).resize(function () {
+    sizeBlue();
+  });
 
-    $('textarea').autogrow({
-        vertical: true,
-        horizontal: false
-    });
+  $('textarea').autogrow({vertical: true, horizontal: false});
 </script>

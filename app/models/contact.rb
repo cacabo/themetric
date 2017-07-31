@@ -6,7 +6,7 @@ class Contact < MailForm::Base
 
     def headers
         {
-            subject: "Email from cameroncabo.com",
+            subject: "Email from the Youth Journal",
             to: "ccabo@wharton.upenn.edu",
             from: %("#{name}" <#{email}>)
         }
