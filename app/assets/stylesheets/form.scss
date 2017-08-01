@@ -11,8 +11,9 @@ textarea.form-control {
   &.has-val {
     border-bottom: 2px solid black;
   }
-  
-  &:active {
+
+  &:active,
+  &.has-error:active {
     border-bottom: 2px solid $blue;
   }
 }

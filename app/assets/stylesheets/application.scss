@@ -116,3 +116,37 @@ a {
     cursor: pointer;
   }
 }
+
+/*
+** ERRORS
+*/
+
+#error_explanation {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 2px solid #ebcccc;
+  padding: 1rem;
+  margin: 1rem 0rem;
+
+  h2 {
+    color: #a94442;
+    font-size: 1.25rem;
+  }
+
+  ul {
+    margin-bottom: 0px;
+  }
+}
+
+.has-error .form-control {
+  border-bottom: 2px solid #a94442;
+}
+
+.help-block {
+  color: #a94442;
+  margin-top: 0.5rem;
+}
+
+.help-block::first-letter {
+  text-transform: uppercase;
+}
