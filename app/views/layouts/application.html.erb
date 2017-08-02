@@ -71,22 +71,7 @@
 
         // Transitions
         $c.delay(200).slideDown(200).delay(4000).slideUp(200);
-        $s.delay(200).queue(function (next) {
-          $(this).css('height', h);
-          next();
-        });
-        $s.delay(4200).queue(function (next) {
-          $(this).css('height', '0px');
-          next();
-        });
-        $n.delay(200).queue(function (next) {
-          $(this).css('top', h);
-          next();
-        });
-        $n.delay(4200).queue(function (next) {
-          $(this).css('top', '0px');
-          next();
-        });
+        $s.delay(200).slideDown(200).delay(4000).slideUp(200);
       });
     </script>
     <% end %>

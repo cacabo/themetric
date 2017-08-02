@@ -1,60 +1,64 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top top">
-    <div class="alert-spacer"></div>
-    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar top-bar"></span>
-        <span class="icon-bar middle-bar"></span>
-        <span class="icon-bar bottom-bar"></span>
-        <span class="sr-only" Toggle navigation></span>
-    </button>
-    <a class="navbar-brand" href="<%= root_path %>">
-        Youth Journal
+<div class="fixed full-width front white">
+  <div class="alert-spacer hidden"></div>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded top">
+      <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+          <span class="sr-only" Toggle navigation></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>">
+          Youth Journal
 
-        <% if @article %>
-        &nbsp;&nbsp;
-        <span class="navbar-text">
-            <% if @article.title %>
-            <% if @article.title.length > 50 %>
-            <%= @article.title[0..50] + '...' %>
-        <% else %>
-            <%= @article.title %>
-            <% end %>
-            <% end %>
-        </span>
-        <% end %>
-    </a>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0"></ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="<%=root_path%>">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<%= about_path %>">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<%= articles_path %>">Articles</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<%= new_contact_path %>">Contact us</a>
-            </li>
-            <% if not current_admin.nil? %>
-            <li class="nav-item">
-              <a class="nav-link" href="<%= new_article_path %>">New article</a>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
-                Sign out
+          <% if @article %>
+          &nbsp;&nbsp;
+          <span class="navbar-text">
+              <% if @article.title %>
+              <% if @article.title.length > 50 %>
+              <%= @article.title[0..50] + '...' %>
+          <% else %>
+              <%= @article.title %>
               <% end %>
-            </li>
-            <% end %>
-        </ul>
-    </div>
-</nav>
+              <% end %>
+          </span>
+          <% end %>
+      </a>
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded top" id="top">
-  <div class="alert-spacer"></div>
-  <a class="navbar-brand" href="<%= root_path %>">
-    Youth Journal
-  </a>
-</nav>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0"></ul>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="<%=root_path%>">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="<%= about_path %>">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="<%= articles_path %>">Articles</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="<%= new_contact_path %>">Contact us</a>
+              </li>
+              <% if not current_admin.nil? %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= new_article_path %>">New article</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
+                  Sign out
+                <% end %>
+              </li>
+              <% end %>
+          </ul>
+      </div>
+  </nav>
+</div>
+
+<div class="full-width">
+  <div class="alert-spacer hidden"></div>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded top" id="top">
+    <a class="navbar-brand" href="<%= root_path %>">
+      Youth Journal
+    </a>
+  </nav>
+</div>
