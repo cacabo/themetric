@@ -1,3 +1,11 @@
+<% if @feature %>
+  <div class="background-image parallax feature" style="<%= @feature.image.url(:large) if (not @article.image.nil? and not @article.image_file_name.nil?) %>">
+    <div class="title">
+      <%= @feature.title %>
+    </div>
+  </div>
+<% end %>
+
 <div class="container marg-bot-2">
   <div class="row">
     <div class="col-12">
@@ -13,13 +21,15 @@
 
       <div class="space-1"></div>
 
-      <h1 class="serif">
+      <h1>
         Hi there!
       </h1>
 
       <p>
         Why is this not showing up?
       </p>
+
+      <div class="space-2"></div>
 
       <%= link_to articles_path do %>
       <div class="btn-black">
