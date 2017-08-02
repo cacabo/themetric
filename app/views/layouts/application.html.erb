@@ -37,23 +37,22 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
     <% if notice or alert %>
-    <div class="row hidden" id="alert-container">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <% if notice %>
-        <div class="info" role="alert">
-          <p class="notice"><%=notice%></p>
-        </div>
-        <% end %>
-        <% if alert %>
-        <div class="danger" role="alert">
-          <p class="alert"><%=alert%></p>
-        </div>
-        <% end %>
+    <div id="alert-container" class="hidden <%= notice ? 'green' : 'red' %>">
+      <% if notice %>
+      <div class="info" role="alert">
+        <p class="notice"><%=notice%></p>
       </div>
+      <% end %>
+      <% if alert %>
+      <div class="danger" role="alert">
+        <p class="alert"><%=alert%></p>
+      </div>
+      <% end %>
     </div>
     <% end %>
+
+    <%= render 'shared/header' %>
 
     <div class="page-content">
       <%= yield %>
@@ -64,7 +63,30 @@
     <% if notice or alert %>
     <script>
       $(document).ready(function () {
-        $('#alert-container').delay(200).slideDown(200).delay(5000).slideUp(200);
+        // Variables
+        const h = '40px';
+        const $s = $('.alert-spacer');
+        const $n = $('.navbar-toggler');
+        const $c = $('#alert-container')
+
+        // Transitions
+        $c.delay(200).slideDown(200).delay(4000).slideUp(200);
+        $s.delay(200).queue(function (next) {
+          $(this).css('height', h);
+          next();
+        });
+        $s.delay(4200).queue(function (next) {
+          $(this).css('height', '0px');
+          next();
+        });
+        $n.delay(200).queue(function (next) {
+          $(this).css('top', h);
+          next();
+        });
+        $n.delay(4200).queue(function (next) {
+          $(this).css('top', '0px');
+          next();
+        });
       });
     </script>
     <% end %>

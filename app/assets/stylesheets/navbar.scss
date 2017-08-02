@@ -110,3 +110,9 @@ $blue: #0275d8;
     transform: rotate(0);
   }
 }
+
+.alert-spacer {
+  height: 0px;
+  width: 100%;
+  transition: all 0.2s ease;
+}

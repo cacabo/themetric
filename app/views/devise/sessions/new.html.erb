@@ -7,11 +7,11 @@
     <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
       <h2>Administrator log in</h2>
       <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
+      <div class="field special-label">
         <%= f.email_field :email, autofocus: true, required: true %>
       </div>
 
-      <div class="field">
+      <div class="field special-label">
         <%= f.password_field :password, autocomplete: "off", required: true %>
       </div>
 

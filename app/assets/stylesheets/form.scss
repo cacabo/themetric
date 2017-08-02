@@ -13,7 +13,26 @@ textarea.form-control {
   }
 
   &:active,
-  &.has-error:active {
-    border-bottom: 2px solid $blue;
+  &:focus,
+  &.has-error:active
+  &.has-error:focus {
+    border-bottom: 2px solid $blue !important;
+  }
+}
+
+.field.special-label label {
+  cursor: text;
+  transform: translate(12px, 36px);
+  color: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease;
+
+  &.hasVal {
+    transform: translate(0px, 4px);
+    color: rgba(0, 0, 0, 1);
+    transform: scale(0.9);
+
+    &.active {
+      color: $blue;
+    }
   }
 }

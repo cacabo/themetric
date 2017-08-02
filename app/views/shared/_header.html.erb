@@ -1,4 +1,5 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top top">
+    <div class="alert-spacer"></div>
     <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="icon-bar top-bar"></span>
         <span class="icon-bar middle-bar"></span>
@@ -39,14 +40,12 @@
             </li>
             <% if not current_admin.nil? %>
             <li class="nav-item">
-              <a href="<%= new_article_path %>">New article</a>
+              <a class="nav-link" href="<%= new_article_path %>">New article</a>
             </li>
             <li class="nav-item">
-                <%= link_to destroy_admin_session_path, method: :delete do %>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign Out</a>
-                </li>
-                <% end %>
+              <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
+                Sign out
+              <% end %>
             </li>
             <% end %>
         </ul>
@@ -54,6 +53,7 @@
 </nav>
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded top" id="top">
+  <div class="alert-spacer"></div>
   <a class="navbar-brand" href="<%= root_path %>">
     Youth Journal
   </a>
