@@ -2,6 +2,7 @@ $blue: #0275d8;
 
 input.form-control,
 textarea.form-control {
+  color: black !important;
   border-radius: 0px;
   border-top: 0px solid transparent;
   border-left: 0px solid transparent;
@@ -16,7 +17,11 @@ textarea.form-control {
   &:focus,
   &.has-error:active
   &.has-error:focus {
-    border-bottom: 2px solid $blue !important;
+    border-bottom: 2px solid $blue;
+  }
+
+  &.no-border {
+    border: 0px solid transparent !important;
   }
 }
 
@@ -35,4 +40,9 @@ textarea.form-control {
       color: $blue;
     }
   }
+}
+
+input.title {
+  font-size: 2rem;
+  font-weight: bold;
 }
