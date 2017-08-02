@@ -95,11 +95,22 @@ textarea.bigger {
 
 .btn-black {
   color: black;
-  border: 2px solid black !important;
+  border: 2px solid black;
 
   &:hover {
     color: white;
     background: black;
+  }
+
+  &.disabled {
+    color: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    cursor: not-allowed;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.4);
+      background: transparent;
+    }
   }
 }
 

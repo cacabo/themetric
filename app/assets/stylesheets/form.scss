@@ -42,12 +42,18 @@ textarea.form-control {
   }
 }
 
-input.title {
+input.title,
+textarea.title {
   font-size: 2rem;
   font-weight: bold;
 }
 
-input.subtitle {
+input.subtitle,
+textarea.subtitle {
   font-size: 1.5rem;
   font-style: italic;
+}
+
+.form-group.marg-bot-0 {
+  margin-bottom: 0;
 }

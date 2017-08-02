@@ -13,8 +13,8 @@
 </div>
 <% end %>
 
-<%= f.text_field :title, hide_label: true, placeholder: "Title...", class: 'serif title no-border', required: true %>
-<%= f.text_field :subtitle, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
+<%= f.text_field :title, hide_label: true, placeholder: "Title", class: 'serif title no-border', wrapper: { class: 'marg-bot-0' }, required: true %>
+<%= f.text_area :subtitle, rows: 1, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
 <%= f.text_area :text, hide_label: true, placeholder: "Write your article here...", class: 'serif bigger no-border', required: true %>
 
 <div class="space-1"></div>
@@ -23,5 +23,59 @@
   <%= f.text_field :tag_list, value: @article.tag_list.join(", "), label: "Tags (separated by commas)..." %>
 </div>
 <%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
-<%= f.submit "Submit Article", class: "btn-black btn-big" %>
+<%= f.submit "Submit Article", class: "btn-black btn-big disabled", id: "submit" %>
 <% end %>
+
+<script type="text/javascript">
+  let hasTitle = false;
+  let hasSubtitle = false;
+  let hasText = false;
+  const $title = $('#article_title');
+  const $subtitle = $('#article_subtitle');
+  const $text = $('#article_text');
+  const $submit = $('#submit');
+
+  function disable() {
+    console.log("called disable");
+    if (hasTitle && hasSubtitle && hasText) {
+      $submit.removeClass('disabled');
+    } else {
+      $submit.addClass('disabled');
+    }
+  }
+
+  $title.blur(function() {
+    if ($(this).val().length > 0) {
+      hasTitle = true;
+      disable();
+    } else {
+      hasTitle = false;
+    }
+  });
+
+  $subtitle.blur(function() {
+    if ($(this).val().length > 0) {
+      hasSubtitle = true;
+      disable();
+    } else {
+      hasSubtitle = false;
+    }
+  });
+
+  function checkText() {
+    if ($text.val().length > 0) {
+      hasText = true;
+      disable();
+    } else {
+      hasText = false;
+    }
+  }
+
+  $text.blur(function() {
+    checkText();
+  });
+
+  $text.keypress(function() {
+    checkText();
+  });
+</script>
