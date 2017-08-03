@@ -15,7 +15,7 @@
 
 <%= f.text_field :title, hide_label: true, placeholder: "Title", class: 'serif title no-border', wrapper: { class: 'marg-bot-0' }, required: true %>
 <%= f.text_area :subtitle, rows: 1, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
-<%= f.text_area :text, hide_label: true, placeholder: "Write your article here...", class: 'serif bigger no-border', required: true %>
+<%= f.text_area :text, hide_label: true, placeholder: "Write your article here...", class: 'serif bigger no-border text', required: true %>
 
 <div class="space-1"></div>
 
@@ -36,7 +36,6 @@
   const $submit = $('#submit');
 
   function disable() {
-    console.log("called disable");
     if (hasTitle && hasSubtitle && hasText) {
       $submit.removeClass('disabled');
     } else {
@@ -44,38 +43,33 @@
     }
   }
 
-  $title.blur(function() {
-    if ($(this).val().length > 0) {
+  $title.keydown(function() {
+    if ($(this).val().length > 3) {
       hasTitle = true;
       disable();
     } else {
       hasTitle = false;
+      $submit.addClass('disabled');
     }
   });
 
-  $subtitle.blur(function() {
-    if ($(this).val().length > 0) {
+  $subtitle.keydown(function() {
+    if ($(this).val().length > 3) {
       hasSubtitle = true;
       disable();
     } else {
       hasSubtitle = false;
+      $submit.addClass('disabled');
     }
   });
 
-  function checkText() {
-    if ($text.val().length > 0) {
+  $text.keydown(function() {
+    if ($text.val().length > 3) {
       hasText = true;
       disable();
     } else {
       hasText = false;
+      $submit.addClass('disabled');
     }
-  }
-
-  $text.blur(function() {
-    checkText();
-  });
-
-  $text.keypress(function() {
-    checkText();
   });
 </script>

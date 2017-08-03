@@ -236,7 +236,7 @@ DEPENDENCIES
   aws-sdk (~> 2.3.0)
   bcrypt (~> 3.1.7)
   bootstrap (~> 4.0.0.alpha6)
-  bootstrap_form
+  bootstrap_form (~> 2.3)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)

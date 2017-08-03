@@ -3,25 +3,24 @@ $blue: #0275d8;
 input.form-control,
 textarea.form-control {
   color: black !important;
-  border-radius: 0px;
-  border-top: 0px solid transparent;
-  border-left: 0px solid transparent;
-  border-right: 0px solid transparent;
+  border-radius: 0;
+  border-top: 0 solid transparent;
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
   border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 
   &.has-val {
     border-bottom: 2px solid black;
   }
 
+  &.has-error:active &.has-error:focus,
   &:active,
-  &:focus,
-  &.has-error:active
-  &.has-error:focus {
+  &:focus {
     border-bottom: 2px solid $blue;
   }
 
   &.no-border {
-    border: 0px solid transparent !important;
+    border: 0 solid transparent !important;
   }
 }
 
@@ -32,9 +31,8 @@ textarea.form-control {
   transition: all 0.2s ease;
 
   &.hasVal {
-    transform: translate(0px, 4px);
+    transform: translate(-8px, 12px) scale(0.9);
     color: rgba(0, 0, 0, 1);
-    transform: scale(0.9);
 
     &.active {
       color: $blue;
@@ -52,6 +50,10 @@ input.subtitle,
 textarea.subtitle {
   font-size: 1.5rem;
   font-style: italic;
+}
+
+textarea.text {
+  line-height: 1.2;
 }
 
 .form-group.marg-bot-0 {
