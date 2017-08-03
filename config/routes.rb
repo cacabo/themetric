@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get 'about', to: 'welcome#about', as: 'about'
   get 'articles/tags/:tag', to: 'articles#index', as: 'tag'
+  get '*unmatched_route', to: 'welcome#notfound'
 end

@@ -35,6 +35,19 @@
   const $text = $('#article_text');
   const $submit = $('#submit');
 
+  if ($title.val().length > 0) {
+    hasTitle = true;
+  }
+
+  if ($subtitle.val().length > 0) {
+    hasSubtitle = true;
+  }
+
+  if ($text.val().length > 0) {
+    hasText = true;
+    disable();
+  }
+
   function disable() {
     if (hasTitle && hasSubtitle && hasText) {
       $submit.removeClass('disabled');

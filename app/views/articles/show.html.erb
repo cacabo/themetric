@@ -5,7 +5,7 @@
   <% image "#{image_url @article.image}" unless @article.image.nil? %>
 </head>
 
-<div class="container serif">
+<div class="container serif marg-top-2">
   <div class="row">
     <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <div class="space"></div>
@@ -91,8 +91,7 @@
         <% end %>
       </div>
 
-      <div class="space"></div>
-      <div class="space"></div>
+      <div class="space-4"></div>
 
     </div>
     <!-- close col -->
@@ -101,9 +100,8 @@
 </div>
 <!-- close container -->
 
-<div class="gray no-pad">
-  <div class="space"></div>
-  <div class="space"></div>
+<div class="light-gray">
+  <div class="space-4"></div>
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
@@ -136,39 +134,38 @@
         </div>
         <% end %>
 
-        <div class="space"></div>
+        <div class="space-2"></div>
 
-        <h4 class="animate">Join the discussion</h4>
-        <div class="line animate"></div>
+        <h4>Join the discussion</h4>
+        <div class="line-1"></div>
 
         <%= bootstrap_form_for([@article, @article.comments.new], remote: true) do |f| %>
         <p><%= f.text_field :name, placeholder: 'Your name', class: 'shade', id: 'comment_name', required: true %></p>
         <p><%= f.text_area :content, placeholder: 'Add a comment...', class: 'shade no-scroll animate min-3', id: 'comment_content', required: true %></p>
-        <%= button_tag(type: 'submit', class: "btn btn-secondary shade marg-top-25") do %>
+        <%= button_tag(type: 'submit', class: "btn btn-secondary shade-2 marg-top-1") do %>
         Post response
         <% end %>
         <% end %>
 
-        <div class="space"></div>
-        <div class="space"></div>
+        <div class="space-2"></div>
 
         <div class="buttons">
           <% if @previous %>
           <%= link_to @previous do %>
-          <button class="btn btn-outline-primary">
+          <button class="btn-black">
             <i class="fa fa-chevron-left"></i>
             &nbsp;Previous article</button>
           <% end %>
         <% else %>
           <%= link_to articles_path do %>
-          <button class="btn btn-outline-primary">
+          <button class="btn-black">
             <i class="fa fa-chevron-left"></i>
             &nbsp;Back to all articles</button>
           <% end %>
           <% end %>
           <% if @next %>
           <%= link_to @next do %>
-          <button class="btn btn-outline-primary">Next article &nbsp;<i class="fa fa-chevron-right"></i>
+          <button class="btn-black">Next article &nbsp;<i class="fa fa-chevron-right"></i>
           </button>
           <% end %>
           <% end %>
@@ -181,8 +178,7 @@
   </div>
   <!-- close container -->
 
-  <div class="space"></div>
-  <div class="space"></div>
+  <div class="space-2"></div>
 </div>
 <!-- close gray -->
 

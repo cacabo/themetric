@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
 
     def index
         if (params[:tag])
-            @articles = Article.tagged_with(params[:tag])
+            @articles = Article.tagged_with(params[:tag]).order(created_at: :desc)
         else
-            @articles = Article.all
+            @articles = Article.all.order(created_at: :desc)
         end
     end
 
@@ -63,7 +63,7 @@ class ArticlesController < ApplicationController
 
     private
     def article_params
-        params.require(:article).permit(:title, :text, :image, :tag_list)
+        params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list)
     end
     # Confirms the correct admin.
     def correct_admin

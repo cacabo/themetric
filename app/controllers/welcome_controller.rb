@@ -7,4 +7,7 @@ class WelcomeController < ApplicationController
     articles.delete(@three)
     @articles = articles.limit(4)
   end
+
+  def notfound
+  end
 end

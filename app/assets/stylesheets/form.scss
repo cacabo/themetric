@@ -31,7 +31,7 @@ textarea.form-control {
   transition: all 0.2s ease;
 
   &.hasVal {
-    transform: translate(-8px, 12px) scale(0.9);
+    transform: translate(0px, 12px) scale(0.9);
     color: rgba(0, 0, 0, 1);
 
     &.active {
@@ -53,9 +53,12 @@ textarea.subtitle {
 }
 
 textarea.text {
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
+.form-group {
+  margin-bottom: 0.5rem !important;
+}
 .form-group.marg-bot-0 {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
