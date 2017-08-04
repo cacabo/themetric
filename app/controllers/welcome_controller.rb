@@ -2,10 +2,8 @@ class WelcomeController < ApplicationController
   def index
     articles = Article.all.order(created_at: :desc)
     @feature = articles.first
-    articles.delete(@feature)
-    @three = articles.limit(3)
-    articles.delete(@three)
-    @articles = articles.limit(4)
+    @three = articles[1..4]
+    @articles = articles[4..8]
   end
 
   def notfound
