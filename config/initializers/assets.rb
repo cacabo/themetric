@@ -16,3 +16,4 @@ Rails.application.config.assets.precompile += %w( project-styles/bootstrap.min.c
 Rails.application.config.assets.precompile += %w( project-styles/ttt-style.css )
 Rails.application.config.assets.precompile += %w( project-js/bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( project-js/ttt.js )
+Rails.application.config.assets.precompile += %w( special-label.js )

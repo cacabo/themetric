@@ -7,6 +7,7 @@
 - [ ] Name transfer (to whatever we decide)
 - [ ] Configure AWS to a new bucket
 - [ ] Domain name
+- [ ] `Friendly_id` (here and personal website)
 
 ##### Views
 - [ ] Pretty forms
@@ -29,3 +30,7 @@
 ##### Post configuration
 - [ ] Add locations to posts
 - [ ] Better categorization for posts
+
+##### Details
+- [ ] Special phone number formatting
+- [ ] Article HTML / MD real-time interpretation / previewing?

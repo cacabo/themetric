@@ -115,3 +115,12 @@ $blue: #0275d8;
   height: 40px;
   width: 100%;
 }
+
+#top {
+  color: white !important;
+  border-bottom: 0px solid white !important;
+
+  .navbar-brand {
+    color: white !important;
+  }
+}

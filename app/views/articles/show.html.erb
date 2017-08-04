@@ -20,35 +20,27 @@
         <%= @article.title %>
       </h1>
 
-      <% if admin_signed_in? %>
-      <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
-      <div class="buttons-right">
-        <%= link_to edit_article_path(@article) do %>
-        <button class="btn btn-sm btn-outline-primary">Edit</button>
-        <% end %>
-        <%= link_to article_path(@article),
-                                  method: :delete,
-                                  data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
-        <button class="btn btn-sm btn-outline-danger">Delete</button>
-        <% end %>
-      </div>
-      <% end %>
-      <% end %>
-      <div class="empty-spacer"></div>
+      <h2 class="subtitle serif">
+        <%= @article.subtitle %>
+      </h2>
+
       <p class="time inline sans"><%= time_ago_in_words(@article.created_at) %>
         ago</p>
       <% if @article.tag_list %>
       <p class="inline tags">
         <% @article.tag_list.each do |t| %>
         <%= link_to tag_path(t) do %>
-        <button class="btn btn-outline-primary btn-sm tag"><%= t %></button>
+        <span class="tag"><%= t %></span>
         <% end %>
         <% end %>
       </p>
       <% end %>
-      <div class="line marg-top-0"></div>
+
+      <div class="line-0"></div>
+      <div class="space-1"></div>
 
       <div class="article-wrapper">
+
         <% components = @article.text.split(/\n+/) %>
         <% components.each do |comp| %><% if comp.start_with?('[IMAGE]') %><% comp.slice! '[IMAGE]' %><img src="<%= comp %>" class="img-fluid">
         <% elsif comp.start_with?('### ') %>
@@ -91,6 +83,21 @@
         <% end %>
       </div>
 
+      <% if admin_signed_in? %>
+      <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
+      <div class="admin-buttons">
+        <%= link_to edit_article_path(@article) do %>
+        <button class="btn btn-sm btn-outline-primary">Edit</button>
+        <% end %>
+        <%= link_to article_path(@article),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
+        <button class="btn btn-sm btn-outline-danger">Delete</button>
+        <% end %>
+      </div>
+      <% end %>
+      <% end %>
+
       <div class="space-4"></div>
 
     </div>
@@ -107,7 +114,7 @@
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 
         <h4>Responses</h4>
-        <div class="line marg-bot-50"></div>
+        <div class="line-1"></div>
 
         <% if @article.comments %>
         <% @comments = [] %>
@@ -178,7 +185,7 @@
   </div>
   <!-- close container -->
 
-  <div class="space-2"></div>
+  <div class="space-4"></div>
 </div>
 <!-- close gray -->
 
@@ -189,6 +196,4 @@
       $('#hidden_comments').slideDown(200);
     });
   });
-
-  $('textarea').autogrow({vertical: true, horizontal: false});
 </script>

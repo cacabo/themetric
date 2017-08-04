@@ -1,0 +1,29 @@
+.time {
+  color: rgba(0, 0, 0, 0.6);
+  font-style: italic;
+  margin-right: 1rem;
+}
+
+.tag {
+  border: 1px solid black;
+  color: black;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:active,
+  &:focus, {
+    background: black;
+    color: white;
+  }
+}
+
+.admin-buttons {
+  top: 0;
+  text-align: right;
+}
+
+.article-wrapper {
+  font-size: 1.2rem;
+}

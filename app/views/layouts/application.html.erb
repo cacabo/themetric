@@ -41,12 +41,12 @@
     <div id="alert-container" class="hidden <%= notice ? 'green' : 'red' %>">
       <% if notice %>
       <div class="info" role="alert">
-        <p class="notice"><%=notice%></p>
+        <p><%=notice%></p>
       </div>
       <% end %>
       <% if alert %>
       <div class="danger" role="alert">
-        <p class="alert"><%=alert%></p>
+        <p><%=alert%></p>
       </div>
       <% end %>
     </div>
@@ -98,5 +98,7 @@
     <script type="text/javascript">
       autosize($('textarea'));
     </script>
+
+    <%= javascript_include_tag 'special-label.js' %>
   </body>
 </html>

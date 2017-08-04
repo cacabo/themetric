@@ -17,4 +17,4 @@
 //= require bootstrap-sprockets
 //= require prism
 //= require cable.js
-//= require_tree .
+//= require_tree ./general
