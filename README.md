@@ -8,6 +8,7 @@
 - [x] Configure AWS to a new bucket
 - [ ] Domain name
 - [ ] `Friendly_id` (here and personal website)
+- [ ] Set up `Heroku` to build with `GitHub`
 
 ##### Views
 - [x] Pretty forms

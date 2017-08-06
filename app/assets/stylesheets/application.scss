@@ -22,7 +22,8 @@ $green: #3ecf8e;
 /*
 ** GENERAL
 */
-.page-content {
+.page-content,
+.full-height {
   min-height: calc(100vh - 50px);
 }
 
@@ -37,6 +38,7 @@ $green: #3ecf8e;
 /*
 ** FONTS AND COLORS
 */
+
 // NOTE only regular, bold, italic
 .serif {
   font-family: 'PT Serif', serif;
@@ -68,6 +70,14 @@ p.bigger,
 input.bigger,
 textarea.bigger {
   font-size: 1.2rem;
+}
+
+.black-diag {
+  background: black;
+  background: -webkit-linear-gradient(15deg, black 50%, white 50%);
+  background: -o-linear-gradient(15deg, black 50%, white 50%);
+  background: -moz-linear-gradient(15deg, black 50%, white 50%);
+  background: linear-gradient(15deg, black 50%, white 50%);
 }
 
 /*
