@@ -43,7 +43,7 @@ gem 'jquery-rails'
 gem 'rails-assets-tether'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bootstrap_form', '~> 2.3'
-gem "paperclip", "~> 5.0.0"
+gem 'paperclip', '~> 5.0.0'
 gem 'aws-sdk', '~> 2.3.0'
 gem 'prism-rails'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'

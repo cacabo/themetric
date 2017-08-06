@@ -64,14 +64,12 @@
     <script>
       $(document).ready(function () {
         // Variables
-        const h = '40px';
-        const $s = $('.alert-spacer');
-        const $n = $('.navbar-toggler');
-        const $c = $('#alert-container')
+        var $spacer = $('.alert-spacer');
+        var $container = $('#alert-container')
 
         // Transitions
-        $c.delay(200).slideDown(200).delay(4000).slideUp(200);
-        $s.delay(200).slideDown(200).delay(4000).slideUp(200);
+        $container.delay(200).slideDown(200).delay(4000).slideUp(200);
+        $spacer.delay(200).slideDown(200).delay(4000).slideUp(200);
       });
     </script>
     <% end %>
@@ -83,8 +81,8 @@
     </script>
 
     <script type="text/javascript">
-      document.addEventListener('turbolinks:load', function (event) {
-        if (typeof ga === 'function') {
+      document.addEventListener('turbolinks:load', function(event) {
+        if ((typeof ga) === 'function') {
           ga('set', 'location', event.data.url);
           ga('send', 'pageview');
         }

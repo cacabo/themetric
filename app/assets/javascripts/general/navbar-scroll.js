@@ -1,11 +1,11 @@
-let last = 0;
+var last = 0;
 
 $(document).ready(function() {
   last = 0;
 });
 
 window.onscroll = function() {
-  const current = document.body.scrollTop;
+  var current = document.body.scrollTop;
   if (current <= 20) {
     $('.navbar').addClass('top');
   } else {
