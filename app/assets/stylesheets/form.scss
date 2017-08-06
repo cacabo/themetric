@@ -20,7 +20,7 @@ textarea.form-control {
   }
 
   &.no-border {
-    border: 0 solid transparent !important;
+    border: 2px solid transparent !important;
   }
 }
 
@@ -42,19 +42,34 @@ textarea.form-control {
 
 input.title,
 textarea.title {
-  font-size: 2rem;
   font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 input.subtitle,
 textarea.subtitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 textarea.text {
   line-height: 1.5;
   font-size: 1.2rem;
+}
+
+input.title,
+textarea.subtitle,
+textarea.text {
+  padding: 0 0 0.5rem 0px;
+  border-radius: 0px !important;
+  transition: all 0.2s ease;
+
+  &.no-border:focus {
+    border-bottom: 2px solid $blue !important;
+  }
 }
 
 .form-group {

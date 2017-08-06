@@ -1,9 +1,16 @@
 <% if @feature %>
-  <div class="background-image parallax feature" style="<%= @feature.image.url(:large) if (not @feature.image.nil? and not @feature.image_file_name.nil?) %>">
-    <div class="title">
-      <h1>
-        <%= @feature.title %>
-      </h1>
+  <div class="background-image parallax feature" style="background-image: <%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>">
+    <div class="content">
+      <% if @feature.title %>
+        <h1 class="title">
+          <%= @feature.title %>
+        </h1>
+      <% end %>
+      <% if @feature.subtitle %>
+        <h2 class="serif subtitle">
+          <%= @feature.subtitle %>
+        </h2>
+      <% end %>
     </div>
   </div>
 <% end %>

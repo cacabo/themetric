@@ -8,20 +8,7 @@
           <span class="sr-only" Toggle navigation></span>
       </button>
       <a class="navbar-brand" href="<%= root_path %>">
-          Youth Journal
-
-          <% if @article %>
-          &nbsp;&nbsp;
-          <span class="navbar-text">
-              <% if @article.title %>
-              <% if @article.title.length > 50 %>
-              <%= @article.title[0..50] + '...' %>
-          <% else %>
-              <%= @article.title %>
-              <% end %>
-              <% end %>
-          </span>
-          <% end %>
+        Youth Journal
       </a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">

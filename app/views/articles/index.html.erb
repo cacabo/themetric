@@ -6,66 +6,65 @@
 
 <div class="container serif marg-top-2 marg-bot-2">
   <div class="row">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
-      <div class="space"></div>
-
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <% if params[:tag] %>
-      <h2 class="title sans">Listing articles tagged with "<%=params[:tag]%>"</h2>
+        <h2 class="sans">Listing articles tagged with "<%=params[:tag]%>"</h2>
       <% end %>
 
       <% if @articles.length > 0 %>
-      <% @articles.each do |article| %>
-      <div class="line"></div>
-      <% if not article.image.nil? and not article.image_file_name.nil? %>
-      <%= image_tag article.image.url(:medium), class: 'img-fluid pad-bot-25' %>
-      <% end %>
-      <h3 class="sans inline"><%= link_to article.title, article %></h3>
-      <div class="space-0"></div>
-      <p class="bigger">
-        <% if article.text %>
-          <% if article.text.length > 100 %>
-            <%= article.text.gsub(/\[.*?\]/, "")[0...100] + '...' %>
+        <% @articles.each do |article| %>
+          <!-- include the image if there is one -->
+          <% if not article.image.nil? and not article.image_file_name.nil? %>
             <%= link_to article do %>
-              <i class="time">click to read the full post.</i>
+              <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
             <% end %>
-          <% else %>
-            <%= article.text.gsub(/\[.*?\]/, "") %>
           <% end %>
+
+          <!-- article title and subtitle -->
+          <h1 class="sans title smaller"><%= link_to article.title, article %></h1>
+          <h2 class="subtitle smaller"><%= article.subtitle %></h2>
+          <div class="space-0"></div>
+
+          <!-- tags -->
+          <% if article.tag_list %>
+            <p class="inline tags">
+              <% article.tag_list.each do |t| %>
+                <%= link_to tag_path(t) do %>
+                  <span class="tag"><%= t %></span>
+                <% end %>
+              <% end %>
+            </p>
+          <% end %>
+          <!-- closing if article.tag_list logic -->
+          <p class="time sans inline float-right">
+            <%= time_ago_in_words(article.created_at) %> ago
+          </p>
+
+          <div class="line-1"></div>
         <% end %>
-      </p>
-      <div class="empty-spacer"></div>
-      <% if article.tag_list %>
-      <p class="inline">
-        <% article.tag_list.each do |t| %>
-        <%= link_to tag_path(t) do %>
-        <button class="btn btn-outline-primary btn-sm tag"><%= t %></button>
-        <% end %>
-        <% end %>
-      </p>
-      <p class="time sans inline float-right"><%= time_ago_in_words(article.created_at) %>
-        ago</p>
-      <% end %>
-      <% end %>
+        <!-- closing loop over articles -->
       <% else %>
+        <!-- if there are no articles -->
         <h2 class="sans">Oops!</h2>
         <p class="sans">There are no articles at this time, but check back soon--we're working hard to produce some great new content.</p>
       <% end %>
+      <!-- closing check for article length -->
 
       <div class="space-2"></div>
 
+      <!-- if there is a tag -->
       <% if params[:tag] %>
-      <%= link_to articles_path do %>
-      <button class="btn btn-outline-primary">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        &nbsp;Back to all articles
-      </button>
-      <% end %>
-    <% else %>
-      <%= link_to root_path do %>
-      <button class="btn-black">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        &nbsp;Back to home</button>
-      <% end %>
+        <%= link_to articles_path do %>
+          <button class="btn btn-outline-primary">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp;Back to all articles
+          </button>
+        <% end %>
+      <% else %>
+        <%= link_to root_path do %>
+          <button class="btn-black">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp;Back to home
+          </button>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -27,3 +27,22 @@
 .article-wrapper {
   font-size: 1.2rem;
 }
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+
+  &.smaller {
+    font-size: 2rem;
+  }
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+
+  &.smaller {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,27 @@
+.feature {
+  background-color: black;
+  padding: 4rem 5% 5% 5%;
+  margin-bottom: 1rem;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+
+  .content {
+    .title, .subtitle {
+      display: inline-block;
+      background: white;
+      padding: 0.5rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (min-device-width: 1024px) and (min-width: 720px) {
+  .feature .content {
+    width: 60%;
+  }
+}
