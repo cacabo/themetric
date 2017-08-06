@@ -4,13 +4,14 @@
 
 ##### General
 - [ ] SendGrid configuration
-- [ ] Name transfer (to whatever we decide)
-- [ ] Configure AWS to a new bucket
+- [ ] Name transfer (to whatever we decide from 'Youth Journal')
+- [x] Configure AWS to a new bucket
 - [ ] Domain name
 - [ ] `Friendly_id` (here and personal website)
 
 ##### Views
-- [ ] Pretty forms
+- [x] Pretty forms
+  -  [ ] Adjust spacing of active label (x-axis)
 - [x] Pretty article form
   - [ ] Get the special label to work (even on page transfers?)
 - [ ] Post show pages
@@ -28,9 +29,11 @@
 - [ ] Restrictions on who can make accounts / who can be admins?
 
 ##### Post configuration
-- [ ] Add locations to posts
+- [ ] Add locations to posts / region
 - [ ] Better categorization for posts
+- [ ] Ability to have `published` and `unpublished` posts
 
 ##### Details
 - [ ] Special phone number formatting
 - [ ] Article HTML / MD real-time interpretation / previewing?
+- [ ] Article image previewing

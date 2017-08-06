@@ -1,5 +1,5 @@
 <% if @feature %>
-  <div class="background-image parallax feature" style="background-image: <%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>">
+  <div class="background-image parallax feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
     <div class="content">
       <% if @feature.title %>
         <h1 class="title">
@@ -30,13 +30,35 @@
 
       <div class="space-1"></div>
 
-      <h1>
-        Hi there!
-      </h1>
+      <% if @three and @three.length > 0 %>
+        <div class="row">
+          <% @three.each do |article| %>
+            <div class="col-12 col-md-4">
+              <%= link_to article do %>
+                <div class="three">
+                  <% if not article.image.nil? and not article.image_file_name.nil? %>
+                    <%= link_to article do %>
+                      <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
+                    <% end %>
+                  <% end %>
 
-      <p>
-        Why is this not showing up?
-      </p>
+                  <!-- article title and subtitle -->
+                  <div class="content">
+                    <h1 class="sans title smaller"><%= article.title %></h1>
+                    <h2 class="subtitle smaller"><%= article.subtitle %></h2>
+                  </div>
+                </div>
+                <!-- closing three -->
+              <% end %>
+              <!-- closing link to article -->
+            </div>
+            <!-- closing col -->
+          <% end %>
+          <!-- close looping over three -->
+        </div>
+        <!-- closing row -->
+      <% end %>
+      <!-- close checking for three -->
 
       <div class="space-2"></div>
 
@@ -46,5 +68,8 @@
       </div>
       <% end %>
     </div>
+    <!-- closing col -->
   </div>
+  <!-- closing row -->
 </div>
+<!-- closing container -->

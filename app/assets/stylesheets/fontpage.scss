@@ -1,7 +1,7 @@
 .feature {
   background-color: black;
   padding: 4rem 5% 5% 5%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   min-height: 60vh;
   display: flex;
   align-items: flex-end;
@@ -23,5 +23,13 @@
 @media screen and (min-device-width: 1024px) and (min-width: 720px) {
   .feature .content {
     width: 60%;
+  }
+}
+
+.three {
+  border: 2px solid black;
+
+  .content {
+    padding: 1rem;
   }
 }
