@@ -69,49 +69,6 @@
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 
-        <h4>Responses</h4>
-        <div class="line-1"></div>
-
-        <% if @article.comments %>
-        <% @comments = [] %>
-        <% @hidden_comments = [] %>
-        <% if @article.comments.size > 5 %>
-        <% @comments = @article.comments.last(5) %>
-        <% @hidden_comments = @article.comments.limit(@article.comments.size - 3) %>
-        <button class='btn btn-secondary btn-sm shade' id="show-all">
-          See all
-          <%= @article.comments.size %>
-          comments
-        </button>
-      <% else %>
-        <% @comments = @article.comments %>
-        <% end %>
-
-        <% if @hidden_comments and @hidden_comments.size > 0 %>
-        <div class="no-display" id="hidden_comments">
-          <%= render @hidden_comments, article: @article %>
-        </div>
-        <% end %>
-        <div id="comments_<%= @article.id %>">
-          <%= render @comments, article: @article %>
-        </div>
-        <% end %>
-
-        <div class="space-2"></div>
-
-        <h4>Join the discussion</h4>
-        <div class="line-1"></div>
-
-        <%= bootstrap_form_for([@article, @article.comments.new], remote: true) do |f| %>
-        <p><%= f.text_field :name, placeholder: 'Your name', class: 'shade', id: 'comment_name', required: true %></p>
-        <p><%= f.text_area :content, placeholder: 'Add a comment...', class: 'shade no-scroll animate min-3', id: 'comment_content', required: true %></p>
-        <%= button_tag(type: 'submit', class: "btn btn-secondary shade-2 marg-top-1") do %>
-        Post response
-        <% end %>
-        <% end %>
-
-        <div class="space-2"></div>
-
         <div class="buttons">
           <% if @previous %>
             <%= link_to @previous do %>
@@ -166,12 +123,3 @@
   <div class="space-4"></div>
 </div>
 <!-- close gray -->
-
-<script>
-  $(document).ready(function() {
-    $('#show-all').click(function() {
-      $(this).hide(200);
-      $('#hidden_comments').slideDown(200);
-    });
-  });
-</script>
