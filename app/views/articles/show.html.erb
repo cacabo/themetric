@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-        <%= image_tag @article.image.url(:large), class: 'img-fluid marg-bot-1' %>
+        <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
       <% end %>
 
       <h1 class="title sans">
@@ -72,44 +72,58 @@
           <% if @previous %>
             <div class="col-12 col-md-6">
               <%= link_to @previous do %>
-                <div class="other white pad-1 marg-bot-1">
-                  <p class="description">
-                    Previous article
-                  </p>
-                  <h2 class="sans title smaller">
-                    <%= @previous.title %>
-                  </h2>
-                  <h3 class="serif subtitle smaller">
-                    <%= @previous.subtitle %>
-                  </h3>
+                <div class="other white marg-bot-1">
+                  <% if not @previous.image.nil? and not @previous.image_file_name.nil? %>
+                    <%= image_tag @previous.image.url(:medium), class: 'img-fluid full-width' %>
+                  <% end %>
+                  <div class="pad-1">
+                    <p class="description">
+                      Previous article
+                    </p>
+                    <h2 class="sans title smaller">
+                      <%= @previous.title %>
+                    </h2>
+                    <h3 class="serif subtitle smaller">
+                      <%= @previous.subtitle %>
+                    </h3>
+                  </div>
                 </div>
               <% end %>
             </div>
           <% else %>
-          <%= link_to articles_path do %>
-            <div class="other white pad-1 marg-bot-1">
-              <p class="description">
-                Keep reading
-              </p>
-              <h2 class="sans title smaller">
-                Back to all articles
-              </h2>
+            <div class="col-12 col-md-6">
+              <%= link_to articles_path do %>
+                <div class="other white marg-bot-1">
+                  <div class="pad-1">
+                    <p class="description">
+                      Keep reading
+                    </p>
+                    <h2 class="sans title smaller">
+                      Back to all articles
+                    </h2>
+                  </div>
+                </div>
+              <% end %>
             </div>
-          <% end %>
           <% end %>
           <% if @next %>
             <div class="col-12 col-md-6">
               <%= link_to @next do %>
-                <div class="other white pad-1 marg-bot-1">
-                  <p class="description">
-                    Next article
-                  </p>
-                  <h2 class="sans title smaller">
-                    <%= @next.title %>
-                  </h2>
-                  <h3 class="serif subtitle smaller">
-                    <%= @next.subtitle %>
-                  </h3>
+                <div class="other white marg-bot-1">
+                  <% if not @next.image.nil? and not @next.image_file_name.nil? %>
+                    <%= image_tag @next.image.url(:medium), class: 'img-fluid full-width' %>
+                  <% end %>
+                  <div class="pad-1">
+                    <p class="description">
+                      Next article
+                    </p>
+                    <h2 class="sans title smaller">
+                      <%= @next.title %>
+                    </h2>
+                    <h3 class="serif subtitle smaller">
+                      <%= @next.subtitle %>
+                    </h3>
+                  </div>
                 </div>
               <% end %>
             </div>

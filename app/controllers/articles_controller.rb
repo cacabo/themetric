@@ -32,13 +32,13 @@ class ArticlesController < ApplicationController
         @article = Article.friendly.find(params[:id])
         @previous = nil
         id = @article.id.to_i - 1
-        while (not @previous) and (id > 0)
+        while (not @previous) and (id >= Article.first.id)
           @previous = Article.exists?(id) ? Article.friendly.find(id) : nil
           id = id - 1
         end
         @next = nil
         id = @article.id.to_i + 1
-        while (not @next) and (id <= Article.all.count)
+        while (not @next) and (id <= Article.last.id)
           @next = Article.exists?(id) ? Article.friendly.find(id) : nil
           id = id + 1
         end
