@@ -25,7 +25,21 @@
 }
 
 .article-wrapper {
-  font-size: 1.2rem;
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .title {

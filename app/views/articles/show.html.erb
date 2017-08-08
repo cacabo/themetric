@@ -36,47 +36,7 @@
       <div class="space-1"></div>
 
       <div class="article-wrapper">
-
-        <% components = @article.text.split(/\n+/) %>
-        <% components.each do |comp| %><% if comp.start_with?('[IMAGE]') %><% comp.slice! '[IMAGE]' %><img src="<%= comp %>" class="img-fluid">
-        <% elsif comp.start_with?('### ') %>
-        <% comp.slice! ('### ') %>
-        <h5>
-          <strong><%=comp%></strong>
-        </h5>
-        <% elsif comp.start_with?('## ') %>
-        <% comp.slice! ('## ') %>
-        <h3>
-          <strong><%=comp%></strong>
-        </h3>
-        <% elsif comp.start_with?('# ') %>
-        <% comp.slice! ('# ') %>
-        <h2>
-          <strong><%=comp%></strong>
-        </h2>
-        <% elsif comp.start_with?('[QUOTE]') %>
-        <% comp.slice! ('[QUOTE]') %>
-        <div class="quote">
-          <%= comp.html_safe %>
-        </div>
-        <% elsif comp.start_with?('[LINE]') %>
-        <div class="line"></div>
-        <% elsif comp.start_with?('[DASH]') %>
-        <div class="col-2 push-5 dash"></div>
-        <% elsif comp.start_with?('[SPACE]') %>
-        <div class="space-2"></div>
-        <% elsif comp.start_with?('[HALF-SPACE]') %>
-        <div class="half-space"></div>
-        <% elsif comp.start_with?('[CAPTION]') %>
-        <% comp.slice! ('[CAPTION]') %>
-        <div class="caption"><%= comp %></div>
-      <% else %>
-        <p>
-          <!-- HTML Safe to allow for links, styling -->
-          <%= comp.html_safe %>
-        </p>
-        <% end %>
-        <% end %>
+        <%= markdown(@article.text) %>
       </div>
 
       <% if admin_signed_in? %>
