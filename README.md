@@ -7,7 +7,9 @@
 - [ ] Name transfer (to whatever we decide from 'Youth Journal')
 - [x] Configure AWS to a new bucket
 - [ ] Domain name
-- [ ] `Friendly_id` (here and personal website)
+- [x] `Friendly_id`
+  - [ ] ...for personal website
+  - [ ] ...for admins
 - [ ] Set up `Heroku` to build with `GitHub`
 
 ##### Views
