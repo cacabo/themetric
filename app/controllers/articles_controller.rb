@@ -31,13 +31,13 @@ class ArticlesController < ApplicationController
     def show
         @article = Article.friendly.find(params[:id])
         @previous = nil
-        id = params[:id].to_i - 1
+        id = @article.id.to_i - 1
         while (not @previous) and (id > 0)
           @previous = Article.exists?(id) ? Article.friendly.find(id) : nil
           id = id - 1
         end
         @next = nil
-        id = params[:id].to_i + 1
+        id = @article.id.to_i + 1
         while (not @next) and (id <= Article.all.count)
           @next = Article.exists?(id) ? Article.friendly.find(id) : nil
           id = id + 1
