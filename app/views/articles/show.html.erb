@@ -67,31 +67,64 @@
   <div class="space-4"></div>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-
-        <div class="buttons">
+      <div class="col-12 col-md-10 offset-md-1">
+        <div class="row">
           <% if @previous %>
-            <%= link_to @previous do %>
-              <button class="btn-black">
-                <i class="fa fa-chevron-left"></i> &nbsp;Previous article
-              </button>
-            <% end %>
+            <div class="col-12 col-md-6">
+              <%= link_to @previous do %>
+                <div class="other white pad-1 marg-bot-1">
+                  <p class="description">
+                    Previous article
+                  </p>
+                  <h2 class="sans title smaller">
+                    <%= @previous.title %>
+                  </h2>
+                  <h3 class="serif subtitle smaller">
+                    <%= @previous.subtitle %>
+                  </h3>
+                </div>
+              <% end %>
+            </div>
           <% else %>
-            <%= link_to articles_path do %>
-              <button class="btn-black">
-                <i class="fa fa-chevron-left"></i> &nbsp;Back to all articles
-              </button>
-            <% end %>
+          <%= link_to articles_path do %>
+            <div class="other white pad-1 marg-bot-1">
+              <p class="description">
+                Keep reading
+              </p>
+              <h2 class="sans title smaller">
+                Back to all articles
+              </h2>
+            </div>
+          <% end %>
           <% end %>
           <% if @next %>
-            <%= link_to @next do %>
-            <button class="btn-black">
-              Next article &nbsp;<i class="fa fa-chevron-right"></i>
-            </button>
-            <% end %>
+            <div class="col-12 col-md-6">
+              <%= link_to @next do %>
+                <div class="other white pad-1 marg-bot-1">
+                  <p class="description">
+                    Next article
+                  </p>
+                  <h2 class="sans title smaller">
+                    <%= @next.title %>
+                  </h2>
+                  <h3 class="serif subtitle smaller">
+                    <%= @next.subtitle %>
+                  </h3>
+                </div>
+              <% end %>
+            </div>
           <% end %>
         </div>
+        <!-- closing row around other articles -->
+      </div>
+      <!-- close col -->
+    </div>
+    <!-- close row -->
 
+    <div class="space-2"></div>
+
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <!-- DISQUS -->
         <div id="disqus_thread"></div>
         <script>
@@ -112,11 +145,8 @@
           })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
       </div>
-      <!-- close col -->
     </div>
-    <!-- close row -->
   </div>
   <!-- close container -->
 

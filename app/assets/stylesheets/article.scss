@@ -60,3 +60,11 @@
     font-size: 1.5rem;
   }
 }
+
+.other {
+  border-top: 0.5rem solid black;
+
+  .description {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
