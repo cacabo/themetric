@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   def show
-    @admin = Admin.find(params[:id]) if Admin.exists? id: :id
+    @admin = Admin.exists?(params[:id]) ? Admin.find(params[:id]) : nil
   end
 
   def index
