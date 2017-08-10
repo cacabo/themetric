@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1>Listing all admins</h1>
+
+      <% @admins.each do |a| %>
+        <%= link_to a do %>
+          <p>
+            <%= a.name ? a.name + ': ' : '' %><%= a.email %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

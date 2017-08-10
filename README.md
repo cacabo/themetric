@@ -19,15 +19,14 @@
   - [ ] Get the special label to work (even on page transfers?)
 - [ ] Post show pages
 - [ ] Front page?
-- [ ] User show pages
-- [ ] Fixed nav only on scroll up, hide on scroll down?
+- [ ] Admin show pages
 
 ##### Admin configuration
-- [ ] User controller
-  - [ ] Name
-  - [ ] Bio
+- [x] Admin controller
+  - [x] Name
+  - [x] Bio
+  - [ ] Social media links
   - [ ] Profile picture
-- [ ] Change from admin to user?
 - [ ] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
 
@@ -40,3 +39,4 @@
 - [ ] Special phone number formatting
 - [ ] Article HTML / MD real-time interpretation / previewing?
 - [ ] Article image previewing
+- [x] Fixed nav only on scroll up, hide on scroll down?

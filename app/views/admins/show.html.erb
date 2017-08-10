@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <% if @admin %>
+        <h1>
+          <%= @admin.name %>
+        </h1>
+
+        <p>
+          <%= @admin.email %>
+        </p>
+
+        <p>
+          <%= @admin.bio %>
+        </p>
+      <% else %>
+        <h1>
+          This admin does not exist.
+        </h1>
+        
+        <div class="space-2"></div>
+
+        <%= link_to admins_path do %>
+          <div class="btn-black">
+            Back to all admins
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
