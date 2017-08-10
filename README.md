@@ -11,6 +11,7 @@
   - [ ] ...for personal website
   - [ ] ...for admins
 - [ ] Set up `Heroku` to build with `GitHub`
+  - [ ] ...or figure out the assets precompile
 
 ##### Views
 - [x] Pretty forms
@@ -20,6 +21,7 @@
 - [ ] Post show pages
 - [ ] Front page?
 - [ ] Admin show pages
+- [ ] Admin index pages
 
 ##### Admin configuration
 - [x] Admin controller
@@ -29,14 +31,18 @@
   - [ ] Profile picture
 - [ ] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
+- [ ] Update edit form, make sure it works with names, bios
 
-##### Post configuration
+##### Article configuration
 - [ ] Add locations to posts / region
+  - [ ] Add select field in form for articles
 - [ ] Better categorization for posts
 - [ ] Ability to have `published` and `unpublished` posts
+- [ ] Handle article not found on show page
 
 ##### Details
 - [ ] Special phone number formatting
+- [ ] Add to navbar, update styling, clean it up
 - [ ] Article HTML / MD real-time interpretation / previewing?
 - [ ] Article image previewing
 - [x] Fixed nav only on scroll up, hide on scroll down?
