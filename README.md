@@ -32,6 +32,7 @@
 - [ ] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
 - [ ] Update edit form, make sure it works with names, bios
+- [ ] Admin can edit page if on their own
 
 ##### Article configuration
 - [ ] Add locations to posts / region

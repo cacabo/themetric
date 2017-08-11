@@ -2,29 +2,37 @@ $blue: #0275d8;
 
 .navbar {
   background: white !important;
-  border-bottom: 2px solid black;
+  border-bottom: 0px solid transparent;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   font-family: 'Palanquin Dark', sans-serif;
   transition: all 0.2s ease;
   overflow: hidden !important;
   width: 100%;
+  padding: 0rem 1rem !important;
 
   .navbar-brand {
     transition: all 0.2s ease;
     font-size: 2rem;
   }
 
+  .navbar-toggler {
+    height: 56px;
+  }
+
   .nav-item a.nav-link {
-    color: black;
+    color: rgba(0, 0, 0, 0.6);
     font-size: 1.25rem;
 
     &:hover {
-      color: $blue;
+      color: black;
     }
   }
 }
 
 .navbar.top {
-  border-bottom: 2px solid transparent;
+  padding: 0.5rem 1rem !important;
+  box-shadow: 0px 2px 2px transparent;
+  border-bottom: 0px solid transparent;
 
   .navbar-brand {
     font-size: 3rem;

@@ -19,29 +19,36 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = current_admin.articles.build(article_params)
+      @article = current_admin.articles.build(article_params)
 
-        if @article.save
-            redirect_to @article
-        else
-            render 'new'
-        end
+      if @article.save
+        redirect_to @article
+      else
+        render 'new'
+      end
     end
 
     def show
-        @article = Article.friendly.find(params[:id])
-        @previous = nil
+      @article = Article.friendly.find(params[:id]) if Article.friendly.exists? params[:id]
+      @previous = nil
+      @next = nil
+
+      if @article
         id = @article.id.to_i - 1
         while (not @previous) and (id >= Article.first.id)
-          @previous = Article.exists?(id) ? Article.friendly.find(id) : nil
+          @previous = Article.exists?(id) ? Article.find(id) : nil
           id = id - 1
         end
-        @next = nil
         id = @article.id.to_i + 1
         while (not @next) and (id <= Article.last.id)
-          @next = Article.exists?(id) ? Article.friendly.find(id) : nil
+          @next = Article.exists?(id) ? Article.find(id) : nil
           id = id + 1
         end
+      else
+        random = Article.limit(10).order("RANDOM()")
+        @previous = random.first
+        @next = random.second
+      end
     end
 
     def update

@@ -1,67 +1,88 @@
-<head>
-  <% title @article.title %>
-  <% description "#{@article.text[0..160]}..." %>
-  <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},Youth,Journal,news" %>
-  <% image "#{image_url @article.image}" unless @article.image.nil? %>
-</head>
+<% if @article %>
+  <head>
+    <% title @article.title %>
+    <% description "#{@article.text[0..160]}..." %>
+    <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},Youth,Journal,news" %>
+    <% image "#{image_url @article.image}" unless @article.image.nil? %>
+  </head>
 
-<div class="container serif marg-top-2">
-  <div class="row">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-        <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
-      <% end %>
+  <div class="container serif marg-top-2">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <% if not @article.image.nil? and not @article.image_file_name.nil? %>
+          <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
+        <% end %>
 
-      <h1 class="title sans">
-        <%= @article.title %>
-      </h1>
+        <h1 class="title sans">
+          <%= @article.title %>
+        </h1>
 
-      <h2 class="subtitle serif">
-        <%= @article.subtitle %>
-      </h2>
+        <h2 class="subtitle serif">
+          <%= @article.subtitle %>
+        </h2>
 
-      <p class="time inline sans"><%= time_ago_in_words(@article.created_at) %>
-        ago</p>
-      <% if @article.tag_list %>
-      <p class="inline tags">
-        <% @article.tag_list.each do |t| %>
-        <%= link_to tag_path(t) do %>
-        <span class="tag"><%= t %></span>
+        <p class="time inline sans"><%= time_ago_in_words(@article.created_at) %>
+          ago</p>
+        <% if @article.tag_list %>
+        <p class="inline tags">
+          <% @article.tag_list.each do |t| %>
+          <%= link_to tag_path(t) do %>
+          <span class="tag"><%= t %></span>
+          <% end %>
+          <% end %>
+        </p>
+        <% end %>
+
+        <div class="line-0"></div>
+        <div class="space-1"></div>
+
+        <div class="article-wrapper">
+          <%= markdown(@article.text) %>
+        </div>
+
+        <% if admin_signed_in? %>
+        <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
+        <div class="admin-buttons">
+          <%= link_to edit_article_path(@article) do %>
+          <button class="btn btn-sm btn-outline-primary">Edit</button>
+          <% end %>
+          <%= link_to article_path(@article),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
+          <button class="btn btn-sm btn-outline-danger">Delete</button>
+          <% end %>
+        </div>
         <% end %>
         <% end %>
-      </p>
-      <% end %>
 
-      <div class="line-0"></div>
-      <div class="space-1"></div>
+        <div class="space-4"></div>
 
-      <div class="article-wrapper">
-        <%= markdown(@article.text) %>
       </div>
-
-      <% if admin_signed_in? %>
-      <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
-      <div class="admin-buttons">
-        <%= link_to edit_article_path(@article) do %>
-        <button class="btn btn-sm btn-outline-primary">Edit</button>
-        <% end %>
-        <%= link_to article_path(@article),
-                                  method: :delete,
-                                  data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
-        <button class="btn btn-sm btn-outline-danger">Delete</button>
-        <% end %>
-      </div>
-      <% end %>
-      <% end %>
-
-      <div class="space-4"></div>
-
+      <!-- close col -->
     </div>
-    <!-- close col -->
+    <!-- close row -->
   </div>
-  <!-- close row -->
-</div>
-<!-- close container -->
+  <!-- close container around article -->
+<% else %>
+  <head>
+    <% title 'Youth Journal | Article not found' %>
+    <% description "This article does not exist." %>
+  </head>
+
+  <div class="container marg-top-2">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h2 class="marg-bot-1">Article not found, oh man!</h2>
+        <p>
+          Seems like this the article that you are looking for does not exist. If you think this is a mistake, please <%= link_to 'contact us', new_contact_path %> with a description of what happened.
+        </p>
+        <div class="space-2"></div>
+        <%= link_to 'Back to all articles', articles_path, class: 'btn-black' %>
+        <div class="space-4"></div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <div class="light-gray">
   <div class="space-4"></div>
@@ -137,30 +158,33 @@
 
     <div class="space-2"></div>
 
-    <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <!-- DISQUS -->
-        <div id="disqus_thread"></div>
-        <script>
-          /**
-          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    <% if @article %>
+      <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <!-- DISQUS -->
+          <div id="disqus_thread"></div>
+          <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
-          var disqus_config = function () {
-          this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = '<%= @article.slug %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
+            var disqus_config = function () {
+            this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '<%= @article.slug %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
 
-          (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
-          s.src = 'https://chasm-1.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://chasm-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
       </div>
-    </div>
+    <% end %>
+    <!-- end logic checking for article for disqus -->
   </div>
   <!-- close container -->
 

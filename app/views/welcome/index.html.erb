@@ -1,18 +1,21 @@
 <% if @feature %>
-  <div class="background-image parallax feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
-    <div class="content">
-      <% if @feature.title %>
-        <h1 class="title">
-          <%= @feature.title %>
-        </h1>
-      <% end %>
-      <% if @feature.subtitle %>
-        <h2 class="serif subtitle">
-          <%= @feature.subtitle %>
-        </h2>
-      <% end %>
+  <%= link_to @feature do %>
+    <div class="background-image parallax feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
+      <div class="content">
+        <% if @feature.title %>
+          <h1 class="title">
+            <%= @feature.title %>
+          </h1>
+        <% end %>
+        <% if @feature.subtitle %>
+          <h2 class="serif subtitle">
+            <%= @feature.subtitle %>
+          </h2>
+        <% end %>
+
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
 <div class="container marg-bot-2">
@@ -67,6 +70,7 @@
           View all articles <i class="fa fa-chevron-right"></i>
         </div>
       <% end %>
+      <div class="space-2"></div>
     </div>
     <!-- closing col -->
   </div>
