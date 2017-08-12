@@ -4,7 +4,7 @@ $(document).ready(function() {
   last = 0;
 });
 
-window.onscroll = function() {
+window.addEventListener('scroll', function() {
   var current = document.body.scrollTop;
   if (current <= 20) {
     $('.navbar').addClass('top');
@@ -20,4 +20,4 @@ window.onscroll = function() {
     }
     last = current;
   }
-}
+});

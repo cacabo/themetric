@@ -57,6 +57,22 @@
 
         <div class="space-4"></div>
 
+        <div class="share">
+          <ul class="hidden-sm-down">
+            <li>
+              <a href="#" target="_blank"><i class="fa fa-facebook fa-2x fa-fw"><span class="share-circle"></span></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fa fa-twitter fa-2x fa-fw"><span class="share-circle"></span></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fa fa-envelope fa-2x fa-fw"><span class="share-circle"></span></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fa fa-linkedin fa-2x fa-fw"><span class="share-circle"></span></i></a>
+            </li>
+          </ul>
+        </div>
       </div>
       <!-- close col -->
     </div>
@@ -191,3 +207,21 @@
   <div class="space-4"></div>
 </div>
 <!-- close gray -->
+
+<script type="text/javascript">
+  var gray = $('.light-gray').offset().top;
+  var $share = $('.share');
+
+  $(window).resize(function() {
+    gray = $('.light-gray').offset().top;
+  });
+
+  window.addEventListener('scroll', function() {
+    var scrollBot = $(window).scrollTop() + $(window).height();
+    if (scrollBot >= gray) {
+      $share.addClass('bottom');
+    } else {
+      $share.removeClass('bottom');
+    }
+  });
+</script>
