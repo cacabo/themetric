@@ -18,7 +18,7 @@
   -  [ ] Adjust spacing of active label (x-axis)
 - [x] Pretty article form
   - [ ] Get the special label to work (even on page transfers?)
-- [ ] Post show pages
+- [x] Article show pages
 - [ ] Front page?
 - [ ] Admin show pages
 - [ ] Admin index pages
@@ -39,7 +39,10 @@
   - [ ] Add select field in form for articles
 - [ ] Better categorization for posts
 - [ ] Ability to have `published` and `unpublished` posts
-- [ ] Handle article not found on show page
+- [x] Handle article not found on show page
+- [ ] Links to share on social media
+  - [x] Desktop
+  - [ ] Mobile / small screen
 
 ##### Details
 - [ ] Special phone number formatting
