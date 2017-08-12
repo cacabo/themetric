@@ -37,6 +37,9 @@ class ArticlesController < ApplicationController
       @encoded = URI.escape(@url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 
       if @article
+        @title = URI.escape(@article.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+        @subtitle = URI.escape(@article.subtitle, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+        
         id = @article.id.to_i - 1
         while (not @previous) and (id >= Article.first.id)
           @previous = Article.exists?(id) ? Article.find(id) : nil
