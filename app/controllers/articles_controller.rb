@@ -33,6 +33,9 @@ class ArticlesController < ApplicationController
       @previous = nil
       @next = nil
 
+      @url = request.base_url + request.fullpath
+      @encoded = URI.escape(@url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+
       if @article
         id = @article.id.to_i - 1
         while (not @previous) and (id >= Article.first.id)
