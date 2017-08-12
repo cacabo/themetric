@@ -60,13 +60,13 @@
         <div class="share">
           <ul class="hidden-sm-down">
             <li>
-              <a href="http://www.facebook.com/sharer.php?u=<%= @encoded + '&amp;src=sdkpreparse' %>" target="_blank"><i class="fa fa-facebook fa-2x fa-fw"><span class="share-circle"></span></i></a>
+              <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-2x fa-fw"><span class="share-circle"></span></i></a>
             </li>
             <li>
-              <a href="#" target="_blank"><i class="fa fa-twitter fa-2x fa-fw"><span class="share-circle"></span></i></a>
+              <a href="https://twitter.com/share?url=<%=@encoded%>"><i class="fa fa-twitter fa-2x fa-fw"><span class="share-circle"></span></i></a>
             </li>
             <li>
-              <a href="mailto:?&subject=<%= @article.title %>&body=<%= @url %>"><i class="fa fa-envelope fa-2x fa-fw"><span class="share-circle"></span></i></a>
+              <a href="mailto:?&subject=<%=@article.title%>&body=<%=@url%>"><i class="fa fa-envelope fa-2x fa-fw"><span class="share-circle"></span></i></a>
             </li>
             <li>
               <a href="#" target="_blank"><i class="fa fa-linkedin fa-2x fa-fw"><span class="share-circle"></span></i></a>
