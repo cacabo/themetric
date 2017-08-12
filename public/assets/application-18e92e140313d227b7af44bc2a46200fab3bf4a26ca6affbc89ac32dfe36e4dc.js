@@ -24060,16 +24060,20 @@ if(typeof Turbolinks != 'undefined' && Turbolinks.supported) {
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
-$('.disabled').click(function(e) {
-  e.preventDefalt();
-});
+var $disabled = $('.disabled');
+if ($disabled) {
+  $('.disabled').click(function(e) {
+    e.preventDefalt();
+  });
+}
+;
 var last = 0;
 
 $(document).ready(function() {
   last = 0;
 });
 
-window.onscroll = function() {
+window.addEventListener('scroll', function() {
   var current = document.body.scrollTop;
   if (current <= 20) {
     $('.navbar').addClass('top');
@@ -24085,8 +24089,7 @@ window.onscroll = function() {
     }
     last = current;
   }
-}
-;
+});
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

@@ -220,6 +220,82 @@ pre[class*="language-"] {
 .other .description {
   color: rgba(0, 0, 0, 0.6);
 }
+
+/* line 73, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share {
+  top: 0;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 10;
+  margin-left: -6rem;
+}
+/* line 82, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0px;
+}
+/* line 88, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul li {
+  margin: 1rem 0;
+}
+/* line 92, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa {
+  color: rgba(0, 0, 0, 0.15);
+  text-align: center;
+  display: table-cell;
+}
+/* line 97, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa .share-circle {
+  position: absolute;
+  right: -0.25rem;
+  -webkit-transform: translateY(-0.5rem);
+          transform: translateY(-0.5rem);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  z-index: -1;
+}
+/* line 108, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa:hover {
+  color: white;
+}
+/* line 112, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa:hover .share-circle {
+  width: 3rem;
+  height: 3rem;
+}
+/* line 118, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa-facebook:hover .share-circle {
+  background: #3b5998;
+}
+/* line 122, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa-twitter:hover .share-circle {
+  background: #1da1f2;
+}
+/* line 126, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa-envelope:hover .share-circle {
+  background: #0099ff;
+}
+/* line 130, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share ul .fa-linkedin:hover .share-circle {
+  background: #0077b5;
+}
+/* line 135, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+.share.bottom {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
 /* line 1, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/fontpage.scss */
 .feature {
   background-color: black;
@@ -397,48 +473,58 @@ textarea.text.no-border:focus {
 /* line 3, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar {
   background: white !important;
-  border-bottom: 2px solid black;
+  border-bottom: 0px solid transparent;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   font-family: 'Palanquin Dark', sans-serif;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   overflow: hidden !important;
   width: 100%;
+  padding: 0rem 1rem !important;
 }
-/* line 11, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 13, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar .navbar-brand {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   font-size: 2rem;
 }
-/* line 16, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 18, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+.navbar .navbar-toggler {
+  height: 56px;
+}
+/* line 22, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar .nav-item a.nav-link {
-  color: black;
+  color: rgba(0, 0, 0, 0.6);
   font-size: 1.25rem;
 }
-/* line 20, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 26, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar .nav-item a.nav-link:hover {
-  color: #0275d8;
+  color: black;
 }
 
-/* line 26, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 32, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar.top {
-  border-bottom: 2px solid transparent;
+  padding: 0.5rem 1rem !important;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-bottom: 0px solid transparent;
 }
-/* line 29, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 37, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar.top .navbar-brand {
   font-size: 3rem;
 }
-/* line 33, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 41, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar.top .navbar-toggler {
   height: 98px;
 }
 
-/* line 38, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 46, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-text {
   padding: 0 !important;
 }
 
-/* line 42, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 50, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -449,7 +535,7 @@ textarea.text.no-border:focus {
   top: 0;
 }
 
-/* line 51, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 59, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .icon-bar {
   background-color: black !important;
   display: block;
@@ -457,12 +543,12 @@ textarea.text.no-border:focus {
   height: 3px;
 }
 
-/* line 58, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 66, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .icon-bar + .icon-bar {
   margin-top: 6px;
 }
 
-/* line 62, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 70, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler,
 .navbar-toggler:active,
 .navbar-toggler:visited {
@@ -470,37 +556,37 @@ textarea.text.no-border:focus {
   outline: 0 !important;
 }
 
-/* line 69, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 77, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .nav-link {
   margin-bottom: 0;
 }
 
-/* line 73, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 81, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler {
   background: transparent !important;
 }
-/* line 76, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 84, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler:hover {
   background: transparent !important;
 }
-/* line 80, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 88, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .icon-bar {
   width: 33px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-/* line 85, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 93, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .top-bar {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transform-origin: 10% 10%;
           transform-origin: 10% 10%;
 }
-/* line 90, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 98, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .middle-bar {
   opacity: 0;
 }
-/* line 94, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 102, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .bottom-bar {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -508,33 +594,33 @@ textarea.text.no-border:focus {
           transform-origin: 10% 90%;
 }
 
-/* line 101, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 109, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler.collapsed .top-bar {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
-/* line 105, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 113, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler.collapsed .middle-bar {
   opacity: 1;
 }
-/* line 109, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 117, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .navbar-toggler.collapsed .bottom-bar {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
 
-/* line 114, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 122, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 .alert-spacer {
   height: 40px;
   width: 100%;
 }
 
-/* line 119, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 127, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 #top {
   color: white !important;
   border-bottom: 0px solid white !important;
 }
-/* line 123, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 131, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
 #top .navbar-brand {
   color: white !important;
 }
@@ -11688,27 +11774,32 @@ a {
   text-decoration: none;
 }
 /* line 65, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
-a:hover {
+a:hover, a:focus, a:active, a:visited {
   text-decoration: none;
 }
 
-/* line 70, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 73, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 p.bigger,
 input.bigger,
 textarea.bigger {
   font-size: 1.2rem;
 }
 
-/* line 76, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 79, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .black-diag {
   background: black;
   background: linear-gradient(20deg, white 50%, black 50%);
 }
 
+/* line 87, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+.bord-top-thick {
+  border-top: 10px solid black;
+}
+
 /*
 ** BUTTONS
 */
-/* line 88, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 95, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-black,
 .btn-white {
   border-radius: 0px;
@@ -11724,40 +11815,40 @@ textarea.bigger {
   cursor: hand;
   cursor: pointer;
 }
-/* line 102, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 109, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-black.btn-big,
 .btn-white.btn-big {
   padding: 0.5rem 1rem;
 }
 
-/* line 107, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 114, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-black {
   color: black;
   border: 2px solid black;
 }
-/* line 111, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 118, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-black:hover {
   color: white;
   background: black;
 }
-/* line 116, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 123, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-black.disabled {
   color: rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(0, 0, 0, 0.4);
   cursor: not-allowed;
 }
-/* line 121, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 128, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-black.disabled:hover {
   color: rgba(0, 0, 0, 0.4);
   background: transparent;
 }
 
-/* line 128, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 135, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-white {
   color: white;
   border: 2px solid white !important;
 }
-/* line 132, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 139, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .btn-white:hover {
   background: white;
   color: black;
@@ -11766,16 +11857,16 @@ textarea.bigger {
 /*
 ** POPUP
 */
-/* line 142, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 149, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .popup {
   color: white;
   padding: 2rem;
 }
-/* line 146, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 153, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .popup h1, .popup h2, .popup h3, .popup h4, .popup h5, .popup h6, .popup p, .popup .fa {
   color: white;
 }
-/* line 150, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 157, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .popup .x {
   position: absolute;
   right: 2rem;
@@ -11788,7 +11879,7 @@ textarea.bigger {
 /*
 ** ERRORS
 */
-/* line 164, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 171, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #error_explanation {
   background-color: #f2dede;
   color: #a94442;
@@ -11796,33 +11887,33 @@ textarea.bigger {
   padding: 1rem;
   margin: 1rem 0rem;
 }
-/* line 171, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 178, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #error_explanation h2 {
   color: #a94442;
   font-size: 1.25rem;
 }
-/* line 176, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 183, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #error_explanation ul {
   margin-bottom: 0px;
 }
 
-/* line 181, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 188, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .has-error .form-control {
   border-bottom: 2px solid #a94442;
 }
 
-/* line 185, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 192, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .help-block {
   color: #a94442;
   margin-top: 0.5rem;
 }
 
-/* line 190, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 197, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 .help-block::first-letter {
   text-transform: uppercase;
 }
 
-/* line 194, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 201, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #alert-container {
   z-index: 1031;
   padding: 0 1rem;
@@ -11834,16 +11925,16 @@ textarea.bigger {
   color: white;
   background: black;
 }
-/* line 205, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 212, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #alert-container p {
   margin: 0.5rem 0;
   color: white;
 }
-/* line 210, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 217, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #alert-container.red {
   background: #FF7085;
 }
-/* line 214, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 221, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
 #alert-container.green {
   background: #3ecf8e;
 }
