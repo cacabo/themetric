@@ -102,7 +102,7 @@
 
       .share-circle {
         position: absolute;
-        right: -0.25rem;
+        right: -0.2rem;
         transform: translateY(-0.5rem);
         transition: all 0.2s ease;
         width: 0px;
@@ -142,5 +142,33 @@
     position: absolute;
     top: auto;
     bottom: 0;
+  }
+}
+
+.article-social {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+
+  .fa-facebook {
+    color: #3b5998;
+  }
+
+  .fa-twitter {
+    color: #1da1f2;
+  }
+
+  .fa-envelope {
+    color: #0099ff;
+  }
+
+  .fa-linkedin {
+    color: #0077b5;
+  }
+
+  .fa {
+    margin-right: 0.75rem;
   }
 }
