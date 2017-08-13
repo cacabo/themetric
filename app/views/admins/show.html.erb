@@ -2,22 +2,48 @@
   <head>
     <% title 'Youth Journal | ' + (@admin.name ? @admin.name : 'Admin') %>
   </head>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h1>
-          <%= @admin.name %>
-        </h1>
+  <div class="full-height light-gray">
+    <div class="space-4"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+          <div class="white pad-1 bord-top-thick">
+            <div class="admin">
+              <div class="admin-img big" style="background-image: URL(<%= @admin.image.url(:large) if (not @admin.image_file_name.nil? and not @admin.image.nil?) %>)">
+              </div>
+              <div class="admin-content">
+                <h1>
+                  <%= @admin.name %>
+                </h1>
 
-        <p>
-          <%= @admin.email %>
-        </p>
+                <p>
+                  <%= @admin.email %>
+                </p>
 
-        <p>
-          <%= @admin.bio %>
-        </p>
+                <p>
+                  <%= @admin.bio %>
+                </p>
+              </div>
+            </div>
+            <!-- closing admin -->
+            <% if @admin.articles.length > 0 %>
+              <div class="line-0"></div>
+              <div class="space-1"></div>
+
+              <% @admin.articles.each do |a| %>
+                <%= render a %>
+              <% end %>
+            <% end %>
+
+            <div class="space-1"></div>
+            <%= link_to 'Back to all admins', admins_path, class: 'btn-black' %>
+            <div class="space-1"></div>
+          </div>
+          <!-- closing white -->
+        </div>
       </div>
     </div>
+    <div class="space-4"></div>
   </div>
 <% else %>
   <head>
