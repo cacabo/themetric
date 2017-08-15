@@ -1,49 +1,55 @@
-<div class="row pad-0">
-  <div class="col-12 col-md-8 pad-0">
-    <% if @feature %>
-      <%= link_to @feature do %>
-        <div class="background-image parallax feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
-          <div class="content">
-            <% if @feature.title %>
-              <h1 class="title">
-                <%= @feature.title %>
-              </h1>
-            <% end %>
-            <div class="space-0"></div>
-            <% if @feature.subtitle %>
-              <h2 class="serif subtitle">
-                <%= @feature.subtitle %>
-              </h2>
-            <% end %>
-
+<div class="container-fluid">
+  <div class="row pad-0">
+    <div class="col-12 col-md-8 pad-0">
+      <% if @feature %>
+        <%= link_to @feature do %>
+          <div class="background-image parallax feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
+            <div class="content">
+              <% if @feature.title %>
+                <h1 class="title">
+                  <%= @feature.title %>
+                </h1>
+              <% end %>
+              <div class="space-0"></div>
+              <% if @feature.subtitle %>
+                <h2 class="serif subtitle">
+                  <%= @feature.subtitle %>
+                </h2>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div class="col-12 col-md-4 pad-0">
-    <% if @three and @three.length > 0 %>
-      <% @three.each do |article| %>
-        <%= link_to article do %>
-          <div class="three">
+      <% if @eight %>
+        <% @eight.each do |a| %>
+          <%= render a %>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- closing left col -->
+    <div class="col-12 col-md-4 pad-top-1 light-gray">
+      <% if @three and @three.length > 0 %>
+        <% @three.each do |article| %>
+          <%= link_to article do %>
             <!-- article image -->
             <% if not article.image.nil? and not article.image_file_name.nil? %>
               <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
             <% end %>
 
             <!-- article title and subtitle -->
-            <div class="content">
-              <h1 class="sans title smaller"><%= article.title %></h1>
-              <h2 class="subtitle smaller"><%= article.subtitle %></h2>
-            </div>
-          </div>
-          <!-- closing three -->
+            <h1 class="sans title smaller"><%= article.title %></h1>
+            <h2 class="subtitle smaller"><%= article.subtitle %></h2>
+            <% unless article == @three.last %>
+              <div class="line-1"></div>
+            <% end %>
+          <% end %>
+          <!-- closing link to article -->
         <% end %>
-        <!-- closing link to article -->
+        <!-- close looping over three -->
       <% end %>
-      <!-- close looping over three -->
-    <% end %>
-    <!-- close checking for three -->
+      <!-- close checking for three -->
+    </div>
+    <!-- closing right col -->
   </div>
 </div>
 
