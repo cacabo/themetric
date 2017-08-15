@@ -7,6 +7,7 @@
             <%= @feature.title %>
           </h1>
         <% end %>
+        <div class="space-0"></div>
         <% if @feature.subtitle %>
           <h2 class="serif subtitle">
             <%= @feature.subtitle %>
@@ -41,10 +42,9 @@
             <div class="col-12 col-md-4">
               <%= link_to article do %>
                 <div class="three">
+                  <!-- article image -->
                   <% if not article.image.nil? and not article.image_file_name.nil? %>
-                    <%= link_to article do %>
-                      <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
-                    <% end %>
+                    <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
                   <% end %>
 
                   <!-- article title and subtitle -->

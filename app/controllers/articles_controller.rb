@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
       if @article
         @title = URI.escape(@article.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
         @subtitle = URI.escape(@article.subtitle, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
-        
+
         id = @article.id.to_i - 1
         while (not @previous) and (id >= Article.first.id)
           @previous = Article.exists?(id) ? Article.find(id) : nil
@@ -49,6 +49,11 @@ class ArticlesController < ApplicationController
         while (not @next) and (id <= Article.last.id)
           @next = Article.exists?(id) ? Article.find(id) : nil
           id = id + 1
+        end
+        if (not @next or not @previous)
+          random = Article.limit(10).where.not(id: id).order("RANDOM()")
+          @next = @next.nil? ? random.first : @next
+          @previous = @previous.nil? ? random.second : @previous
         end
       else
         random = Article.limit(10).order("RANDOM()")

@@ -96,7 +96,7 @@
   <!-- close container around article -->
 <% else %>
   <head>
-    <% title 'Youth Journal | Article not found' %>
+    <% title 'Youth Journal | Article Not Found' %>
     <% description "This article does not exist." %>
   </head>
 
@@ -228,6 +228,10 @@
   var $share = $('.share');
 
   $(window).resize(function() {
+    gray = $('.light-gray').offset().top;
+  });
+
+  $(document).ready(function() {
     gray = $('.light-gray').offset().top;
   });
 
