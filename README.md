@@ -1,10 +1,10 @@
-# Website for the Youth Journal
+# Website for the The Metric
 
 ### Todo
 
 ##### General
 - [ ] SendGrid configuration
-- [ ] Name transfer (to whatever we decide from 'Youth Journal')
+- [ ] Name transfer (to whatever we decide from 'The Metric')
 - [x] Configure AWS to a new bucket
 - [ ] Domain name
 - [x] `Friendly_id`
