@@ -21,9 +21,27 @@
         <% end %>
       <% end %>
       <% if @eight %>
-        <% @eight.each do |a| %>
-          <%= render a %>
-        <% end %>
+        <div class="container-fluid">
+          <div class="row eight">
+            <% @eight.each do |a| %>
+              <div class="col-6">
+                <%= link_to a do %>
+                  <div class="card">
+                    <% if not a.image_file_name.nil? and not a.image.nil? %>
+                      <div class="card-img-top">
+                        <img src="<%= a.image.url(:medium) %>" alt="<%= a.title %>" class="full-width">
+                      </div>
+                    <% end %>
+                    <div class="card-block">
+                      <h2 class="bold"><%= a.title %></h2>
+                      <h4 class="serif"><%= a.subtitle %></h4>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
     <!-- closing left col -->

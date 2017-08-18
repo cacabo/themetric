@@ -1,7 +1,7 @@
 .feature {
   background-color: black;
   padding: 4rem 5% 5% 5%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   min-height: 40vh;
   display: flex;
   align-items: flex-end;
@@ -39,4 +39,8 @@
   .content {
     padding: 1rem;
   }
+}
+
+.card {
+  border-radius: 0px !important;
 }
