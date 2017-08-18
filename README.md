@@ -22,6 +22,8 @@
 - [ ] Front page?
 - [ ] Admin show pages
 - [ ] Admin index pages
+- [ ] Fix popup
+  - [ ] Also fix popup javascript stuff
 
 ##### Admin configuration
 - [x] Admin controller
