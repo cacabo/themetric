@@ -153,6 +153,12 @@ textarea.bigger {
   }
 }
 
+a.white-text,
+a.white-text:focus,
+a.white-text:hover {
+  color: white !important;
+}
+
 .btn-white {
   color: white;
   border: 2px solid white !important;
@@ -161,6 +167,10 @@ textarea.bigger {
     background: white;
     color: black;
   }
+}
+
+h1 .small {
+  font-size: 1.5rem;
 }
 
 /*
