@@ -1,28 +1,28 @@
 <!-- include the image if there is one -->
 <% if not article.image.nil? and not article.image_file_name.nil? %>
-  <%= link_to article do %>
+  <div class="card-img-top">
     <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
-  <% end %>
+  </div>
 <% end %>
 
 <!-- article title and subtitle -->
-<h1 class="sans title smaller"><%= link_to article.title, article %></h1>
-<h2 class="subtitle smaller"><%= article.subtitle %></h2>
-<div class="space-0"></div>
+<div class="card-block">
+  <h1 class="sans title smaller"><%= article.title %></h1>
+  <h2 class="subtitle smaller"><%= article.subtitle %></h2>
+  <div class="space-0"></div>
 
-<!-- tags -->
-<% if article.tag_list %>
-  <p class="inline tags">
-    <% article.tag_list.each do |t| %>
-      <%= link_to tag_path(t) do %>
-        <span class="tag"><%= t %></span>
+  <!-- tags -->
+  <% if article.tag_list %>
+    <p class="inline tags">
+      <% article.tag_list.each do |t| %>
+        <%= link_to tag_path(t) do %>
+          <span class="tag"><%= t %></span>
+        <% end %>
       <% end %>
-    <% end %>
+    </p>
+  <% end %>
+  <!-- closing if article.tag_list logic -->
+  <p class="time sans inline float-right">
+    <%= time_ago_in_words(article.created_at) %> ago
   </p>
-<% end %>
-<!-- closing if article.tag_list logic -->
-<p class="time sans inline float-right">
-  <%= time_ago_in_words(article.created_at) %> ago
-</p>
-
-<div class="line-1"></div>
+</div>

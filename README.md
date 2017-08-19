@@ -16,14 +16,16 @@
 ##### Views
 - [x] Pretty forms
   -  [ ] Adjust spacing of active label (x-axis)
-- [x] Pretty article form
+  - [x] Pretty article form
   - [ ] Get the special label to work (even on page transfers?)
 - [x] Article show pages
-- [ ] Front page?
+- [x] Front page?
+  - Better categorization and titles on front page
 - [ ] Admin show pages
 - [ ] Admin index pages
-- [ ] Fix popup
-  - [ ] Also fix popup javascript stuff
+- [ ] Pretty about page
+- [x] Fix popup
+  - [x] Also fix popup javascript stuff
 
 ##### Admin configuration
 - [x] Admin controller
@@ -52,3 +54,5 @@
 - [ ] Article HTML / MD real-time interpretation / previewing?
 - [ ] Article image previewing
 - [x] Fixed nav only on scroll up, hide on scroll down?
+- [ ] Add social media links
+- [ ] One sentence pitch in footer
