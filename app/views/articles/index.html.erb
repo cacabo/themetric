@@ -12,10 +12,14 @@
       <% end %>
 
       <% if @articles.length > 0 %>
-        <% @articles.each do |article| %>
-          <%= render article %>
-        <% end %>
-        <!-- closing loop over articles -->
+        <div class="row">
+          <% @articles.each do |article| %>
+            <div class="col-6">
+              <%= render article %>
+            </div>
+          <% end %>
+          <!-- closing loop over articles -->
+        </div>
       <% else %>
         <!-- if there are no articles -->
         <h2 class="sans">Oops!</h2>

@@ -34,9 +34,8 @@
       <% end %>
       <% if @eight %>
         <div class="container-fluid">
-          <div class="row eight">
+          <div class="card-columns eight">
             <% @eight.each do |a| %>
-              <div class="col-6">
                 <%= link_to a do %>
                   <div class="card">
                     <% if not a.image_file_name.nil? and not a.image.nil? %>
@@ -50,7 +49,6 @@
                     </div>
                   </div>
                 <% end %>
-              </div>
             <% end %>
           </div>
         </div>

@@ -41,14 +41,11 @@
   }
 }
 
-.card {
-  border-radius: 0px !important;
-}
+.eight.card-columns {
+  column-count: 2;
 
-.eight.row {
-  padding: 0 0.5rem 1rem 0.5rem;
-
-  .col-6 {
-    padding: 0 0.5rem;
+  .card {
+    border-radius: 0px !important;
+    margin-bottom: 1rem;
   }
 }

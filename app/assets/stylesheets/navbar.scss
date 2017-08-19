@@ -16,6 +16,10 @@ $blue: #0275d8;
   .navbar-brand {
     transition: all 0.2s ease;
     font-size: 2rem;
+
+    .small {
+      font-size: 1rem;
+    }
   }
 
   .navbar-toggler {
@@ -42,6 +46,10 @@ $blue: #0275d8;
 
   .navbar-brand {
     font-size: 3rem;
+
+    .small {
+      font-size: 1.5rem;
+    }
   }
 
   .navbar-toggler {
