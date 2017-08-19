@@ -4,9 +4,9 @@
 
 ##### General
 - [ ] SendGrid configuration
-- [ ] Name transfer (to whatever we decide from 'The Metric')
+- [x] Name transfer (to whatever we decide)
 - [x] Configure AWS to a new bucket
-- [ ] Domain name
+- [ ] Domain name (@jason?)
 - [x] `Friendly_id`
   - [ ] ...for personal website
   - [ ] ...for admins
@@ -20,9 +20,9 @@
   - [ ] Get the special label to work (even on page transfers?)
 - [x] Article show pages
 - [x] Front page?
-  - Better categorization and titles on front page
+  - Better categorization and section titles on front page
 - [ ] Admin show pages
-- [ ] Admin index pages
+- [x] Admin index pages
 - [ ] Pretty about page
 - [x] Fix popup
   - [x] Also fix popup javascript stuff

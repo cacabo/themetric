@@ -25,19 +25,23 @@
                 </p>
               </div>
             </div>
+
+            <div class="space-1"></div>
+
             <!-- closing admin -->
             <% if @admin.articles.length > 0 %>
-              <div class="line-0"></div>
-              <div class="space-1"></div>
-
               <% @admin.articles.each do |a| %>
-                <%= render a %>
+                <%= link_to a do %>
+                  <div class="card marg-bot-1">
+                    <%= render a %>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
 
-            <div class="space-1"></div>
+            <div class="space-2"></div>
             <%= link_to 'Back to all admins', admins_path, class: 'btn-black' %>
-            <div class="space-1"></div>
+            <div class="space-2"></div>
           </div>
           <!-- closing white -->
         </div>
