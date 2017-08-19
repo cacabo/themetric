@@ -15,8 +15,12 @@ group :development, :test do
     gem 'sqlite3'
 end
 
+group :development do
+  gem 'rails_real_favicon'
+end
+
 group :production do
-    gem 'pg'
+  gem 'pg'
 end
 
 # Use Puma as the app server

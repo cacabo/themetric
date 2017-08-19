@@ -34,9 +34,14 @@
     <!-- styles -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- favicon -->
+    <%= render 'application/favicon' %>
+    <%= favicon_link_tag 'favicon/favicon.ico' %>
   </head>
 
   <body>
+
     <% if notice or alert %>
     <div id="alert-container" class="hidden <%= notice ? 'green' : 'red' %>">
       <% if notice %>
