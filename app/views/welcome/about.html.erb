@@ -1,19 +1,37 @@
-<div class="container marg-top-2 marg-bot-2">
+<div class="background-graphic">
+  <div class="background-fade"></div>
+  <div class="slice-1"></div>
+  <div class="slice-2"></div>
+  <div class="dots"></div>
+  <div class="slice-3"></div>
+</div>
+<div class="container-fluid marg-top-2 marg-bot-2">
+  <div class="space-2"></div>
   <div class="row">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1>
+    <div class="col-12 col-md-8 offset-md-1 col-lg-6">
+      <h1 class="white pad-1 special marg-bot-1">
         We write stories to raise awareness and create impact.
       </h1>
-      <p class="marg-bot-2">
+    </div>
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8">
+      <p class="white pad-1 marg-bot-2">
         Shoreditch before they sold out in selvage gastropub PBR&B retro palo santo quinoa messenger bag. Shabby chic exercitation hexagon, occupy vegan tbh +1 narwhal glossier nisi selfies subway tile dreamcatcher. Velit letterpress humblebrag shoreditch officia iceland aliqua affogato freegan ea. Consectetur VHS you probably haven't heard of them keffiyeh sustainable brunch salvia anim paleo vegan hella bushwick succulents ugh. Ennui cillum craft beer, cloud bread helvetica cronut quis in shoreditch. Lyft chia consectetur aesthetic. Dolore meh williamsburg, tousled dreamcatcher viral excepteur ullamco blue bottle authentic kale chips cillum PBR&B.
       </p>
-
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1>
         Meet the team
       </h1>
       <p>
         We're a driven team of something something and we are passionate for something something. Want to join us? <a href="<%= new_contact_path %>">Send us a message.</a>
       </p>
+      <div class="space-1"></div>
+      <%= link_to 'See all of our contributors', admins_path, class: 'btn-black' %>
     </div>
   </div>
+  <div class="space-4"></div>
 </div>
