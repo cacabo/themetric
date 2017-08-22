@@ -1,0 +1,27 @@
+<%= bootstrap_form_for @admin, html: { multipart: true } do |f| %>
+<% if @admin.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@admin.errors.count, "error") %>
+    prohibited this article from being saved:
+  </h2>
+  <ul>
+    <% @admin.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field special-label">
+  <%= f.text_field :name, required: true, autofocus: true %>
+</div>
+
+<div class="field special-label">
+  <%= f.text_field :bio, required: true %>
+</div>
+
+<%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
+
+<%= f.submit "Submit Admin", class: "btn-black btn-big", id: "submit" %>
+<% end %>
