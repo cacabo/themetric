@@ -3,10 +3,10 @@ $blue: #0275d8;
 input.form-control,
 textarea.form-control {
   color: black !important;
-  border-radius: 0;
-  border-top: 0 solid transparent;
-  border-left: 0 solid transparent;
-  border-right: 0 solid transparent;
+  border-radius: 0px;
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
   border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 
   &.has-val {

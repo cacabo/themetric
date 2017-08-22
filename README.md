@@ -19,6 +19,7 @@
   - [x] Pretty article form
   - [ ] Get the special label to work (even on page transfers?)
 - [x] Article show pages
+  - [ ] Author information on article show page
 - [x] Front page?
   - Better categorization and section titles on front page
 - [ ] Admin show pages
