@@ -29,6 +29,9 @@ class AdminsController < ApplicationController
   end
 
   def correct_admin
-    redirect_to(root_url) unless current_admin.id == params[:id]
+    unless current_admin.id.to_i == params[:id].to_i
+      flash[:alert] = "You can only edit your own information"
+      redirect_to(root_url)
+    end
   end
 end

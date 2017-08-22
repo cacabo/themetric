@@ -26,6 +26,12 @@
               </div>
             </div>
 
+            <% if current_admin == @admin %>
+              <div class="space-1"></div>
+              <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn-black' %>
+              <div class="space-1"></div>
+            <% end %>
+
             <div class="space-1"></div>
 
             <!-- closing admin -->
