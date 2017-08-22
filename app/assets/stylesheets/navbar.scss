@@ -9,7 +9,6 @@ $blue: #0275d8;
   border-bottom: 0px solid transparent;
   font-family: 'Palanquin Dark', sans-serif;
   transition: all 0.2s ease;
-  overflow: hidden !important;
   width: 100%;
   padding: 0rem 1rem !important;
 
@@ -146,3 +145,14 @@ $blue: #0275d8;
     color: white !important;
   }
 }
+
+/**
+ * Dropdown menu
+ */
+
+ .navbar {
+   .dropdown-menu {
+     z-index: 1500 !important;
+     border-radius: 0px !important;
+   }
+ }

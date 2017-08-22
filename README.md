@@ -12,6 +12,8 @@
   - [ ] ...for admins
 - [ ] Set up `Heroku` to build with `GitHub`
   - [ ] ...or figure out the assets precompile
+- [ ] Rename Disqus thread to "The Metric" or "Metric"
+- [ ] Better error throwing on admin security
 
 ##### Views
 - [x] Pretty forms
@@ -21,10 +23,10 @@
 - [x] Article show pages
   - [ ] Author information on article show page
 - [x] Front page?
-  - Better categorization and section titles on front page
-- [ ] Admin show pages
+  - [ ] Better categorization and section titles on front page
+- [ ] Clean up admin show pages
 - [x] Admin index pages
-- [ ] Pretty about page
+- [ ] Content for about page
 - [x] Fix popup
   - [x] Also fix popup javascript stuff
 
@@ -33,11 +35,12 @@
   - [x] Name
   - [x] Bio
   - [ ] Social media links
-  - [ ] Profile picture
+  - [x] Profile picture
 - [ ] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
 - [ ] Update edit form, make sure it works with names, bios
-- [ ] Admin can edit page if on their own
+- [ ] Admin can edit admin show page if on their own
+- [ ] Link to admin show page if logged in
 
 ##### Article configuration
 - [ ] Add locations to posts / region

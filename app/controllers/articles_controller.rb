@@ -85,8 +85,7 @@ class ArticlesController < ApplicationController
     end
     # Confirms the correct admin.
     def correct_admin
-        @article = Article.friendly.find(params[:id])
-        @admin = Admin.find(current_admin.id)
-        redirect_to(root_url) unless current_admin.id == @article.admin.id
+        article = Article.friendly.find(params[:id])
+        redirect_to(root_url) unless current_admin.id == article.admin.id
     end
 end

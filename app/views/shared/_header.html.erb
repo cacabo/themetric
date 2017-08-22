@@ -27,14 +27,16 @@
                   <a class="nav-link" href="<%= new_contact_path %>">Contact us</a>
               </li>
               <% if not current_admin.nil? %>
-              <li class="nav-item">
-                <a class="nav-link" href="<%= new_article_path %>">New article</a>
-              </li>
-              <li class="nav-item">
-                <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
-                  Sign out
-                <% end %>
-              </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
+                    <%= link_to 'New article', new_article_path, class: 'dropdown-item' %>
+                    <%= link_to 'View profile', current_admin, class: 'dropdown-item' %>
+                    <%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'dropdown-item' %>
+                  </div>
+                </li>
               <% end %>
           </ul>
       </div>
