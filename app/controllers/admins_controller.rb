@@ -16,8 +16,10 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
 
     if @admin.update(admin_params)
+      flash[:notice] = "Admin information updated successfully"
       redirect_to @admin
     else
+      flash[:alert] = "There was an issue updating your admin information"
       render 'edit'
     end
   end
