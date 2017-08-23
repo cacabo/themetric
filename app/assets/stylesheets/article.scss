@@ -22,6 +22,11 @@
 .admin-buttons {
   top: 0;
   text-align: right;
+
+  form {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 .article-wrapper {

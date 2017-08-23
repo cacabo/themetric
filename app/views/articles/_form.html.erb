@@ -23,6 +23,7 @@
   <%= f.text_field :tag_list, value: @article.tag_list.join(", "), label: "Tags (separated by commas)..." %>
 </div>
 <%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
+<%= f.hidden_field :published, value: false %>
 <%= f.submit "Submit Article", class: "btn-black btn-big disabled", id: "submit" %>
 <% end %>
 

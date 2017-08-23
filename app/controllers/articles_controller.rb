@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :correct_admin, only: [:edit, :update, :destroy]
+  before_action :is_published, only: [:show]
 
   def index
     if (params[:tag])
@@ -11,21 +12,21 @@ class ArticlesController < ApplicationController
   end
 
   def new
-      @article = current_admin.articles.build
+    @article = current_admin.articles.build
   end
 
   def edit
-      @article = Article.friendly.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   def create
     @article = current_admin.articles.build(article_params)
 
     if @article.save
-      flash[:notice] = "Article created successfully"
+      flash[:notice] = "Article created successfully."
       redirect_to @article
     else
-      flash[:alert] = "There was an issue submitting the article"
+      flash[:alert] = "There was an issue submitting the article."
       render 'new'
     end
   end
@@ -68,10 +69,10 @@ class ArticlesController < ApplicationController
     @article = Article.friendly.find(params[:id])
 
     if @article.update(article_params)
-      flash[:notice] = "Article updated successfully"
+      flash[:notice] = "Article updated successfully."
       redirect_to @article
     else
-      flash[:alert] = "There was an error updating the article"
+      flash[:alert] = "There was an error updating the article."
       render 'edit'
     end
   end
@@ -80,19 +81,28 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.friendly.find(params[:id])
     @article.destroy
-    flash[:notice] = "Article deleted successfully"
+    flash[:notice] = "Article deleted successfully."
     redirect_to articles_path
   end
 
   private
   def article_params
-    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list)
+    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published)
   end
+
   # Confirms the correct admin.
   def correct_admin
     article = Article.friendly.find(params[:id])
     unless current_admin.id.to_i == article.admin.id.to_i
-      flash[:alert] = "You don't have permission to perform this action"
+      flash[:alert] = "You don't have permission to perform this action."
+      redirect_to(root_url)
+    end
+  end
+
+  def is_published
+    article = Article.friendly.find(params[:id])
+    unless article.published or current_admin
+      flash[:alert] = "You cannot access this article."
       redirect_to(root_url)
     end
   end

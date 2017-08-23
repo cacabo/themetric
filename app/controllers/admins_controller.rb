@@ -16,10 +16,10 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
 
     if @admin.update(admin_params)
-      flash[:notice] = "Admin information updated successfully"
+      flash[:notice] = "Admin information updated successfully."
       redirect_to @admin
     else
-      flash[:alert] = "There was an issue updating your admin information"
+      flash[:alert] = "There was an issue updating your admin information."
       render 'edit'
     end
   end
@@ -32,7 +32,7 @@ class AdminsController < ApplicationController
 
   def correct_admin
     unless current_admin.id.to_i == params[:id].to_i
-      flash[:alert] = "You can only edit your own information"
+      flash[:alert] = "You can only edit your own information."
       redirect_to(root_url)
     end
   end

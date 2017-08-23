@@ -9,6 +9,11 @@
   <div class="container serif marg-top-2">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <% unless @article.published %>
+          <p class="text-muted special pad-1 light-gray">
+            THIS ARTICLE IS NOT PUBLISHED
+          </p>
+        <% end %>
         <% if not @article.image.nil? and not @article.image_file_name.nil? %>
           <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
         <% end %>
@@ -58,13 +63,24 @@
         <% if admin_signed_in? %>
         <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
         <div class="admin-buttons">
+          <% if @article.published %>
+            <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
+              <%= f.hidden_field :published, value: false %>
+              <%= f.submit 'Unpublish article', data: { confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.' }, class: 'btn btn-sm btn-info' %>
+            <% end %>
+          <% else %>
+            <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
+              <%= f.hidden_field :published, value: true %>
+              <%= f.submit 'Publish article', data: { confirm: 'Publish article, are you sure? The article will be visible to all site users.' }, class: 'btn btn-sm btn-info' %>
+            <% end %>
+          <% end %>
           <%= link_to edit_article_path(@article) do %>
-          <button class="btn btn-sm btn-outline-primary">Edit</button>
+          <button class="btn btn-sm btn-primary">Edit</button>
           <% end %>
           <%= link_to article_path(@article),
                                     method: :delete,
                                     data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
-          <button class="btn btn-sm btn-outline-danger">Delete</button>
+          <button class="btn btn-sm btn-danger">Delete</button>
           <% end %>
         </div>
         <% end %>
