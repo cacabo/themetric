@@ -32,9 +32,15 @@
                     Admin
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
-                    <%= link_to 'New article', new_article_path, class: 'dropdown-item' %>
-                    <%= link_to 'View profile', current_admin, class: 'dropdown-item' %>
-                    <%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'dropdown-item' %>
+                    <%= link_to new_article_path, class: 'dropdown-item' do %>
+                      <i class="fa fa-fw fa-plus"></i> New article
+                    <% end %>
+                    <%= link_to current_admin, class: 'dropdown-item' do %>
+                      <i class="fa fa-fw fa-user"></i> View profile
+                    <% end %>
+                    <%= link_to destroy_admin_session_path, method: :delete, class: 'dropdown-item' do %>
+                      <i class="fa fa-fw fa-sign-out"></i> Sign out
+                    <% end %>
                   </div>
                 </li>
               <% end %>

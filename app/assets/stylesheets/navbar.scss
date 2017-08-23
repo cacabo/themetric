@@ -154,5 +154,22 @@ $blue: #0275d8;
    .dropdown-menu {
      z-index: 1500 !important;
      border-radius: 0px !important;
+
+     a.dropdown-item {
+       background: transparent !important;
+       color: rgba(0, 0, 0, 0.6);
+
+       &:hover,
+       &:active,
+       &:focus {
+         color: #000000;
+       }
+     }
    }
  }
+
+@media (max-width: 991px) {
+  .navbar-toggleable-md .navbar-nav .dropdown-menu {
+    border: 1px solid transparent;
+  }
+}

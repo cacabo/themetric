@@ -7,6 +7,11 @@
 
 <!-- article title and subtitle -->
 <div class="card-block">
+  <% unless article.published %>
+    <div class="light-gray pad-1 special text-muted marg-bot-1">
+      ARTICLE NOT PUBLISHED
+    </div>
+  <% end %>
   <h1 class="sans title smaller"><%= article.title %></h1>
   <h2 class="subtitle smaller"><%= article.subtitle %></h2>
   <div class="space-0"></div>

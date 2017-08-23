@@ -15,7 +15,7 @@
 - [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [ ] Better error throwing on admin security
 - [ ] Published only on front page
-- [ ] Show that an article is unpublished if this is an admin on index page
+- [x] Show that an article is unpublished if this is an admin on index page
 
 ##### Views
 - [x] Pretty forms
