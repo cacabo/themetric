@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824220614) do
+ActiveRecord::Schema.define(version: 20170824225200) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20170824220614) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "role"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "github"
+    t.string "website"
+    t.string "instagram"
+    t.string "linkedin"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end

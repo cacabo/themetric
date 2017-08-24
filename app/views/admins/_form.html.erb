@@ -18,7 +18,44 @@
 </div>
 
 <div class="field special-label">
+  <%= f.text_field :role, wrapper: { class: 'marg-bot-0' }, required: true %>
+</div>
+
+<div class="field special-label">
   <%= f.text_field :bio, required: true %>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="field special-label">
+      <%= f.text_field :facebook %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="field special-label">
+      <%= f.text_field :twitter %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="field special-label">
+      <%= f.text_field :github %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="field special-label">
+      <%= f.text_field :website %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="field special-label">
+      <%= f.text_field :instagram %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="field special-label">
+      <%= f.text_field :linkedin %>
+    </div>
+  </div>
 </div>
 
 <%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>

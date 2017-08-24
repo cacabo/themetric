@@ -21,14 +21,60 @@
                     <% end %>
 
                     <div class="admin-content">
-                      <h3><%= a.name %></h3>
-                      <p class="marg-bot-05"><%= a.bio %></p>
+                      <h3>
+                        <%= a.name %>
+                      </h3>
+                      <p class="text-muted bold marg-bot-05">
+                        <%= a.role %>
+                      </p>
                       <ul class="horizontal admin-icons">
                         <li>
                           <a href="mailto:<%= a.email %>">
                             <i class="fa fa-envelope"></i>
                           </a>
                         </li>
+                        <% if a.facebook and a.facebook.length > 0 %>
+                          <li>
+                            <a href="<%= a.facebook %>">
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.twitter and a.twitter.length > 0 %>
+                          <li>
+                            <a href="<%= a.twitter %>">
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.linkedin and a.linkedin.length > 0 %>
+                          <li>
+                            <a href="<%= a.linkedin %>">
+                              <i class="fa fa-linkedin"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.github and a.github.length > 0 %>
+                          <li>
+                            <a href="<%= a.github %>">
+                              <i class="fa fa-github"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.website and a.website.length > 0 %>
+                          <li>
+                            <a href="<%= a.website %>">
+                              <i class="fa fa-link"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.instagram and a.instagram.length > 0 %>
+                          <li>
+                            <a href="<%= a.instagram %>">
+                              <i class="fa fa-instagram"></i>
+                            </a>
+                          </li>
+                        <% end %>
                       </ul>
                     </div>
                     <!-- close content -->

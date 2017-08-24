@@ -17,18 +17,66 @@
                   <%= @admin.name %>
                 </h1>
 
-                <a class="bold text-muted" href="mailto:<%= @admin.email %>">
-                  <%= @admin.email %>
-                </a>
+                <p class="bold text-muted marg-bot-0">
+                  <%= @admin.role %>
+                </p>
 
                 <p>
                   <%= @admin.bio %>
                 </p>
 
+                <ul class="horizontal admin-icons">
+                  <li>
+                    <a href="mailto:<%= @admin.email %>">
+                      <i class="fa fa-lg fa-envelope"></i>
+                    </a>
+                  </li>
+                  <% if @admin.facebook and @admin.facebook.length > 0 %>
+                    <li>
+                      <a href="<%= @admin.facebook %>">
+                        <i class="fa fa-lg fa-facebook"></i>
+                      </a>
+                    </li>
+                  <% end %>
+                  <% if @admin.twitter and @admin.twitter.length > 0 %>
+                    <li>
+                      <a href="<%= @admin.twitter %>">
+                        <i class="fa fa-lg fa-twitter"></i>
+                      </a>
+                    </li>
+                  <% end %>
+                  <% if @admin.linkedin and @admin.linkedin.length > 0 %>
+                    <li>
+                      <a href="<%= @admin.linkedin %>">
+                        <i class="fa fa-lg fa-linkedin"></i>
+                      </a>
+                    </li>
+                  <% end %>
+                  <% if @admin.github and @admin.github.length > 0 %>
+                    <li>
+                      <a href="<%= @admin.github %>">
+                        <i class="fa fa-lg fa-github"></i>
+                      </a>
+                    </li>
+                  <% end %>
+                  <% if @admin.website and @admin.website.length > 0 %>
+                    <li>
+                      <a href="<%= @admin.website %>">
+                        <i class="fa fa-lg fa-link"></i>
+                      </a>
+                    </li>
+                  <% end %>
+                  <% if @admin.instagram and @admin.instagram.length > 0 %>
+                    <li>
+                      <a href="<%= @admin.instagram %>">
+                        <i class="fa fa-lg fa-instagram"></i>
+                      </a>
+                    </li>
+                  <% end %>
+                </ul>
+
                 <% if current_admin == @admin %>
-                  <div class="admin-buttons">
-                    <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-primary' %>
-                  </div>
+                  <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-primary btn-sm' %>
                 <% end %>
               </div>
             </div>
