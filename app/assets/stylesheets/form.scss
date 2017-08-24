@@ -42,7 +42,8 @@ textarea.form-control {
   transition: all 0.2s ease;
 
   &.hasVal {
-    transform: translate(-12px, 12px) scale(0.9);
+    transform: translate(0px, 12px);
+    font-size: 0.9rem;
     color: rgba(0, 0, 0, 1);
 
     &.active {
@@ -52,7 +53,8 @@ textarea.form-control {
 }
 
 .field.special-label.alwaysHasVal label {
-  transform: translate(0px, 12px) scale(0.9);
+  transform: translate(0px, 12px);
+  font-size: 0.9rem;
   color: rgba(0, 0, 0, 1);
 
   &.active {
