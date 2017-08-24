@@ -8,7 +8,7 @@ class Article < ApplicationRecord
     acts_as_taggable
     acts_as_taggable_on :tags
 
-    enum region: [ :none, :us ]
+    enum region: [ :undefined, :north_america, :south_america, :europe, :middle_east_and_north_africa, :africa, :asia_and_oceania ]
 
     extend FriendlyId
     friendly_id :title, use: :slugged
