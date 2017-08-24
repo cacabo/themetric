@@ -95,7 +95,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published)
+    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region)
   end
 
   # Confirms the correct admin.

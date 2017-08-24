@@ -38,6 +38,12 @@
                     <%= link_to current_admin, class: 'dropdown-item' do %>
                       <i class="fa fa-fw fa-user"></i> View profile
                     <% end %>
+                    <%= link_to edit_admin_path(current_admin), class: 'dropdown-item' do %>
+                      <i class="fa fa-fw fa-pencil"></i> Edit profile
+                    <% end %>
+                    <%= link_to admins_path, class: 'dropdown-item' do %>
+                      <i class="fa fa-fw fa-users"></i> Admins
+                    <% end %>
                     <%= link_to destroy_admin_session_path, method: :delete, class: 'dropdown-item' do %>
                       <i class="fa fa-fw fa-sign-out"></i> Sign out
                     <% end %>
