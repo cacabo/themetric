@@ -8,6 +8,8 @@ class Article < ApplicationRecord
     acts_as_taggable
     acts_as_taggable_on :tags
 
+    enum region: [ :none, :us ]
+
     extend FriendlyId
     friendly_id :title, use: :slugged
 end
