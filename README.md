@@ -24,7 +24,7 @@
 - [x] Pretty forms
   -  [x] Adjust spacing of active label (x-axis)
   - [x] Pretty article form
-  - [ ] Get the special label to work (even on page transfers?)
+  - [x] Get the special label to work (even on page transfers?)
     - [ ] Test this further
 - [x] Article show pages
   - [ ] Author information on article show page
@@ -38,12 +38,13 @@
 - [x] Fix popup
   - [x] Also fix popup javascript stuff
 - [ ] Add region in more places?
+- [ ] One sentence pitch in footer
 
 ##### Admin configuration
 - [x] Admin controller
   - [x] Name
   - [x] Bio
-  - [ ] Social media links
+  - [x] Social media links
   - [x] Profile picture
 - [ ] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
@@ -52,20 +53,19 @@
 - [x] Link to admin show page if logged in
 
 ##### Article configuration
-- [ ] Add locations to posts / region
-  - [ ] Add select field in form for articles
-- [ ] Better categorization for posts
-- [ ] Ability to have `published` and `unpublished` posts
+- [x] Add locations to posts / region
+  - [x] Add select field in form for articles
+- [x] Better categorization for posts
+- [x] Ability to have `published` and `unpublished` posts
 - [x] Handle article not found on show page
-- [ ] Links to share on social media
+- [x] Links to share on social media
   - [x] Desktop
-  - [ ] Mobile / small screen
+  - [x] Mobile / small screen
 
 ##### Details
 - [ ] Special phone number formatting
 - [ ] Add to navbar, update styling, clean it up
 - [ ] Article HTML / MD real-time interpretation / previewing?
 - [ ] Article image previewing
+- [ ] Admin image previewing
 - [x] Fixed nav only on scroll up, hide on scroll down?
-- [ ] Add social media links
-- [ ] One sentence pitch in footer
