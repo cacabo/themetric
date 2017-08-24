@@ -10,6 +10,33 @@ class ArticlesController < ApplicationController
       else
         @articles = Article.where(published: true).tagged_with(params[:tag]).order(created_at: :desc)
       end
+    elsif (params[:region])
+      @region = ''
+
+      if params[:region] == 'undefined'
+        @region == 'undefined'
+      elsif params[:region] == 'north_america'
+        @region = 'North America'
+      elsif params[:region] == 'south_america'
+        @region = 'South America'
+      elsif params[:region] == 'europe'
+        @region = 'Europe'
+      elsif params[:region] == 'middle_east_and_north_africa'
+        @region = 'Middle East & North Africa'
+      elsif params[:region] == 'africa'
+        @region = 'Africa'
+      elsif params[:region] == 'asia_and_oceania'
+        @region = 'Asia & Oceania'
+      elsif params[:region] != 'undefined'
+        flash[:alert] = 'Region does not exist'
+        redirect_to notfound_path
+      end
+
+      if current_admin
+        @articles = Article.where(region: params[:region]).order(created_at: :desc)
+      else
+        @articles = Article.where(published: true, region: params[:region]).order(created_at: :desc)
+      end
     else
       if current_admin
         @articles = Article.all.order(created_at: :desc)
@@ -108,10 +135,12 @@ class ArticlesController < ApplicationController
   end
 
   def is_published
-    article = Article.friendly.find(params[:id])
-    unless article.published or current_admin
-      flash[:alert] = "You cannot access this article."
-      redirect_to(root_url)
+    unless current_admin
+      article = Article.fiendly.exists? :id ? Article.friendly.find(params[:id]) : nil
+      if article and not article.published
+        flash[:alert] = "You cannot access this article."
+        redirect_to(root_url)
+      end
     end
   end
 end

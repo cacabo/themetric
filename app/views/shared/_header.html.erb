@@ -20,8 +20,19 @@
               <li class="nav-item">
                   <a class="nav-link" href="<%= about_path %>">About</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="<%= articles_path %>">Articles</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="articles-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Articles
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="articles-dropdown">
+                  <%= link_to 'All articles', articles_path, class: 'dropdown-item' %>
+                  <%= link_to 'North America', region_path(:north_america), class: 'dropdown-item' %>
+                  <%= link_to 'South America', region_path(:south_america), class: 'dropdown-item' %>
+                  <%= link_to 'Europe', region_path(:europe), class: 'dropdown-item' %>
+                  <%= link_to 'Middle East & North Africa', region_path(:middle_east_and_north_africa), class: 'dropdown-item' %>
+                  <%= link_to 'Africa', region_path(:africa), class: 'dropdown-item' %>
+                  <%= link_to 'Asia & Oceania', region_path(:asia_and_oceania), class: 'dropdown-item' %>
+                </div>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="<%= new_contact_path %>">Contact us</a>

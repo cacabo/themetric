@@ -159,10 +159,18 @@ $blue: #0275d8;
        background: transparent !important;
        color: rgba(0, 0, 0, 0.6);
 
+       .fa {
+         color: rgba( 0, 0, 0, 0.4);
+       }
+
        &:hover,
        &:active,
        &:focus {
          color: #000000;
+
+         .fa {
+           color: #000000;
+         }
        }
      }
    }

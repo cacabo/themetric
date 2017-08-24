@@ -10,7 +10,13 @@
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <% if params[:tag] %>
-          <h2 class="sans">Listing articles tagged with "<%=params[:tag]%>"</h2>
+          <h2 class="sans marg-bot-1">Listing articles tagged with "<%= params[:tag] %>"</h2>
+        <% elsif params[:region] %>
+          <% if params[:region] == 'undefined' %>
+            <h2 class="sans marg-bot-1 special">Regionless Articles</h2>
+          <% else %>
+            <h2 class="sans marg-bot-1 special"><%= @region %></h2>
+          <% end %>
         <% end %>
 
         <% if @articles.length > 0 %>
@@ -26,8 +32,10 @@
           </div>
         <% else %>
           <!-- if there are no articles -->
-          <h2 class="sans">Oops!</h2>
-          <p class="sans">There are no articles at this time, but check back soon--we're working hard to produce some great new content.</p>
+          <div class="white pad-1 border">
+            <h3 class="sans">Oops!</h3>
+            <p class="sans marg-bot-0">There are no articles in the specified parameters at this time, but check back soon--we're working hard to produce some great new content.</p>
+          </div>
         <% end %>
         <!-- closing check for article length -->
 

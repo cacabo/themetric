@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   get 'about', to: 'welcome#about', as: 'about'
   get 'articles/tags/:tag', to: 'articles#index', as: 'tag'
+  get 'articles/region/:region', to: 'articles#index', as: 'region'
 
   resources :admins, only: [:index, :show, :edit, :update]
 
   # Handle 404
+  get '404', to: 'welcome#notfound', as: 'notfound'
   get '*unmatched_route', to: 'welcome#notfound'
 end
