@@ -35,6 +35,11 @@ $green: #3ecf8e;
   width: 100% !important;
 }
 
+a.black-text,
+a.black-text:hover {
+  color: black;
+}
+
 .pad-top-1 {
   padding-top: 1rem;
 }

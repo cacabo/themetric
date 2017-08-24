@@ -10,12 +10,12 @@
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <% if params[:tag] %>
-          <h2 class="sans marg-bot-1">Listing articles tagged with "<%= params[:tag] %>"</h2>
+          <h2 class="sans marg-bot-2">Listing articles tagged with "<%= params[:tag] %>"</h2>
         <% elsif params[:region] %>
           <% if params[:region] == 'undefined' %>
-            <h2 class="sans marg-bot-1 special">Regionless Articles</h2>
+            <h2 class="marg-bot-2 special region">Regionless Articles</h2>
           <% else %>
-            <h2 class="sans marg-bot-1 special"><%= @region %></h2>
+            <h2 class="marg-bot-2 special region"><%= @region %></h2>
           <% end %>
         <% end %>
 

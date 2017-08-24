@@ -20,11 +20,11 @@
 <div class="space-1"></div>
 
 <div class="field special-label alwaysHasVal">
-  <%= f.select :region, [['None', 0], ['North America', 1], ['South America', 2], ['Europe', 3], ['Middle East & North Africa', 4], ['Africa', 5], ['Asia & Oceania', 6]]%>
+  <%= f.select :region, [['None', :undefined], ['North America', :north_america], ['South America', :south_america], ['Europe', :europe], ['Middle East & North Africa', :middle_east_and_north_africa], ['Africa', :africa], ['Asia & Oceania', :asia_and_oceania]]%>
 </div>
 
 <div class="field special-label">
-  <%= f.text_field :tag_list, value: @article.tag_list.join(", "), label: "Tags" %>
+  <%= f.text_field :tag_list, value: @article.tag_list.join(", "), label: "Tags (separated by commas)" %>
 </div>
 
 <div class="space-1"></div>

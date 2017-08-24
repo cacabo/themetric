@@ -14,8 +14,9 @@
   - [ ] ...or figure out the assets precompile
 - [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [ ] Better error throwing on admin security
-- [ ] Published only on front page
+- [x] Published only on front page
 - [x] Show that an article is unpublished if this is an admin on index page
+- [ ] Search for articles by name
 
 ##### Views
 - [x] Pretty forms
