@@ -4,6 +4,7 @@
 
 .admin {
   display: flex;
+  width: 100%;
 
   .admin-img {
     width: 4rem;
@@ -11,7 +12,9 @@
     margin-right: 1rem;
     margin-bottom: 1.5rem;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    overflow: hidden !important;
+    position: relative;
 
     &.big {
       height: 6rem;
@@ -19,7 +22,23 @@
     }
   }
 
+  .admin-no-img {
+    width: 4rem;
+    height: 0rem;
+    margin-right: 1rem;
+    display: inline-block;
+    position: relative;
+  }
+
   .admin-content {
     flex: 1;
+  }
+}
+
+.admin-icons li a {
+  color: rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.4);
   }
 }

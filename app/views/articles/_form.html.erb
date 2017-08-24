@@ -1,3 +1,5 @@
+<div class="space-1"></div>
+
 <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
 <% if @article.errors.any? %>
 <div id="error_explanation">
@@ -30,7 +32,7 @@
 <div class="space-1"></div>
 
 <%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
-<%= f.hidden_field :published, value: false %>
+<%= f.hidden_field :published, value: true and @article.published %>
 <%= f.submit "Submit Article", class: "btn-black btn-big disabled", id: "submit" %>
 <% end %>
 

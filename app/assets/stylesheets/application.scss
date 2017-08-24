@@ -22,6 +22,12 @@ $green: #3ecf8e;
 /*
 ** GENERAL
 */
+button,
+button.btn,
+.btn {
+  border-radius: 0px !important;
+}
+
 .btn {
   cursor: hand;
   cursor: pointer;
@@ -46,6 +52,10 @@ a.black-text:hover {
 
 .marg-0 {
   margin: 0 !important;
+}
+
+.marg-bot-05 {
+  margin-bottom: 0.5rem !important;
 }
 
 .space-0 {

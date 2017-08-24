@@ -33,11 +33,6 @@
         <li>
           <a href="<%= admins_path %>">Admins</a>
         </li>
-        <% if current_admin %>
-          <li>
-            <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
-          </li>
-        <% end %>
       </ul>
     </div>
 

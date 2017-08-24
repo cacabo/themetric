@@ -1,43 +1,53 @@
 <div class="light-gray full-height">
-  <div class="space-4"></div>
+  <div class="space-2"></div>
 
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="white pad-1 bord-top-thick">
-          <h1 class="marg-bot-2">
-            Meet our contributors
-          </h1>
+        <h1 class="marg-bot-2">
+          Meet our contributors
+        </h1>
 
-          <div class="row">
-            <% @admins.each do |a| %>
-              <%= link_to a, class: 'admin col-12 col-md-6' do %>
-                <div class="admin-img" style="background-image: URL(<%= a.image.url(:large) if (not a.image_file_name.nil? and not a.image.nil?) %>)">
+        <div class="row">
+          <% @admins.each do |a| %>
+            <div class="col-12 col-md-6 marg-bot-1">
+              <%= link_to a do %>
+                <div class="card">
+                  <div class="card-block admin">
+                    <% if (not a.image_file_name.nil? and not a.image.nil?) %>
+                      <img class="admin-img" src="<%= a.image.url(:large) %>">
+                    <% else %>
+                      <div class="admin-no-img"></div>
+                    <% end %>
+
+                    <div class="admin-content">
+                      <h3><%= a.name %></h3>
+                      <p class="marg-bot-05"><%= a.bio %></p>
+                      <ul class="horizontal admin-icons">
+                        <li>
+                          <a href="mailto:<%= a.email %>">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- close content -->
+                  </div>
+                  <!-- closr card-body -->
                 </div>
-                <!-- close image wrapper -->
-                <div class="admin-content">
-                  <% if a.name %>
-                    <h3><%= a.name %></h3>
-                  <% elsif a.email %>
-                    <p><%= a.email %></p>
-                  <% end %>
-                  <% if a.bio %>
-                    <p><%= a.bio %></p>
-                  <% end %>
-                </div>
-                <!-- close content -->
+                <!-- close card -->
               <% end %>
               <!-- close link to admin -->
-            <% end %>
-            <!-- close loop over admins -->
-          </div>
-          <!-- close row -->
-
-          <div class="space-2"></div>
-          <%= link_to 'Back to home', root_path, class: 'btn-black' %>
-          <div class="space-2"></div>
+            </div>
+            <!-- close col -->
+          <% end %>
+          <!-- close loop over admins -->
         </div>
-        <!-- close white -->
+        <!-- close row -->
+
+        <div class="space-2"></div>
+        <%= link_to 'Back to home', root_path, class: 'btn-black' %>
+        <div class="space-2"></div>
       </div>
       <!-- close col -->
     </div>
