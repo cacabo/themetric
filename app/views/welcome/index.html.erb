@@ -34,19 +34,14 @@
       <% end %>
       <% if @eight %>
         <div class="container-fluid">
+          <p class="text-muted bold full-width marg-bot-1">
+            AROUND THE WORLD
+          </p>
           <div class="card-columns articles">
             <% @eight.each do |a| %>
                 <%= link_to a do %>
                   <div class="card">
-                    <% if not a.image_file_name.nil? and not a.image.nil? %>
-                      <div class="card-img-top">
-                        <img src="<%= a.image.url(:medium) %>" alt="<%= a.title %>" class="full-width">
-                      </div>
-                    <% end %>
-                    <div class="card-block">
-                      <h2 class="bold"><%= a.title %></h2>
-                      <h4 class="serif"><%= a.subtitle %></h4>
-                    </div>
+                    <%= render a %>
                   </div>
                 <% end %>
             <% end %>
@@ -57,6 +52,9 @@
     <!-- closing left col -->
     <div class="col-12 col-md-4 pad-top-1 light-gray full-height">
       <% if @three and @three.length > 0 %>
+        <p class="text-muted bold full-width marg-bot-1">
+          GLOBAL TAKES
+        </p>
         <% @three.each do |article| %>
           <%= link_to article do %>
             <!-- article image -->
