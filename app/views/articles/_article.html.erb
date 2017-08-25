@@ -30,4 +30,10 @@
   <p class="time sans inline float-right">
     <%= time_ago_in_words(article.created_at) %> ago
   </p>
+  <% r = article.regionText %>
+  <% if r and r.length > 0 %>
+    <%= link_to region_path(article.region), class: "full-width region special marg-bot-0 black-text relative" do %>
+      <%= r %>
+    <% end %>
+  <% end %>
 </div>

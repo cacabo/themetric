@@ -10,6 +10,24 @@ class Article < ApplicationRecord
 
     enum region: [ :undefined, :north_america, :south_america, :europe, :middle_east_and_north_africa, :africa, :asia_and_oceania ]
 
+    def regionText
+      if region == 'undefined'
+        return ''
+      elsif region == 'north_america'
+        return 'North America'
+      elsif region  == 'south_america'
+        return 'South America'
+      elsif region == 'europe'
+        return 'Europe'
+      elsif region =='middle_east_and_north_africa'
+        return 'Middle East & North Africa'
+      elsif region == 'africa'
+        return 'Africa'
+      elsif region == 'asia_and_oceania'
+        return 'Asia & Oceania'
+      end
+    end
+
     extend FriendlyId
     friendly_id :title, use: :slugged
 end

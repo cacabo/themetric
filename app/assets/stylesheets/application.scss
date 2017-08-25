@@ -46,6 +46,12 @@ a.black-text:hover {
   color: black;
 }
 
+a.full-width {
+  position: relative;
+  width: 100% !important;
+  display: block;
+}
+
 .pad-top-1 {
   padding-top: 1rem;
 }

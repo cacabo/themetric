@@ -75,25 +75,6 @@ class ArticlesController < ApplicationController
     @encoded = URI.escape(@url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 
     if @article
-      r = @article.region
-      @region = ''
-
-      if r == 'undefined'
-        @region == 'undefined'
-      elsif r == 'north_america'
-        @region = 'North America'
-      elsif r == 'south_america'
-        @region = 'South America'
-      elsif r == 'europe'
-        @region = 'Europe'
-      elsif r == 'middle_east_and_north_africa'
-        @region = 'Middle East & North Africa'
-      elsif r == 'africa'
-        @region = 'Africa'
-      elsif r == 'asia_and_oceania'
-        @region = 'Asia & Oceania'
-      end
-
       @title = URI.escape(@article.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
       @subtitle = URI.escape(@article.subtitle, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 
