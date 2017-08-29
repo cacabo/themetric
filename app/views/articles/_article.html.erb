@@ -17,7 +17,7 @@
   <div class="space-0"></div>
 
   <!-- tags -->
-  <% if article.tag_list %>
+  <!-- <% if article.tag_list and article.tag_list.length > 0 %>
     <p class="inline tags">
       <% article.tag_list.each do |t| %>
         <%= link_to tag_path(t) do %>
@@ -25,8 +25,9 @@
         <% end %>
       <% end %>
     </p>
-  <% end %>
+  <% end %> -->
   <!-- closing if article.tag_list logic -->
+  
   <p class="time sans inline float-right">
     <%= time_ago_in_words(article.created_at) %> ago
   </p>

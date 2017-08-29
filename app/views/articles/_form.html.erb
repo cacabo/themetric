@@ -32,7 +32,7 @@
 <div class="space-1"></div>
 
 <%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
-<%= f.hidden_field :published, value: true and @article.published %>
+<%= f.hidden_field :published, value: (true and @article.published), class: 'no-display' %>
 <%= f.submit "Submit Article", class: "btn-black btn-big disabled", id: "submit" %>
 <% end %>
 

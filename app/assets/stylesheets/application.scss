@@ -20,6 +20,17 @@ $blush: #FF7085;
 $green: #3ecf8e;
 
 /*
+** COLORS
+*/
+.cyan {
+  background: cyan !important;
+}
+
+.cyan-text {
+  color: cyan !important;
+}
+
+/*
 ** GENERAL
 */
 button,
@@ -282,6 +293,10 @@ h1 .small {
   &.green {
     background: $green;
   }
+}
+
+.no-display {
+  display: none !important;
 }
 
 .background-graphic {

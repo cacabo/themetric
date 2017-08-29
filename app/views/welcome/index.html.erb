@@ -12,10 +12,10 @@
 
 <div class="container-fluid">
   <div class="row pad-0">
-    <div class="col-12 col-md-8 pad-0">
+    <div class="col-12 col-md-9 pad-0">
       <% if @feature %>
         <%= link_to @feature do %>
-          <div class="background-image parallax feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
+          <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
             <div class="content">
               <% if @feature.title %>
                 <h1 class="title">
@@ -32,13 +32,13 @@
           </div>
         <% end %>
       <% end %>
-      <% if @eight %>
+      <% if @region %>
         <div class="container-fluid">
           <p class="text-muted bold full-width marg-bot-1">
             AROUND THE WORLD
           </p>
           <div class="card-columns articles">
-            <% @eight.each do |a| %>
+            <% @region.each do |a| %>
                 <%= link_to a do %>
                   <div class="card">
                     <%= render a %>
@@ -50,12 +50,12 @@
       <% end %>
     </div>
     <!-- closing left col -->
-    <div class="col-12 col-md-4 pad-top-1 light-gray full-height">
-      <% if @three and @three.length > 0 %>
+    <div class="col-12 col-md-3 pad-top-1 light-gray full-height">
+      <% if @global and @global.length > 0 %>
         <p class="text-muted bold full-width marg-bot-1">
           GLOBAL TAKES
         </p>
-        <% @three.each do |article| %>
+        <% @global.each do |article| %>
           <%= link_to article do %>
             <!-- article image -->
             <% if not article.image.nil? and not article.image_file_name.nil? %>
@@ -65,15 +65,34 @@
             <!-- article title and subtitle -->
             <h1 class="sans title smaller"><%= article.title %></h1>
             <h2 class="subtitle smaller"><%= article.subtitle %></h2>
-            <% unless article == @three.last %>
+            <% unless article == @global.last %>
               <div class="line-1"></div>
             <% end %>
           <% end %>
           <!-- closing link to article -->
         <% end %>
-        <!-- close looping over three -->
+        <!-- close looping over global -->
       <% end %>
-      <!-- close checking for three -->
+      <!-- close checking for global -->
+
+      <div class="space-2"></div>
+
+      <% if @global and @global.length > 0 %>
+        <p class="full-width bold text-muted">
+          READ MORE
+        </p>
+
+        <% @global.each do |article| %>
+          <%= link_to article do %>
+            <h2>
+              <%= article.title %>
+            </h2>
+            <% unless article == @global.last %>
+              <div class="line-1"></div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
 
       <div class="space-2"></div>
 

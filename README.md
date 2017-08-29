@@ -19,25 +19,27 @@
 - [x] Show that an article is unpublished if this is an admin on index page
 - [ ] Search for articles by name
 - [ ] Email list in footer / popup
+- [ ] Tags only when article open
 
 ##### Views
 - [x] Pretty forms
   -  [x] Adjust spacing of active label (x-axis)
   - [x] Pretty article form
   - [x] Get the special label to work (even on page transfers?)
-    - [ ] Test this further
+    - [x] Test this further
 - [x] Article show pages
   - [ ] Author information on article show page
   - [x] Region information on article show page
 - [x] Front page?
-  - [ ] Better categorization and section titles on front page
+  - [x] Better categorization and section titles on front page
+  - [ ] Get feedback on this (@team)
 - [x] Clean up admin show pages
   - [x] Maybe export articles to their own cards?
 - [x] Admin index pages
 - [ ] Content for about page
 - [x] Fix popup
   - [x] Also fix popup javascript stuff
-- [ ] Add region in more places?
+- [x] Add region in more places?
 - [ ] One sentence pitch in footer
 
 ##### Admin configuration
@@ -63,9 +65,13 @@
   - [x] Mobile / small screen
 
 ##### Details
-- [ ] Special phone number formatting
-- [ ] Add to navbar, update styling, clean it up
+- [ ] Make navbar more unique?
 - [ ] Article HTML / MD real-time interpretation / previewing?
 - [ ] Article image previewing
 - [ ] Admin image previewing
 - [x] Fixed nav only on scroll up, hide on scroll down?
+- [ ] Responsive column counts for articles
+- [ ] More columns on articles index page
+- [ ] Play around with title and subtitle overlay
+- [ ] Play around with colors
+  - [ ] Color highlighting on contact page
