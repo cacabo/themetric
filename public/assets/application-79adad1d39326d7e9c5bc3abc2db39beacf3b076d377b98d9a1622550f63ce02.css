@@ -145,40 +145,66 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-/* line 5, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/admins.scss */
+/* line 5, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
 .admin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
 }
-/* line 8, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/admins.scss */
+/* line 9, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
 .admin .admin-img {
   width: 4rem;
   height: 4rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  overflow: hidden !important;
+  position: relative;
 }
-/* line 16, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/admins.scss */
+/* line 19, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
 .admin .admin-img.big {
   height: 6rem;
   width: 6rem;
 }
-/* line 22, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/admins.scss */
+/* line 25, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
+.admin .admin-no-img {
+  width: 4rem;
+  height: 0rem;
+  margin-right: 1rem;
+  display: inline-block;
+  position: relative;
+}
+/* line 33, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
 .admin .admin-content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-/* line 1, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+
+/* line 38, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
+.admin-icons li a {
+  color: rgba(0, 0, 0, 0.3);
+}
+/* line 41, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/admins.scss */
+.admin-icons li a:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+/* line 1, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .time {
   color: rgba(0, 0, 0, 0.6);
   font-style: italic;
   margin-right: 1rem;
 }
 
-/* line 7, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 7, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
+.region {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+/* line 12, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .tag {
   border: 1px solid black;
   color: black;
@@ -187,68 +213,73 @@ pre[class*="language-"] {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 14, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 19, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .tag:hover, .tag:active, .tag:focus {
   background: black;
   color: white;
 }
 
-/* line 22, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 27, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .admin-buttons {
   top: 0;
   text-align: right;
 }
+/* line 31, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
+.admin-buttons form {
+  display: inline-block;
+  width: auto;
+}
 
-/* line 28, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 38, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper p {
   font-size: 1.2rem;
   line-height: 1.5;
 }
-/* line 32, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 42, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper h1,
 .article-wrapper h2,
 .article-wrapper h3 {
   margin-bottom: 1rem;
 }
-/* line 38, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 48, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper h4,
 .article-wrapper h5,
 .article-wrapper h6 {
   margin-bottom: 0.5rem;
 }
 
-/* line 45, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 55, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
-/* line 50, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 60, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .title.smaller {
   font-size: 2rem;
 }
 
-/* line 55, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 65, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .subtitle {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-/* line 59, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 69, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .subtitle.smaller {
   font-size: 1.5rem;
 }
 
-/* line 64, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 74, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .other {
   border-top: 0.5rem solid black;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 68, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 78, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .other .description {
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 72, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 82, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .other:hover {
   -webkit-transform: translateY(-0.25rem);
           transform: translateY(-0.25rem);
@@ -256,7 +287,7 @@ pre[class*="language-"] {
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 79, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 89, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share {
   top: 0;
   height: 100vh;
@@ -270,24 +301,24 @@ pre[class*="language-"] {
   z-index: 10;
   margin-left: -6rem;
 }
-/* line 88, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 98, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul {
   margin-left: 0;
   padding-left: 0;
   list-style: none;
   margin-bottom: 0px;
 }
-/* line 94, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 104, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul li {
   margin: 1rem 0;
 }
-/* line 98, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 108, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa {
   color: rgba(0, 0, 0, 0.15);
   text-align: center;
   display: table-cell;
 }
-/* line 103, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 113, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa .share-circle {
   position: absolute;
   right: -0.2rem;
@@ -300,39 +331,39 @@ pre[class*="language-"] {
   border-radius: 50%;
   z-index: -1;
 }
-/* line 114, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 124, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa:hover {
   color: white;
 }
-/* line 118, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 128, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa:hover .share-circle {
   width: 3rem;
   height: 3rem;
 }
-/* line 124, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 134, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa-facebook:hover .share-circle {
   background: #3b5998;
 }
-/* line 128, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 138, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa-twitter:hover .share-circle {
   background: #1da1f2;
 }
-/* line 132, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 142, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa-envelope:hover .share-circle {
   background: #0099ff;
 }
-/* line 136, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 146, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share ul .fa-linkedin:hover .share-circle {
   background: #0077b5;
 }
-/* line 141, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 151, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .share.bottom {
   position: absolute;
   top: auto;
   bottom: 0;
 }
 
-/* line 148, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 158, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-social {
   margin-left: 0;
   padding-left: 0;
@@ -342,93 +373,117 @@ pre[class*="language-"] {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 155, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 165, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-facebook {
   color: #3b5998;
 }
-/* line 159, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 169, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-twitter {
   color: #1da1f2;
 }
-/* line 163, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 173, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-envelope {
   color: #0099ff;
 }
-/* line 167, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 177, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-linkedin {
   color: #0077b5;
 }
-/* line 171, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/article.scss */
+/* line 181, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa {
   margin-right: 0.75rem;
 }
-/* line 4, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 4, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.navigation {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
-/* line 9, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 9, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.navigation li a {
   font-size: 1.25rem;
   color: white;
   text-decoration: none;
 }
-/* line 14, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 14, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.navigation li a:hover {
-  color: #0275d8;
+  color: white;
 }
-/* line 20, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 20, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social {
   margin-left: 0;
   padding-left: 0;
   list-style: none;
 }
-/* line 25, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 25, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social li {
   margin-right: 1rem;
   display: inline;
 }
-/* line 29, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 29, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social li a {
   color: white;
 }
-/* line 32, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/footer.scss */
+/* line 32, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social li a:hover {
-  color: #0275d8;
+  color: white;
 }
-/* line 3, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 3, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
+select:not([multiple]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+  padding: .5em;
+  padding-right: 1.5em;
+}
+
+/* line 13, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.form-control,
+select.form-control,
 textarea.form-control {
   color: black !important;
-  border-radius: 0;
-  border-top: 0 solid transparent;
-  border-left: 0 solid transparent;
-  border-right: 0 solid transparent;
+  border-radius: 0px !important;
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
   border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
-/* line 12, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 23, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.form-control.has-val,
+select.form-control.has-val,
 textarea.form-control.has-val {
   border-bottom: 2px solid black;
 }
-/* line 16, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 27, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.form-control.has-error:active input.form-control.has-error:focus, input.form-control:active, input.form-control:focus,
+select.form-control.has-error:active input.form-control.has-error:focus,
+select.form-control:active,
+select.form-control:focus,
 textarea.form-control.has-error:active input.form-control.has-error:focus,
 textarea.form-control:active,
 textarea.form-control:focus, input.form-control.has-error:active
+select.form-control.has-error:focus,
+select.form-control.has-error:active
+select.form-control.has-error:focus,
+textarea.form-control.has-error:active
+select.form-control.has-error:focus, input.form-control.has-error:active
+textarea.form-control.has-error:focus,
+select.form-control.has-error:active
 textarea.form-control.has-error:focus,
 textarea.form-control.has-error:active
 textarea.form-control.has-error:focus {
   border-bottom: 2px solid #0275d8;
 }
-/* line 22, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 33, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.form-control.no-border,
+select.form-control.no-border,
 textarea.form-control.no-border {
   border: 2px solid transparent !important;
 }
 
-/* line 27, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 38, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 .field.special-label label {
   cursor: text;
   -webkit-transform: translate(12px, 36px);
@@ -437,18 +492,31 @@ textarea.form-control.no-border {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 33, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 44, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 .field.special-label label.hasVal {
-  -webkit-transform: translate(0px, 12px) scale(0.9);
-          transform: translate(0px, 12px) scale(0.9);
+  -webkit-transform: translate(0px, 12px);
+          transform: translate(0px, 12px);
+  font-size: 0.9rem;
   color: black;
 }
-/* line 37, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 49, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 .field.special-label label.hasVal.active {
   color: #0275d8;
 }
 
-/* line 43, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 55, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
+.field.special-label.alwaysHasVal label {
+  -webkit-transform: translate(0px, 12px);
+          transform: translate(0px, 12px);
+  font-size: 0.9rem;
+  color: black;
+}
+/* line 60, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
+.field.special-label.alwaysHasVal label.active {
+  color: #0275d8;
+}
+
+/* line 65, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.title,
 textarea.title {
   font-weight: bold;
@@ -457,7 +525,7 @@ textarea.title {
   margin-bottom: 0;
 }
 
-/* line 51, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 73, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.subtitle,
 textarea.subtitle {
   font-size: 2rem;
@@ -465,13 +533,13 @@ textarea.subtitle {
   margin-bottom: 0.5rem;
 }
 
-/* line 58, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 80, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 textarea.text {
   line-height: 1.5;
   font-size: 1.2rem;
 }
 
-/* line 63, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 85, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.title,
 textarea.subtitle,
 textarea.text {
@@ -480,27 +548,27 @@ textarea.text {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 70, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 92, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 input.title.no-border:focus,
 textarea.subtitle.no-border:focus,
 textarea.text.no-border:focus {
   border-bottom: 2px solid #0275d8 !important;
 }
 
-/* line 75, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 97, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 .form-group {
   margin-bottom: 0.5rem !important;
 }
 
-/* line 78, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/form.scss */
+/* line 100, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/form.scss */
 .form-group.marg-bot-0 {
   margin-bottom: 0 !important;
 }
-/* line 1, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+/* line 1, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
 .feature {
   background-color: black;
   padding: 4rem 5% 5% 5%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   min-height: 40vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -509,14 +577,14 @@ textarea.text.no-border:focus {
       -ms-flex-align: end;
           align-items: flex-end;
 }
-/* line 9, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+/* line 9, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
 .feature:hover .title, .feature:hover .subtitle {
   -webkit-transform: translateY(-0.25rem);
           transform: translateY(-0.25rem);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-/* line 16, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+/* line 16, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
 .feature .content .title, .feature .content .subtitle {
   display: inline-block;
   background: white;
@@ -524,89 +592,107 @@ textarea.text.no-border:focus {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 23, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+/* line 23, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
 .feature .content .title {
   font-size: 3rem;
   font-weight: bold;
 }
 
 @media screen and (min-device-width: 1024px) and (min-width: 720px) {
-  /* line 31, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+  /* line 31, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
   .feature .content {
     width: 60%;
   }
 }
-/* line 36, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+/* line 36, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
 .three {
   background: white;
 }
-/* line 39, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/frontpage.scss */
+/* line 39, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
 .three .content {
   padding: 1rem;
 }
-/* line 3, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+
+/* line 44, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
+.articles.card-columns {
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+/* line 47, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/frontpage.scss */
+.articles.card-columns .card {
+  border-radius: 0px !important;
+  margin-bottom: 1rem;
+}
+/* line 3, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .fixed .navbar {
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* line 7, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 7, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar {
   background: white !important;
   border-bottom: 0px solid transparent;
   font-family: 'Palanquin Dark', sans-serif;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  overflow: hidden !important;
   width: 100%;
   padding: 0rem 1rem !important;
 }
-/* line 16, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 15, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar .navbar-brand {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   font-size: 2rem;
 }
-/* line 21, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 19, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar .navbar-brand .small {
+  font-size: 1rem;
+}
+/* line 24, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar .navbar-toggler {
   height: 56px;
 }
-/* line 25, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 28, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar .nav-item a.nav-link {
   color: rgba(0, 0, 0, 0.6);
   font-size: 1.25rem;
 }
-/* line 29, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 32, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar .nav-item a.nav-link:hover {
   color: black;
 }
 
-/* line 35, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 38, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .fixed .navbar.top {
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 39, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 42, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar.top {
   padding: 0.5rem 1rem !important;
   border-bottom: 0px solid transparent;
 }
-/* line 43, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 46, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar.top .navbar-brand {
   font-size: 3rem;
 }
-/* line 47, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 49, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar.top .navbar-brand .small {
+  font-size: 1.5rem;
+}
+/* line 54, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar.top .navbar-toggler {
   height: 98px;
 }
 
-/* line 52, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 59, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-text {
   padding: 0 !important;
 }
 
-/* line 56, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 63, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -617,7 +703,7 @@ textarea.text.no-border:focus {
   top: 0;
 }
 
-/* line 65, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 72, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .icon-bar {
   background-color: black !important;
   display: block;
@@ -625,12 +711,12 @@ textarea.text.no-border:focus {
   height: 3px;
 }
 
-/* line 72, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 79, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .icon-bar + .icon-bar {
   margin-top: 6px;
 }
 
-/* line 76, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 83, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler,
 .navbar-toggler:active,
 .navbar-toggler:visited {
@@ -638,37 +724,37 @@ textarea.text.no-border:focus {
   outline: 0 !important;
 }
 
-/* line 83, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 90, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .nav-link {
   margin-bottom: 0;
 }
 
-/* line 87, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 94, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler {
   background: transparent !important;
 }
-/* line 90, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 97, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler:hover {
   background: transparent !important;
 }
-/* line 94, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 101, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .icon-bar {
   width: 33px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-/* line 99, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 106, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .top-bar {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transform-origin: 10% 10%;
           transform-origin: 10% 10%;
 }
-/* line 104, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 111, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .middle-bar {
   opacity: 0;
 }
-/* line 108, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 115, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler .bottom-bar {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -676,35 +762,81 @@ textarea.text.no-border:focus {
           transform-origin: 10% 90%;
 }
 
-/* line 115, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 122, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler.collapsed .top-bar {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
-/* line 119, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 126, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler.collapsed .middle-bar {
   opacity: 1;
 }
-/* line 123, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 130, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .navbar-toggler.collapsed .bottom-bar {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
 
-/* line 128, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 135, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 .alert-spacer {
   height: 40px;
   width: 100%;
 }
 
-/* line 133, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 140, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 #top {
   color: white !important;
   border-bottom: 0px solid white !important;
 }
-/* line 137, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/navbar.scss */
+/* line 144, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
 #top .navbar-brand {
   color: white !important;
+}
+
+/**
+ * Dropdown menu
+ */
+/* line 154, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar .dropdown-menu {
+  border-top: 1px solid white;
+  z-index: 1500 !important;
+  border-radius: 0px !important;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  top: calc(100% + 1px);
+}
+/* line 162, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar .dropdown-menu a.dropdown-item {
+  background: transparent !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+/* line 166, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar .dropdown-menu a.dropdown-item .fa {
+  color: rgba(0, 0, 0, 0.4);
+}
+/* line 170, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar .dropdown-menu a.dropdown-item:hover, .navbar .dropdown-menu a.dropdown-item:active, .navbar .dropdown-menu a.dropdown-item:focus {
+  color: #000000;
+}
+/* line 175, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar .dropdown-menu a.dropdown-item:hover .fa, .navbar .dropdown-menu a.dropdown-item:active .fa, .navbar .dropdown-menu a.dropdown-item:focus .fa {
+  color: #000000;
+}
+
+/* line 183, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+.navbar.top .dropdown-menu {
+  top: calc(100% + 21px);
+  -webkit-box-shadow: 0px 0px 0px transparent;
+          box-shadow: 0px 0px 0px transparent;
+}
+
+@media (max-width: 991px) {
+  /* line 189, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/navbar.scss */
+  .navbar-toggleable-md .navbar-nav .dropdown-menu {
+    border: 1px solid transparent;
+  }
 }
 .pad-0{padding:0!important}.pad-1{padding:1rem}.pad-2{padding:2rem}.pad-0-1{padding:0 1rem}.pad-0-2{padding:0 2rem}.pad-1-0{padding:1rem 0}.pad-2-0{padding:2rem 0}.pad-1-2{padding:1rem 2rem}.pad-2-1{padding:2rem 1rem}.space-1,.space-2,.space-3,.space-4{display:block;width:100%}.space-1{height:1rem}.space-2{height:2rem}.space-3{height:3rem}.space-4{height:4rem}.marg-0{margin:0!important}.marg-top-0{margin-top:0}.marg-top-1{margin-top:1rem}.marg-top-2{margin-top:2rem}.marg-bot-0{margin-bottom:0}.marg-bot-1{margin-bottom:1rem}.marg-bot-2{margin-bottom:2rem}.marg-right-0{margin-right:0}.marg-right-05{margin-right:.5rem}.marg-right-1{margin-right:1rem}.marg-left-0{margin-left:0}.marg-left-05{margin-left:.5rem}.marg-left-1{margin-left:1rem}.border{border:1px solid rgba(0,0,0,.15)}.light-border{border:1px solid rgba(0,0,0,.075)}.round-1{border-radius:.25rem}.round-2{border-radius:.5rem}.round-3{border-radius:.75rem}.round-4{border-radius:1rem}.line-0,.line-1,.line-2{display:block;width:100%;height:1px;background:rgba(0,0,0,.15)}.line-0.light-line,.line-1.light-line,.line-2.light-line{background:rgba(0,0,0,.075)}.line-0{margin:0}.line-1{margin:1rem 0}.line-2{margin:2rem 0}.black{background:#000}.white{background:#fff}.light-gray{background:rgba(0,0,0,.075)}.gray{background:rgba(0,0,0,.15)}.black-text,a.black-text{color:#000}.white-text,a.white-text{color:#fff}.no-decoration,a.no-decoration,a.no-decoration:hover{text-decoration:none}.bold{font-weight:700}.hover{-webkit-transition:all .2s ease;transition:all .2s ease}.shade-1{-webkit-box-shadow:0 .125rem .5rem rgba(0,0,0,.1);box-shadow:0 .125rem .5rem rgba(0,0,0,.1)}.shade-1.hover:hover{-webkit-box-shadow:0 .0625rem .375rem rgba(0,0,0,.175);box-shadow:0 .0625rem .375rem rgba(0,0,0,.175)}.shade-2{-webkit-box-shadow:0 .1875rem .625rem rgba(0,0,0,.15);box-shadow:0 .1875rem .625rem rgba(0,0,0,.15)}.shade-2.hover:hover{-webkit-box-shadow:0 .125rem .5rem rgba(0,0,0,.225);box-shadow:0 .125rem .5rem rgba(0,0,0,.225)}.shade-3{-webkit-box-shadow:0 .25rem .75rem rgba(0,0,0,.2);box-shadow:0 .25rem .75rem rgba(0,0,0,.2)}.shade-3.hover:hover{-webkit-box-shadow:0 .1875rem .5rem rgba(0,0,0,.275);box-shadow:0 .1875rem .5rem rgba(0,0,0,.275)}.shade-4{-webkit-box-shadow:0 .3125rem .875rem rgba(0,0,0,.25);box-shadow:0 .3125rem .875rem rgba(0,0,0,.25)}.shade-4.hover:hover{-webkit-box-shadow:0 .25rem .75rem rgba(0,0,0,.325);box-shadow:0 .25rem .75rem rgba(0,0,0,.325)}.cursor,button{cursor:pointer;cursor:hand}.animate{-webkit-transition:all .2s ease;transition:all .2s ease}.absolute{position:absolute}.absolute.right{right:0}.fixed{position:fixed}.relative{position:relative}.inline{display:inline-block}.block{display:block}.full-width{width:100%}.left{text-align:left}.float-left{float:left}.right{text-align:right}.float-right{float:right}.center{width:100%;text-align:center}.background-image{background-position:center;background-repeat:no-repeat;background-size:cover}.background-image.parallax{background-attachment:fixed}@media only screen and (max-device-width:1024px){.background-image.parallax{background-attachment:scroll}}ul.horizontal{list-style:none;margin:0;padding:0}ul.horizontal li{float:left;margin-right:1rem}ul.horizontal.right li{float:right;margin-right:0;margin-left:1rem}
 /*
@@ -11809,93 +11941,147 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 }
 
 /*
+** COLORS
+*/
+/* line 26, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.cyan {
+  background: cyan !important;
+}
+
+/* line 30, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.cyan-text {
+  color: cyan !important;
+}
+
+/*
 ** GENERAL
 */
-/* line 26, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 37, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+button,
+button.btn,
+.btn {
+  border-radius: 0px !important;
+}
+
+/* line 43, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.btn {
+  cursor: hand;
+  cursor: pointer;
+}
+
+/* line 48, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 52, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .container.full-width {
   width: 100% !important;
 }
 
-/* line 30, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 56, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+a.black-text,
+a.black-text:hover {
+  color: black;
+}
+
+/* line 61, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+a.full-width {
+  position: relative;
+  width: 100% !important;
+  display: block;
+}
+
+/* line 67, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .pad-top-1 {
   padding-top: 1rem;
 }
 
-/* line 34, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 71, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .marg-0 {
   margin: 0 !important;
 }
 
-/* line 38, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 75, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.marg-bot-05 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* line 79, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .space-0 {
   display: block;
   width: 100%;
   height: 0px;
 }
 
-/* line 44, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 85, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .page-content,
 .full-height {
   min-height: calc(100vh - 50px);
 }
 
-/* line 49, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 90, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .hidden {
   display: none;
 }
 
-/* line 53, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 94, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .front {
   z-index: 1030;
+}
+
+/* line 97, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.card {
+  border-radius: 0px !important;
 }
 
 /*
 ** FONTS AND COLORS
 */
-/* line 62, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 106, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .serif {
   font-family: 'PT Serif', serif;
 }
 
-/* line 67, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 111, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .special {
   font-family: 'Palanquin Dark', sans-serif;
   font-weight: bold;
 }
 
-/* line 72, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 116, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .sans {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* line 76, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 120, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 p, h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
-/* line 80, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 124, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 a {
   text-decoration: none;
 }
-/* line 83, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 127, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 a:hover, a:focus, a:active, a:visited {
   text-decoration: none;
 }
 
-/* line 91, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 135, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 p.bigger,
 input.bigger,
 textarea.bigger {
   font-size: 1.2rem;
 }
 
-/* line 97, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 141, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .black-diag {
   background: black;
   background: linear-gradient(20deg, white 50%, black 50%);
 }
 
-/* line 105, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 149, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .bord-top-thick {
   border-top: 10px solid black;
 }
@@ -11903,7 +12089,7 @@ textarea.bigger {
 /*
 ** BUTTONS
 */
-/* line 113, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 157, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-black,
 .btn-white {
   border-radius: 0px;
@@ -11919,62 +12105,75 @@ textarea.bigger {
   cursor: hand;
   cursor: pointer;
 }
-/* line 127, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 171, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-black.btn-big,
 .btn-white.btn-big {
   padding: 0.5rem 1rem;
 }
 
-/* line 132, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 176, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-black {
   color: black;
   border: 2px solid black;
 }
-/* line 136, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 180, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-black:hover {
   color: white;
   background: black;
 }
-/* line 141, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 185, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-black.disabled {
   color: rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(0, 0, 0, 0.4);
   cursor: not-allowed;
 }
-/* line 146, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 190, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-black.disabled:hover {
   color: rgba(0, 0, 0, 0.4);
   background: transparent;
 }
 
-/* line 153, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 197, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+a.white-text,
+a.white-text:focus,
+a.white-text:hover {
+  color: white !important;
+}
+
+/* line 203, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-white {
   color: white;
   border: 2px solid white !important;
 }
-/* line 157, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 207, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .btn-white:hover {
   background: white;
   color: black;
 }
 
+/* line 213, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+h1 .small {
+  font-size: 1.5rem;
+}
+
 /*
 ** POPUP
 */
-/* line 167, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 221, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .popup {
   color: white;
   padding: 2rem;
 }
-/* line 171, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 225, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .popup h1, .popup h2, .popup h3, .popup h4, .popup h5, .popup h6, .popup p, .popup .fa {
   color: white;
 }
-/* line 175, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 229, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .popup .x {
   position: absolute;
-  right: 2rem;
-  top: 1rem;
+  z-index: 1000;
+  color: white;
+  right: 1.5rem;
   padding: 0.25rem;
   cursor: hand;
   cursor: pointer;
@@ -11983,7 +12182,7 @@ textarea.bigger {
 /*
 ** ERRORS
 */
-/* line 189, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 244, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #error_explanation {
   background-color: #f2dede;
   color: #a94442;
@@ -11991,33 +12190,33 @@ textarea.bigger {
   padding: 1rem;
   margin: 1rem 0rem;
 }
-/* line 196, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 251, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #error_explanation h2 {
   color: #a94442;
   font-size: 1.25rem;
 }
-/* line 201, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 256, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #error_explanation ul {
   margin-bottom: 0px;
 }
 
-/* line 206, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 261, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .has-error .form-control {
   border-bottom: 2px solid #a94442;
 }
 
-/* line 210, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 265, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .help-block {
   color: #a94442;
   margin-top: 0.5rem;
 }
 
-/* line 215, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 270, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 .help-block::first-letter {
   text-transform: uppercase;
 }
 
-/* line 219, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 274, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #alert-container {
   z-index: 1031;
   padding: 0 1rem;
@@ -12029,16 +12228,79 @@ textarea.bigger {
   color: white;
   background: black;
 }
-/* line 230, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 285, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #alert-container p {
   margin: 0.5rem 0;
   color: white;
 }
-/* line 235, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 290, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #alert-container.red {
   background: #FF7085;
 }
-/* line 239, /Users/cameroncabo/Documents/youthjournal/app/assets/stylesheets/application.scss */
+/* line 294, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
 #alert-container.green {
   background: #3ecf8e;
+}
+
+/* line 299, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.no-display {
+  display: none !important;
+}
+
+/* line 303, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.background-graphic {
+  width: 100%;
+  height: 60vh;
+  position: absolute;
+  z-index: -1;
+  top: 50px;
+}
+/* line 310, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.background-graphic .background-fade {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 60vh;
+  z-index: -3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(transparent));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+}
+/* line 319, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.background-graphic .slice-2 {
+  position: absolute;
+  width: 100%;
+  top: 0vh;
+  height: 40vh;
+  z-index: -1;
+  background: -webkit-gradient(linear, right top, left bottom, color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(50%, transparent));
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.1) 50%, transparent 50%);
+}
+/* line 331, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.background-graphic .slice-1 {
+  position: absolute;
+  width: 100%;
+  top: 20vh;
+  height: 40vh;
+  z-index: -2;
+  background: linear-gradient(-15deg, #ffffff 50%, transparent 50%);
+}
+/* line 343, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.background-graphic .dots {
+  width: 100%;
+  height: 100%;
+  background-image: url("dot.png");
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+/* line 352, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
+.background-graphic .slice-3 {
+  position: absolute;
+  width: 100%;
+  top: 40vh;
+  height: 20vh;
+  z-index: 1;
+  background: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ffffff));
+  background: linear-gradient(transparent, #ffffff);
 }

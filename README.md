@@ -19,7 +19,7 @@
 - [x] Show that an article is unpublished if this is an admin on index page
 - [ ] Search for articles by name
 - [ ] Email list in footer / popup
-- [ ] Tags only when article open
+- [x] Tags only when article open
 
 ##### Views
 - [x] Pretty forms
@@ -32,7 +32,7 @@
   - [x] Region information on article show page
 - [x] Front page?
   - [x] Better categorization and section titles on front page
-  - [ ] Get feedback on this (@team)
+  - [x] Get feedback on this (@team)
 - [x] Clean up admin show pages
   - [x] Maybe export articles to their own cards?
 - [x] Admin index pages
@@ -72,6 +72,6 @@
 - [x] Fixed nav only on scroll up, hide on scroll down?
 - [ ] Responsive column counts for articles
 - [ ] More columns on articles index page
-- [ ] Play around with title and subtitle overlay
+- [ ] Play around with title and subtitle overlay on article preview
 - [ ] Play around with colors
   - [ ] Color highlighting on contact page

@@ -18,6 +18,10 @@ $('input').focus(function() {
   $(this).prev('label').addClass('hasVal active');
 });
 
+$('select').focus(function() {
+  $(this).prev('label').addClass('active');
+});
+
 $('textarea').focus(function() {
   $(this).prev('label').addClass('hasVal active');
 });
