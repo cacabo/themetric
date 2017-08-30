@@ -34,18 +34,20 @@
       <% end %>
       <% if @region %>
         <div class="container-fluid">
-          <p class="text-muted bold full-width marg-bot-1">
-            AROUND THE WORLD
-          </p>
-          <div class="card-columns articles">
-            <% @region.each do |a| %>
-                <%= link_to a do %>
-                  <div class="card">
-                    <%= render a %>
-                  </div>
-                <% end %>
-            <% end %>
-          </div>
+          <% if @region and @region.length > 0 %>
+            <p class="text-muted bold full-width marg-bot-1">
+              AROUND THE WORLD
+            </p>
+            <div class="card-columns articles">
+              <% @region.each do |a| %>
+                  <%= link_to a do %>
+                    <div class="card">
+                      <%= render a %>
+                    </div>
+                  <% end %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -77,17 +79,17 @@
 
       <div class="space-2"></div>
 
-      <% if @global and @global.length > 0 %>
+      <% if @more_global and @more_global.length > 0 %>
         <p class="full-width bold text-muted">
           READ MORE
         </p>
 
-        <% @global.each do |article| %>
+        <% @more_global.each do |article| %>
           <%= link_to article do %>
-            <h2>
+            <h3 class="bold">
               <%= article.title %>
-            </h2>
-            <% unless article == @global.last %>
+            </h3>
+            <% unless article == @more_global.last %>
               <div class="line-1"></div>
             <% end %>
           <% end %>

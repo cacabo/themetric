@@ -75,3 +75,4 @@
 - [ ] Play around with title and subtitle overlay on article preview
 - [ ] Play around with colors
   - [ ] Color highlighting on contact page
+- [ ] Articles from same region on right side of article show page on large screens
