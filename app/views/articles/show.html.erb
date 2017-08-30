@@ -8,7 +8,7 @@
 
   <div class="container serif marg-top-2">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-1">
         <% unless @article.published %>
           <p class="text-muted special pad-1 light-gray">
             THIS ARTICLE IS NOT PUBLISHED
@@ -112,7 +112,23 @@
           </ul>
         </div>
       </div>
-      <!-- close col -->
+      <!-- close col around article -->
+
+      <% if @recommended and @recommended.length > 0 %>
+        <div class="col-12 col-lg-3 hidden-lg-down fixed recommended">
+          <p class="text-muted bold sans">
+            RECOMMENDED FOR YOU
+          </p>
+
+          <% @recommended.each do |a| %>
+            <%= link_to a do %>
+              <div class="card article marg-bot-1">
+                <%= render a %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <!-- close row -->
   </div>
@@ -152,8 +168,8 @@
                     <%= image_tag @previous.image.url(:medium), class: 'img-fluid full-width' %>
                   <% end %>
                   <div class="pad-1">
-                    <p class="description">
-                      Previous article
+                    <p class="description bold">
+                      PREVIOUS ARTICLE
                     </p>
                     <h2 class="sans title smaller">
                       <%= @previous.title %>
@@ -189,8 +205,8 @@
                     <%= image_tag @next.image.url(:medium), class: 'img-fluid full-width' %>
                   <% end %>
                   <div class="pad-1">
-                    <p class="description">
-                      Next article
+                    <p class="description bold">
+                      NEXT ARTICLE
                     </p>
                     <h2 class="sans title smaller">
                       <%= @next.title %>
@@ -249,6 +265,7 @@
 <script type="text/javascript">
   var gray = $('.light-gray').offset().top;
   var $share = $('.share');
+  var rec = $('.recommended');
 
   $(window).resize(function() {
     gray = $('.light-gray').offset().top;
@@ -262,8 +279,10 @@
     var scrollBot = $(window).scrollTop() + $(window).height();
     if (scrollBot >= gray) {
       $share.addClass('bottom');
+      rec.slideUp(200);
     } else {
       $share.removeClass('bottom');
+      rec.slideDown(200);
     }
   });
 </script>

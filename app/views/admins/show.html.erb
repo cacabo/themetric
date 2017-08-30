@@ -90,7 +90,7 @@
             <% if current_admin %>
               <% @admin.articles.each do |a| %>
                 <%= link_to a do %>
-                  <div class="card marg-bot-1">
+                  <div class="card marg-bot-1 article">
                     <%= render a %>
                   </div>
                 <% end %>
@@ -98,7 +98,7 @@
             <% else %>
               <% @admin.articles.where(published: true).each do |a| %>
                 <%= link_to a do %>
-                  <div class="card marg-bot-1">
+                  <div class="card marg-bot-1 article">
                     <%= render a %>
                   </div>
                 <% end %>

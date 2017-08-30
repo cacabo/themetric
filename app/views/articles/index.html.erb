@@ -8,7 +8,7 @@
   <div class="space-2"></div>
   <div class="container serif">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="col-12 col-md-10 offset-md-1">
         <% if params[:tag] %>
           <h2 class="sans marg-bot-2">Listing articles tagged with "<%= params[:tag] %>"</h2>
         <% elsif params[:region] %>
@@ -23,7 +23,7 @@
           <div class="card-columns articles">
             <% @articles.each do |article| %>
               <%= link_to article do %>
-                <div class="card">
+                <div class="card article">
                   <%= render article %>
                 </div>
               <% end %>
