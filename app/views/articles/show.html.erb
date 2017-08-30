@@ -279,10 +279,12 @@
     var scrollBot = $(window).scrollTop() + $(window).height();
     if (scrollBot >= gray) {
       $share.addClass('bottom');
-      rec.slideUp(200);
+      // rec.slideUp(200);
+      rec.hide(200);
     } else {
       $share.removeClass('bottom');
-      rec.slideDown(200);
+      // rec.slideDown(200);
+      rec.show(200);
     }
   });
 </script>
