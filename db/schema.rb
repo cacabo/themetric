@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824225200) do
+ActiveRecord::Schema.define(version: 20170904021148) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -57,6 +57,12 @@ ActiveRecord::Schema.define(version: 20170824225200) do
     t.boolean "published"
     t.integer "region", default: 0
     t.index ["slug"], name: "index_articles_on_slug", unique: true
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
   end
 
   create_table "taggings", force: :cascade do |t|
