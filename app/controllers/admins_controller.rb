@@ -1,7 +1,15 @@
 class AdminsController < ApplicationController
   before_action :correct_admin, only: [:edit, :update]
+
   def show
     @admin = Admin.exists?(params[:id]) ? Admin.find(params[:id]) : nil
+  end
+
+  def info
+    if not current_admin
+      flash[:alert] = "You must be logged in to see this page."
+      redirect_to root_path
+    end
   end
 
   def index

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'about', to: 'welcome#about', as: 'about'
   get 'articles/tags/:tag', to: 'articles#index', as: 'tag'
   get 'articles/region/:region', to: 'articles#index', as: 'region'
+  get 'admins/info', to: 'admins#info', as: 'info'
 
   resources :admins, only: [:index, :show, :edit, :update]
 

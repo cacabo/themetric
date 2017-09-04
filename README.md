@@ -50,6 +50,7 @@
 - [x] Update edit form, make sure it works with names, bios
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
+- [ ] Admin information page
 
 ##### Article configuration
 - [x] Add locations to posts / region
@@ -67,9 +68,10 @@
 - [ ] Article image previewing
 - [ ] Admin image previewing
 - [x] Fixed nav only on scroll up, hide on scroll down?
-- [ ] Responsive column counts for articles
-- [ ] More columns on articles index page
+- [x] Responsive column counts for articles
+- [x] More columns on articles index page
 - [ ] Play around with title and subtitle overlay on article preview
 - [ ] Play around with colors
   - [ ] Color highlighting on contact page
-- [ ] Articles from same region on right side of article show page on large screens
+- [x] Articles from same region on right side of article show page on large screens
+- [ ] Google analytics
