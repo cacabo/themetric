@@ -45,20 +45,41 @@
         </p>
         <% end %>
 
-        <ul class="article-social">
-          <li>
-            <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-lg"><span class="share-circle"></span></i></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/share?url=<%=@encoded%>" target="_blank"><i class="fa fa-twitter fa-lg"><span class="share-circle"></span></i></a>
-          </li>
-          <li>
-            <a href="mailto:?&subject=<%=@article.title%>&body=<%=@url%>"><i class="fa fa-envelope fa-lg"><span class="share-circle"></span></i></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=@url%>&title=<%=@title%>&summary=<%=@subtitle%>&source=Youth%20Journal" target="_blank"><i class="fa fa-linkedin fa-lg"><span class="share-circle"></span></i></a>
-          </li>
-        </ul>
+        <div class="space-0"></div>
+
+        <div class="interact">
+          <% if @author %>
+            <div class="author inline">
+              <% if not @author.image.nil? and not @author.image_file_name.nil? %>
+                <%= link_to @author do %>
+                  <%= image_tag @author.image.url(:medium) %>
+                <% end %>
+              <% end %>
+              <%= link_to @author do %>
+                <p>
+                  <strong><%= @author.name %></strong>
+                  <br>
+                  <i><%= @author.role %></i>
+                </p>
+              <% end %>
+            </div>
+          <% end %>
+
+          <ul class="article-social">
+            <li>
+              <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-lg"><span class="share-circle"></span></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/share?url=<%=@encoded%>" target="_blank"><i class="fa fa-twitter fa-lg"><span class="share-circle"></span></i></a>
+            </li>
+            <li>
+              <a href="mailto:?&subject=<%=@article.title%>&body=<%=@url%>"><i class="fa fa-envelope fa-lg"><span class="share-circle"></span></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=@url%>&title=<%=@title%>&summary=<%=@subtitle%>&source=Youth%20Journal" target="_blank"><i class="fa fa-linkedin fa-lg"><span class="share-circle"></span></i></a>
+            </li>
+          </ul>
+        </div>
 
         <div class="line-0"></div>
         <div class="space-1"></div>

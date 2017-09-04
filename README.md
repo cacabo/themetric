@@ -6,13 +6,10 @@
 - [ ] SendGrid configuration
 - [x] Name transfer (to whatever we decide)
 - [x] Configure AWS to a new bucket
-- [ ] Domain name (@jason?)
-- [x] `Friendly_id`
-  - [ ] ...for personal website
+- [ ] Link with domain name
+- [ ] `Friendly_id`
   - [ ] ...for admins
   - [x] ...for articles
-- [ ] Set up `Heroku` to build with `GitHub`
-  - [ ] ...or figure out the assets precompile
 - [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [x] Better error throwing on admin security
 - [x] Published only on front page
@@ -28,7 +25,7 @@
   - [x] Get the special label to work (even on page transfers?)
     - [x] Test this further
 - [x] Article show pages
-  - [ ] Author information on article show page
+  - [x] Author information on article show page
   - [x] Region information on article show page
 - [x] Front page?
   - [x] Better categorization and section titles on front page

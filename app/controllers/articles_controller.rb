@@ -101,6 +101,8 @@ class ArticlesController < ApplicationController
         random = Article.limit(10).where.not(id: id).where.not(id: @next.id).order("RANDOM()")
         @previous = random.first
       end
+
+      @author = @article.admin
     else
       random = Article.limit(10).order("RANDOM()")
       @previous = random.first
