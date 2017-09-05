@@ -48,6 +48,7 @@
 - [x] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
   - [ ] Have a referred controller where super admins can add emails, and in order to register one's email must be referred.
+  - [ ] Allow super admins to delete accounts
 - [x] Update edit form, make sure it works with names, bios
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
@@ -77,4 +78,4 @@
   - [ ] Highlight color
 - [x] Articles from same region on right side of article show page on large screens
 - [x] Google analytics
-- [ ] Link to destroy emails as fitting
+- [x] Link to destroy emails as fitting
