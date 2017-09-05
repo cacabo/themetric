@@ -21,7 +21,7 @@ class EmailsController < ApplicationController
     @email = Email.find(params[:id])
     @email.destroy
     flash[:notice] = "Email removed successfully."
-    redirect_to root_path
+    redirect_to emails_path
   end
 
   private

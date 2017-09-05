@@ -19,9 +19,8 @@ Rails.application.routes.draw do
   get 'articles/region/:region', to: 'articles#index', as: 'region'
 
   get 'admins/info', to: 'admins#info', as: 'info'
-  get 'admins/emails', to: 'emails#index', as: 'email'
 
-  resources :emails, only: [:create, :destroy]
+  resources :emails, only: [:index, :create, :destroy]
 
   resources :referrals, only: [:create, :index, :destroy]
 
