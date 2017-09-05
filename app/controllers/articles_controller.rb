@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :correct_admin, only: [:edit, :update, :destroy]
   before_action :is_published, only: [:show]
+  before_action :super_admin, only: [:publish, :unpublish]
 
   def index
     if (params[:tag])
@@ -177,6 +178,13 @@ class ArticlesController < ApplicationController
         flash[:alert] = "You cannot access this article."
         redirect_to(root_url)
       end
+    end
+  end
+
+  def super_admin
+    unless current_admin and (current_admin.super or current_admin.id == 1)
+      flash[:alert] = "You must be a super admin to perform this"
+      redirect_to(root_url)
     end
   end
 end

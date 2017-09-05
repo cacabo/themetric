@@ -91,10 +91,12 @@
         <% if admin_signed_in? %>
         <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
         <div class="admin-buttons">
-          <% if @article.published %>
-            <%= link_to 'Unpublish article', unpublish_path(@article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans' %>
-          <% else %>
-            <%= link_to 'Publish article', publish_path(@article), method: :patch, confirm: 'Publish article, are you sure? The article will be visible to all site users.', class: 'btn btn-sm btn-info sans' %>
+          <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+            <% if @article.published %>
+              <%= link_to 'Unpublish article', unpublish_path(@article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans' %>
+            <% else %>
+              <%= link_to 'Publish article', publish_path(@article), method: :patch, confirm: 'Publish article, are you sure? The article will be visible to all site users.', class: 'btn btn-sm btn-info sans' %>
+            <% end %>
           <% end %>
 
           <%= link_to edit_article_path(@article) do %>
@@ -184,7 +186,7 @@
                     <%= image_tag @previous.image.url(:medium), class: 'img-fluid full-width' %>
                   <% end %>
                   <div class="pad-1">
-                    <p class="text-muted bold">
+                    <p class="text-light bold">
                       PREVIOUS ARTICLE
                     </p>
                     <h2 class="sans title smaller">
@@ -221,7 +223,7 @@
                     <%= image_tag @next.image.url(:medium), class: 'img-fluid full-width' %>
                   <% end %>
                   <div class="pad-1">
-                    <p class="text-muted bold">
+                    <p class="text-light bold">
                       NEXT ARTICLE
                     </p>
                     <h2 class="sans title smaller">

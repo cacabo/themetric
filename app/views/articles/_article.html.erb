@@ -1,7 +1,7 @@
 <!-- include the image if there is one -->
 <% if not article.image.nil? and not article.image_file_name.nil? %>
   <div class="card-img-top">
-    <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
+    <%= image_tag article.image.url(:medium), class: 'img-fluid full-width' %>
   </div>
 <% end %>
 
@@ -27,7 +27,7 @@
     </p>
   <% end %> -->
   <!-- closing if article.tag_list logic -->
-  
+
   <p class="time sans inline float-right">
     <%= time_ago_in_words(article.created_at) %> ago
   </p>

@@ -24,6 +24,19 @@
                       <h3>
                         <%= a.name %>
                       </h3>
+
+                      <% if current_admin %>
+                        <% if a.super %>
+                          <p class="bold text-light marg-bot-05">
+                            SUPER ADMIN
+                          </p>
+                        <% else %>
+                          <p class="bold text-light marg-bot-05">
+                            REGULAR ADMIN
+                          </p>
+                        <% end %>
+                      <% end %>
+
                       <p class="text-muted bold marg-bot-05">
                         <%= a.role %>
                       </p>
