@@ -95,7 +95,7 @@
             <% if @article.published %>
               <%= link_to 'Unpublish article', unpublish_path(@article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans' %>
             <% else %>
-              <%= link_to 'Publish article', publish_path(@article), method: :patch, confirm: 'Publish article, are you sure? The article will be visible to all site users.', class: 'btn btn-sm btn-info sans' %>
+              <%= link_to 'Publish article', publish_path(@article), method: :patch, data: { confirm: 'Publish article, are you sure? The article will be visible to all site users.' }, class: 'btn btn-sm btn-info sans' %>
             <% end %>
           <% end %>
 
