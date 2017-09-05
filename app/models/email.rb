@@ -1,5 +1,5 @@
 class Email < ApplicationRecord
-  validates :email, presence: true, length: { minimum: 5 }
+  validates :email, presence: true, length: { minimum: 5 }, uniqueness: true
   validate :email_format
 
   def email_format

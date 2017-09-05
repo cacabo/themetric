@@ -16,7 +16,7 @@
           <tbody>
             <% @emails.each_with_index do |e, index| %>
               <tr>
-                <td><%= index %></td>
+                <td><%= index + 1 %></td>
                 <td><%= e.email %></td>
               </tr>
             <% end %>

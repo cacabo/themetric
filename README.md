@@ -15,7 +15,7 @@
 - [x] Published only on front page
 - [x] Show that an article is unpublished if this is an admin on index page
 - [ ] Search for articles by name
-- [ ] Email list in footer / popup
+- [x] Email list in footer / popup
 - [x] Tags only when article open
 
 ##### Views
@@ -33,11 +33,11 @@
 - [x] Clean up admin show pages
   - [x] Maybe export articles to their own cards?
 - [x] Admin index pages
-- [ ] Content for about page
 - [x] Fix popup
   - [x] Also fix popup javascript stuff
 - [x] Add region in more places?
 - [ ] One sentence pitch in footer
+- [ ] Content for about page
 
 ##### Admin configuration
 - [x] Admin controller
@@ -47,10 +47,11 @@
   - [x] Profile picture
 - [ ] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
+  - [ ] Have a referred controller where super admins can add emails, and in order to register one's email must be referred.
 - [x] Update edit form, make sure it works with names, bios
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
-- [ ] Admin information page
+- [x] Admin information page
 
 ##### Article configuration
 - [x] Add locations to posts / region
@@ -72,6 +73,6 @@
 - [x] More columns on articles index page
 - [ ] Play around with title and subtitle overlay on article preview
 - [ ] Play around with colors
-  - [ ] Color highlighting on contact page
+  - [ ] Color highlighting on contact page?
 - [x] Articles from same region on right side of article show page on large screens
-- [ ] Google analytics
+- [x] Google analytics

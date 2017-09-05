@@ -110,6 +110,32 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def publish
+    @article = Article.friendly.find(params[:id])
+    @article.published = true
+
+    if @article.save
+      flash[:notice] = "Article published."
+      redirect_to @article
+    else
+      flash[:alert] = "There was an error publishing the article."
+      redirect_to @article
+    end
+  end
+
+  def unpublish
+    @article = Article.friendly.find(params[:id])
+    @article.published = false
+
+    if @article.save
+      flash[:notice] = "Article unpublished."
+      redirect_to @article
+    else
+      flash[:alert] = "There was an error unpublishing the article."
+      redirect_to @article
+    end
+  end
+
   def update
     @article = Article.friendly.find(params[:id])
 

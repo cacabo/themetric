@@ -59,9 +59,9 @@
       </ul>
       <!-- close list of icons -->
       <% @email = Email.new %>
-      <%= form_for @email, url: {action: "create", controller: "emails"} do |f| %>
+      <%= form_with(model: @email) do |f| %>
         <%= f.text_field :email, class: 'form-control footer-field', required: true %>
-        <%= f.submit "Add my email", class: 'btn-white' %>
+        <%= f.submit "Join our email list", class: 'btn-white' %>
       <% end %>
     </div>
     <!-- close col -->

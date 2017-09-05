@@ -3,13 +3,18 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  patch 'articles/:id/publish', to: 'articles#publish', as: 'publish'
+  patch 'articles/:id/unpublish', to: 'articles#unpublish', as: 'unpublish'
+
   resources :contacts, only: [:new, :create]
 
   root 'welcome#index'
 
   get 'about', to: 'welcome#about', as: 'about'
+
   get 'articles/tags/:tag', to: 'articles#index', as: 'tag'
   get 'articles/region/:region', to: 'articles#index', as: 'region'
+
   get 'admins/info', to: 'admins#info', as: 'info'
   get 'admins/emails', to: 'emails#index', as: 'email'
 
