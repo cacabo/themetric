@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   patch 'articles/:id/publish', to: 'articles#publish', as: 'publish'
   patch 'articles/:id/unpublish', to: 'articles#unpublish', as: 'unpublish'
 
+  patch 'admins/:id/super', to: 'admins#super', as: 'super'
+  patch 'admins/:id/unsuper', to: 'admins#unsuper', as: 'unsuper'
+
   resources :contacts, only: [:new, :create]
 
   root 'welcome#index'

@@ -17,6 +17,18 @@
                   <%= @admin.name %>
                 </h1>
 
+                <% if current_admin %>
+                  <% if @admin.super %>
+                    <p class="bold text-muted marg-bot-05">
+                      SUPER ADMIN
+                    </p>
+                  <% else %>
+                    <p class="bold text-muted marg-bot-05">
+                      REGULAR ADMIN
+                    </p>
+                  <% end %>
+                <% end %>
+
                 <p class="bold text-muted marg-bot-0">
                   <%= @admin.role %>
                 </p>
@@ -75,9 +87,17 @@
                   <% end %>
                 </ul>
 
-                <% if current_admin == @admin %>
-                  <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-primary btn-sm' %>
-                <% end %>
+                <div class="admin-buttons">
+                  <% if current_admin == @admin %>
+                    <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-sm btn-primary marg-bot-05' %>
+                  <% end %>
+
+                  <% if current_admin.super or current_admin.id == 1 %>
+                    <% if not @admin.super %>
+                      <%= link_to 'Make super admin', super_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                    <% end %>
+                  <% end %>
+                </div>
               </div>
             </div>
             <!-- closing admin -->
