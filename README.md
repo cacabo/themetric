@@ -4,9 +4,9 @@
 
 ##### General
 - [ ] SendGrid configuration
+- [ ] Link with domain name
 - [x] Name transfer (to whatever we decide)
 - [x] Configure AWS to a new bucket
-- [ ] Link with domain name
 - [ ] `Friendly_id`
   - [ ] ...for admins
   - [x] ...for articles
@@ -14,9 +14,9 @@
 - [x] Better error throwing on admin security
 - [x] Published only on front page
 - [x] Show that an article is unpublished if this is an admin on index page
-- [ ] Search for articles by name
 - [x] Email list in footer / popup
 - [x] Tags only when article open
+- [ ] Search for articles by name
 
 ##### Views
 - [x] Pretty forms
@@ -45,7 +45,7 @@
   - [x] Bio
   - [x] Social media links
   - [x] Profile picture
-- [ ] User roles? Who can edit what?
+- [x] User roles? Who can edit what?
 - [ ] Restrictions on who can make accounts / who can be admins?
   - [ ] Have a referred controller where super admins can add emails, and in order to register one's email must be referred.
 - [x] Update edit form, make sure it works with names, bios
@@ -74,5 +74,7 @@
 - [ ] Play around with title and subtitle overlay on article preview
 - [ ] Play around with colors
   - [ ] Color highlighting on contact page?
+  - [ ] Highlight color
 - [x] Articles from same region on right side of article show page on large screens
 - [x] Google analytics
+- [ ] Link to destroy emails as fitting

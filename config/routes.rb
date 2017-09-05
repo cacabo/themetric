@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   get 'admins/info', to: 'admins#info', as: 'info'
   get 'admins/emails', to: 'emails#index', as: 'email'
 
-  resources :emails, only: [:create]
+  resources :emails, only: [:create, :destroy]
+
+  resources :referrals, only: [:create, :index, :destroy]
 
   resources :admins, only: [:index, :show, :edit, :update]
 

@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="space-2"></div>
+
+      <!-- email form -->
+      <div class="card">
+        <div class="card-block">
+          <h4 class="special marg-bot-0">Refer a new contributor</h4>
+          <% @referral = Referral.new %>
+          <%= bootstrap_form_for(@referral) do |f| %>
+            <div class="field special-label marg-bot-1">
+              <%= f.email_field :email, class: 'form-control', required: true %>
+            </div>
+            <%= f.submit "Add a new referral", class: 'btn-black' %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="space-2"></div>
+      <h2 class="special marg-bot-1">
+        Listing all referrals provided
+      </h2>
+      <% if @referrals and @referrals.length > 0 %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @referrals.each_with_index do |r, index| %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= r.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>
+          Looks like we don't have any referred emails on file yet.
+        </p>
+      <% end %>
+
+      <div class="space-2"></div>
+      <%= link_to 'Back to home', root_path, class: 'btn-black' %>
+      <div class="space-4"></div>
+    </div>
+  </div>
+</div>

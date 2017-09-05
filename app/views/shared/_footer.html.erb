@@ -58,6 +58,8 @@
         </li>
       </ul>
       <!-- close list of icons -->
+
+      <!-- email form -->
       <% @email = Email.new %>
       <%= form_with(model: @email) do |f| %>
         <%= f.text_field :email, class: 'form-control footer-field', required: true %>
