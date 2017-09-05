@@ -17,6 +17,24 @@ footer {
     }
   }
 
+  .form-control.footer-field {
+    background: transparent;
+    border-bottom: 2px solid white !important;
+    color: white !important;
+    font-weight: bold;
+    max-width: 24rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
   ul.social {
     margin-left: 0;
     padding-left: 0;

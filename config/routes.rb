@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'articles/tags/:tag', to: 'articles#index', as: 'tag'
   get 'articles/region/:region', to: 'articles#index', as: 'region'
   get 'admins/info', to: 'admins#info', as: 'info'
+  get 'admins/emails', to: 'emails#index', as: 'email'
+
+  resources :emails, only: [:create]
 
   resources :admins, only: [:index, :show, :edit, :update]
 

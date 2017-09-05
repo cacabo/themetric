@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="space-2"></div>
+      <h2 class="special marg-bot-1">
+        Listing all emails provided
+      </h2>
+      <% if @emails and @emails.length > 0 %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @emails.each_with_index do |e, index| %>
+              <tr>
+                <td><%= index %></td>
+                <td><%= e.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>
+          Looks like we don't have any emails on file yet.
+        </p>
+      <% end %>
+
+      <div class="space-2"></div>
+      <%= link_to 'Back to home', root_path, class: 'btn-black' %>
+      <div class="space-4"></div>
+    </div>
+  </div>
+</div>
