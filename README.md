@@ -46,8 +46,8 @@
   - [x] Social media links
   - [x] Profile picture
 - [x] User roles? Who can edit what?
-- [ ] Restrictions on who can make accounts / who can be admins?
-  - [ ] Have a referred controller where super admins can add emails, and in order to register one's email must be referred.
+- [x] Restrictions on who can make accounts / who can be admins?
+  - [x] Have a referred controller where super admins can add emails, and in order to register one's email must be referred.
   - [ ] Allow super admins to delete accounts
 - [x] Update edit form, make sure it works with names, bios
 - [x] Admin can edit admin show page if on their own
@@ -69,13 +69,13 @@
 - [ ] Article HTML / MD real-time interpretation / previewing?
 - [ ] Article image previewing
 - [ ] Admin image previewing
-- [x] Fixed nav only on scroll up, hide on scroll down?
-- [x] Responsive column counts for articles
-- [x] More columns on articles index page
 - [ ] Play around with title and subtitle overlay on article preview
 - [ ] Play around with colors
   - [ ] Color highlighting on contact page?
-  - [ ] Highlight color
+  - [ ] Text highlight color
 - [x] Articles from same region on right side of article show page on large screens
 - [x] Google analytics
 - [x] Link to destroy emails as fitting
+- [x] Fixed nav only on scroll up, hide on scroll down?
+- [x] Responsive column counts for articles
+- [x] More columns on articles index page
