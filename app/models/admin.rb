@@ -18,40 +18,50 @@ class Admin < ApplicationRecord
     validate :website_link
     validate :instagram_link
     validate :linkedin_link
+    validate :referred
+
+    def referred
+      unless Admin.count == 0
+        referral = Referral.where(email: email)
+        unless referral and referral.length > 0
+          errors.add(:email, "must be referred by a super admin")
+        end
+      end
+    end
 
     def facebook_link
       unless facebook.nil? or facebook.length == 0
-        errors.add(:facebook, "Invalid URL") unless facebook.start_with? "https://facebook.com/"
+        errors.add(:facebook, "invalid URL") unless facebook.start_with? "https://facebook.com/"
       end
     end
 
     def twitter_link
       unless twitter.nil? or twitter.length == 0
-        errors.add(:twitter, "Invalid URL") unless twitter.start_with? "https://twitter.com/"
+        errors.add(:twitter, "invalid URL") unless twitter.start_with? "https://twitter.com/"
       end
     end
 
     def github_link
       unless github.nil? or github.length == 0
-        errors.add(:github, "Invalid URL") unless github.start_with? "https://github.com/"
+        errors.add(:github, "invalid URL") unless github.start_with? "https://github.com/"
       end
     end
 
     def website_link
       unless website.nil? or website.length == 0
-        errors.add(:website, "Invalid URL") unless website.start_with? "https://" or website.start_with? "http://"
+        errors.add(:website, "invalid URL") unless website.start_with? "https://" or website.start_with? "http://"
       end
     end
 
     def instagram_link
       unless instagram.nil? or instagram.length == 0
-        errors.add(:instagram, "Invalid URL") unless instagram.start_with? "https://instagram.com/"
+        errors.add(:instagram, "invalid URL") unless instagram.start_with? "https://instagram.com/"
       end
     end
 
     def linkedin_link
       unless linkedin.nil? or linkedin.length == 0
-        errors.add(:linkedin, "Invalid URL") unless linkedin.start_with? "https://linkedin.com/in/"
+        errors.add(:linkedin, "invalid URL") unless linkedin.start_with? "https://linkedin.com/in/"
       end
     end
 end

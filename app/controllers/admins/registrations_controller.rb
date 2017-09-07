@@ -8,21 +8,21 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    puts 'PARAMS COMING:'
-    puts ''
-    puts params[:admin]
-
-    unless Admin.count == 0
-      referrals = Referral.where(email: params[:admin.email])
-      unless referrals and referrals.length > 0
-        flash[:alert] = "Your email is not referred: contact a super admin"
-        redirect_to new_admin_registration_path
-      end
-    end
-
-    super
-  end
+  # def create
+  #   puts 'PARAMS COMING:'
+  #   puts ''
+  #   puts params[:admin]
+  #
+  #   unless Admin.count == 0
+  #     referrals = Referral.where(email: params[:admin.email])
+  #     unless referrals and referrals.length > 0
+  #       flash[:alert] = "Your email is not referred: contact a super admin"
+  #       redirect_to new_admin_registration_path
+  #     end
+  #   end
+  #
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
