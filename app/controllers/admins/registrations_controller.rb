@@ -9,13 +9,18 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    unless params[:id] == 1
-      referrals = Referral.where(email: params[:email])
+    puts 'PARAMS COMING:'
+    puts ''
+    puts params[:admin]
+
+    unless Admin.count == 0
+      referrals = Referral.where(email: params[:admin.email])
       unless referrals and referrals.length > 0
         flash[:alert] = "Your email is not referred: contact a super admin"
         redirect_to new_admin_registration_path
       end
     end
+
     super
   end
 
@@ -47,12 +52,12 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :bio])
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :bio, :role])
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio])
+  #   devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :role])
   # end
 
   # The path used after sign up.

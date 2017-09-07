@@ -9,7 +9,7 @@ class Admin < ApplicationRecord
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
     validates :name, presence: true, length: { minimum: 4 }
-    validates :role, presence: true, length: { minimum: 10 }
+    validates :role, presence: true, length: { minimum: 8 }
     validates :bio, presence: true, length: { minimum: 20 }
 
     validate :facebook_link
