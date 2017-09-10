@@ -90,7 +90,7 @@
         </div>
 
         <% if admin_signed_in? %>
-        <% if @article.admin.nil? or current_admin.id == @article.admin.id %>
+        <% if @article.admin.nil? or (current_admin.id == @article.admin.id) or (current_admin and current_admin.super) %>
         <div class="admin-buttons">
           <% if current_admin and (current_admin.super or current_admin.id == 1) %>
             <% if @article.published %>

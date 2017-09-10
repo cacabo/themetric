@@ -17,6 +17,7 @@
 - [x] Email list in footer / popup
 - [x] Tags only when article open
 - [ ] Search for articles by name
+  - [ ] Left part of navbar, click to expand
 
 ##### Views
 - [x] Pretty forms
@@ -82,3 +83,10 @@
 - [ ] Try to make markdown less necessary (replace with editor?)
 - [ ] Columns on admin show
 - [ ] Sample bio stuff
+- [ ] Links to social media in navbar
+- [ ] About --> meet the team, show profiles
+- [ ] Admin can delete their own article if it is not published
+- [ ] Article views --> most viewed articles on right?
+- [ ] Month in review on the right?
+- [ ] Default profile picture thing
+- [ ] Colors on about gradient

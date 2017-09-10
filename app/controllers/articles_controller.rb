@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
-  before_action :correct_admin, only: [:edit, :update, :destroy]
+  before_action :super_or_correct_admin, only: [:edit, :update, :destroy]
   before_action :is_published, only: [:show]
   before_action :super_admin, only: [:publish, :unpublish]
 
@@ -183,6 +183,13 @@ class ArticlesController < ApplicationController
 
   def super_admin
     unless current_admin and (current_admin.super or current_admin.id == 1)
+      flash[:alert] = "You must be a super admin to perform this"
+      redirect_to(root_url)
+    end
+  end
+
+  def super_or_correct_admin
+    unless current_admin and ((current_admin.super or current_admin.id == 1) or (Article.friendly.find(params[:id]).admin == current_admin))
       flash[:alert] = "You must be a super admin to perform this"
       redirect_to(root_url)
     end

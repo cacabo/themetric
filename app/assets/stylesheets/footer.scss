@@ -1,4 +1,13 @@
-$blue: #0275d8;
+$color: #47b4ff;
+$darker: #752bff;
+
+#footer {
+  background: $color;
+  background: -webkit-linear-gradient(left top, $color, $darker);
+  background: -o-linear-gradient(bottom right, $color, $darker);
+  background: -moz-linear-gradient(bottom right, $color, $darker);
+  background: linear-gradient(to bottom right, $color, $darker);
+}
 
 footer {
   ul.navigation {
