@@ -57,7 +57,7 @@
               <% end %>
               <%= link_to @author do %>
                 <p>
-                  <strong><%= @author.name %></strong>
+                  <strong style="font-size: 1.2rem"><%= @author.name %></strong>
                   <br>
                   <i><%= @author.role %></i>
                 </p>
@@ -66,6 +66,7 @@
           <% end %>
 
           <ul class="article-social">
+            <p class="inline special text-muted" style="font-size: 1.2rem">Share &nbsp;</p>
             <li>
               <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-lg"><span class="share-circle"></span></i></a>
             </li>

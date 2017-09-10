@@ -79,3 +79,6 @@
 - [x] Fixed nav only on scroll up, hide on scroll down?
 - [x] Responsive column counts for articles
 - [x] More columns on articles index page
+- [ ] Try to make markdown less necessary (replace with editor?)
+- [ ] Columns on admin show
+- [ ] Sample bio stuff

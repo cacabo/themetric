@@ -88,11 +88,11 @@
                 </ul>
 
                 <div class="admin-buttons">
-                  <% if current_admin == @admin %>
+                  <% if current_admin and (current_admin == @admin) %>
                     <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-sm btn-primary marg-bot-05' %>
                   <% end %>
 
-                  <% if current_admin.super or current_admin.id == 1 %>
+                  <% if current_admin and (current_admin.super or current_admin.id == 1) %>
                     <% if not @admin.super %>
                       <%= link_to 'Make super admin', super_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
                     <% end %>
