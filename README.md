@@ -54,6 +54,7 @@
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
 - [x] Admin information page
+- [ ] Complete meta tags
 
 ##### Article configuration
 - [x] Add locations to posts / region

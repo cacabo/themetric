@@ -436,22 +436,42 @@ pre[class*="language-"] {
   display: inline-block;
 }
 /* line 4, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.4rem;
+  width: 100%;
+  background: #00aeff;
+  background: -webkit-gradient(linear, left top, right bottom, from(#00aeff), to(#752bff));
+  background: linear-gradient(to bottom right, #00aeff, #752bff);
+}
+
+/* line 18, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+#footer {
+  background: #00aeff;
+  background: -webkit-gradient(linear, left top, right bottom, from(#00aeff), to(#752bff));
+  background: linear-gradient(to bottom right, #00aeff, #752bff);
+}
+
+/* line 27, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.navigation {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
-/* line 9, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 32, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.navigation li a {
   font-size: 1.25rem;
   color: white;
   text-decoration: none;
 }
-/* line 14, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 37, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.navigation li a:hover {
   color: white;
 }
-/* line 20, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 43, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer .form-control.footer-field {
   background: transparent;
   border-bottom: 2px solid white !important;
@@ -462,30 +482,30 @@ footer .form-control.footer-field {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 29, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 52, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer .form-control.footer-field:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-/* line 33, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 56, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer .form-control.footer-field:focus {
   background: rgba(255, 255, 255, 0.1);
 }
-/* line 38, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 61, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social {
   margin-left: 0;
   padding-left: 0;
   list-style: none;
 }
-/* line 43, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 66, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social li {
   margin-right: 1rem;
   display: inline;
 }
-/* line 47, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 70, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social li a {
   color: white;
 }
-/* line 50, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
+/* line 73, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/footer.scss */
 footer ul.social li a:hover {
   color: white;
 }
