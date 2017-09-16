@@ -6,7 +6,7 @@
 <% end %>
 
 <!-- article title and subtitle -->
-<div class="card-block">
+<div class="card-block shade-1 hover">
   <% unless article.published %>
     <div class="light-gray pad-1 special text-muted marg-bot-1">
       ARTICLE NOT PUBLISHED
@@ -15,18 +15,6 @@
   <h1 class="sans title smaller"><%= article.title %></h1>
   <h2 class="subtitle smaller"><%= article.subtitle %></h2>
   <div class="space-0"></div>
-
-  <!-- tags -->
-  <!-- <% if article.tag_list and article.tag_list.length > 0 %>
-    <p class="inline tags">
-      <% article.tag_list.each do |t| %>
-        <%= link_to tag_path(t) do %>
-          <span class="tag"><%= t %></span>
-        <% end %>
-      <% end %>
-    </p>
-  <% end %> -->
-  <!-- closing if article.tag_list logic -->
 
   <p class="time sans inline float-right">
     <%= time_ago_in_words(article.created_at) %> ago

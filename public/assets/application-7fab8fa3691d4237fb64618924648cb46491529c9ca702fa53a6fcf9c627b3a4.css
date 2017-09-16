@@ -12186,7 +12186,7 @@ textarea.bigger {
 ** BUTTONS
 */
 /* line 173, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
-.btn-black,
+.btn-white shade-3 hover,
 .btn-white {
   border-radius: 0px;
   background: transparent;
@@ -12202,29 +12202,29 @@ textarea.bigger {
   cursor: pointer;
 }
 /* line 187, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
-.btn-black.btn-big,
+.btn-white shade-3 hover.btn-big,
 .btn-white.btn-big {
   padding: 0.5rem 1rem;
 }
 
 /* line 192, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
-.btn-black {
+.btn-white shade-3 hover {
   color: black;
   border: 2px solid black;
 }
 /* line 196, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
-.btn-black:hover {
+.btn-white shade-3 hover:hover {
   color: white;
   background: black;
 }
 /* line 201, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
-.btn-black.disabled {
+.btn-white shade-3 hover.disabled {
   color: rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(0, 0, 0, 0.4);
   cursor: not-allowed;
 }
 /* line 206, /Users/cameroncabo/Documents/themetric/app/assets/stylesheets/application.scss */
-.btn-black.disabled:hover {
+.btn-white shade-3 hover.disabled:hover {
   color: rgba(0, 0, 0, 0.4);
   background: transparent;
 }

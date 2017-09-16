@@ -1,26 +1,34 @@
 $color: #00aeff;
 $darker: #752bff;
 
-.navbar-brand::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 0.4rem;
-  width: 100%;
-  background: $color;
-  background: -webkit-linear-gradient(left top, $color, $darker);
-  background: -o-linear-gradient(bottom right, $color, $darker);
-  background: -moz-linear-gradient(bottom right, $color, $darker);
-  background: linear-gradient(to bottom right, $color, $darker);
-}
+// .navbar-brand::after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 0.4rem;
+//   width: 100%;
+//   background: $color;
+//   background: -webkit-linear-gradient(left top, $color, $darker);
+//   background: -o-linear-gradient(bottom right, $color, $darker);
+//   background: -moz-linear-gradient(bottom right, $color, $darker);
+//   background: linear-gradient(to bottom right, $color, $darker);
+// }
 
 #footer {
-  background: $color;
-  background: -webkit-linear-gradient(left top, $color, $darker);
-  background: -o-linear-gradient(bottom right, $color, $darker);
-  background: -moz-linear-gradient(bottom right, $color, $darker);
-  background: linear-gradient(to bottom right, $color, $darker);
+  // background: $color;
+  // background: -webkit-linear-gradient(left top, $color, $darker);
+  // background: -o-linear-gradient(bottom right, $color, $darker);
+  // background: -moz-linear-gradient(bottom right, $color, $darker);
+  // background: linear-gradient(to bottom right, $color, $darker);
+  background: black;
+
+  .footer-logo {
+    height: 3rem;
+    margin-bottom: 1rem;
+    width: auto;
+    display: block;
+  }
 }
 
 footer {
