@@ -20,18 +20,18 @@ $blue: #008cff;
 $darker: #752bff;
 $blush: #FF7085;
 $green: #3ecf8e;
+$blue-gray: #aab1b7;
 $light-light-gray: #eff2f4;
 $light-light-light-gray: #f4f9fc;
 
 /*
 ** COLORS
 */
-.blue-underline-hover:hover::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 0.25rem;
-  bottom: 0;
+.text-muted {
+  color: $blue-gray !important;
+}
+
+.blue-background-hover:hover {
   background: $blue;
 }
 
@@ -53,10 +53,6 @@ $light-light-light-gray: #f4f9fc;
 
 .text-light {
   color: rgba(0, 0, 0, 0.4) !important;
-}
-
-.text-muted {
-  color: rgba(0, 0, 0, 0.6) !important;
 }
 
 /*
@@ -191,17 +187,38 @@ textarea.bigger {
 */
 
 .btn-white {
+  cursor: hand;
+  cursor: pointer;
+  border: 0px solid transparent;
   border-radius: 0.5rem;
   color: $blue;
   transition: all 0.2s ease;
   background: white;
   display: inline-block;
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   font-weight: bold;
   font-family: 'Palanquin Dark', sans-serif;
 
   &:hover {
     background: $light-light-light-gray;
+  }
+}
+
+.btn-black {
+  cursor: hand;
+  cursor: pointer;
+  border: 0px solid transparent;
+  border-radius: 0.5rem;
+  color: white;
+  transition: all 0.2s ease;
+  background: #333333;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  font-family: 'Palanquin Dark', sans-serif;
+
+  &:hover {
+    background: #222222;
   }
 }
 
