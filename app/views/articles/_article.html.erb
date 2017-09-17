@@ -1,7 +1,9 @@
 <!-- include the image if there is one -->
 <% if not article.image.nil? and not article.image_file_name.nil? %>
-  <div class="card-img-top">
-    <%= image_tag article.image.url(:medium), class: 'img-fluid full-width' %>
+  <div class="card-img-top background-image" style="background-image: URL(<%= article.image.url(:large) %>)">
+    <h1 class="sans title smaller up">
+      <span class="underline"><%= article.title %></span>
+    </h1>
   </div>
 <% end %>
 
@@ -12,7 +14,9 @@
       ARTICLE NOT PUBLISHED
     </div>
   <% end %>
-  <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
+  <% if article.image.nil? or article.image_file_name.nil? %>
+    <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
+  <% end %>
   <h2 class="subtitle smaller"><%= article.subtitle %></h2>
   <div class="space-0"></div>
 

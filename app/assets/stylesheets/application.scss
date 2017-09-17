@@ -27,6 +27,10 @@ $light-light-light-gray: #f4f9fc;
 /*
 ** COLORS
 */
+.underline {
+  border-bottom: 4px solid $blue;
+}
+
 .text-muted {
   color: $blue-gray !important;
 }

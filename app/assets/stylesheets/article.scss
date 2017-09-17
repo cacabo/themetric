@@ -64,9 +64,19 @@
   font-size: 3rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
+  line-height: 1.5;
 
   &.smaller {
     font-size: 2rem;
+  }
+
+  &.up {
+    padding: 6rem 1rem 1rem 1rem;
+    color: white;
+
+    .underline {
+      background: rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
@@ -214,5 +224,29 @@
     color: rgba(0, 0, 0, 0.6) !important;
     margin-left: 4rem;
     display: inline-block;
+  }
+}
+
+@media screen and (max-width: 864px) {
+  .card-columns {
+    column-count: 2 !important;
+  }
+}
+
+@media screen and (max-device-width: 864px) {
+  .card-columns {
+    column-count: 2 !important;
+  }
+}
+
+@media screen and (max-width: 612px) {
+  .card-columns {
+    column-count: 1 !important;
+  }
+}
+
+@media screen and (max-device-width: 612px) {
+  .card-columns {
+    column-count: 1 !important;
   }
 }

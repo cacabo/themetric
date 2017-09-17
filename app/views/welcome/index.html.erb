@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row pad-0">
-    <div class="col-12 col-md-9 pad-0">
+    <div class="col-12 col-xl-9 pad-0">
       <% if @feature %>
         <%= link_to @feature do %>
           <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
@@ -44,7 +44,7 @@
       <% end %>
     </div>
     <!-- closing left col -->
-    <div class="col-12 col-md-3 pad-top-1 light-gray full-height">
+    <div class="col-12 col-xl-3 pad-top-1 light-gray full-height">
       <% if @global and @global.length > 0 %>
         <p class="text-muted bold full-width marg-bot-1">
           GLOBAL TAKES
