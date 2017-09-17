@@ -16,17 +16,17 @@
           <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="<%=root_path%>">
-                  Home
+                  <span class="nav-hover">Home</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<%= about_path %>">
-                  About
+                  <span class="nav-hover">About</span>
                 </a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="articles-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Articles
+                  <span class="nav-hover">Articles</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="articles-dropdown">
                   <%= link_to 'All articles', articles_path, class: 'dropdown-item' %>
@@ -40,7 +40,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<%= new_contact_path %>">
-                  Contact us
+                  <span class="nav-hover">Contact us</span>
                 </a>
               </li>
               <% if not current_admin.nil? %>

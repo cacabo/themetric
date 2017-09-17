@@ -1,5 +1,23 @@
 $blue: #008cff;
 
+.underline {
+  border-bottom: 4px solid $blue;
+}
+
+.nav-item {
+  .nav-hover {
+    border-bottom: 4px solid transparent;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    .nav-hover {
+      border-bottom: 4px solid $blue;
+    }
+  }
+}
+
 .feature {
   background-color: black;
   padding: 4rem 5% 5% 5%;

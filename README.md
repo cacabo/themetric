@@ -18,6 +18,7 @@
 - [x] Tags only when article open
 - [ ] Search for articles by name
   - [ ] Left part of navbar, click to expand
+- [ ] isOpinionArticle
 
 ##### Views
 - [x] Pretty forms
