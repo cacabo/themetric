@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :referrals, only: [:create, :index, :destroy]
 
-  resources :admins, only: [:index, :show, :edit, :update]
+  resources :admins, only: [:show, :edit, :update]
 
   # Handle 404
   get '404', to: 'welcome#notfound', as: 'notfound'

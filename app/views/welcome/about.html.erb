@@ -9,32 +9,142 @@
   <div class="space-2"></div>
   <div class="row">
     <div class="col-12 col-md-8 offset-md-1 col-lg-6">
-      <h1 class="white pad-1 special marg-bot-1">
+      <h1 class="white pad-1 special marg-bot-1 shade-1">
         We write stories to raise awareness and create impact.
       </h1>
     </div>
     <div class="col-12 col-md-10 offset-md-1 col-lg-8">
-      <p class="white pad-1 marg-bot-1">
+      <p class="white pad-1 marg-bot-1 shade-1">
         The Metric is a student-run organization that publishes domestic policy, foreign policy, and current affairs-related content from students in higher education across the world. We as well write about opportunities and resources to catalyze political action.
       </p>
-      <p class="white pad-1 marg-bot-2">
+      <p class="white pad-1 marg-bot-2 shade-1">
         By conducting a worldwide communications initiative, we aim to better inform our peers in an accessible, appealing manner. We provide a platform for youths to share their views in order to encourage productive discussion and action.
       </p>
     </div>
   </div>
+  <div class="space-1"></div>
 </div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-8">
-      <h1 class="special">
-        Meet the team
-      </h1>
-      <p>
-        We're a driven team of something something and we are passionate for something something. Want to join us? <a href="<%= new_contact_path %>">Send us a message.</a>
-      </p>
-      <div class="space-1"></div>
-      <%= link_to 'See all of our contributors', admins_path, class: 'btn-white shade-3 hover' %>
+
+<!-- admins -->
+<div class="light-light-gray full-height">
+  <div class="space-3"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h1 class="special">
+          Meet the team
+        </h1>
+        <p class="marg-bot-2">
+          We're a driven team of students passionate for progress and political awareness. Want to join us? <a href="<%= new_contact_path %>">Send us a message.</a>
+        </p>
+
+        <div class="row">
+          <% @admins.each do |a| %>
+            <div class="col-12 col-md-6 marg-bot-1">
+              <%= link_to a do %>
+                <div class="card">
+                  <div class="card-block admin">
+                    <% if (not a.image_file_name.nil? and not a.image.nil?) %>
+                      <img class="admin-img" src="<%= a.image.url(:large) %>">
+                    <% else %>
+                      <div class="admin-no-img"></div>
+                    <% end %>
+
+                    <div class="admin-content">
+                      <h3>
+                        <%= a.name %>
+                      </h3>
+
+                      <% if current_admin %>
+                        <% if a.super %>
+                          <p class="bold text-light marg-bot-05">
+                            SUPER ADMIN
+                          </p>
+                        <% else %>
+                          <p class="bold text-light marg-bot-05">
+                            REGULAR ADMIN
+                          </p>
+                        <% end %>
+                      <% end %>
+
+                      <p class="text-muted bold marg-bot-05">
+                        <%= a.role %>
+                      </p>
+                      <ul class="horizontal admin-icons">
+                        <li>
+                          <a href="mailto:<%= a.email %>">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                        </li>
+                        <% if a.facebook and a.facebook.length > 0 %>
+                          <li>
+                            <a href="<%= a.facebook %>">
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.twitter and a.twitter.length > 0 %>
+                          <li>
+                            <a href="<%= a.twitter %>">
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.linkedin and a.linkedin.length > 0 %>
+                          <li>
+                            <a href="<%= a.linkedin %>">
+                              <i class="fa fa-linkedin"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.github and a.github.length > 0 %>
+                          <li>
+                            <a href="<%= a.github %>">
+                              <i class="fa fa-github"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.website and a.website.length > 0 %>
+                          <li>
+                            <a href="<%= a.website %>">
+                              <i class="fa fa-link"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                        <% if a.instagram and a.instagram.length > 0 %>
+                          <li>
+                            <a href="<%= a.instagram %>">
+                              <i class="fa fa-instagram"></i>
+                            </a>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                    <!-- close content -->
+                  </div>
+                  <!-- closr card-body -->
+                </div>
+                <!-- close card -->
+              <% end %>
+              <!-- close link to admin -->
+            </div>
+            <!-- close col -->
+          <% end %>
+          <!-- close loop over admins -->
+        </div>
+        <!-- close row -->
+
+        <div class="space-2"></div>
+        <%= link_to 'Back to home', root_path, class: 'btn-white shade-3 hover' %>
+        <div class="space-2"></div>
+      </div>
+      <!-- close col -->
     </div>
+    <!-- close row -->
   </div>
+  <!-- close container -->
+
   <div class="space-4"></div>
 </div>
+<!-- end admins -->

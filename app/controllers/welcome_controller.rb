@@ -10,6 +10,10 @@ class WelcomeController < ApplicationController
     @region = articles.offset(1)
   end
 
+  def about
+    @admins = Admin.order(created_at: :asc)
+  end
+
   def notfound
   end
 end
