@@ -17,9 +17,7 @@
 
 <%= f.text_field :title, hide_label: true, placeholder: "Title", class: 'title no-border', wrapper: { class: 'marg-bot-0' }, required: true, autofocus: true %>
 <%= f.text_area :subtitle, rows: 1, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
-<!-- <%= f.text_area :text, hide_label: true, placeholder: "Write your article here...", class: 'serif bigger no-border text', required: true %> -->
-
-<%= f.trix_editor :text %>
+<%= f.trix_editor :text, class: 'serif bigger text', required: true %>
 
 <div class="space-1"></div>
 
