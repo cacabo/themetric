@@ -4,10 +4,10 @@ class WelcomeController < ApplicationController
     @feature = articles.limit(1)[0]
     global = articles.offset(1).where(region: 'undefined')
 
-    # FIXME
-    @global = global.limit(4)
-    @more_global = global.offset(4).limit(8)
-    @region = articles.offset(1).where.not(region: 'undefined').limit(8)
+    by_views = articles.order(views: :desc)
+    @popular = by_views.limit(4);
+    @more_opular = by_views.offset(4).limit(8)
+    @region = articles.offset(1)
   end
 
   def notfound

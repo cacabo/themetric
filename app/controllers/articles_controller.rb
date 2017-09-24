@@ -69,6 +69,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.friendly.find(params[:id]) if Article.friendly.exists? params[:id]
+
+    views = @article.views
+    views = 0 if views.nil?
+    @article.views = views + 1
+    @article.save
+
     @previous = nil
     @next = nil
 
