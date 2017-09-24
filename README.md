@@ -40,6 +40,8 @@
 - [x] Add region in more places?
 - [ ] One sentence pitch in footer
 - [ ] Content for about page
+- [ ] Title over image on article show
+- [ ] Highlight color
 
 ##### Admin configuration
 - [x] Admin controller

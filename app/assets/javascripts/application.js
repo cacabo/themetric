@@ -15,6 +15,6 @@
 //= require turbolinks
 //= require tether
 //= require bootstrap-sprockets
-//= require prism
+//= require trix
 //= require cable.js
 //= require_tree ./general

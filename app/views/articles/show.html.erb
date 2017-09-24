@@ -86,7 +86,7 @@
         <div class="space-1"></div>
 
         <div class="article-wrapper">
-          <%= markdown(@article.text) %>
+          <%= @article.text.html_safe %>
         </div>
 
         <% if admin_signed_in? %>

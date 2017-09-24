@@ -64,7 +64,7 @@
   font-size: 3rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.2;
 
   &.smaller {
     font-size: 2rem;
@@ -78,6 +78,10 @@
       background: rgba(0, 0, 0, 0.3);
     }
   }
+}
+
+.background-image .title {
+  line-height: 1.4;
 }
 
 .subtitle {
