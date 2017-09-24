@@ -26,7 +26,9 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="articles-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="nav-hover">Articles</span>
+                  <span class="nav-hover">
+                    Articles
+                  </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="articles-dropdown">
                   <%= link_to 'All articles', articles_path, class: 'dropdown-item' %>
@@ -46,7 +48,9 @@
               <% if not current_admin.nil? %>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Admin
+                    <span class="nav-hover">
+                      Admin
+                    </span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
                     <%= link_to new_article_path, class: 'dropdown-item' do %>
