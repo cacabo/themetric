@@ -86,7 +86,16 @@
         <div class="space-1"></div>
 
         <div class="article-wrapper">
-          <%= @article.text.html_safe %>
+          <% sections = @article.text.split(/\[(.*?)\]/) %>
+          <% sections.each_with_index do |s, index| %>
+            <% if index % 2 == 0 %>
+              <p>
+                <%= s.html_safe %>
+              </p>
+            <% else %>
+              <img src=<%= s.scan(/"([^"]*)"/)[0][0] %> class="full-width img-responsive">
+            <% end %>
+          <% end %>
         </div>
 
         <% if admin_signed_in? %>
