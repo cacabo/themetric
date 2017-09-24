@@ -335,31 +335,33 @@ h1 .small {
     top: 0;
     height: 60vh;
     z-index: -3;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, $blue, rgba(0, 0, 0, 0));
   }
 
   .slice-2 {
     position: absolute;
     width: 100%;
+    opacity: 0.7;
     top: 0vh;
     height: 40vh;
     z-index: -1;
-    background: -webkit-linear-gradient(right top, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 50%);
-    background: -o-linear-gradient(bottom left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 50%);
-    background: -moz-linear-gradient(bottom left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 50%);
-    background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 50%);
+    background: -webkit-linear-gradient(right top, $darker 50%, rgba(0, 0, 0, 0) 50%);
+    background: -o-linear-gradient(bottom left, $darker 50%, rgba(0, 0, 0, 0) 50%);
+    background: -moz-linear-gradient(bottom left, $darker 50%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(to bottom left, $darker 50%, rgba(0, 0, 0, 0) 50%);
   }
 
   .slice-1 {
     position: absolute;
+    opacity: 0.8;
     width: 100%;
     top: 20vh;
     height: 40vh;
     z-index: -2;
-    background: -webkit-linear-gradient(-15deg, #ffffff 50%, rgba(0, 0, 0, 0) 50%);
-    background: -o-linear-gradient(-15deg, #ffffff 50%, rgba(0, 0, 0, 0) 50%);
-    background: -moz-linear-gradient(-15deg, #ffffff 50%, rgba(0, 0, 0, 0) 50%);
-    background: linear-gradient(-15deg, #ffffff 50%, rgba(0, 0, 0, 0) 50%);
+    background: -webkit-linear-gradient(-15deg, #ffffff 50%, $color 50%);
+    background: -o-linear-gradient(-15deg, #ffffff 50%, $color 50%);
+    background: -moz-linear-gradient(-15deg, #ffffff 50%, $color 50%);
+    background: linear-gradient(-15deg, #ffffff 50%, $color 50%);
   }
 
   .dots {

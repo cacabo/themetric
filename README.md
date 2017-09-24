@@ -19,6 +19,7 @@
 - [ ] Search for articles by name
   - [ ] Left part of navbar, click to expand
 - [ ] isOpinionArticle
+- [ ] Grey column widths on mid-sized screens  (to wide rn)
 
 ##### Views
 - [x] Pretty forms
@@ -38,10 +39,12 @@
 - [x] Fix popup
   - [x] Also fix popup javascript stuff
 - [x] Add region in more places?
-- [ ] One sentence pitch in footer
-- [ ] Content for about page
+- [x] One sentence pitch in footer
+- [x] Content for about page
+- [ ] Join our team section
 - [ ] Title over image on article show
 - [ ] Highlight color
+- [ ] Favicon
 
 ##### Admin configuration
 - [x] Admin controller
