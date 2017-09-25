@@ -17,6 +17,7 @@
 @import "bootstrap"; // general formatting
 $color: #00aeff;
 $blue: #008cff;
+$dark-blue: #6f3fff;
 $darker: #752bff;
 $blush: #FF7085;
 $green: #3ecf8e;
@@ -29,6 +30,13 @@ $light-light-light-gray: #f4f9fc;
 */
 .underline {
   border-bottom: 4px solid $blue;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom: 4px solid $dark-blue;
+  }
 }
 
 .text-muted {

@@ -1,3 +1,6 @@
+$blue: #008cff;
+$dark-blue: #6f3fff;
+
 .article {
   transition: all 0.2s ease !important;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
@@ -8,6 +11,10 @@
 
   &:hover {
     box-shadow: 0px 1.5px 2.5px rgba(0, 0, 0, 0.2);
+
+    .underline {
+      border-bottom: 4px solid $dark-blue;
+    }
   }
 }
 

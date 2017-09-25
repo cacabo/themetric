@@ -96,3 +96,5 @@
 - [ ] Default profile picture thing
 - [x] Colors on about gradient
 - [ ] Add location to admin
+- [ ] Scroll to load more images?
+- [ ] Include the typeform
