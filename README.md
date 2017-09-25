@@ -3,8 +3,6 @@
 ### Todo
 
 ##### General
-- [ ] SendGrid configuration
-- [ ] Link with domain name
 - [x] Name transfer (to whatever we decide)
 - [x] Configure AWS to a new bucket
 - [ ] `Friendly_id`
@@ -17,10 +15,14 @@
 - [x] Email list in footer / popup
 - [x] Tags only when article open
 - [ ] Search for articles by name
-  - [ ] Left part of navbar, click to expand
 - [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
 - [ ] Grey column widths on mid-sized screens  (to wide rn)
 - [ ] Clean up JS code for fixed stuff on article show page?
+- [ ] Test share buttons when published
+- [ ] SendGrid configuration for contact page
+- [ ] SendGrid for Devise?
+- [ ] Link with domain name
+- [ ] SSL certificate
 
 ##### Views
 - [x] Pretty forms
@@ -33,7 +35,6 @@
   - [x] Region information on article show page
 - [x] Front page?
   - [x] Better categorization and section titles on front page
-  - [x] Get feedback on this (@team)
 - [x] Clean up admin show pages
   - [x] Maybe export articles to their own cards?
 - [x] Admin index pages
@@ -42,9 +43,8 @@
 - [x] Add region in more places?
 - [x] One sentence pitch in footer
 - [x] Content for about page
-- [ ] Join our team section
+- [x] Highlight color
 - [ ] Title over image on article show
-- [ ] Highlight color
 - [ ] Favicon
 
 ##### Admin configuration
@@ -55,13 +55,12 @@
   - [x] Profile picture
 - [x] User roles? Who can edit what?
 - [x] Restrictions on who can make accounts / who can be admins?
-  - [x] Have a referred controller where super admins can add emails, and in order to register one's email must be referred.
-  - [ ] Allow super admins to delete accounts
 - [x] Update edit form, make sure it works with names, bios
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
 - [x] Admin information page
 - [ ] Complete meta tags
+- [ ] Allow super admins to delete accounts
 
 ##### Article configuration
 - [x] Add locations to posts / region
@@ -74,17 +73,14 @@
   - [x] Mobile / small screen
 
 ##### Details
-- [ ] Make navbar more unique?
-- [ ] Article HTML / MD real-time interpretation / previewing?
-- [ ] Article image previewing
-- [ ] Admin image previewing
-- [ ] Play around with title and subtitle overlay on article preview
+- [x] Play around with title and subtitle overlay on article preview
 - [x] Articles from same region on right side of article show page on large screens
 - [x] Google analytics
 - [x] Link to destroy emails as fitting
 - [x] Fixed nav only on scroll up, hide on scroll down?
 - [x] Responsive column counts for articles
 - [x] More columns on articles index page
+- [x] Colors on about gradient
 - [x] Try to make markdown less necessary (replace with editor?)
 - [ ] Columns on admin show
 - [ ] Sample bio stuff
@@ -94,8 +90,8 @@
 - [ ] Admin can delete their own article if it is not published
 - [ ] Article views --> most viewed articles on right?
 - [ ] Default profile picture thing
-- [x] Colors on about gradient
 - [ ] Add location to admin
 - [ ] Scroll to load more images?
 - [ ] Include the typeform
 - [ ] Title rise on hover for card?
+- [ ] Better article recommendations

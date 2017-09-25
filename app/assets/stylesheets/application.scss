@@ -28,6 +28,16 @@ $light-light-light-gray: #f4f9fc;
 /*
 ** COLORS
 */
+::selection {
+  background: $blue !important;
+  color: white;
+}
+
+::-moz-selection {
+  background: $blue !important;
+  color: white;
+}
+
 a {
   color: $blue;
 
