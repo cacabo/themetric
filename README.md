@@ -18,9 +18,9 @@
 - [x] Tags only when article open
 - [ ] Search for articles by name
   - [ ] Left part of navbar, click to expand
-- [ ] topics (economics and finance, security, politics, science and innovation, culture, opinion)
-- [ ]
+- [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
 - [ ] Grey column widths on mid-sized screens  (to wide rn)
+- [ ] Clean up JS code for fixed stuff on article show page?
 
 ##### Views
 - [x] Pretty forms
@@ -98,3 +98,4 @@
 - [ ] Add location to admin
 - [ ] Scroll to load more images?
 - [ ] Include the typeform
+- [ ] Title rise on hover for card?

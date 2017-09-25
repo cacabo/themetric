@@ -2,7 +2,7 @@
 
 <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
 
-<%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
+<%= f.file_field :image, label: 'Cover image: ', class: 'marg-left-1 marg-bot-1' %>
 
 <% if @article.errors.any? %>
 <div id="error_explanation">

@@ -28,6 +28,20 @@ $light-light-light-gray: #f4f9fc;
 /*
 ** COLORS
 */
+a {
+  color: $blue;
+
+  &:visited {
+    color: $blue;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-blue;
+  }
+}
+
 .underline {
   border-bottom: 4px solid $blue;
   transition: all 0.2s ease;
