@@ -88,12 +88,11 @@
         <div class="article-wrapper">
           <% sections = @article.text.split(/\[(.*?)\]/) %>
           <% sections.each_with_index do |s, index| %>
-            <% if index % 2 == 0 %>
-              <p>
-                <%= s.html_safe %>
-              </p>
+            <% if s.index '[' %>
+              <% link = s.scan(/"([^"]*)"/)[0][0] %>
+              <img src="<%= link %>" class="full-width img-responsive">
             <% else %>
-              <img src=<%= s.scan(/"([^"]*)"/)[0][0] %> class="full-width img-responsive">
+              <%= s.html_safe %>
             <% end %>
           <% end %>
         </div>

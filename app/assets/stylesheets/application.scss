@@ -190,18 +190,31 @@ textarea.bigger {
 ** BUTTONS
 */
 
+.btn-blue,
 .btn-white {
   cursor: hand;
   cursor: pointer;
   border: 0px solid transparent;
   border-radius: 0rem;
-  color: $blue;
   transition: all 0.2s ease;
-  background: white;
   display: inline-block;
   padding: 0.5rem 0.75rem;
   font-weight: bold;
   font-family: 'Palanquin Dark', sans-serif;
+}
+
+.btn-blue {
+  color: white;
+  background: $blue;
+
+  &:hover {
+    background: $color;
+  }
+}
+
+.btn-white {
+  color: $blue;
+  background: white;
 
   &:hover {
     background: $light-light-light-gray;

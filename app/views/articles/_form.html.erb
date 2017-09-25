@@ -1,6 +1,9 @@
 <div class="space-1"></div>
 
 <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
+
+<%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
+
 <% if @article.errors.any? %>
 <div id="error_explanation">
   <h2>
@@ -31,9 +34,11 @@
 
 <div class="space-1"></div>
 
-<%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
 <%= f.hidden_field :published, value: (true and @article.published), class: 'no-display' %>
-<%= f.submit "Submit Article", class: "btn-white shade-3 hover btn-big disabled", id: "submit" %>
+<p class="text-muted">
+  To display images, surround a link to the image in [square brackets]. If using a local file, upload it to some external service with a stable link.
+</p>
+<%= f.submit "Submit Article", class: "btn-blue shade-3 hover btn-big disabled", id: "submit" %>
 <% end %>
 
 <script type="text/javascript">

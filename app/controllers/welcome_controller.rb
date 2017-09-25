@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
-    @admins = Admin.order(created_at: :asc)
+    @admins = Admin.order(name: :asc)
   end
 
   def notfound

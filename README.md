@@ -18,7 +18,8 @@
 - [x] Tags only when article open
 - [ ] Search for articles by name
   - [ ] Left part of navbar, click to expand
-- [ ] isOpinionArticle
+- [ ] topics (economics and finance, security, politics, science and innovation, culture, opinion)
+- [ ]
 - [ ] Grey column widths on mid-sized screens  (to wide rn)
 
 ##### Views
@@ -78,22 +79,20 @@
 - [ ] Article image previewing
 - [ ] Admin image previewing
 - [ ] Play around with title and subtitle overlay on article preview
-- [ ] Play around with colors
-  - [ ] Color highlighting on contact page?
-  - [ ] Text highlight color
 - [x] Articles from same region on right side of article show page on large screens
 - [x] Google analytics
 - [x] Link to destroy emails as fitting
 - [x] Fixed nav only on scroll up, hide on scroll down?
 - [x] Responsive column counts for articles
 - [x] More columns on articles index page
-- [ ] Try to make markdown less necessary (replace with editor?)
+- [x] Try to make markdown less necessary (replace with editor?)
 - [ ] Columns on admin show
 - [ ] Sample bio stuff
+- [ ] Recommendations for photo
 - [ ] Links to social media in navbar
 - [ ] About --> meet the team, show profiles
 - [ ] Admin can delete their own article if it is not published
 - [ ] Article views --> most viewed articles on right?
-- [ ] Month in review on the right?
 - [ ] Default profile picture thing
-- [ ] Colors on about gradient
+- [x] Colors on about gradient
+- [ ] Add location to admin
