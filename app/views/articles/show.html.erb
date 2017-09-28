@@ -88,7 +88,7 @@
         <div class="article-wrapper">
           <% sections = @article.text.split(/\[(.*?)\]/) %>
           <% sections.each_with_index do |s, index| %>
-            <% if s.index '[' %>
+            <% if index % 2 != 0 %>
               <% link = s.scan(/"([^"]*)"/)[0][0] %>
               <img src="<%= link %>" class="full-width img-responsive">
             <% else %>
@@ -99,6 +99,7 @@
 
         <% if admin_signed_in? %>
         <% if @article.admin.nil? or (current_admin.id == @article.admin.id) or (current_admin and current_admin.super) %>
+        <div class="space-1"></div>
         <div class="admin-buttons">
           <% if current_admin and (current_admin.super or current_admin.id == 1) %>
             <% if @article.published %>
