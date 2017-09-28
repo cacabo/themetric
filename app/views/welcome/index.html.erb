@@ -49,23 +49,29 @@
         <p class="text-muted bold full-width marg-bot-1">
           MOST READ
         </p>
-        <% @popular.each do |article| %>
-          <%= link_to article do %>
-            <!-- article image -->
-            <% if not article.image.nil? and not article.image_file_name.nil? %>
-              <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
-            <% end %>
+        <div class="row">
+          <% @popular.each do |article| %>
+            <div class="col-12 col-md-6 col-xl-12">
+              <%= link_to article do %>
+                <!-- article image -->
+                <% if not article.image.nil? and not article.image_file_name.nil? %>
+                  <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
+                <% end %>
 
-            <!-- article title and subtitle -->
-            <h1 class="sans title smaller"><%= article.title %></h1>
-            <h2 class="subtitle smaller"><%= article.subtitle %></h2>
-            <% unless article == @popular.last %>
-              <div class="line-1"></div>
-            <% end %>
+                <!-- article title and subtitle -->
+                <h1 class="sans title smaller"><%= article.title %></h1>
+                <h2 class="subtitle smaller"><%= article.subtitle %></h2>
+                <% unless article == @popular.last %>
+                  <div class="line-1"></div>
+                <% end %>
+              <% end %>
+              <!-- closing link to article -->
+            </div>
+            <!-- closing col -->
           <% end %>
-          <!-- closing link to article -->
-        <% end %>
-        <!-- close looping over global -->
+          <!-- close looping over global -->
+        </div>
+        <!-- closing row -->
       <% end %>
       <!-- close checking for global -->
 
