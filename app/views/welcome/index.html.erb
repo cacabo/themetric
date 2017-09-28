@@ -81,17 +81,22 @@
         <p class="full-width bold text-muted">
           READ MORE
         </p>
-
-        <% @more_popular.each do |article| %>
-          <%= link_to article do %>
-            <h3 class="bold">
-              <%= article.title %>
-            </h3>
-            <% unless article == @more_popular.last %>
-              <div class="line-1"></div>
-            <% end %>
+        <div class="row">
+          <% @more_popular.each do |article| %>
+            <div class="col-12 col-md-6 col-xl-12">
+              <%= link_to article do %>
+                <h3 class="bold">
+                  <%= article.title %>
+                </h3>
+                <% unless article == @more_popular.last %>
+                  <div class="line-1"></div>
+                <% end %>
+              <% end %>
+            </div>
+            <!-- closing col -->
           <% end %>
-        <% end %>
+        </div>
+        <!-- closing row -->
       <% end %>
 
       <div class="space-2"></div>
