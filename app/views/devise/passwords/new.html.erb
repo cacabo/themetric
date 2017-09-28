@@ -2,24 +2,36 @@
   <title>The Metric | New Password</title>
 </head>
 
-<div class="container marg-top-2 marg-bot-2">
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <h2>Forgot your password?</h2>
+<div class="light-light-gray full-height">
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="white pad-2 shade-1 hover">
+          <p class="text-muted caps bold marg-bot-1">Forgotten password</p>
 
-      <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
+          <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
 
-      <div class="field special-label">
-        <%= f.email_field :email, autofocus: true %>
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <div class="actions">
+            <%= f.submit "Send reset instructions", class: 'btn-blue shade-3 hover marg-bot-1' %>
+          </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
-
-      <div class="actions">
-        <%= f.submit "Send me reset password instructions" %>
-      </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
     </div>
   </div>
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
 </div>

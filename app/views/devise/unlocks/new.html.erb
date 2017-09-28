@@ -2,25 +2,37 @@
   <title>The Metric | Unlock Instructions</title>
 </head>
 
-<div class="container marg-top-2 marg-bot-2">
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <h2>Resend unlock instructions</h2>
+<div class="light-light-gray full-height">
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="white pad-2 shade-1 hover">
+          <p class="text-muted bold caps marg-bot-1">Resend unlock instructions</p>
 
-      <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
+          <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
 
-      <div class="field  special-label">
-        <%= f.label :email %><br/>
-        <%= f.email_field :email, autofocus: true %>
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <div class="actions">
+            <%= f.submit "Resend unlock instructions", class: 'btn-blue' %>
+          </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
-
-      <div class="actions">
-        <%= f.submit "Resend unlock instructions" %>
-      </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
     </div>
   </div>
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
 </div>

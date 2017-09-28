@@ -2,53 +2,71 @@
   <title>The Metric | New Account</title>
 </head>
 
-<div class="container marg-top-2 marg-bot-2">
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="light-light-gray full-height">
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="white pad-2 shade-1 hover">
+          <p class="text-muted marg-bot-1 bold caps">Edit <%= resource_name.to_s.humanize %></p>
 
-      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
+          <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
 
-      <div class="field special-label">
-        <%= f.email_field :email, autofocus: true %>
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for:
+            <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="field special-label marg-bot-1">
+            <i>(Leave blank if you don't want to change it)</i><br/>
+            <%= f.password_field :password, autocomplete: "off" %>
+            <% if @minimum_password_length %>
+            <br/>
+            <em><%= @minimum_password_length %>
+              characters minimum</em>
+            <% end %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <i>(we need your current password to confirm your changes)</i><br/>
+            <%= f.password_field :current_password, autocomplete: "off" %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <%= button_tag(type: 'submit', class: "btn-blue") do %>
+          Update account
+          <% end %>
+          <% end %>
+
+          <p class="text-muted bold caps marg-bot-1">CANCEL ACCOUNT</p>
+
+          <p>Unhappy?
+            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+          <%= link_to "Back", :back %>
+        </div>
       </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for:
-        <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <div class="field special-label">
-        <i>(Leave blank if you don't want to change it)</i><br/>
-        <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-        <br/>
-        <em><%= @minimum_password_length %>
-          characters minimum</em>
-        <% end %>
-      </div>
-
-      <div class="field special-label">
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="field special-label">
-        <i>(we need your current password to confirm your changes)</i><br/>
-        <%= f.password_field :current_password, autocomplete: "off" %>
-      </div>
-
-      <%= button_tag(type: 'submit', class: "btn btn-secondary marg-top-25") do %>
-      Update account
-      <% end %>
-      <% end %>
-
-      <h3>Cancel my account</h3>
-
-      <p>Unhappy?
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
     </div>
   </div>
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
 </div>

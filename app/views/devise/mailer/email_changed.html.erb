@@ -2,18 +2,27 @@
   <title>The Metric | Change Email</title>
 </head>
 
-<div class="container marg-top-2 marg-bot-2">
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <h2>Hello
-        <%= @email %>!</h2>
-      <% if @resource.try(:unconfirmed_email?) %>
-      <p>We're contacting you to notify you that your email is being changed to
-        <%= @resource.unconfirmed_email %>.</p>
-    <% else %>
-      <p>We're contacting you to notify you that your email has been changed to
-        <%= @resource.email %>.</p>
-      <% end %>
+<div class="light-light-gray full-height">
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="white pad-2 shade-1 hover">
+          <p class="text-muted caps marg-bot-1">Hello <%= @email %>!</p>
+          <% if @resource.try(:unconfirmed_email?) %>
+            <p>
+              We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.
+            </p>
+          <% else %>
+            <p>
+              We're contacting you to notify you that your email has been changed to <%= @resource.email %>.
+            </p>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
 </div>
