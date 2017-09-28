@@ -2,32 +2,45 @@
   <title>The Metric | Log In</title>
 </head>
 
-<div class="container marg-top-2 marg-bot-2">
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <h2>Log in</h2>
-      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field special-label">
-        <%= f.email_field :email, label_class: 'hasVal active', autofocus: true, required: true %>
+<div class="light-light-gray full-height">
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="white pad-2 shade-1 hover">
+          <p class="text-muted bold marg-bot-1">ADMIN SIGN IN</p>
+
+          <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <%= f.email_field :email, label_class: 'hasVal active', autofocus: true, required: true %>
+          </div>
+
+          <div class="space-05"></div>
+
+          <div class="field special-label marg-bot-1">
+            <%= f.password_field :password, autocomplete: "off", required: true %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+          <div class="field marg-bot-1">
+            <%= f.check_box :remember_me %>
+          </div>
+          <% end -%>
+
+          <%= button_tag(type: 'submit', class: "btn-blue shade-3 hover") do %>
+          Log in
+          <% end %>
+          <% end %>
+
+          <div class="space-1"></div>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
-
-      <div class="field special-label marg-bot-1">
-        <%= f.password_field :password, autocomplete: "off", required: true %>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
-      <div class="field marg-bot-1">
-        <%= f.check_box :remember_me %>
-      </div>
-      <% end -%>
-
-      <%= button_tag(type: 'submit', class: "btn-white shade-3 hover") do %>
-      Log in
-      <% end %>
-      <% end %>
-
-      <div class="space-1"></div>
-      <%= render "devise/shared/links" %>
     </div>
   </div>
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
 </div>

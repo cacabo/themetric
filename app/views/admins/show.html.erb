@@ -7,8 +7,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          <div class="white pad-1 border">
-            <div class="admin">
+          <div class="white">
+            <div class="admin pad-1">
               <% if (not @admin.image_file_name.nil? and not @admin.image.nil?) %>
                 <img class="admin-img big" src="<%= @admin.image.url(:medium) %>" />
               <% end %>
@@ -89,7 +89,7 @@
 
                 <div class="admin-buttons">
                   <% if current_admin and (current_admin == @admin) %>
-                    <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-sm btn-primary marg-bot-05' %>
+                    <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
                   <% end %>
 
                   <% if current_admin and (current_admin.super or current_admin.id == 1) %>
@@ -127,7 +127,7 @@
           <% end %>
 
           <div class="space-2"></div>
-          <%= link_to 'Back to all admins', admins_path, class: 'btn-white shade-3 hover' %>
+          <%= link_to 'More about us', about_path, class: 'btn-white shade-3 hover' %>
           <div class="space-2"></div>
         </div>
       </div>

@@ -82,7 +82,6 @@
 - [x] More columns on articles index page
 - [x] Colors on about gradient
 - [x] Try to make markdown less necessary (replace with editor?)
-- [ ] Columns on admin show
 - [ ] Sample bio stuff
 - [ ] Recommendations for photo
 - [ ] Links to social media in navbar
