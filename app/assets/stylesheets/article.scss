@@ -1,5 +1,6 @@
 $blue: #008cff;
 $dark-blue: #6f3fff;
+$light-light-gray: #eff2f4;
 
 .article {
   transition: all 0.2s ease !important;
@@ -234,6 +235,16 @@ $dark-blue: #6f3fff;
     border-radius: 50%;
     display: inline-block;
     position: absolute;
+  }
+
+  .no-img {
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden!important;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    background: $light-light-gray;
   }
 
   p {

@@ -42,7 +42,7 @@
           <% @admins.each do |a| %>
             <div class="col-12 col-md-6 marg-bot-1">
               <%= link_to a do %>
-                <div class="card">
+                <div class="card admin-card">
                   <div class="card-block admin">
                     <% if (not a.image_file_name.nil? and not a.image.nil?) %>
                       <img class="admin-img" src="<%= a.image.url(:large) %>">

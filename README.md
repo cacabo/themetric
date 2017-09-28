@@ -14,9 +14,9 @@
 - [x] Show that an article is unpublished if this is an admin on index page
 - [x] Email list in footer / popup
 - [x] Tags only when article open
+- [x] Grey column widths on mid-sized screens
 - [ ] Search for articles by name
 - [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
-- [ ] Grey column widths on mid-sized screens  (to wide rn)
 - [ ] Clean up JS code for fixed stuff on article show page?
 - [ ] Test share buttons when published
 - [ ] SendGrid configuration for contact page
@@ -60,7 +60,7 @@
 - [x] Link to admin show page if logged in
 - [x] Admin information page
 - [ ] Complete meta tags
-- [ ] Allow super admins to delete accounts
+- [ ] Allow super admins to delete other admin accounts
 
 ##### Article configuration
 - [x] Add locations to posts / region
@@ -82,15 +82,17 @@
 - [x] More columns on articles index page
 - [x] Colors on about gradient
 - [x] Try to make markdown less necessary (replace with editor?)
-- [ ] Sample bio stuff
-- [ ] Recommendations for photo
+- [x] Sample bio stuff
+- [x] Recommendations for photo
 - [ ] Links to social media in navbar
 - [ ] About --> meet the team, show profiles
 - [ ] Admin can delete their own article if it is not published
 - [ ] Article views --> most viewed articles on right?
-- [ ] Default profile picture thing
+- [ ] Default profile picture (gray round image)
 - [ ] Add location to admin
-- [ ] Scroll to load more images?
 - [ ] Include the typeform
 - [ ] Title rise on hover for card?
 - [ ] Better article recommendations
+
+##### Down the line
+- [ ] Paginate or scroll to load more articles

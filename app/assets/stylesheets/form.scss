@@ -55,9 +55,9 @@ textarea.form-control {
 }
 
 .field.special-label.alwaysHasVal label {
-  transform: translate(0px, 12px);
+  transform: translate(0px, -14px);
   font-size: 0.9rem;
-  color: rgba(0, 0, 0, 1);
+  color: $blue-gray;
 
   &.active {
     color: $blue;

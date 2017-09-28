@@ -2,8 +2,6 @@
 
 <%= bootstrap_form_for @article, html: { multipart: true } do |f| %>
 
-<%= f.file_field :image, label: 'Cover image: ', class: 'marg-left-1 marg-bot-1' %>
-
 <% if @article.errors.any? %>
 <div id="error_explanation">
   <h2>
@@ -18,15 +16,20 @@
 </div>
 <% end %>
 
+<%= f.file_field :image, label: 'Cover image: ', class: 'marg-left-05 marg-bot-1' %>
+
 <%= f.text_field :title, hide_label: true, placeholder: "Title", class: 'title no-border', wrapper: { class: 'marg-bot-0' }, required: true, autofocus: true %>
 <%= f.text_area :subtitle, rows: 1, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
 <%= f.trix_editor :text, class: 'serif bigger text', required: true %>
 
 <div class="space-1"></div>
+<div class="space-05"></div>
 
-<div class="field special-label alwaysHasVal">
+<div class="field special-label alwaysHasVal marg-bot-1">
   <%= f.select :region, [['None', :undefined], ['North America', :north_america], ['South America', :south_america], ['Europe', :europe], ['Middle East & North Africa', :middle_east_and_north_africa], ['Africa', :africa], ['Asia & Oceania', :asia_and_oceania]]%>
 </div>
+
+<div class="space-05"></div>
 
 <div class="field special-label">
   <%= f.text_field :tag_list, value: @article.tag_list.join(", "), label: "Tags (separated by commas)" %>
