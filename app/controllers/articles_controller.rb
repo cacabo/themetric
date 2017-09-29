@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :super_or_correct_admin, only: [:edit, :update, :destroy]
   before_action :is_published, only: [:show]
-  before_action :super_admin, only: [:publish, :unpublish]
+  before_action :super_admin, only: [:publish, :unpublish, :feature]
 
   def index
     if (params[:tag])
@@ -117,6 +117,35 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def feature
+    @article = Article.friendly.find(params[:id])
+    if @article.published
+      @article.featured = true
+      if @article.save
+        flash[:notice] = "Article featured."
+        redirect_to @article
+      else
+        flash[:alert] = "There was an error featuring the article."
+        redirect_to @article
+      end
+    else
+      flash[:alert] = "The article must be published before featured."
+      redirect_to @article
+    end
+  end
+
+  def unfeatured
+    @article = Article.friendly.find(params[:id])
+    @article.featured = false
+    if @article.save
+      flash[:notice] = "Article unfeatured."
+      redirect_to @article
+    else
+      flash[:alert] = "There was an error unfeaturing the article."
+      redirect_to @article
+    end
+  end
+
   def publish
     @article = Article.friendly.find(params[:id])
     @article.published = true
@@ -133,6 +162,7 @@ class ArticlesController < ApplicationController
   def unpublish
     @article = Article.friendly.find(params[:id])
     @article.published = false
+    @article.featured = false
 
     if @article.save
       flash[:notice] = "Article unpublished."

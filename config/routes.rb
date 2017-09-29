@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   patch 'articles/:id/publish', to: 'articles#publish', as: 'publish'
   patch 'articles/:id/unpublish', to: 'articles#unpublish', as: 'unpublish'
+  patch 'articles/:id/feature', to: 'articles#feature', as: 'feature'
+  patch 'articles/:id/unfeature', to: 'articles#unfeature', as: 'unfeature'
 
   patch 'admins/:id/super', to: 'admins#super', as: 'super'
   patch 'admins/:id/unsuper', to: 'admins#unsuper', as: 'unsuper'

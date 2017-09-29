@@ -10,6 +10,8 @@ class Article < ApplicationRecord
 
     enum region: [ :undefined, :north_america, :south_america, :europe, :middle_east_and_north_africa, :africa, :asia_and_oceania ]
 
+    after_save :ensure_only_one_featured_article
+
     def regionText
       if region == 'undefined'
         return ''
@@ -30,4 +32,10 @@ class Article < ApplicationRecord
 
     extend FriendlyId
     friendly_id :title, use: :slugged
+
+    private
+
+    def ensure_only_one_featured_article
+      Article.where(featured: true).where.not(id: id).update_all(featured: false)
+    end
 end

@@ -9,9 +9,15 @@
   <div class="container serif marg-top-2">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-1">
-        <% unless @article.published %>
+        <% unless current_admin and @article.published %>
           <p class="text-muted special pad-1 light-gray">
             THIS ARTICLE IS NOT PUBLISHED
+          </p>
+        <% end %>
+
+        <% if current_admin and @article.featured %>
+          <p class="text-muted special pad-1 light-gray">
+            THIS ARTICLE IS FEATURED
           </p>
         <% end %>
 
@@ -104,6 +110,11 @@
           <% if current_admin and (current_admin.super or current_admin.id == 1) %>
             <% if @article.published %>
               <%= link_to 'Unpublish article', unpublish_path(@article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans' %>
+              <% if @article.featured %>
+                <%= link_to 'Unfeature article', unfeature_path(@article), method: :patch, confirm: 'Unfeature article, are you sure? The article will no longer be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans' %>
+              <% else %>
+                <%= link_to 'Feature article', feature_path(@article), method: :patch, confirm: 'Feature article, are you sure? The article will be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans' %>
+              <% end %>
             <% else %>
               <%= link_to 'Publish article', publish_path(@article), method: :patch, data: { confirm: 'Publish article, are you sure? The article will be visible to all site users.' }, class: 'btn btn-sm btn-info sans' %>
             <% end %>
