@@ -36,6 +36,6 @@ class Article < ApplicationRecord
     private
 
     def ensure_only_one_featured_article
-      Article.where(featured: true).where.not(id: id).update_all(featured: false)
+      Article.where.not(id: id).update_all(featured: false)
     end
 end

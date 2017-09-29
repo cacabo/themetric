@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 20170929222308) do
     t.datetime "image_updated_at"
     t.string "subtitle"
     t.string "slug"
-    t.boolean "published"
+    t.boolean "published", default: false
     t.integer "region", default: 0
     t.integer "views"
-    t.boolean "featured"
+    t.boolean "featured", default: false
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 

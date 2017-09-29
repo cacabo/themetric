@@ -193,7 +193,7 @@
   </div>
 <% end %>
 
-<div class="light-gray">
+<div class="light-gray" id="comments">
   <div class="space-4"></div>
   <div class="container">
     <div class="row">
@@ -302,27 +302,25 @@
 <!-- close gray -->
 
 <script type="text/javascript">
-  var gray = $('.light-gray').offset().top;
+  var comments = $('#comments').offset().top;
   var $share = $('.share');
   var rec = $('.recommended');
 
   $(window).resize(function() {
-    gray = $('.light-gray').offset().top;
+    comments = $('#comments').offset().top;
   });
 
   $(document).ready(function() {
-    gray = $('.light-gray').offset().top;
+    comments = $('#comments').offset().top;
   });
 
   window.addEventListener('scroll', function() {
     var scrollBot = $(window).scrollTop() + $(window).height();
-    if (scrollBot >= gray) {
+    if (scrollBot >= comments) {
       $share.addClass('bottom');
-      // rec.slideUp(200);
       rec.hide(200);
     } else {
       $share.removeClass('bottom');
-      // rec.slideDown(200);
       rec.show(200);
     }
   });
