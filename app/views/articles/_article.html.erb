@@ -9,11 +9,18 @@
 
 <!-- article title and subtitle -->
 <div class="card-block">
-  <% unless article.published %>
+  <% unless current_admin and article.published %>
     <div class="light-gray pad-1 special text-muted marg-bot-1">
       ARTICLE NOT PUBLISHED
     </div>
   <% end %>
+
+  <% if current_admin and article.featured %>
+    <div class="light-gray pad-1 special text-muted marg-bot-1">
+      ARTICLE FEATURED
+    </div>
+  <% end %>
+  
   <% if article.image.nil? or article.image_file_name.nil? %>
     <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
   <% end %>
