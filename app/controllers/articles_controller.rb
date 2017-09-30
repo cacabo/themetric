@@ -113,18 +113,10 @@ class ArticlesController < ApplicationController
       # choose recommended articles
       @recommended = Article.where(region: @article.region).where(published: true).where.not(id: @article.id).limit(3)
 
-      # select the previous article by ID
-      id = @article.id.to_i - 1
-      while (not @previous) and (id >= Article.first.id)
-        @previous = Article.exists?(id) ? Article.find(id) : nil
-        id = id - 1
-      end
-
-      # select the next article by id
-      id = @article.id.to_i + 1
-      while (not @next) and (id <= Article.last.id)
-        @next = Article.exists?(id) ? Article.find(id) : nil
-        id = id + 1
+      # select the previous and next articles by ID
+      if Article.all.size > 1
+        @previous = Article.where("id < ?", @article.id).last
+        @next = Article.where("id > ?", @article.id).first
       end
 
       # if one is not found, choose random articles

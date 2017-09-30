@@ -45,6 +45,7 @@
 - [x] Content for about page
 - [x] Highlight color
 - [ ] Title over image on article show
+  - [ ] Sidebar on article show
 - [ ] Favicon
 
 ##### Admin configuration
@@ -84,14 +85,13 @@
 - [x] Try to make markdown less necessary (replace with editor?)
 - [x] Sample bio stuff
 - [x] Recommendations for photo
+- [x] About: meet the team, show profiles
 - [ ] Links to social media in navbar
-- [ ] About --> meet the team, show profiles
 - [ ] Admin can delete their own article if it is not published
 - [ ] Article views --> most viewed articles on right?
 - [ ] Default profile picture (gray round image)
 - [ ] Add location to admin
 - [ ] Include the typeform
-- [ ] Title rise on hover for card?
 - [ ] Better article recommendations
 
 ##### Down the line
