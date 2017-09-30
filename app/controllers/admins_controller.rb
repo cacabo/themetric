@@ -20,11 +20,11 @@ class AdminsController < ApplicationController
   end
 
   def edit
-    @admin = Admin.find(params[:id])
+    @admin = Admin.friendly.find(params[:id])
   end
 
   def update
-    @admin = Admin.find(params[:id])
+    @admin = Admin.friendly.find(params[:id])
 
     if @admin.update(admin_params)
       flash[:notice] = "Admin information updated successfully."
@@ -36,7 +36,7 @@ class AdminsController < ApplicationController
   end
 
   def super
-    @admin = Admin.find(params[:id])
+    @admin = Admin.friendly.find(params[:id])
     @admin.super = true
 
     if @admin.save
@@ -49,7 +49,7 @@ class AdminsController < ApplicationController
   end
 
   def unsuper
-    @admin = Admin.find(params[:id])
+    @admin = Admin.friendly.find(params[:id])
     @admin.super = false
 
     if @admin.save
@@ -64,11 +64,11 @@ class AdminsController < ApplicationController
   private
 
   def admin_params
-    params.require(:admin).permit(:name, :role, :bio, :image, :email, :facebook, :twitter, :github, :website, :instagram, :linkedin)
+    params.require(:admin).permit(:name, :role, :bio, :image, :email, :facebook, :twitter, :github, :website, :instagram, :linkedin, :location)
   end
 
   def correct_admin
-    unless current_admin and current_admin.id.to_i == params[:id].to_i
+    unless current_admin and current_admin.id.to_i == Admin.friendly.find(params[:id]).id.to_i
       flash[:alert] = "You can only edit your own information."
       redirect_to(root_url)
     end

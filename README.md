@@ -59,7 +59,7 @@
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
 - [x] Admin information page
-- [ ] Add location to admin
+- [x] Add location to admin
 
 ##### Article configuration
 - [x] Add locations to posts / region

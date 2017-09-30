@@ -3,25 +3,29 @@
   <% description 'Edit admin information' %>
 </head>
 
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <div class="space-2"></div>
+<div class="light-light-gray">
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="white pad-2">
+          <p class="caps text-muted bold marg-bot-1">
+            Edit admin information
+          </p>
+          <%= render 'form' %>
 
-      <h1>
-        Edit admin information
-      </h1>
-      <%= render 'form' %>
-
-      <div class="space-2"></div>
-      <%= link_to current_admin do %>
-        <button class="btn-white shade-3 hover">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i>
-          &nbsp;Back to profile
-        </button>
-      <% end %>
-
-      <div class="space-4"></div>
+          <div class="space-2"></div>
+          <%= link_to current_admin do %>
+            <button class="btn-white shade-3 hover">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              &nbsp;Back to profile
+            </button>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="space-2"></div>
+  <div class="space-2 hidden-sm-down"></div>
 </div>

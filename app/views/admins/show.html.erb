@@ -33,6 +33,14 @@
                   <%= @admin.role %>
                 </p>
 
+                <% if @admin.location %>
+                  <p class="italic text-muted marg-bot-0">
+                    <%= @admin.location %>
+                  </p>
+                <% end %>
+
+                <div class="space-05"></div>
+
                 <p>
                   <%= @admin.bio %>
                 </p>
