@@ -8,16 +8,16 @@
 - [ ] `Friendly_id`
   - [ ] ...for admins
   - [x] ...for articles
-- [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [x] Better error throwing on admin security
 - [x] Published only on front page
 - [x] Show that an article is unpublished if this is an admin on index page
 - [x] Email list in footer / popup
 - [x] Tags only when article open
 - [x] Grey column widths on mid-sized screens
+- [x] Clean up JS code for fixed stuff on article show page?
 - [ ] Search for articles by name
 - [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
-- [ ] Clean up JS code for fixed stuff on article show page?
+- [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [ ] Test share buttons when published
 - [ ] SendGrid configuration for contact page
 - [ ] SendGrid for Devise?
