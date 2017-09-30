@@ -77,10 +77,11 @@ class ArticlesController < ApplicationController
       window = @article.views_window
 
       if window
-        difference = Time.now - window
+        # wait 2 weeks (14 days)
+        difference = Time.now - window - 14.days
 
         # if it has been two weeks, reset the window and set views to 0
-        if difference > 14
+        if difference > 0
           @article.views = 0
           @article.views_window = Time.now
         else
