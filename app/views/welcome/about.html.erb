@@ -15,9 +15,11 @@
     </div>
     <div class="col-12 col-md-10 offset-md-1 col-lg-8">
       <p class="white pad-1 marg-bot-1 shade-1">
-        The Metric is a student-run organization that publishes domestic policy, foreign policy, and current affairs-related content from across the world. We as well write about opportunities and resources to catalyze political action.
+        The Metric is a student-run organization that publishes domestic policy, foreign policy, and current affairs-related content from across the world. Founded at the University of Pennsylvania, our team now includes students from all around the world. We represent a diversity of geographic locations, cultural experiences, and intellectual passions, and we are united by a desire to better inform our generation.
         <br><br>
-        By conducting a worldwide communications initiative, we aim to better inform our peers in an accessible, appealing manner. We provide a platform for youths to share their views in order to encourage productive discussion and action.
+        In addition to our published content, we highlight opportunities and resources to catalyze political action. Being informed matters to the extent that people use their knowledge to make the world a better place, so The Metric strives to connect our readers with the means to engage with their communities and the world.
+        <br><br>
+        We aim to raise the standards for modern journalism in an accessible, appealing manner. The Metric provides insight on what matters with the context the modern world demands.
       </p>
     </div>
   </div>
@@ -70,6 +72,11 @@
                       <p class="text-muted bold marg-bot-05">
                         <%= a.role %>
                       </p>
+                      <% if a.location and a.location.length > 0 %>
+                        <p class="text-muted italic marg-bot-05">
+                          <%= a.location %>
+                        </p>
+                      <% end %>
                       <ul class="horizontal admin-icons">
                         <li>
                           <a href="mailto:<%= a.email %>">

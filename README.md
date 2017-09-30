@@ -43,7 +43,6 @@
 - [x] One sentence pitch in footer
 - [x] Content for about page
 - [x] Highlight color
-- [ ] Title over image on article show
 - [ ] Sidebar on article show
 
 ##### Admin configuration
@@ -70,9 +69,9 @@
   - [x] Desktop
   - [x] Mobile / small screen
 - [x] Search for articles by name
-- [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
-  - [ ] Topics in navbar dropdown
-  - [ ] Display opinion on article index
+- [x] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
+  - [x] Topics in navbar dropdown
+  - [x] Display opinion on article index
 - [ ] Better article recommendations
 
 ##### Details
