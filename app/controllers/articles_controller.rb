@@ -163,7 +163,9 @@ class ArticlesController < ApplicationController
       @subtitle = URI.escape(@article.subtitle, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 
       # choose recommended articles
-      @recommended = Article.where(region: @article.region).where(published: true).where.not(id: @article.id).limit(3)
+      filter = Article.where(published: true).where.not(id: @article.id)
+
+      @recommended = filter.where(region: @article.region).or(filter.where(topic: @article.topic)).limit(2)
 
       # select the previous and next articles by ID
       if Article.all.size > 1

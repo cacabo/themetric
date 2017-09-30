@@ -6,187 +6,197 @@
     <% image "#{image_url @article.image}" unless @article.image.nil? %>
   </head>
 
-  <div class="container serif marg-top-2">
+  <div class="container-fluid serif">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-1">
-        <% if current_admin and not @article.published %>
-          <p class="text-muted special pad-1 light-gray">
-            THIS ARTICLE IS NOT PUBLISHED
-          </p>
-        <% elsif current_admin and @article.featured %>
-          <p class="text-muted special pad-1 light-gray">
-            THIS ARTICLE IS FEATURED
-          </p>
-        <% end %>
+      <div class="col-12 col-lg-8 pad-0 col-xl-9">
+        <div class="pad-1">
+          <% if current_admin and not @article.published %>
+            <p class="text-muted special pad-1 light-gray">
+              THIS ARTICLE IS NOT PUBLISHED
+            </p>
+          <% elsif current_admin and @article.featured %>
+            <p class="text-muted special pad-1 light-gray">
+              THIS ARTICLE IS FEATURED
+            </p>
+          <% end %>
 
-        <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-          <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
-        <% end %>
+          <h1 class="title sans">
+            <%= @article.title %>
+          </h1>
 
-        <h1 class="title sans">
-          <%= @article.title %>
-        </h1>
+          <h2 class="subtitle sans">
+            <%= @article.subtitle %>
+          </h2>
 
-        <h2 class="subtitle sans">
-          <%= @article.subtitle %>
-        </h2>
+          <p class="time inline sans">
+            <%= time_ago_in_words(@article.created_at) %> ago
+            <% r = @article.regionText %>
+            <% t = @article.topicText %>
+            <% if r and r.length > 0 %>
+              in <%= link_to region_path(@article.region), class: 'inline black-text special region' do %><%= r %><% end %>
 
-        <p class="time inline sans">
-          <%= time_ago_in_words(@article.created_at) %> ago
-          <% r = @article.regionText %>
-          <% t = @article.topicText %>
-          <% if r and r.length > 0 %>
-            in <%= link_to region_path(@article.region), class: 'inline black-text special region' do %><%= r %><% end %>
-
-            <% if t and t.length > 0 %>
-              and <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %><%= t %><% end %>
+              <% if t and t.length > 0 %>
+                and <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %><%= t %><% end %>
+              <% end %>
+            <% elsif t and t.length > 0 %>
+              in <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %><%= t %><% end %>
             <% end %>
-          <% elsif t and t.length > 0 %>
-            in <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %><%= t %><% end %>
-          <% end %>
-        </p>
+          </p>
 
-        <% if @article.tag_list %>
-        <p class="inline tags">
-          <% @article.tag_list.each do |t| %>
-          <%= link_to tag_path(t) do %>
-          <span class="tag"><%= t %></span>
+          <% if @article.tag_list %>
+          <p class="inline tags">
+            <% @article.tag_list.each do |t| %>
+            <%= link_to tag_path(t) do %>
+            <span class="tag"><%= t %></span>
+            <% end %>
+            <% end %>
+          </p>
           <% end %>
-          <% end %>
-        </p>
-        <% end %>
 
-        <div class="space-0"></div>
+          <div class="space-0"></div>
 
-        <div class="interact">
-          <% if @author %>
-            <div class="author inline">
-              <% if not @author.image.nil? and not @author.image_file_name.nil? %>
-                <%= link_to @author do %>
-                  <%= image_tag @author.image.url(:medium) %>
+          <div class="interact">
+            <% if @author %>
+              <div class="author inline">
+                <% if not @author.image.nil? and not @author.image_file_name.nil? %>
+                  <%= link_to @author do %>
+                    <%= image_tag @author.image.url(:medium) %>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <%= link_to @author do %>
-                <p>
-                  <strong style="font-size: 1.2rem"><%= @author.name %></strong>
-                  <br>
-                  <i><%= @author.role %></i>
-                </p>
-              <% end %>
-            </div>
-          <% end %>
-
-          <ul class="article-social">
-            <p class="inline special text-muted" style="font-size: 1.2rem">Share &nbsp;</p>
-            <li>
-              <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-lg"><span class="share-circle"></span></i></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/share?url=<%=@encoded%>" target="_blank"><i class="fa fa-twitter fa-lg"><span class="share-circle"></span></i></a>
-            </li>
-            <li>
-              <a href="mailto:?&subject=<%=@article.title%>&body=<%=@url%>"><i class="fa fa-envelope fa-lg"><span class="share-circle"></span></i></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=@url%>&title=<%=@title%>&summary=<%=@subtitle%>&source=Youth%20Journal" target="_blank"><i class="fa fa-linkedin fa-lg"><span class="share-circle"></span></i></a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="line-0"></div>
-        <div class="space-1"></div>
-
-        <div class="article-wrapper">
-          <% sections = @article.text.split(/\[(.*?)\]/) %>
-          <% sections.each_with_index do |s, index| %>
-            <% if index % 2 != 0 %>
-              <% image_components = (s[1, s.length - 2]).split(",") %>
-              <% puts "components!!!!" %>
-              <% puts image_components %>
-              <% link = image_components[0].split("\"")[1] %>
-              <img src="<%= link %>" class="full-width img-responsive">
-              <% image_components.each_with_index do |c, i| %>
-                <% if i != 0 %>
-                  <p class="text-muted italic caption">
-                    <%= c %>
+                <%= link_to @author do %>
+                  <p>
+                    <strong style="font-size: 1.2rem"><%= @author.name %></strong>
+                    <br>
+                    <i><%= @author.role %></i>
                   </p>
                 <% end %>
-              <% end %>
-            <% else %>
-              <%= s.html_safe %>
+              </div>
             <% end %>
-          <% end %>
-        </div>
 
-        <% if admin_signed_in? %>
-        <% if @article.admin.nil? or (current_admin.id == @article.admin.id) or (current_admin and current_admin.super) %>
-        <div class="space-1"></div>
-        <div class="admin-buttons">
-          <% if current_admin and (current_admin.super or current_admin.id == 1) %>
-            <% if @article.published %>
-              <%= link_to 'Unpublish article', unpublish_path(@article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans white-text' %>
-              <% if @article.featured %>
-                <%= link_to 'Unfeature article', unfeature_path(@article), method: :patch, confirm: 'Unfeature article, are you sure? The article will no longer be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans white-text' %>
+            <ul class="article-social">
+              <p class="inline special text-muted" style="font-size: 1.2rem">Share &nbsp;</p>
+              <li>
+                <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-lg"><span class="share-circle"></span></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/share?url=<%=@encoded%>" target="_blank"><i class="fa fa-twitter fa-lg"><span class="share-circle"></span></i></a>
+              </li>
+              <li>
+                <a href="mailto:?&subject=<%=@article.title%>&body=<%=@url%>"><i class="fa fa-envelope fa-lg"><span class="share-circle"></span></i></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=@url%>&title=<%=@title%>&summary=<%=@subtitle%>&source=Youth%20Journal" target="_blank"><i class="fa fa-linkedin fa-lg"><span class="share-circle"></span></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="line-0"></div>
+        <div class="space-2"></div>
+
+        <div class="col-12 col-md-10 offset-md-1">
+          <% if not @article.image.nil? and not @article.image_file_name.nil? %>
+            <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
+          <% end %>
+
+          <div class="article-wrapper">
+            <% sections = @article.text.split(/\[(.*?)\]/) %>
+            <% sections.each_with_index do |s, index| %>
+              <% if index % 2 != 0 %>
+                <% image_components = (s[1, s.length - 2]).split(",") %>
+                <% link = image_components[0].split("\"")[1] %>
+                <img src="<%= link %>" class="full-width img-responsive">
+                <% image_components.each_with_index do |c, i| %>
+                  <% if i != 0 %>
+                    <p class="text-muted italic caption">
+                      <%= c %>
+                    </p>
+                  <% end %>
+                <% end %>
               <% else %>
-                <%= link_to 'Feature article', feature_path(@article), method: :patch, confirm: 'Feature article, are you sure? The article will be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans white-text' %>
+                <%= s.html_safe %>
               <% end %>
-            <% else %>
-              <%= link_to 'Publish article', publish_path(@article), method: :patch, data: { confirm: 'Publish article, are you sure? The article will be visible to all site users.' }, class: 'btn btn-sm btn-info sans white-text' %>
             <% end %>
-            <%= link_to article_path(@article),
-              method: :delete,
-              data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
-                <button class="btn btn-sm btn-danger white-text">Delete</button>
+          </div>
+
+          <% if admin_signed_in? %>
+          <% if @article.admin.nil? or (current_admin.id == @article.admin.id) or (current_admin and current_admin.super) %>
+          <div class="space-1"></div>
+          <div class="admin-buttons">
+            <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+              <% if @article.published %>
+                <%= link_to 'Unpublish article', unpublish_path(@article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans white-text' %>
+                <% if @article.featured %>
+                  <%= link_to 'Unfeature article', unfeature_path(@article), method: :patch, confirm: 'Unfeature article, are you sure? The article will no longer be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans white-text' %>
+                <% else %>
+                  <%= link_to 'Feature article', feature_path(@article), method: :patch, confirm: 'Feature article, are you sure? The article will be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans white-text' %>
+                <% end %>
+              <% else %>
+                <%= link_to 'Publish article', publish_path(@article), method: :patch, data: { confirm: 'Publish article, are you sure? The article will be visible to all site users.' }, class: 'btn btn-sm btn-info sans white-text' %>
+              <% end %>
+              <%= link_to article_path(@article),
+                method: :delete,
+                data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
+                  <button class="btn btn-sm btn-danger white-text">Delete</button>
+              <% end %>
+            <% elsif current_admin and not @article.published and (current_admin.super or current_admin.id == @admin.id) %>
+              <%= link_to article_path(@article),
+                method: :delete,
+                data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
+                  <button class="btn btn-sm btn-danger white-text">Delete</button>
+              <% end %>
             <% end %>
-          <% elsif current_admin and not @article.published and (current_admin.super or current_admin.id == @admin.id) %>
-            <%= link_to article_path(@article),
-              method: :delete,
-              data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
-                <button class="btn btn-sm btn-danger white-text">Delete</button>
+
+            <%= link_to edit_article_path(@article) do %>
+            <button class="btn btn-sm btn-primary">Edit</button>
             <% end %>
+          </div>
+          <% end %>
           <% end %>
 
-          <%= link_to edit_article_path(@article) do %>
-          <button class="btn btn-sm btn-primary">Edit</button>
-          <% end %>
-        </div>
-        <% end %>
-        <% end %>
-
-        <div class="space-4"></div>
-
-        <div class="share">
-          <ul class="hidden-sm-down">
-            <li>
-              <a href="http://www.facebook.com/sharer.php?u=<%=@encoded + '&amp;src=sdkpreparse'%>" target="_blank"><i class="fa fa-facebook fa-2x fa-fw"><span class="share-circle"></span></i></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/share?url=<%=@encoded%>" target="_blank"><i class="fa fa-twitter fa-2x fa-fw"><span class="share-circle"></span></i></a>
-            </li>
-            <li>
-              <a href="mailto:?&subject=<%=@article.title%>&body=<%=@url%>"><i class="fa fa-envelope fa-2x fa-fw"><span class="share-circle"></span></i></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=@url%>&title=<%=@title%>&summary=<%=@subtitle%>&source=Youth%20Journal" target="_blank"><i class="fa fa-linkedin fa-2x fa-fw"><span class="share-circle"></span></i></a>
-            </li>
-          </ul>
+          <div class="space-4"></div>
         </div>
       </div>
       <!-- close col around article -->
 
       <% if @recommended and @recommended.length > 0 %>
-        <div class="col-12 col-lg-3 hidden-lg-down fixed recommended">
-          <p class="text-muted bold sans">
-            RECOMMENDED FOR YOU
-          </p>
+        <div class="col-12 col-lg-4 col-xl-3 hidden-md-down light-light-gray" id="wrapper">
+          <div class="recommended">
+            <div class="space-1"></div>
+            <p class="text-muted bold sans">
+              RECOMMENDED FOR YOU
+            </p>
 
-          <% @recommended.each do |a| %>
-            <%= link_to a do %>
-              <div class="card article marg-bot-1">
-                <%= render a %>
-              </div>
+            <% @recommended.each do |article| %>
+              <%= link_to article do %>
+                <div class="card article marg-bot-1">
+                  <div class="card-block">
+                    <% if article.opinion? %>
+                      <div class="opinion absolute special">
+                        OPINION
+                      </div>
+                      <div class="space-1"></div>
+                      <div class="space-05"></div>
+                    <% end %>
+
+                    <% if current_admin and not article.published %>
+                      <div class="light-gray pad-1 special text-muted marg-bot-1">
+                        ARTICLE NOT PUBLISHED
+                      </div>
+                    <% elsif current_admin and article.featured %>
+                      <div class="light-gray pad-1 special text-muted marg-bot-1">
+                        ARTICLE FEATURED
+                      </div>
+                    <% end %>
+
+                    <% if article.image.nil? or article.image_file_name.nil? %>
+                      <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
+                    <% end %>
+                    <h2 class="subtitle smaller sans"><%= article.subtitle %></h2>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       <% end %>
     </div>
@@ -324,8 +334,9 @@
 
 <script type="text/javascript">
   var comments = $('#comments').offset().top;
-  var $share = $('.share');
   var rec = $('.recommended');
+  var wrapper = $('#wrapper');
+  rec.width(wrapper.width());
 
   $(window).resize(function() {
     comments = $('#comments').offset().top;
@@ -338,11 +349,9 @@
   window.addEventListener('scroll', function() {
     var scrollBot = $(window).scrollTop() + $(window).height();
     if (scrollBot >= comments) {
-      $share.addClass('bottom');
-      rec.hide(200);
+      rec.addClass('absolute');
     } else {
-      $share.removeClass('bottom');
-      rec.show(200);
+      rec.removeClass('absolute');
     }
   });
 </script>

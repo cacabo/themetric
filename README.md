@@ -15,13 +15,13 @@
 - [x] Tags only when article open
 - [x] Grey column widths on mid-sized screens
 - [x] Clean up JS code for fixed stuff on article show page?
-- [ ] Rename Disqus thread to "The Metric" or "Metric"
+- [x] Complete meta tags
+- [x] Rename Disqus thread to "The Metric" or "Metric"
 - [ ] Test share buttons when published
 - [ ] SendGrid configuration for contact page
 - [ ] Link with domain name
 - [ ] SSL certificate
 - [ ] Favicon
-- [ ] Complete meta tags
 
 ##### Views
 - [x] Pretty forms
@@ -43,7 +43,8 @@
 - [x] One sentence pitch in footer
 - [x] Content for about page
 - [x] Highlight color
-- [ ] Sidebar on article show
+- [x] Sidebar on article show
+- [x] Fixed recommendations
 
 ##### Admin configuration
 - [x] Admin controller
@@ -72,8 +73,8 @@
 - [x] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
   - [x] Topics in navbar dropdown
   - [x] Display opinion on article index
-- [ ] Better article recommendations
-- [ ] Captions on images
+- [x] Better article recommendations
+- [x] Captions on images
 
 ##### Details
 - [x] Play around with title and subtitle overlay on article preview
