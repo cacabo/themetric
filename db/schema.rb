@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170930060257) do
     t.boolean "published"
     t.integer "region", default: 0
     t.integer "views"
-    t.boolean "featured"
+    t.boolean "featured", null: false
     t.datetime "views_window"
     t.integer "topic", default: 0
     t.index ["slug"], name: "index_articles_on_slug", unique: true
