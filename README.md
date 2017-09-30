@@ -5,8 +5,8 @@
 ##### General
 - [x] Name transfer (to whatever we decide)
 - [x] Configure AWS to a new bucket
-- [ ] `Friendly_id`
-  - [ ] ...for admins
+- [x] `Friendly_id`
+  - [x] ...for admins
   - [x] ...for articles
 - [x] Better error throwing on admin security
 - [x] Published only on front page
@@ -15,14 +15,14 @@
 - [x] Tags only when article open
 - [x] Grey column widths on mid-sized screens
 - [x] Clean up JS code for fixed stuff on article show page?
-- [ ] Search for articles by name
-- [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
 - [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [ ] Test share buttons when published
 - [ ] SendGrid configuration for contact page
 - [ ] SendGrid for Devise?
 - [ ] Link with domain name
 - [ ] SSL certificate
+- [ ] Favicon
+- [ ] Complete meta tags
 
 ##### Views
 - [x] Pretty forms
@@ -45,8 +45,7 @@
 - [x] Content for about page
 - [x] Highlight color
 - [ ] Title over image on article show
-  - [ ] Sidebar on article show
-- [ ] Favicon
+- [ ] Sidebar on article show
 
 ##### Admin configuration
 - [x] Admin controller
@@ -60,8 +59,7 @@
 - [x] Admin can edit admin show page if on their own
 - [x] Link to admin show page if logged in
 - [x] Admin information page
-- [ ] Complete meta tags
-- [ ] Allow super admins to delete other admin accounts
+- [ ] Add location to admin
 
 ##### Article configuration
 - [x] Add locations to posts / region
@@ -72,6 +70,9 @@
 - [x] Links to share on social media
   - [x] Desktop
   - [x] Mobile / small screen
+- [x] Search for articles by name
+- [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
+- [ ] Better article recommendations
 
 ##### Details
 - [x] Play around with title and subtitle overlay on article preview
@@ -87,11 +88,13 @@
 - [x] Recommendations for photo
 - [x] Meet the team, show profiles on about page
 - [x] Most viewed articles on right?
-- [ ] Links to social media in navbar
+- [x] Links to social media in navbar
 - [x] Admin can delete their own article if it is not published
-- [ ] Add location to admin
 - [ ] Include the typeform
-- [ ] Better article recommendations
+- [ ] Add URL's to social media for links
+- [ ] Collapse navbar at wider size
+  - [ ] Adjust CSS media queries accordingly
 
 ##### Down the line
 - [ ] Paginate or scroll to load more articles
+- [ ] Allow super admin to lock / delete other admin accounts

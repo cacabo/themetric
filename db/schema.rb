@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930022317) do
+ActiveRecord::Schema.define(version: 20170930052349) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 20170930022317) do
     t.string "instagram"
     t.string "linkedin"
     t.boolean "super"
+    t.string "slug"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_admins_on_slug", unique: true
   end
 
   create_table "articles", force: :cascade do |t|
@@ -57,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170930022317) do
     t.string "slug"
     t.boolean "published"
     t.integer "region", default: 0
-    t.integer "views", default: 0
+    t.integer "views"
     t.boolean "featured"
     t.datetime "views_window"
     t.index ["slug"], name: "index_articles_on_slug", unique: true

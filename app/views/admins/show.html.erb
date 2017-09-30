@@ -106,9 +106,9 @@
 
           <div class="space-1"></div>
 
-          <% if @admin.articles.length > 0 %>
+          <% if @articles and @articles.length > 0 %>
             <% if current_admin %>
-              <% @admin.articles.each do |a| %>
+              <% @articles.each do |a| %>
                 <%= link_to a do %>
                   <div class="card marg-bot-1 article">
                     <%= render a %>
@@ -150,7 +150,7 @@
               Seems like this the admin that you are looking for does not exist. If you think this is a mistake, please <%= link_to 'contact us', new_contact_path %> with a description of what happened.
             </p>
             <div class="space-2"></div>
-            <%= link_to 'Back to all admins', admins_path, class: 'btn-white shade-3 hover' %>
+            <%= link_to 'Learn more us', about_path, class: 'btn-white shade-3 hover' %>
           </div>
         </div>
       </div>

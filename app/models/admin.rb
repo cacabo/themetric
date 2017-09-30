@@ -20,6 +20,11 @@ class Admin < ApplicationRecord
     validate :linkedin_link
     validate :referred
 
+    extend FriendlyId
+    friendly_id :name, use: :slugged
+
+    private
+
     def referred
       unless Admin.count == 0
         referral = Referral.where(email: email)

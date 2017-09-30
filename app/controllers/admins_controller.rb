@@ -3,7 +3,13 @@ class AdminsController < ApplicationController
   before_action :super_admin, only: [:super, :unsuper]
 
   def show
-    @admin = Admin.exists?(params[:id]) ? Admin.find(params[:id]) : nil
+    @admin = Admin.friendly.exists?(params[:id]) ? Admin.friendly.find(params[:id]) : nil
+
+    if current_admin and @admin
+      @articles = @admin.articles
+    else
+      @articles = @admin.articles.where(published: true)
+    end
   end
 
   def info
