@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: [:edit, :delete, :update, :feature, :unfeature, :publish, :unpublish]
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :super_or_correct_admin, only: [:edit, :update, :destroy]
   before_action :is_published, only: [:show]
@@ -6,15 +7,21 @@ class ArticlesController < ApplicationController
 
   # list all articles
   def index
-    if (params[:tag])
+    if (params[:search])
+      # if we are searching for articles by name
+      @articles = Article.search(params[:search])
+    elsif (params[:tag])
+      # if we are searching for articles by a tag
       if current_admin
         @articles = Article.tagged_with(params[:tag]).order(created_at: :desc)
       else
         @articles = Article.where(published: true).tagged_with(params[:tag]).order(created_at: :desc)
       end
     elsif (params[:region])
+      # if we are searching for articles by a region
       @region = ''
 
+      # match the region to a text representation
       if params[:region] == 'undefined'
         @region == 'undefined'
       elsif params[:region] == 'north_america'
@@ -35,14 +42,19 @@ class ArticlesController < ApplicationController
       end
 
       if current_admin
+        # show all articles if there is an admin
         @articles = Article.where(region: params[:region]).order(created_at: :desc)
       else
+        # show published articles if there is no admin
         @articles = Article.where(published: true, region: params[:region]).order(created_at: :desc)
       end
     else
+      # otherwise if we are finding all articles
       if current_admin
+        # show all articles if there is an admin
         @articles = Article.all.order(created_at: :desc)
       else
+        # show only published articles if there is no admin
         @articles = Article.where(published: true).order(created_at: :desc)
       end
     end
@@ -60,13 +72,17 @@ class ArticlesController < ApplicationController
 
   # create an article
   def create
+    # update fields
     @article = current_admin.articles.build(article_params)
     @article.views_window = Time.now
 
+    # try to save the article
     if @article.save
+      # flash success
       flash[:notice] = "Article created successfully."
       redirect_to @article
     else
+      # flash failure with errors
       flash[:alert] = "There was an issue submitting the article."
       render 'new'
     end
@@ -149,7 +165,6 @@ class ArticlesController < ApplicationController
 
   # feature an article
   def feature
-    @article = Article.friendly.find(params[:id])
     if @article.published
       @article.featured = true
       if @article.save
@@ -166,8 +181,7 @@ class ArticlesController < ApplicationController
   end
 
   # unfeature an article
-  def unfeatured
-    @article = Article.friendly.find(params[:id])
+  def unfeature
     @article.featured = false
     if @article.save
       flash[:notice] = "Article unfeatured."
@@ -180,7 +194,6 @@ class ArticlesController < ApplicationController
 
   # publish an article
   def publish
-    @article = Article.friendly.find(params[:id])
     @article.published = true
 
     if @article.save
@@ -194,7 +207,6 @@ class ArticlesController < ApplicationController
 
   # unpublish an article
   def unpublish
-    @article = Article.friendly.find(params[:id])
     @article.published = false
     @article.featured = false
 
@@ -209,8 +221,6 @@ class ArticlesController < ApplicationController
 
   # update an article
   def update
-    @article = Article.friendly.find(params[:id])
-
     if @article.update(article_params)
       flash[:notice] = "Article updated successfully."
       redirect_to @article
@@ -222,8 +232,6 @@ class ArticlesController < ApplicationController
 
   # delete an article
   def destroy
-    @article = Article.friendly.find(params[:id])
-
     # a super admin can delete any article
     # a regular admin can only delete an article if it is their own
     # and if it is not published
@@ -242,7 +250,12 @@ class ArticlesController < ApplicationController
   end
 
   private
-  
+
+  # find the current article
+  def find_article
+    @article = Article.friendly.find(params[:id])
+  end
+
   # define article params passed with edits and creates
   def article_params
     params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region)

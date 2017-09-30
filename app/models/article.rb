@@ -33,6 +33,14 @@ class Article < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
 
+    def self.search(search)
+      if search
+        Article.where('published = ? AND title LIKE ?', true, "%#{search}%")
+      else
+        find(:all)
+      end
+    end
+
     private
 
     def ensure_only_one_featured_article

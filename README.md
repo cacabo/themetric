@@ -88,7 +88,7 @@
 - [x] Meet the team, show profiles on about page
 - [x] Most viewed articles on right?
 - [ ] Links to social media in navbar
-- [ ] Admin can delete their own article if it is not published
+- [x] Admin can delete their own article if it is not published
 - [ ] Add location to admin
 - [ ] Include the typeform
 - [ ] Better article recommendations

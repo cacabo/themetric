@@ -28,6 +28,11 @@ $light-light-light-gray: #f4f9fc;
 /*
 ** COLORS
 */
+
+.caps {
+  text-transform: uppercase;
+}
+
 ::selection {
   background: $blue !important;
   color: white;
