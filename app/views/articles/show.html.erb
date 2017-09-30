@@ -1,7 +1,7 @@
 <% if @article %>
   <head>
     <% title @article.title %>
-    <% description "#{@article.text[0..160]}..." %>
+    <% description @article.subtitle %>
     <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},the,metric,news" %>
     <% image "#{image_url @article.image}" unless @article.image.nil? %>
   </head>

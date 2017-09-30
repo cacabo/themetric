@@ -17,7 +17,7 @@
 - [x] Clean up JS code for fixed stuff on article show page?
 - [x] Complete meta tags
 - [x] Rename Disqus thread to "The Metric" or "Metric"
-- [ ] Test share buttons when published
+- [x] Test share buttons when published
 - [ ] SendGrid configuration for contact page
 - [ ] Link with domain name
 - [ ] SSL certificate
