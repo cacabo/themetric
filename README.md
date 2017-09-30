@@ -73,6 +73,7 @@
   - [x] Topics in navbar dropdown
   - [x] Display opinion on article index
 - [ ] Better article recommendations
+- [ ] Captions on images
 
 ##### Details
 - [x] Play around with title and subtitle overlay on article preview
@@ -91,8 +92,8 @@
 - [x] Links to social media in navbar
 - [x] Admin can delete their own article if it is not published
 - [x] Collapse navbar at wider size
+- [x] Add URL's to social media for links
 - [ ] Include the typeform
-- [ ] Add URL's to social media for links
 
 ##### Down the line
 - [ ] Paginate or scroll to load more articles

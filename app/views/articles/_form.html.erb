@@ -44,10 +44,22 @@
 <div class="space-1"></div>
 
 <%= f.hidden_field :published, value: (true and @article.published), class: 'no-display' %>
+<%= f.submit "Submit Article", class: "btn-blue shade-3 hover btn-big disabled", id: "submit" %>
+<div class="space-1"></div>
 <p class="text-muted">
   To display images, surround a link to the image in [square brackets]. If using a local file, upload it to some external service with a stable link.
 </p>
-<%= f.submit "Submit Article", class: "btn-blue shade-3 hover btn-big disabled", id: "submit" %>
+<p class="text-muted">
+  To add a caption or source to your image, append commas to the link to your image follows by the text you want. Each new comma adds a new line of text:
+  <br><br>
+  [link_to_image]
+  <br>
+  [link_to_image,caption]
+  <br>
+  [link_to_image,source,caption]
+  <br>
+  [link_to_image,caption,source,etc...].
+</p>
 <% end %>
 
 <script type="text/javascript">

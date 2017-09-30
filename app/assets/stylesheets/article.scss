@@ -3,6 +3,12 @@ $t-cyan: rgba(0, 203, 255, 0.8);
 $dark-blue: #6f3fff;
 $light-light-gray: #eff2f4;
 
+.caption {
+  font-size: 0.8rem !important;
+  margin-bottom: 0rem;
+  margin-top: 0.2rem;
+}
+
 .article {
   transition: all 0.2s ease !important;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);

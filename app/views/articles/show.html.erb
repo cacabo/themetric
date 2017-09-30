@@ -100,8 +100,18 @@
           <% sections = @article.text.split(/\[(.*?)\]/) %>
           <% sections.each_with_index do |s, index| %>
             <% if index % 2 != 0 %>
-              <% link = s.scan(/"([^"]*)"/)[0][0] %>
+              <% image_components = (s[1, s.length - 2]).split(",") %>
+              <% puts "components!!!!" %>
+              <% puts image_components %>
+              <% link = image_components[0].split("\"")[1] %>
               <img src="<%= link %>" class="full-width img-responsive">
+              <% image_components.each_with_index do |c, i| %>
+                <% if i != 0 %>
+                  <p class="text-muted italic caption">
+                    <%= c %>
+                  </p>
+                <% end %>
+              <% end %>
             <% else %>
               <%= s.html_safe %>
             <% end %>
