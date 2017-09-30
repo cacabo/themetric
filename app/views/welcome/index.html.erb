@@ -7,41 +7,44 @@
             <div class="content">
               <% if @feature.title %>
                 <h1 class="title">
-                  <%= @feature.title %>
+                  <span class="feature-underline">
+                    <%= @feature.title %>
+                  </span>
                 </h1>
               <% end %>
               <div class="space-0"></div>
               <% if @feature.subtitle %>
                 <h2 class="subtitle">
-                  <%= @feature.subtitle %>
+                  <span class="feature-underline">
+                    <%= @feature.subtitle %>
+                  </span>
                 </h2>
               <% end %>
             </div>
           </div>
         <% end %>
       <% end %>
-      <% if @region %>
-        <div class="light-light-gray full-height">
-          <div class="space-1"></div>
-          <div class="container-fluid">
-            <% if @region and @region.length > 0 %>
-              <p class="text-muted bold full-width marg-bot-1">
-                AROUND THE WORLD
-              </p>
-              <div class="card-columns articles">
-                <% @region.each do |a| %>
-                    <%= link_to a do %>
-                      <div class="card article">
-                        <%= render a %>
-                      </div>
-                    <% end %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-          <div class="space-2"></div>
+      <div class="light-light-gray full-height">
+        <div class="space-1"></div>
+        <div class="container-fluid">
+          <% if @articles and @articles.length > 0 %>
+            <p class="text-muted bold full-width marg-bot-1">
+              AROUND THE WORLD
+            </p>
+            <div class="card-columns articles">
+              <% @articles.each do |a| %>
+                  <%= link_to a do %>
+                    <div class="card article">
+                      <%= render a %>
+                    </div>
+                  <% end %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+        <div class="space-2"></div>
+      </div>
+      <!-- closing light-gray -->
     </div>
     <!-- closing left col -->
     <div class="col-12 col-xl-3 pad-top-1 light-gray full-height">

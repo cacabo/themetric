@@ -9,13 +9,11 @@
   <div class="container serif marg-top-2">
     <div class="row">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-1">
-        <% unless current_admin and @article.published %>
+        <% if current_admin and not @article.published %>
           <p class="text-muted special pad-1 light-gray">
             THIS ARTICLE IS NOT PUBLISHED
           </p>
-        <% end %>
-
-        <% if current_admin and @article.featured %>
+        <% elsif current_admin and @article.featured %>
           <p class="text-muted special pad-1 light-gray">
             THIS ARTICLE IS FEATURED
           </p>

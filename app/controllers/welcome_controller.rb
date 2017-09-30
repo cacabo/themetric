@@ -1,12 +1,14 @@
 class WelcomeController < ApplicationController
   def index
-    articles = Article.where(featured: false).where(published: true).order(created_at: :desc)
+    # find the feature
     @feature = Article.where(featured: true)[0]
 
-    by_views = articles.order(views: :desc)
+    # find the article
+    @articles = Article.where("published = ? AND featured = ?", true, false).order(created_at: :desc)
+
+    by_views = Article.where(published: true).order(views: :desc)
     @popular = by_views.limit(4);
-    @more_opular = by_views.offset(4).limit(8)
-    @region = articles.offset(1)
+    @more_popular = by_views.offset(4).limit(8)
   end
 
   def about

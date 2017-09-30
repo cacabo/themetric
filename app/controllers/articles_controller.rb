@@ -57,6 +57,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_admin.articles.build(article_params)
+    @article.views_window = Time.now
 
     if @article.save
       flash[:notice] = "Article created successfully."
@@ -70,10 +71,31 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.friendly.find(params[:id]) if Article.friendly.exists? params[:id]
 
-    views = @article.views
-    views = 0 if views.nil?
-    @article.views = views + 1
-    @article.save
+    # update views if there is an article
+    if @article and @article.published
+      # find how long ago the current window was
+      window = @article.views_window
+
+      if window
+        difference = Time.now - window
+
+        # if it has been two weeks, reset the window and set views to 0
+        if difference > 14
+          @article.views = 0
+          @article.views_window = Time.now
+        else
+          views = @article.views
+          views = 0 if views.nil?
+          @article.views = views + 1
+        end
+      else
+        # if the window is null, set it to now
+        @article.views_window = Time.now
+      end
+
+      # save the article
+      @article.save
+    end
 
     @previous = nil
     @next = nil
@@ -81,22 +103,30 @@ class ArticlesController < ApplicationController
     @url = request.base_url + request.fullpath
     @encoded = URI.escape(@url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 
+    # check if there is an article
     if @article
+      # find the title and subtitle for links
       @title = URI.escape(@article.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
       @subtitle = URI.escape(@article.subtitle, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 
+      # choose recommended articles
       @recommended = Article.where(region: @article.region).where(published: true).where.not(id: @article.id).limit(3)
 
+      # select the previous article by ID
       id = @article.id.to_i - 1
       while (not @previous) and (id >= Article.first.id)
         @previous = Article.exists?(id) ? Article.find(id) : nil
         id = id - 1
       end
+
+      # select the next article by id
       id = @article.id.to_i + 1
       while (not @next) and (id <= Article.last.id)
         @next = Article.exists?(id) ? Article.find(id) : nil
         id = id + 1
       end
+
+      # if one is not found, choose random articles
       if (not @next and not @previous)
         random = Article.limit(10).where.not(id: id).order("RANDOM()")
         @next = random.first
@@ -109,8 +139,10 @@ class ArticlesController < ApplicationController
         @previous = random.first
       end
 
+      # select the author
       @author = @article.admin
     else
+      # if there is no article found
       random = Article.limit(10).order("RANDOM()")
       @previous = random.first
       @next = random.second
