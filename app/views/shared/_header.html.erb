@@ -14,13 +14,12 @@
       <div class="collapse navbar-collapse" id="navToggle">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <li class="nav-item">
-            <a class="nav-link cursor" id="search-toggle">
+            <a class="nav-link cursor inline" id="search-toggle">
               <i class="fa fa-search" aria-hidden="true"></i>
             </a>
           </li>
-          <%= form_tag articles_path, method: 'get', class: 'form-inline my-2 my-lg-0 no-display', id: 'search' do %>
+          <%= form_tag articles_path, method: 'get', class: 'form-inline my-2 my-lg-0 no-display', id: 'search-form' do %>
             <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', type: "text", required: true, placeholder: 'Search' %>
-            <%= submit_tag "Search", class: "btn-blue" %>
           <% end %>
         </ul>
         <ul class="navbar-nav">
@@ -104,7 +103,26 @@
 </div>
 
 <script type="text/javascript">
-  $('#search-toggle').click(function() {
-    $('#search').toggleClass('no-display');
+  function searchListen() {
+    var active = false;
+    var $toggle = $('#search-toggle');
+    var $form = $('#search-form');
+    var $search = $('#search');
+    var $icon = $toggle.find('.fa');
+    $toggle.click(function() {
+      if (!active) {
+        $icon.removeClass('fa-search').addClass('fa-times');
+        $form.removeClass('no-display');
+        $search.focus();
+      } else {
+        $icon.addClass('fa-search').removeClass('fa-times');
+        $form.addClass('no-display');
+      }
+      active = !active;
+    });
+  }
+
+  $(document).ready(function() {
+    searchListen();
   });
 </script>
