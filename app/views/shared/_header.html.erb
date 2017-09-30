@@ -14,13 +14,24 @@
       <div class="collapse navbar-collapse" id="navToggle">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <li class="nav-item">
-            <a class="nav-link cursor inline" id="search-toggle">
-              <i class="fa fa-search" aria-hidden="true"></i>
+            <a class="nav-link cursor inline">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a class="nav-link cursor inline">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="nav-link cursor inline">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
             </a>
           </li>
-          <%= form_tag articles_path, method: 'get', class: 'form-inline my-2 my-lg-0 no-display', id: 'search-form' do %>
-            <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', type: "text", required: true, placeholder: 'Search' %>
-          <% end %>
+          <li class="nav-item">
+            <a class="nav-link">
+              <i class="fa fa-search cursor" id="search-toggle" aria-hidden="true"></i>
+              <%= form_tag articles_path, method: 'get', class: 'form-inline inline margin-0 my-2 my-lg-0 no-display', id: 'search-form' do %>
+                <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', type: "text", required: true, placeholder: 'Search' %>
+              <% end %>
+            </a>
+          </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
