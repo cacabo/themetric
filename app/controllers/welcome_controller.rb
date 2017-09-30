@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
 
     # only show published articles
     published = Article.where(published: true)
-    published = published.where.not(featured: true)
+    published = published.where(featured: false).or(published.where(featured: nil))
 
     # find most read articles
     by_views = published.order(views: :desc)
