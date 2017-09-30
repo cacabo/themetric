@@ -85,11 +85,10 @@
 - [x] Try to make markdown less necessary (replace with editor?)
 - [x] Sample bio stuff
 - [x] Recommendations for photo
-- [x] About: meet the team, show profiles
+- [x] Meet the team, show profiles on about page
+- [x] Most viewed articles on right?
 - [ ] Links to social media in navbar
 - [ ] Admin can delete their own article if it is not published
-- [ ] Article views --> most viewed articles on right?
-- [ ] Default profile picture (gray round image)
 - [ ] Add location to admin
 - [ ] Include the typeform
 - [ ] Better article recommendations

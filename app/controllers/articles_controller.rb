@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   before_action :is_published, only: [:show]
   before_action :super_admin, only: [:publish, :unpublish, :feature]
 
+  # list all articles
   def index
     if (params[:tag])
       if current_admin
@@ -47,14 +48,17 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # start making a new article
   def new
     @article = current_admin.articles.build
   end
 
+  # edit an article
   def edit
     @article = Article.friendly.find(params[:id])
   end
 
+  # create an article
   def create
     @article = current_admin.articles.build(article_params)
     @article.views_window = Time.now
@@ -68,6 +72,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # show an article
   def show
     @article = Article.friendly.find(params[:id]) if Article.friendly.exists? params[:id]
 
@@ -142,6 +147,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # feature an article
   def feature
     @article = Article.friendly.find(params[:id])
     if @article.published
@@ -159,6 +165,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # unfeature an article
   def unfeatured
     @article = Article.friendly.find(params[:id])
     @article.featured = false
@@ -171,6 +178,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # publish an article
   def publish
     @article = Article.friendly.find(params[:id])
     @article.published = true
@@ -184,6 +192,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # unpublish an article
   def unpublish
     @article = Article.friendly.find(params[:id])
     @article.published = false
@@ -198,6 +207,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # update an article
   def update
     @article = Article.friendly.find(params[:id])
 
@@ -210,20 +220,35 @@ class ArticlesController < ApplicationController
     end
   end
 
-
+  # delete an article
   def destroy
     @article = Article.friendly.find(params[:id])
-    @article.destroy
-    flash[:notice] = "Article deleted successfully."
-    redirect_to articles_path
+
+    # a super admin can delete any article
+    # a regular admin can only delete an article if it is their own
+    # and if it is not published
+    if not @article.published or current_admin.super
+      if @article.destroy
+        flash[:notice] = "Article deleted successfully."
+        redirect_to articles_path
+      else
+        flash[:alert] = "There was an issue deleting the article."
+        redirect_to @article
+      end
+    else
+      flash[:alert] = "Article must be unpublished first."
+      redirect_to @article
+    end
   end
 
   private
+  
+  # define article params passed with edits and creates
   def article_params
     params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region)
   end
 
-  # Confirms the correct admin.
+  # Confirms the admin owns the article of focus
   def correct_admin
     article = Article.friendly.find(params[:id])
     unless current_admin.id.to_i == article.admin.id.to_i
@@ -232,6 +257,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # redirect a normal user away from unpublished posts
   def is_published
     unless current_admin
       article = (Article.friendly.exists? :id) ? Article.friendly.find(params[:id]) : nil
@@ -242,6 +268,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # check if the current admin is a super admin, otherwise redirect
   def super_admin
     unless current_admin and (current_admin.super or current_admin.id == 1)
       flash[:alert] = "You must be a super admin to perform this"
@@ -249,6 +276,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # ensure the admin is either super or correct
   def super_or_correct_admin
     unless current_admin and ((current_admin.super or current_admin.id == 1) or (Article.friendly.find(params[:id]).admin == current_admin))
       flash[:alert] = "You must be a super admin to perform this"
