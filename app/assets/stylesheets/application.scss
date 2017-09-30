@@ -446,6 +446,15 @@ h1 .small {
 .inline {
   display: inline-block;
   width: auto !important;
+
+  &.nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+
+    &:first-child {
+      padding-left: 0rem;
+    }
+  }
 }
 
 .margin-0 {
