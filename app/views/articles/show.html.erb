@@ -34,8 +34,15 @@
         <p class="time inline sans">
           <%= time_ago_in_words(@article.created_at) %> ago
           <% r = @article.regionText %>
+          <% t = @article.topicText %>
           <% if r and r.length > 0 %>
             in <%= link_to region_path(@article.region), class: 'inline black-text special region' do %><%= r %><% end %>
+
+            <% if t and t.length > 0 %>
+              and <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %><%= t %><% end %>
+            <% end %>
+          <% elsif t and t.length > 0 %>
+            in <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %><%= t %><% end %>
           <% end %>
         </p>
 

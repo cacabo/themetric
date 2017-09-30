@@ -173,14 +173,14 @@ class ArticlesController < ApplicationController
 
       # if one is not found, choose random articles
       if (not @next and not @previous)
-        random = Article.limit(10).where.not(id: id).order("RANDOM()")
+        random = Article.limit(10).where.not(id: @article.id).order("RANDOM()")
         @next = random.first
         @previous = random.second
       elsif not @next
-        random = Article.limit(10).where.not(id: id).where.not(id: @previous.id).order("RANDOM()")
+        random = Article.limit(10).where.not(id: @article.id).where.not(id: @previous.id).order("RANDOM()")
         @next = random.first
       elsif not @previous
-        random = Article.limit(10).where.not(id: id).where.not(id: @next.id).order("RANDOM()")
+        random = Article.limit(10).where.not(id: @article.id).where.not(id: @next.id).order("RANDOM()")
         @previous = random.first
       end
 
@@ -289,7 +289,7 @@ class ArticlesController < ApplicationController
 
   # define article params passed with edits and creates
   def article_params
-    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region)
+    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region, :topic)
   end
 
   # Confirms the admin owns the article of focus

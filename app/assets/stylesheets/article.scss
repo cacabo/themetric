@@ -1,4 +1,5 @@
 $blue: #008cff;
+$t-cyan: rgba(0, 203, 255, 0.8);
 $dark-blue: #6f3fff;
 $light-light-gray: #eff2f4;
 
@@ -16,6 +17,24 @@ $light-light-gray: #eff2f4;
     .underline {
       border-bottom: 4px solid $dark-blue;
     }
+  }
+}
+
+.opinion {
+  padding: 0.5rem 1rem;
+  background: $t-cyan;
+  background: -webkit-linear-gradient(120deg, $t-cyan 50%, transparent 50%);
+  background: -o-linear-gradient(120deg, $t-cyan 50%, transparent 50%);
+  background: -moz-linear-gradient(120deg, $t-cyan 50%, transparent 50%);
+  background: linear-gradient(120deg, $t-cyan 50%, transparent 50%);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+
+  &.absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
   }
 }
 
