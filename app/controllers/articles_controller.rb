@@ -17,13 +17,44 @@ class ArticlesController < ApplicationController
       else
         @articles = Article.where(published: true).tagged_with(params[:tag]).order(created_at: :desc)
       end
+    elsif (params[:topic])
+      # if we are searching for articles by a region
+      @region = ''
+
+      # match the region to a text representation
+      if params[:topic] == 'no_topic'
+        @topic == ''
+      elsif params[:topic] == 'economics_and_finance'
+        @topic = 'Economics & Finance'
+      elsif params[:topic] == 'security'
+        @topic = 'Security'
+      elsif params[:topic] == 'politics'
+        @topic = 'Politics'
+      elsif params[:topic] == 'science_and_innovation'
+        @topic = 'Science & Innovation'
+      elsif params[:topic] == 'culture'
+        @topic = 'Culture'
+      elsif params[:topic] == 'opinion'
+        @topic = 'Opinion'
+      else
+        flash[:alert] = 'Topic does not exist'
+        redirect_to notfound_path
+      end
+
+      if current_admin
+        # show all articles if there is an admin
+        @articles = Article.where(topic: params[:topic]).order(created_at: :desc)
+      else
+        # show published articles if there is no admin
+        @articles = Article.where(published: true, topic: params[:topic]).order(created_at: :desc)
+      end
     elsif (params[:region])
       # if we are searching for articles by a region
       @region = ''
 
       # match the region to a text representation
-      if params[:region] == 'undefined'
-        @region == 'undefined'
+      if params[:region] == 'no_region'
+        @region == 'no_region'
       elsif params[:region] == 'north_america'
         @region = 'North America'
       elsif params[:region] == 'south_america'
@@ -36,7 +67,7 @@ class ArticlesController < ApplicationController
         @region = 'Africa'
       elsif params[:region] == 'asia_and_oceania'
         @region = 'Asia & Oceania'
-      elsif params[:region] != 'undefined'
+      else
         flash[:alert] = 'Region does not exist'
         redirect_to notfound_path
       end

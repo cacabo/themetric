@@ -18,7 +18,6 @@
 - [ ] Rename Disqus thread to "The Metric" or "Metric"
 - [ ] Test share buttons when published
 - [ ] SendGrid configuration for contact page
-- [ ] SendGrid for Devise?
 - [ ] Link with domain name
 - [ ] SSL certificate
 - [ ] Favicon
@@ -72,6 +71,8 @@
   - [x] Mobile / small screen
 - [x] Search for articles by name
 - [ ] Add topics to articles (economics and finance, security, politics, science and innovation, culture, opinion)
+  - [ ] Topics in navbar dropdown
+  - [ ] Display opinion on article index
 - [ ] Better article recommendations
 
 ##### Details
@@ -98,3 +99,4 @@
 ##### Down the line
 - [ ] Paginate or scroll to load more articles
 - [ ] Allow super admin to lock / delete other admin accounts
+- [ ] SendGrid for Devise?

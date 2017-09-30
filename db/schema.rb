@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930053038) do
+ActiveRecord::Schema.define(version: 20170930060257) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170930053038) do
     t.integer "views"
     t.boolean "featured"
     t.datetime "views_window"
+    t.integer "topic", default: 0
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 

@@ -26,7 +26,13 @@
 <div class="space-05"></div>
 
 <div class="field special-label alwaysHasVal marg-bot-1">
-  <%= f.select :region, [['None', :undefined], ['North America', :north_america], ['South America', :south_america], ['Europe', :europe], ['Middle East & North Africa', :middle_east_and_north_africa], ['Africa', :africa], ['Asia & Oceania', :asia_and_oceania]]%>
+  <%= f.select :region, [['None', :no_region], ['North America', :north_america], ['South America', :south_america], ['Europe', :europe], ['Middle East & North Africa', :middle_east_and_north_africa], ['Africa', :africa], ['Asia & Oceania', :asia_and_oceania]]%>
+</div>
+
+<div class="space-05"></div>
+
+<div class="field special-label alwaysHasVal marg-bot-1">
+  <%= f.select :topic, [['None', :no_topic], ['Economics & Finance', :economics_and_finance], ['Security', :security], ['Politics', :politics], ['Science & Innovation', :science_and_innovation], ['Culture', :culture], ['Opinion', :opinion]]%>
 </div>
 
 <div class="space-05"></div>

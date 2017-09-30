@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  get 'notfound', to: 'welcome#notfound', as: 'notfound'
+
   patch 'articles/:id/publish', to: 'articles#publish', as: 'publish'
   patch 'articles/:id/unpublish', to: 'articles#unpublish', as: 'unpublish'
   patch 'articles/:id/feature', to: 'articles#feature', as: 'feature'
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'articles/tags/:tag', to: 'articles#index', as: 'tag'
   get 'articles/region/:region', to: 'articles#index', as: 'region'
+  get 'articles/topic/:topic', to: 'articles#index', as: 'topic'
 
   get 'admins/info', to: 'admins#info', as: 'info'
 
@@ -29,6 +32,5 @@ Rails.application.routes.draw do
   resources :admins, only: [:show, :edit, :update]
 
   # Handle 404
-  get '404', to: 'welcome#notfound', as: 'notfound'
   get '*unmatched_route', to: 'welcome#notfound'
 end

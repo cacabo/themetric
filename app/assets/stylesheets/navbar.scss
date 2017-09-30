@@ -151,6 +151,15 @@ $light-gray: #eff2f4;
  * Dropdown menu
  */
 
+ .dropdown-header {
+   color: black !important;
+   font-size: 1rem !important;
+ }
+
+ .indent {
+   margin-left: 1rem;
+ }
+
  .navbar {
    .dropdown-menu {
      border-top: 1px solid white;

@@ -8,12 +8,30 @@ class Article < ApplicationRecord
   acts_as_taggable
   acts_as_taggable_on :tags
 
-  enum region: [ :undefined, :north_america, :south_america, :europe, :middle_east_and_north_africa, :africa, :asia_and_oceania ]
+  enum region: [
+    :no_region,
+    :north_america,
+    :south_america,
+    :europe,
+    :middle_east_and_north_africa,
+    :africa,
+    :asia_and_oceania
+  ]
+
+  enum topic: [
+    :no_topic,
+    :economics_and_finance,
+    :security,
+    :politics,
+    :science_and_innovation,
+    :culture,
+    :opinion
+  ]
 
   after_save :ensure_only_one_featured_article
 
   def regionText
-    if region == 'undefined'
+    if region == 'no_region'
       return ''
     elsif region == 'north_america'
       return 'North America'
@@ -27,6 +45,24 @@ class Article < ApplicationRecord
       return 'Africa'
     elsif region == 'asia_and_oceania'
       return 'Asia & Oceania'
+    end
+  end
+
+  def topicText
+    if topic == 'no_topic'
+      return ''
+    elsif topic == 'economics_and_finance'
+      return 'Economics & Finance'
+    elsif topic  == 'security'
+      return 'Security'
+    elsif topic == 'politics'
+      return 'Politics'
+    elsif topic =='science_and_innovation'
+      return 'Science & Innovation'
+    elsif topic == 'culture'
+      return 'Culture'
+    elsif topic == 'opinion'
+      return 'Opinion'
     end
   end
 
