@@ -90,10 +90,9 @@
 - [x] Most viewed articles on right?
 - [x] Links to social media in navbar
 - [x] Admin can delete their own article if it is not published
+- [x] Collapse navbar at wider size
 - [ ] Include the typeform
 - [ ] Add URL's to social media for links
-- [ ] Collapse navbar at wider size
-  - [ ] Adjust CSS media queries accordingly
 
 ##### Down the line
 - [ ] Paginate or scroll to load more articles
