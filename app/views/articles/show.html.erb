@@ -158,8 +158,9 @@
       </div>
       <!-- close col around article -->
 
-      <% if @recommended and @recommended.length > 0 %>
-        <div class="col-12 col-lg-4 col-xl-3 hidden-md-down light-light-gray" id="wrapper">
+
+      <div class="col-12 col-lg-4 col-xl-3 hidden-md-down light-light-gray" id="wrapper">
+        <% if @recommended and @recommended.length > 0 %>
           <div class="recommended">
             <div class="space-1"></div>
             <p class="text-muted bold sans">
@@ -197,8 +198,9 @@
               <% end %>
             <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+
     </div>
     <!-- close row -->
   </div>
