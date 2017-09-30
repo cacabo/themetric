@@ -18,7 +18,7 @@ class Admin < ApplicationRecord
     validate :website_link
     validate :instagram_link
     validate :linkedin_link
-    validate :referred
+    validate :referred, on: :create
 
     extend FriendlyId
     friendly_id :name, use: :slugged
