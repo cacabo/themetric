@@ -22,7 +22,7 @@
 - [ ] Create GoDaddy Email
 - [ ] Link with domain name
 - [ ] SSL certificate
-- [ ] Favicon
+- [x] Favicon
 - [ ] Link to google form
 
 ##### Views
