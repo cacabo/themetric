@@ -1,8 +1,10 @@
 {
-    "master_picture": "app/assets/images/black.png",
+    "master_picture": "app/assets/images/logo_small.svg",
     "favicon_design": {
         "ios": {
-            "picture_aspect": "no_change",
+            "picture_aspect": "background_and_margin",
+            "background_color": "#ffffff",
+            "margin": "21%",
             "assets": {
                 "ios6_and_prior_icons": false,
                 "ios7_and_later_icons": false,
@@ -14,7 +16,7 @@
 
         ],
         "windows": {
-            "picture_aspect": "no_change",
+            "picture_aspect": "white_silhouette",
             "background_color": "#2d89ef",
             "on_conflict": "override",
             "assets": {
@@ -28,8 +30,8 @@
             }
         },
         "android_chrome": {
-            "picture_aspect": "no_change",
-            "theme_color": "#000000",
+            "picture_aspect": "shadow",
+            "theme_color": "#ffffff",
             "manifest": {
                 "name": "The Metric",
                 "display": "standalone",
@@ -43,9 +45,8 @@
             }
         },
         "safari_pinned_tab": {
-            "picture_aspect": "black_and_white",
-            "threshold": 75,
-            "theme_color": "#000000"
+            "picture_aspect": "silhouette",
+            "theme_color": "#008cff"
         }
     },
     "settings": {

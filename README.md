@@ -18,10 +18,12 @@
 - [x] Complete meta tags
 - [x] Rename Disqus thread to "The Metric" or "Metric"
 - [x] Test share buttons when published
-- [ ] SendGrid configuration for contact page
+- [x] SendGrid configuration for contact page
+- [ ] Create GoDaddy Email
 - [ ] Link with domain name
 - [ ] SSL certificate
 - [ ] Favicon
+- [ ] Link to google form
 
 ##### Views
 - [x] Pretty forms
@@ -94,7 +96,6 @@
 - [x] Admin can delete their own article if it is not published
 - [x] Collapse navbar at wider size
 - [x] Add URL's to social media for links
-- [ ] Include the typeform
 
 ##### Down the line
 - [ ] Paginate or scroll to load more articles
