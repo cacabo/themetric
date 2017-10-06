@@ -68,8 +68,8 @@ class AdminsController < ApplicationController
   end
 
   def correct_admin
-    unless current_admin and current_admin.id.to_i == Admin.friendly.find(params[:id]).id.to_i
-      flash[:alert] = "You can only edit your own information."
+    unless current_admin and ((current_admin.id.to_i == Admin.friendly.find(params[:id]).id.to_i) or (current_admin.super or current_admin.id == 1))
+      flash[:alert] = "Only a super admin or the user of focus can edit this information."
       redirect_to(root_url)
     end
   end
