@@ -66,6 +66,45 @@
           <%= f.file_field :image, label: 'Profile picture:', class: 'marg-left-05 marg-bot-1' %>
           <p class="text-muted" style="transform: translateY(-1rem)"><i>Try to use a square-ish photo!</i></p>
 
+          <div class="row">
+            <div class="col-6">
+              <div class="field special-label marg-bot-1">
+                <%= f.text_field :facebook %>
+              </div>
+              <div class="space-05"></div>
+            </div>
+            <div class="col-6">
+              <div class="field special-label marg-bot-1">
+                <%= f.text_field :twitter %>
+              </div>
+              <div class="space-05"></div>
+            </div>
+            <div class="col-6">
+              <div class="field special-label marg-bot-1">
+                <%= f.text_field :github %>
+              </div>
+              <div class="space-05"></div>
+            </div>
+            <div class="col-6">
+              <div class="field special-label marg-bot-1">
+                <%= f.text_field :website %>
+              </div>
+              <div class="space-05"></div>
+            </div>
+            <div class="col-6">
+              <div class="field special-label marg-bot-1">
+                <%= f.text_field :instagram %>
+              </div>
+              <div class="space-05"></div>
+            </div>
+            <div class="col-6">
+              <div class="field special-label marg-bot-1">
+                <%= f.text_field :linkedin %>
+              </div>
+              <div class="space-05"></div>
+            </div>
+          </div>
+
           <%= button_tag(type: 'submit', class: "btn-blue shade-3 hover") do %>
           Sign up
           <% end %>

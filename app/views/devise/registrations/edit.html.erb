@@ -52,17 +52,15 @@
 
           <div class="space-05"></div>
 
-          <%= button_tag(type: 'submit', class: "btn-blue") do %>
-          Update account
+          <%= button_tag(type: 'submit', class: "btn-blue shade-3 hover") do %>
+            Update account
           <% end %>
           <% end %>
 
-          <p class="text-muted bold caps marg-bot-1">CANCEL ACCOUNT</p>
+          <div class="space-2"></div>
 
           <p>Unhappy?
-            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-          <%= link_to "Back", :back %>
+            <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
         </div>
       </div>
     </div>

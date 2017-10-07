@@ -9,11 +9,15 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-        <div class="white pad-2">
+        <div class="white pad-2 shade-1 hover">
           <p class="caps text-muted bold marg-bot-1">
             Edit admin information
           </p>
           <%= render 'form' %>
+
+          <div class="space-1"></div>
+
+          <%= link_to 'Edit email and password', edit_admin_registration_path %>
 
           <div class="space-2"></div>
           <%= link_to current_admin do %>

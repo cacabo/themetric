@@ -15,11 +15,11 @@
     </div>
     <div class="col-12 col-md-10 offset-md-1 col-lg-8">
       <p class="white pad-1 marg-bot-1 shade-1">
-        The Metric is a student-run organization that publishes domestic policy, foreign policy, and current affairs-related content from across the world. Founded at the University of Pennsylvania, our team now includes students from all around the world. We represent a diversity of geographic locations, cultural experiences, and intellectual passions, and we are united by a desire to better inform our generation.
+        The Metric is a student-run organization that publishes domestic policy, foreign policy, and current affairs-related content from across the world. Founded at the University of Pennsylvania, we empower contributors from around the globe to share their worldviews. We represent a variety of geographic locations, cultural experiences, and intellectual interests; we are united by a passion to better inform our generation and motivate them to take action.
         <br><br>
-        In addition to our published content, we highlight opportunities and resources to catalyze political action. Being informed matters to the extent that people use their knowledge to make the world a better place, so The Metric strives to connect our readers with the means to engage with their communities and the world.
+        Our platform is a tool for enabling our generation to share their stories with the world. We believe that our diversity of contributors produces a better measure of what’s happening in the world. With this in mind, we provide insights on what matters with the context the modern world demands.
         <br><br>
-        We aim to raise the standards for modern journalism in an accessible, appealing manner. The Metric provides insight on what matters with the context the modern world demands.
+        In addition to our published content, we highlight opportunities and resources to catalyze political action. Being informed matters to the extent that we use our knowledge to make the world a better place, which makes us strive to connect our readers with the means to engage with their communities across the world.
       </p>
     </div>
   </div>
@@ -32,17 +32,26 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="col-12 col-md-10 offset-md-1">
         <h1 class="special">
           Meet the team
         </h1>
         <p class="marg-bot-2">
-          We're a driven team of students passionate for progress and political awareness. Want to join us? <a href="<%= new_contact_path %>">Send us a message.</a>
+          We're a driven team of students passionate for progress and political awareness. Want to join us?
         </p>
 
-        <div class="row">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOvrr_VWSgQO8PYN1Wa4un5gixcY29VBErWuzO9ERzIOWzWQ/viewform" target="_blank" class="btn-blue white-text marg-right-05 shade-3 hover">
+          Join the team
+        </a>
+        <a href="<%= new_contact_path %>" class="btn-white shade-3 hover">
+          Send us a message
+        </a>
+        <div class="space-2"></div>
+
+        <!-- <div class="row"> -->
+        <div class="card-columns articles">
           <% @admins.each do |a| %>
-            <div class="col-12 col-md-6 marg-bot-1">
+            <!-- <div class="col-12 col-md-6 marg-bot-1"> -->
               <%= link_to a do %>
                 <div class="card admin-card">
                   <div class="card-block admin">
@@ -69,14 +78,15 @@
                         <% end %>
                       <% end %>
 
-                      <p class="text-muted bold marg-bot-05">
-                        <%= a.role %>
-                      </p>
                       <% if a.location and a.location.length > 0 %>
-                        <p class="text-muted italic marg-bot-05">
+                        <p class="text-muted bold marg-bot-05">
                           <%= a.location %>
                         </p>
                       <% end %>
+
+                      <p class="text-muted italic marg-bot-05">
+                        <%= a.role %>
+                      </p>
                       <ul class="horizontal admin-icons">
                         <li>
                           <a href="mailto:<%= a.email %>">
@@ -134,7 +144,7 @@
                 <!-- close card -->
               <% end %>
               <!-- close link to admin -->
-            </div>
+            <!-- </div> -->
             <!-- close col -->
           <% end %>
           <!-- close loop over admins -->
@@ -142,9 +152,6 @@
         <!-- close row -->
 
         <div class="space-2"></div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOvrr_VWSgQO8PYN1Wa4un5gixcY29VBErWuzO9ERzIOWzWQ/viewform" target="_blank" class="btn-blue white-text marg-right-05 shade-3 hover">
-          Join the team
-        </a>
         <%= link_to 'Back to home', root_path, class: 'btn-white shade-3 hover' %>
         <div class="space-2"></div>
       </div>
