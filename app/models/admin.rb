@@ -36,19 +36,19 @@ class Admin < ApplicationRecord
 
     def facebook_link
       unless facebook.nil? or facebook.length == 0
-        errors.add(:facebook, "invalid URL") unless facebook.start_with? "https://facebook.com/"
+        errors.add(:facebook, "invalid URL") unless facebook.start_with? "https://facebook.com/" or facebook.start_with? "https://www.facebook.com/"
       end
     end
 
     def twitter_link
       unless twitter.nil? or twitter.length == 0
-        errors.add(:twitter, "invalid URL") unless twitter.start_with? "https://twitter.com/"
+        errors.add(:twitter, "invalid URL") unless twitter.start_with? "https://twitter.com/" or twitter.start_with? "https://www.twitter.com/"
       end
     end
 
     def github_link
       unless github.nil? or github.length == 0
-        errors.add(:github, "invalid URL") unless github.start_with? "https://github.com/"
+        errors.add(:github, "invalid URL") unless github.start_with? "https://github.com/" or github.start_with? "https://www.github.com/"
       end
     end
 
