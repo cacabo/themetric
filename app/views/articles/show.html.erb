@@ -143,7 +143,7 @@
                   data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
                     <button class="btn btn-sm btn-danger white-text">Delete</button>
                 <% end %>
-              <% elsif not @article.published and (current_admin.super or current_admin.id == @admin.id) %>
+              <% elsif not @article.published and (current_admin.super or current_admin.id == @article.admin.id) %>
                 <%= link_to article_path(@article),
                   method: :delete,
                   data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
