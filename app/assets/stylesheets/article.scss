@@ -237,6 +237,10 @@ $light-light-gray: #eff2f4;
   }
 }
 
+.card-columns.two-columns {
+  column-count: 2;
+}
+
 @media screen and (max-width: 864px) {
   .card-columns {
     column-count: 2 !important;
