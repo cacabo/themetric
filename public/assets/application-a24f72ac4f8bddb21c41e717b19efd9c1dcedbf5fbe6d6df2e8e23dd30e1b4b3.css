@@ -635,29 +635,35 @@ trix-editor .attachment__remove--icon {
   display: inline-block;
 }
 
+/* line 240, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+.card-columns.two-columns {
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
 @media screen and (max-width: 864px) {
-  /* line 241, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 245, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 2 !important;
             column-count: 2 !important;
   }
 }
 @media screen and (max-device-width: 864px) {
-  /* line 247, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 251, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 2 !important;
             column-count: 2 !important;
   }
 }
 @media screen and (max-width: 612px) {
-  /* line 253, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 257, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 1 !important;
             column-count: 1 !important;
   }
 }
 @media screen and (max-device-width: 612px) {
-  /* line 259, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 263, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 1 !important;
             column-count: 1 !important;
@@ -1158,7 +1164,7 @@ textarea.text.no-border:focus {
 @media (max-width: 892px) {
   /* line 198, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/navbar.scss */
   .navbar-collapse {
-    max-height: calc(100vh + -48px);
+    max-height: calc(100vh + -56px);
   }
 
   /* line 202, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/navbar.scss */
