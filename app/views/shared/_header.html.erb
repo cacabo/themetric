@@ -155,10 +155,7 @@
     var $nav = $('.navbar-collapse');
     var h1 = $(window).height();
     var h2 = $nav.height();
-    console.log(h1);
-    console.log(h2);
     if (h1 < h2 + 82) {
-      console.log('true!!');
       $nav.css('overflow-y', 'scroll');
     } else {
       $nav.css('overflow-y', 'visible');
