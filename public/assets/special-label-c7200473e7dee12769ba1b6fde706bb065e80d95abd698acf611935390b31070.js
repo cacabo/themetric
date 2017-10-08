@@ -1,14 +1,23 @@
 function check() {
-  // Check for value on load
+  // Check for value in inputs on load
   $('input').each(function() {
+    if ($(this).val().length > 0) {
+      $(this).prev('label').addClass('hasVal');
+    }
+  });
+
+  // Check for value in textareas on load
+  $('textarea').each(function() {
     if ($(this).val().length > 0) {
       $(this).prev('label').addClass('hasVal');
     }
   });
 }
 
+// Call on first load
 check();
 
+// Call when assets have loaded
 $(document).ready(function() {
   check();
 });
