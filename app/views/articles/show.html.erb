@@ -199,11 +199,15 @@
                         ARTICLE FEATURED
                       </div>
                     <% end %>
-
-                    <% if article.image.nil? or article.image_file_name.nil? %>
-                      <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
-                    <% end %>
-                    <h2 class="subtitle smaller sans"><%= article.subtitle %></h2>
+                    
+                    <h1 class="sans title smaller">
+                      <span class="underline">
+                        <%= article.title %>
+                      </span>
+                    </h1>
+                    <h2 class="subtitle smaller sans">
+                      <%= article.subtitle %>
+                    </h2>
                   </div>
                 </div>
               <% end %>
