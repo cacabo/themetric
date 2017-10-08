@@ -169,20 +169,20 @@ class ArticlesController < ApplicationController
 
       # select the previous and next articles by ID
       if Article.all.size > 1
-        @previous = Article.where("id < ?", @article.id).last
-        @next = Article.where("id > ?", @article.id).first
+        @previous = Article.where(published: true).where("id < ?", @article.id).last
+        @next = Article.where(published: true).where("id > ?", @article.id).first
       end
 
       # if one is not found, choose random articles
       if (not @next and not @previous)
-        random = Article.limit(10).where.not(id: @article.id).order("RANDOM()")
+        random = Article.where(published: true).limit(10).where.not(id: @article.id).order("RANDOM()")
         @next = random.first
         @previous = random.second
       elsif not @next
-        random = Article.limit(10).where.not(id: @article.id).where.not(id: @previous.id).order("RANDOM()")
+        random = Article.where(published: true).limit(10).where.not(id: @article.id).where.not(id: @previous.id).order("RANDOM()")
         @next = random.first
       elsif not @previous
-        random = Article.limit(10).where.not(id: @article.id).where.not(id: @next.id).order("RANDOM()")
+        random = Article.where(published: true).limit(10).where.not(id: @article.id).where.not(id: @next.id).order("RANDOM()")
         @previous = random.first
       end
 

@@ -24,7 +24,7 @@
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item hidden-md-down">
             <a class="nav-link">
               <i class="fa fa-search cursor" id="search-toggle" aria-hidden="true"></i>
               <%= form_tag articles_path, method: 'get', class: 'form-inline inline margin-0 my-2 my-lg-0 no-display', id: 'search-form' do %>
@@ -76,7 +76,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="space-1"></div>
               </div>
             </li>
             <li class="nav-item">
@@ -158,7 +157,7 @@
     var h2 = $nav.height();
     console.log(h1);
     console.log(h2);
-    if (h1 < h2 + 72) {
+    if (h1 < h2 + 82) {
       console.log('true!!');
       $nav.css('overflow-y', 'scroll');
     } else {
