@@ -23,6 +23,10 @@ $light-gray: #eff2f4;
     padding: 0.5rem 0.5rem;
   }
 
+  .navbar-collapse {
+    max-height: calc(100vh + -48px);
+  }
+
   .navbar-toggler {
     height: 50px;
   }

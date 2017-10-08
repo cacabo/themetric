@@ -480,3 +480,23 @@ h1 .small {
     flex: 1;
   }
 }
+
+@media screen and (max-device-width: 998px) {
+  .flex-container {
+    display: block;
+
+    .flex {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 696px) {
+  .flex-container {
+    display: block;
+
+    .flex {
+      width: 100%;
+    }
+  }
+}
