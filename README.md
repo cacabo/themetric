@@ -19,11 +19,13 @@
 - [x] Rename Disqus thread to "The Metric" or "Metric"
 - [x] Test share buttons when published
 - [x] SendGrid configuration for contact page
-- [ ] Create GoDaddy Email
-- [ ] Link with domain name
-- [ ] SSL certificate
+- [x] Create GoDaddy Email
+- [x] Link with domain name
+- [x] SSL certificate
 - [x] Favicon
-- [ ] Link to google form
+- [x] Link to google form
+- [ ] 2 articles on index
+- [ ] Improve search
 
 ##### Views
 - [x] Pretty forms
