@@ -9,7 +9,7 @@
   <div class="container-fluid serif">
     <div class="row">
       <div class="col-12 col-lg-8 pad-0 col-xl-9">
-        <div class="pad-1">
+        <div class="pad-1-special">
           <% if current_admin and not @article.published %>
             <p class="text-muted special pad-1 light-gray">
               THIS ARTICLE IS NOT PUBLISHED
@@ -37,9 +37,13 @@
               in <%= link_to region_path(@article.region), class: 'inline black-text special region' do %>
                 <%= r %>
               <% end %>
-            <% end %>
 
-            <% if t and t.length > 0 %>
+              <% if t and t.length > 0 %>
+                and <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %>
+                  <%= t %>
+                <% end %>
+              <% end %>
+            <% elsif t and t.length > 0 %>
               in <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %>
                 <%= t %>
               <% end %>
@@ -345,7 +349,10 @@
   var comments = $('#comments').offset().top;
   var rec = $('.recommended');
   var wrapper = $('#wrapper');
-  rec.width(wrapper.width());
+
+  function setRecWidth() {
+    rec.width(wrapper.width());
+  }
 
   $(window).resize(function() {
     comments = $('#comments').offset().top;
@@ -362,5 +369,13 @@
     } else {
       rec.removeClass('absolute');
     }
+  });
+
+  $(document).ready(function() {
+    setRecWidth();
+  });
+
+  $(window).resize(function() {
+    setRecWidth();
   });
 </script>

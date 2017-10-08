@@ -3,6 +3,22 @@ $t-cyan: rgba(0, 203, 255, 0.8);
 $dark-blue: #6f3fff;
 $light-light-gray: #eff2f4;
 
+.pad-1-special {
+  padding: 1rem 2rem;
+}
+
+@media screen and (max-device-width: 848px) {
+  .pad-1-special {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 848px) {
+  .pad-1-special {
+    padding: 1rem;
+  }
+}
+
 .caption {
   font-size: 0.8rem !important;
   margin-bottom: 0rem;
@@ -35,19 +51,6 @@ $light-light-gray: #eff2f4;
     max-width: 100% !important;
     height: auto;
     overflow: hidden !important;
-  }
-}
-
-figure {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  overflow: hidden !important;
-  text-align: center !important;
-
-  img {
-    max-width: 100% !important;
-    text-align: center !important;
   }
 }
 
@@ -211,7 +214,7 @@ figure {
   img {
     width: 3rem;
     height: 3rem;
-    overflow: hidden!important;
+    overflow: hidden !important;
     border-radius: 50%;
     display: inline-block;
     position: absolute;
@@ -220,7 +223,7 @@ figure {
   .no-img {
     width: 3rem;
     height: 3rem;
-    overflow: hidden!important;
+    overflow: hidden !important;
     border-radius: 50%;
     display: inline-block;
     position: absolute;
