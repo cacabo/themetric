@@ -111,7 +111,7 @@
             <% sections = @article.text.split(/\[(.*?)\]/) %>
             <% sections.each_with_index do |s, index| %>
               <% if index % 2 != 0 %>
-                <% image_components = (s[1, s.length - 2]).split(",") %>
+                <% image_components = (s[1, s.length - 1]).split(",") %>
                 <% link = image_components[0].split("\"")[1] %>
                 <div class="image-wrapper">
                   <img src="<%= link %>" class="img-responsive">
