@@ -26,6 +26,18 @@ $light-light-gray: #eff2f4;
   }
 }
 
+.image-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+
+  .img-responsive {
+    max-width: 100% !important;
+    height: auto;
+    overflow: hidden !important;
+  }
+}
+
 .opinion {
   padding: 0.5rem 1rem;
   background: $t-cyan;
