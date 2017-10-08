@@ -268,16 +268,17 @@ class ArticlesController < ApplicationController
     # a super admin can delete any article
     # a regular admin can only delete an article if it is their own
     # and if it is not published
-    if not @article.published or current_admin.super
-      if @article.destroy
-        flash[:notice] = "Article deleted successfully."
-        redirect_to articles_path
-      else
-        flash[:alert] = "There was an issue deleting the article."
-        redirect_to @article
-      end
-    else
+    if not @article
+      flash[:notice] = "Article deleted successfully."
+      redirect_to articles_path
+    elsif @article and (not @article.published or current_admin.super)
       flash[:alert] = "Article must be unpublished first."
+      redirect_to @article
+    elsif @article.destroy
+      flash[:notice] = "Article deleted successfully."
+      redirect_to articles_path
+    else
+      flash[:alert] = "There was an issue deleting the article."
       redirect_to @article
     end
   end
