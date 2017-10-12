@@ -211,6 +211,36 @@ $light-light-gray: #eff2f4;
   }
 }
 
+@media screen and (max-width: 996px) {
+  .interact {
+    display: block;
+    width: 100%;
+
+    ul {
+      width: 100%;
+    }
+
+    .article-social {
+      text-align: left !important;
+    }
+  }
+}
+
+@media screen and (max-device-width: 996px) {
+  .interact {
+    display: block;
+    width: 100%;
+
+    ul {
+      width: 100%;
+    }
+
+    .article-social {
+      text-align: left !important;
+    }
+  }
+}
+
 .author {
   img {
     width: 3rem;
