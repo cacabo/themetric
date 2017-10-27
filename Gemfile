@@ -38,7 +38,6 @@ gem 'aws-sdk', '~> 2.3.0'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 gem 'mail_form'
 gem 'sendgrid-ruby'
-# gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 gem 'trix'
 gem 'friendly_id', '~> 5.1.0'
 
