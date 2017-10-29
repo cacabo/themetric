@@ -93,7 +93,7 @@ $light-light-gray: #eff2f4;
     display: inline-block;
 
     .tag {
-      color: rgba(0, 0, 0, 0.15);
+      color: rgba(0, 0, 0, 0.25);
       font-weight: bold;
       text-transform: uppercase;
       margin-right: 0.2rem;
@@ -102,21 +102,8 @@ $light-light-gray: #eff2f4;
       &:hover,
       &:active,
       &:focus {
-        color: rgba(0, 0, 0, 0.3);
+        color: rgba(0, 0, 0, 0.5);
       }
-
-      // border: 1px solid black;
-      // color: black;
-      // padding: 0.2rem 0.6rem;
-      // border-radius: 0.8rem;
-      // transition: all 0.2s ease;
-
-      // &:hover,
-      // &:active,
-      // &:focus, {
-      //   background: black;
-      //   color: white;
-      // }
 
       &::before {
         content: "#"
@@ -149,6 +136,10 @@ $light-light-gray: #eff2f4;
   h4,
   h5,
   h6 {
+    margin-bottom: 0.5rem;
+  }
+
+  img {
     margin-bottom: 0.5rem;
   }
 }

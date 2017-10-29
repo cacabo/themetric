@@ -106,8 +106,17 @@
 
         <div class="col-12 col-md-10 offset-md-1">
           <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-            <%= image_tag @article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
+            <%= image_tag @article.image.url(:large), class: 'img-fluid full-width' %>
           <% end %>
+
+          <% if @article.caption.present? %>
+            <div class="space-05"></div>
+            <p class="text-muted italic caption">
+              <%= @article.caption %>
+            </p>
+          <% end %>
+
+          <div class="space-1"></div>
 
           <div class="article-wrapper">
             <% sections = @article.text.split(/\[(.*?)\]/) %>
