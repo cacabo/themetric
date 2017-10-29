@@ -165,7 +165,7 @@ class ArticlesController < ApplicationController
       # choose recommended articles
       filter = Article.where(published: true).where.not(id: @article.id)
 
-      @recommended = filter.where(region: @article.region).or(filter.where(topic: @article.topic)).limit(2)
+      @recommended = filter.where(region: @article.region).or(filter.where(topic: @article.topic)).limit(6)
 
       # select the previous and next articles by ID
       if Article.all.size > 1

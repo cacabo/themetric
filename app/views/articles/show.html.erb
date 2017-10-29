@@ -190,22 +190,12 @@
                       <div class="space-05"></div>
                     <% end %>
 
-                    <% if current_admin and not article.published %>
-                      <div class="light-gray pad-1 special text-muted marg-bot-1">
-                        ARTICLE NOT PUBLISHED
-                      </div>
-                    <% elsif current_admin and article.featured %>
-                      <div class="light-gray pad-1 special text-muted marg-bot-1">
-                        ARTICLE FEATURED
-                      </div>
-                    <% end %>
-                    
-                    <h1 class="sans title smaller">
+                    <h1 class="sans title">
                       <span class="underline">
                         <%= article.title %>
                       </span>
                     </h1>
-                    <h2 class="subtitle smaller sans">
+                    <h2 class="subtitle sans">
                       <%= article.subtitle %>
                     </h2>
                   </div>
@@ -348,38 +338,3 @@
   <div class="space-4"></div>
 </div>
 <!-- close gray -->
-
-<script type="text/javascript">
-  var comments = $('#comments').offset().top;
-  var rec = $('.recommended');
-  var wrapper = $('#wrapper');
-
-  function setRecWidth() {
-    rec.width(wrapper.width());
-  }
-
-  $(window).resize(function() {
-    comments = $('#comments').offset().top;
-  });
-
-  $(document).ready(function() {
-    comments = $('#comments').offset().top;
-  });
-
-  window.addEventListener('scroll', function() {
-    var scrollBot = $(window).scrollTop() + $(window).height();
-    if (scrollBot >= comments) {
-      rec.addClass('absolute');
-    } else {
-      rec.removeClass('absolute');
-    }
-  });
-
-  $(document).ready(function() {
-    setRecWidth();
-  });
-
-  $(window).resize(function() {
-    setRecWidth();
-  });
-</script>

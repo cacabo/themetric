@@ -156,14 +156,15 @@ a.full-width {
 }
 
 .recommended {
-  right: 1rem;
-  position: fixed;
-  height: calc(100vh + -1rem + -50px);
-  overflow-y: hidden !important;
+  position: relative;
 
-  &.absolute {
-    position: absolute;
-    bottom: 0;
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0rem;
   }
 }
 

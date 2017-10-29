@@ -81,12 +81,6 @@
     <% end %>
 
     <script type="text/javascript">
-      $('.x').click(function() {
-        $('.popup').slideUp(200);
-      });
-    </script>
-
-    <script type="text/javascript">
       document.addEventListener('turbolinks:load', function(event) {
         if ((typeof ga) === 'function') {
           ga('set', 'location', event.data.url);
