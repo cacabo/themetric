@@ -16,11 +16,23 @@
 </div>
 <% end %>
 
+<!-- title -->
+<%= f.text_field :title, hide_label: true, placeholder: "Title", class: 'title no-border', wrapper: { class: 'marg-bot-0' }, required: true, autofocus: true %>
+
+<!-- subtitle -->
+<%= f.text_area :subtitle, rows: 1, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
+
+<div class="space-1"></div>
+
 <%= f.file_field :image, label: 'Cover image: ', class: 'marg-left-05' %>
 <p class="text-muted marg-bot-1">Accepted formats: .PNG, .JPEG</p>
 
-<%= f.text_field :title, hide_label: true, placeholder: "Title", class: 'title no-border', wrapper: { class: 'marg-bot-0' }, required: true, autofocus: true %>
-<%= f.text_area :subtitle, rows: 1, hide_label: true, placeholder: "Quickly summarize your article...", class: 'serif subtitle no-border', required: true %>
+<!-- caption -->
+<%= f.text_area :caption, rows: 1, hide_label: true, placeholder: "Caption the cover image...", lcass: 'serif bigger text', required: false %>
+
+<div class="space-1"></div>
+
+<!-- body -->
 <%= f.trix_editor :text, class: 'serif bigger text', required: true %>
 
 <div class="space-1"></div>

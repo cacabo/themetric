@@ -280,7 +280,7 @@ class ArticlesController < ApplicationController
 
   # define article params passed with edits and creates
   def article_params
-    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region, :topic)
+    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region, :topic, :caption)
   end
 
   # Confirms the admin owns the article of focus
