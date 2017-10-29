@@ -29,7 +29,7 @@
           </h2>
 
           <p class="time inline sans">
-            <%= time_ago_in_words(@article.created_at) %> ago
+            <%= "Posted " + time_ago_in_words(@article.created_at) %> ago
             <% r = @article.regionText %>
             <% t = @article.topicText %>
 
@@ -49,6 +49,8 @@
               <% end %>
             <% end %>
           </p>
+
+          <div class="space-0"></div>
 
           <% if @article.tag_list %>
             <p class="inline tags">
@@ -232,6 +234,7 @@
             <% end %>
           </div>
         <% end %>
+        <div class="space-1"></div>
       </div>
 
     </div>

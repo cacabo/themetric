@@ -84,18 +84,43 @@ $light-light-gray: #eff2f4;
   font-style: italic;
 }
 
-.tag {
-  border: 1px solid black;
-  color: black;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.8rem;
-  transition: all 0.2s ease;
+.tags {
+  margin-bottom: 0.4rem;
 
-  &:hover,
-  &:active,
-  &:focus, {
-    background: black;
-    color: white;
+  a {
+    padding-bottom: 0.2rem;
+    display: inline-block;
+
+    .tag {
+      color: rgba(0, 0, 0, 0.15);
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-right: 0.2rem;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      // border: 1px solid black;
+      // color: black;
+      // padding: 0.2rem 0.6rem;
+      // border-radius: 0.8rem;
+      // transition: all 0.2s ease;
+
+      // &:hover,
+      // &:active,
+      // &:focus, {
+      //   background: black;
+      //   color: white;
+      // }
+
+      &::before {
+        content: "#"
+      }
+    }
   }
 }
 
@@ -172,11 +197,17 @@ $light-light-gray: #eff2f4;
 }
 
 .article-social {
+  margin-top: 1rem;
   margin-left: 0;
+  margin-bottom: 0rem;
   padding-left: 0;
   list-style: none;
   width: 100%;
   text-align: right;
+
+  p {
+    margin-bottom: 0;
+  }
 
   .fa-facebook {
     color: #3b5998;
@@ -265,6 +296,7 @@ $light-light-gray: #eff2f4;
     color: rgba(0, 0, 0, 0.6) !important;
     margin-left: 4rem;
     display: inline-block;
+    margin-bottom: 0rem;
   }
 }
 
