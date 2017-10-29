@@ -111,9 +111,12 @@
 
           <% if @article.caption.present? %>
             <div class="space-05"></div>
-            <p class="text-muted italic caption">
-              <%= @article.caption %>
-            </p>
+            <% captions = @article.caption.split("\n") %>
+            <% captions.each do |c| %>
+              <p class="text-muted italic caption">
+                <%= c %>
+              </p>
+            <% end %>
           <% end %>
 
           <div class="space-1"></div>
