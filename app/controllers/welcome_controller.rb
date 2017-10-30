@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
     @popular = by_views.limit(2);
 
     # sort the remaining articles by time
-    by_time = by_views.offset(2).order(updated_at: :desc)
+    by_time = by_views.offset(2).order(created_at: :desc)
 
     # find the articles
     @articles = by_time.limit(24)
