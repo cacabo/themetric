@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   before_action :correct_admin, only: [:edit, :update]
-  before_action :super_admin, only: [:super, :unsuper]
+  before_action :super_admin, only: [:super, :unsuper, :guest, :unguest]
 
   def show
     @admin = Admin.friendly.exists?(params[:id]) ? Admin.friendly.find(params[:id]) : nil
