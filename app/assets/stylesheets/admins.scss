@@ -6,6 +6,26 @@ $dark-blue-gray: #989fa5;
   border: 0px solid transparent;
 }
 
+.card-columns.admins {
+  column-count: 1;
+
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-device-width: 1204px) and (min-width: 848px) {
+  .card-columns.admins {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-device-width: 1204px) and (min-width: 1204px) {
+  .card-columns.admins {
+    column-count: 3;
+  }
+}
+
 .admin {
   display: flex;
   width: 100%;
