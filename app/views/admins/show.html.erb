@@ -24,7 +24,7 @@
                     </p>
                   <% else %>
                     <p class="bold text-light marg-bot-05">
-                      REGULAR ADMIN
+                      ADMIN
                     </p>
                   <% end %>
                 <% end %>
@@ -98,6 +98,14 @@
                 <div class="admin-buttons">
                   <% if current_admin and (current_admin == @admin) %>
                     <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
+                  <% end %>
+
+                  <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+                    <% if not @admin.isGuest %>
+                      <%= link_to 'Make guest contributor', guest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                    <% else %>
+                      <%= link_to 'Make non-guest contributor', unguest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                    <% end %>
                   <% end %>
 
                   <% if current_admin and (current_admin.super or current_admin.id == 1) %>

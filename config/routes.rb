@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   patch 'admins/:id/super', to: 'admins#super', as: 'super'
   patch 'admins/:id/unsuper', to: 'admins#unsuper', as: 'unsuper'
 
+  patch 'admins/:id/guest', to: 'admins#guest', as: 'guest'
+  patch 'admins/:id/unguest', to: 'admins#unguest', as: 'unguest'
+
   resources :contacts, only: [:new, :create]
 
   root 'welcome#index'

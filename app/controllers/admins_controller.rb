@@ -61,6 +61,32 @@ class AdminsController < ApplicationController
     end
   end
 
+  def guest
+    @admin = Admin.friendly.find(params[:id])
+    @admin.isGuest = true
+
+    if @admin.save
+      flash[:notice] = "Admin changed to guest."
+      redirect_to @admin
+    else
+      flash[:alert] = "Failed to change to guest."
+      redurect_to @admin
+    end
+  end
+
+  def unguest
+    @admin = Admin.friendly.find(params[:id])
+    @admin.isGuest = false
+
+    if @admin.save
+      flash[:notice] = "Admin no longer guest."
+      redirect_to @admin
+    else
+      flash[:alert] = "Failed to change away from guest."
+      redurect_to @admin
+    end
+  end
+
   private
 
   def admin_params

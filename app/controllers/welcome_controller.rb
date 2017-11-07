@@ -22,7 +22,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
-    @admins = Admin.order(name: :asc)
+    @admins = Admin.order(name: :asc).where(isGuest: false)
   end
 
   def notfound
