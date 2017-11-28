@@ -12,6 +12,15 @@ class AdminsController < ApplicationController
     end
   end
 
+  def index
+    if not current_admin
+      flash[:alert] = "You must be logged in to see this page."
+      redirect_to root_path
+    end
+
+    @admins = Admin.all
+  end
+
   def info
     if not current_admin
       flash[:alert] = "You must be logged in to see this page."
