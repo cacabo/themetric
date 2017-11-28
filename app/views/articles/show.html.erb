@@ -289,7 +289,7 @@
               <%= link_to @previous do %>
                 <div class="other white marg-bot-1">
                   <% if not @previous.image.nil? and not @previous.image_file_name.nil? %>
-                    <%= image_tag @previous.image.url(:medium), class: 'img-fluid full-width' %>
+                    <%= image_tag @previous.image.url(:large), class: 'img-fluid full-width' %>
                   <% end %>
                   <div class="pad-1">
                     <p class="text-light bold">
@@ -326,7 +326,7 @@
               <%= link_to @next do %>
                 <div class="other white marg-bot-1">
                   <% if not @next.image.nil? and not @next.image_file_name.nil? %>
-                    <%= image_tag @next.image.url(:medium), class: 'img-fluid full-width' %>
+                    <%= image_tag @next.image.url(:large), class: 'img-fluid full-width' %>
                   <% end %>
                   <div class="pad-1">
                     <p class="text-light bold">

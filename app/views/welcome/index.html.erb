@@ -55,7 +55,7 @@
               <%= link_to article do %>
                 <!-- article image -->
                 <% if not article.image.nil? and not article.image_file_name.nil? %>
-                  <%= image_tag article.image.url(:medium), class: 'img-fluid full-width marg-bot-1' %>
+                  <%= image_tag article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
                 <% end %>
 
                 <!-- article title and subtitle -->
