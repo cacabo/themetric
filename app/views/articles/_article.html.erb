@@ -40,7 +40,7 @@
   <div class="space-0"></div>
 
   <p class="time sans inline float-right">
-    <% if @article.published_at %>
+    <% if article.published_at %>
       <%= time_ago_in_words(article.published_at) %> ago
     <% else %>
       <%= time_ago_in_words(article.created_at) %> ago
