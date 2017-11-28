@@ -29,7 +29,11 @@
           </h2>
 
           <p class="time inline sans">
-            <%= "Posted " + time_ago_in_words(@article.created_at) %> ago
+            <% if @article.published_at %>
+              <%= "Posted " + time_ago_in_words(@article.published_at) %> ago
+            <% else %>
+              <%= "Created " + time_ago_in_words(@article.created_at) %> ago
+            <% end %>
             <% r = @article.regionText %>
             <% t = @article.topicText %>
 

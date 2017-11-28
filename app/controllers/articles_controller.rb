@@ -228,6 +228,7 @@ class ArticlesController < ApplicationController
   # publish an article
   def publish
     @article.published = true
+    @article.published_at = Time.now
 
     if @article.save
       flash[:notice] = "Article published."
