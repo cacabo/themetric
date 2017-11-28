@@ -124,7 +124,7 @@
           <div class="article-wrapper">
             <% sections = @article.text.split(/\[(.*?)\]/) %>
             <% sections.each_with_index do |s, index| %>
-              <% if index % 2 != 0 %>
+              <% if index % 2 != 0 and s and s.length > 2 %>
                 <% image_components = (s[1, s.length - 1]).split(",") %>
                 <% link = image_components[0].split("\"")[1] %>
                 <div class="image-wrapper">
