@@ -32,7 +32,7 @@ I thus delineated between being an `admin` and being a `superAdmin`, where only 
 ### Articles and organization
 We needed a way to house articles of diverse content relating to diverse topics. As such, having a flexible online editor and the ability to categorize and prioritize articles is of the utmost importance.
 
-We first split articles by `region` (North America, South America, Europe, Middle East & North Africa, Africa, and Asia & Oceania) and `topic` (Economics & Finance, Security, Politics, Science & Innovation, Culture, and Opinion).
+We first split articles by `region` (North America, Latin America, Europe, Middle East & North Africa, Africa, and Asia & Oceania) and `topic` (Economics & Finance, Security, Politics, Science & Innovation, Culture, and Opinion).
 
 While editing articles, authors can also add a comma-separated `tags-list` to add more targeted filtering to their piece. It follows that articles can be filtered by either `tag`, `region`, or `topic`.
 

@@ -11,7 +11,7 @@ class Article < ApplicationRecord
   enum region: [
     :no_region,
     :north_america,
-    :south_america,
+    :latin_america,
     :europe,
     :middle_east_and_north_africa,
     :africa,
@@ -35,8 +35,8 @@ class Article < ApplicationRecord
       return ''
     elsif region == 'north_america'
       return 'North America'
-    elsif region  == 'south_america'
-      return 'South America'
+    elsif region  == 'latin_america'
+      return 'Latin America'
     elsif region == 'europe'
       return 'Europe'
     elsif region =='middle_east_and_north_africa'
