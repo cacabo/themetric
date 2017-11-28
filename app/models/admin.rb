@@ -60,13 +60,13 @@ class Admin < ApplicationRecord
 
     def instagram_link
       unless instagram.nil? or instagram.length == 0
-        errors.add(:instagram, "invalid URL") unless instagram.start_with? "https://instagram.com/"
+        errors.add(:instagram, "invalid URL") unless instagram.start_with? "https://instagram.com/" or instagram.start_with? "https://www.github.com/"
       end
     end
 
     def linkedin_link
       unless linkedin.nil? or linkedin.length == 0
-        errors.add(:linkedin, "invalid URL") unless linkedin.start_with? "https://linkedin.com/in/"
+        errors.add(:linkedin, "invalid URL") unless linkedin.start_with? "https://linkedin.com/" or linkedin.start_with? "https://www.linkedin.com/"
       end
     end
 end
