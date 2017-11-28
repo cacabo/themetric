@@ -450,20 +450,35 @@ trix-editor .attachment__remove--icon {
   border-bottom: 4px solid #6f3fff;
 }
 
-/* line 46, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 47, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper h1 {
+  font-size: 2rem;
+  margin-bottom: 0rem !important;
+}
+/* line 52, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper blockquote {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 1rem;
+  border-left: 4px solid rgba(0, 0, 0, 0.3);
+  font-size: 1.2rem;
+  margin-bottom: 0rem;
+}
+
+/* line 62, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .image-wrapper {
   width: 100%;
   text-align: center;
   margin: 0 auto;
 }
-/* line 51, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 67, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .image-wrapper .img-responsive {
   max-width: 100% !important;
   height: auto;
   overflow: hidden !important;
 }
 
-/* line 58, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 74, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .opinion {
   padding: 0.5rem 1rem;
   background: rgba(0, 203, 255, 0.8);
@@ -471,7 +486,7 @@ trix-editor .attachment__remove--icon {
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.8rem;
 }
-/* line 68, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 84, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .opinion.absolute {
   position: absolute;
   left: 0;
@@ -479,7 +494,7 @@ trix-editor .attachment__remove--icon {
   width: 100%;
 }
 
-/* line 76, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 92, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .time {
   color: rgba(0, 0, 0, 0.6);
   font-style: italic;
@@ -487,22 +502,22 @@ trix-editor .attachment__remove--icon {
   margin-bottom: 0.6rem;
 }
 
-/* line 83, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 99, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .region {
   text-transform: uppercase;
   font-style: italic;
 }
 
-/* line 88, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 104, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .tags {
   margin-bottom: 0.6rem;
 }
-/* line 91, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 107, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .tags a {
   padding-bottom: 0.2rem;
   display: inline-block;
 }
-/* line 95, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 111, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .tags a .tag {
   color: rgba(0, 0, 0, 0.25);
   font-weight: bold;
@@ -510,85 +525,85 @@ trix-editor .attachment__remove--icon {
   margin-right: 0.2rem;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-/* line 102, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 118, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .tags a .tag:hover, .tags a .tag:active, .tags a .tag:focus {
   color: rgba(0, 0, 0, 0.5);
 }
-/* line 108, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 124, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .tags a .tag::before {
   content: "#";
 }
 
-/* line 115, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 131, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .admin-buttons {
   top: 0;
   text-align: right;
 }
-/* line 119, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 135, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .admin-buttons form {
   display: inline-block;
   width: auto;
 }
 
-/* line 126, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 142, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper p {
   font-size: 1.2rem;
   line-height: 1.5;
 }
-/* line 130, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 146, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper h1,
 .article-wrapper h2,
 .article-wrapper h3 {
   margin-bottom: 1rem;
 }
-/* line 136, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 152, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper h4,
 .article-wrapper h5,
 .article-wrapper h6 {
   margin-bottom: 0.5rem;
 }
-/* line 142, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 158, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-wrapper img {
   margin-bottom: 0.5rem;
 }
 
-/* line 147, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 163, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
   line-height: 1.1;
 }
-/* line 153, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 169, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .title.smaller {
   font-size: 2rem;
 }
-/* line 157, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 173, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .title.up {
   padding: 6rem 1rem 1rem 1rem;
   color: white;
 }
-/* line 161, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 177, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .title.up .underline {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 167, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 183, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .background-image .title {
   line-height: 1.4;
 }
 
-/* line 171, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 187, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .subtitle {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-/* line 175, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 191, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .subtitle.smaller {
   font-size: 1.5rem;
 }
 
-/* line 180, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 196, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .other {
   border: 1px solid rgba(0, 0, 0, 0.15);
   -webkit-transition: all 0.2s ease;
@@ -596,7 +611,7 @@ trix-editor .attachment__remove--icon {
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
 }
-/* line 185, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 201, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .other:hover {
   -webkit-transform: translateY(-0.25rem);
           transform: translateY(-0.25rem);
@@ -604,7 +619,7 @@ trix-editor .attachment__remove--icon {
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 191, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 207, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social {
   margin-top: 1rem;
   margin-left: 0;
@@ -614,42 +629,42 @@ trix-editor .attachment__remove--icon {
   width: 100%;
   text-align: right;
 }
-/* line 200, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 216, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social p {
   margin-bottom: 0;
 }
-/* line 204, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 220, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-facebook {
   color: #3b5998;
 }
-/* line 208, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 224, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-twitter {
   color: #1da1f2;
 }
-/* line 212, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 228, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-envelope {
   color: #0099ff;
 }
-/* line 216, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 232, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa-linkedin {
   color: #0077b5;
 }
-/* line 220, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 236, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social li {
   display: inline-block;
 }
-/* line 224, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 240, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .article-social .fa {
   margin-right: 0.75rem;
 }
 
-/* line 229, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 245, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .interact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 232, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 248, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .interact ul {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -657,36 +672,36 @@ trix-editor .attachment__remove--icon {
 }
 
 @media screen and (max-width: 996px) {
-  /* line 238, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 254, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .interact {
     display: block;
     width: 100%;
   }
-  /* line 242, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 258, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .interact ul {
     width: 100%;
   }
-  /* line 246, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 262, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .interact .article-social {
     text-align: left !important;
   }
 }
 @media screen and (max-device-width: 996px) {
-  /* line 253, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 269, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .interact {
     display: block;
     width: 100%;
   }
-  /* line 257, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 273, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .interact ul {
     width: 100%;
   }
-  /* line 261, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 277, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .interact .article-social {
     text-align: left !important;
   }
 }
-/* line 268, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 284, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .author img {
   width: 3rem;
   height: 3rem;
@@ -695,7 +710,7 @@ trix-editor .attachment__remove--icon {
   display: inline-block;
   position: absolute;
 }
-/* line 277, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 293, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .author .no-img {
   width: 3rem;
   height: 3rem;
@@ -705,7 +720,7 @@ trix-editor .attachment__remove--icon {
   position: absolute;
   background: #eff2f4;
 }
-/* line 287, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 303, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .author p {
   color: rgba(0, 0, 0, 0.6) !important;
   margin-left: 4rem;
@@ -713,35 +728,35 @@ trix-editor .attachment__remove--icon {
   margin-bottom: 0rem;
 }
 
-/* line 295, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+/* line 311, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
 .card-columns.two-columns {
   -webkit-column-count: 2;
           column-count: 2;
 }
 
 @media screen and (max-width: 864px) {
-  /* line 300, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 316, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 2 !important;
             column-count: 2 !important;
   }
 }
 @media screen and (max-device-width: 864px) {
-  /* line 306, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 322, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 2 !important;
             column-count: 2 !important;
   }
 }
 @media screen and (max-width: 612px) {
-  /* line 312, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 328, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 1 !important;
             column-count: 1 !important;
   }
 }
 @media screen and (max-device-width: 612px) {
-  /* line 318, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
+  /* line 334, /Users/cameroncabo/Projects/themetric/app/assets/stylesheets/article.scss */
   .card-columns {
     -webkit-column-count: 1 !important;
             column-count: 1 !important;
