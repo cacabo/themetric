@@ -9,10 +9,10 @@ class WelcomeController < ApplicationController
 
     # find most read articles
     by_views = published.order(views: :desc)
-    @popular = by_views.limit(2);
+    @popular = by_views.limit(3);
 
     # sort the remaining articles by time
-    by_time = by_views.offset(2).order(created_at: :desc)
+    by_time = by_views.offset(3).order(created_at: :desc)
 
     # find the articles
     @articles = by_time.limit(24)
