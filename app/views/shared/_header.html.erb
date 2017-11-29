@@ -106,6 +106,9 @@
                   <%= link_to emails_path, class: 'dropdown-item' do %>
                     <i class="fa fa-fw fa-envelope"></i> Email list
                   <% end %>
+                  <%= link_to admins_path, class: 'dropdown-item' do %>
+                    <i class="fa fa-fw fa-list"></i> Admins
+                  <% end %>
                   <% if current_admin.super or current_admin.id == 1 %>
                     <%= link_to referrals_path, class: 'dropdown-item' do %>
                       <i class="fa fa-fw fa-check-circle-o"></i> Referrals

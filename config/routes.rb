@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # admin-specific routes
   devise_for :admins, controllers: { sessions: 'admins/sessions' }, path: '', path_names: { sign_in: 'login', sign_out: 'logout', password: 'password', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: '' }
 
   # general routes for articles
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
 
   # admin information
   get 'admins/info', to: 'admins#info', as: 'info'
+  get 'admins', to: 'admins#index', as: 'admins'
 
   # managing the email list
   resources :emails, only: [:index, :create, :destroy]
