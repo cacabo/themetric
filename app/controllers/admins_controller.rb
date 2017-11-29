@@ -18,7 +18,7 @@ class AdminsController < ApplicationController
       redirect_to root_path
     end
 
-    @admins = Admin.all
+    @admins = Admin.all.order('name ASC')
   end
 
   def info
