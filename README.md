@@ -1,20 +1,20 @@
-# Website for the The Metric
+# The Metric
 
-A scalable web application to house diverse content by a wide range of editors, contributors, and administrators. We aim to give a voice to passionate college students and raising political literacy and engagement. This project has scaled to 25+ contributors and thousands of weekly readers.
+A scalable web application to house diverse content by a wide range of editors, contributors, and administrators. We aim to give a voice to passionate college students and raising political literacy and engagement. This project has scaled to 20+ contributors and thousands of weekly readers.
 
-![The Metric](/img/screenshot.png?raw=true)
+Website: [https://themetric.org](https://themetric.org)
 
-Here's an overview of the application and the development process:
+![The Metric](/img/screenshot.png?raw=true "Screenshot of the homepage")
 
 ### Stack
 * Ruby 2.3
-  * PostgreSQL
-  * Devise
-  * Sendgrid
-  * AWS S3
-  * Paperclip gem
-  * Trix
-* Rails 5.1
+  * Rails 5.1
+  * PostgreSQL: database
+  * Devise: helper gem for user model and security
+  * Sendgrid: sending emails to users
+  * AWS S3: image storage
+  * Paperclip gem: image uploading
+  * Trix: in-browser text editor
 * JavaScript
 * jQuery
 * Bootstrap 4 alpha
@@ -62,9 +62,9 @@ Our content brings a fresh perspective, thus we want our site to convey and exte
 
 It's a fully responsive, mobile-first site which puts content first.
 
-### Todo
+### Feature tracking
 
-##### General
+__General__
 - [x] Name transfer (to whatever we decide)
 - [x] Configure AWS to a new bucket
 - [x] `Friendly_id`
@@ -89,7 +89,7 @@ It's a fully responsive, mobile-first site which puts content first.
 - [x] 2 articles on index
 - [ ] Improve search
 
-##### Views
+__Views__
 - [x] Pretty forms
   -  [x] Adjust spacing of active label (x-axis)
   - [x] Pretty article form
@@ -112,7 +112,7 @@ It's a fully responsive, mobile-first site which puts content first.
 - [x] Sidebar on article show
 - [x] Fixed recommendations
 
-##### Admin configuration
+__Admin configuration__
 - [x] Admin controller
   - [x] Name
   - [x] Bio
@@ -126,7 +126,7 @@ It's a fully responsive, mobile-first site which puts content first.
 - [x] Admin information page
 - [x] Add location to admin
 
-##### Article configuration
+__Article configuration__
 - [x] Add locations to posts / region
   - [x] Add select field in form for articles
 - [x] Better categorization for posts
@@ -142,7 +142,7 @@ It's a fully responsive, mobile-first site which puts content first.
 - [x] Better article recommendations
 - [x] Captions on images
 
-##### Details
+__Details__
 - [x] Play around with title and subtitle overlay on article preview
 - [x] Articles from same region on right side of article show page on large screens
 - [x] Google analytics
@@ -161,7 +161,7 @@ It's a fully responsive, mobile-first site which puts content first.
 - [x] Collapse navbar at wider size
 - [x] Add URL's to social media for links
 
-##### Down the line
+__Down the line__
 - [ ] Paginate or scroll to load more articles
 - [ ] Allow super admin to lock / delete other admin accounts
 - [ ] SendGrid for Devise?
