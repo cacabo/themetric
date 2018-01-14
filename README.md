@@ -1,10 +1,12 @@
+![The Metric Logo](/img/logo.png?raw=true)
+
 # The Metric
 
 A scalable web application to house diverse content by a wide range of editors, contributors, and administrators. We aim to give a voice to passionate college students and raising political literacy and engagement. This project has scaled to 20+ contributors and thousands of weekly readers.
 
 Website: [https://themetric.org](https://themetric.org)
 
-![The Metric](/img/screenshot.png?raw=true "Screenshot of the homepage")
+![The Metric](/img/screenshot.png?raw=true)
 
 ### Stack
 * Ruby 2.3
