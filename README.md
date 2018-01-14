@@ -2,6 +2,8 @@
 
 A scalable web application to house diverse content by a wide range of editors, contributors, and administrators. We aim to give a voice to passionate college students and raising political literacy and engagement. This project has scaled to 25+ contributors and thousands of weekly readers.
 
+![The Metric](/img/screenshot.png?raw=true)
+
 Here's an overview of the application and the development process:
 
 ### Stack
