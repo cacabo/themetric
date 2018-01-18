@@ -18,7 +18,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.18'
 end
 
 gem 'puma', '~> 3.7'

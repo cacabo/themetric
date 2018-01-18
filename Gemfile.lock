@@ -272,7 +272,7 @@ DEPENDENCIES
   jquery-rails
   mail_form
   paperclip (~> 5.0.0)
-  pg
+  pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.1)
   rails-assets-tether
