@@ -30,7 +30,7 @@
 
           <p class="time inline sans">
             <% if @article.published_at %>
-              <%= "Posted " + time_ago_in_words(@article.published_at) %> ago
+              <%= "Published " + time_ago_in_words(@article.published_at) %> ago
             <% else %>
               <%= "Created " + time_ago_in_words(@article.created_at) %> ago
             <% end %>
@@ -40,9 +40,9 @@
             <% if r and r.length > 0 %>
               in <%= link_to region_path(@article.region), class: 'inline black-text special region' do %>
                 <%= r %>
-              <% end %>
+            <% end %>
 
-              <% if t and t.length > 0 %>
+            <% if t and t.length > 0 %>
                 and <%= link_to topic_path(@article.topic), class: 'inline black-text special region' do %>
                   <%= t %>
                 <% end %>

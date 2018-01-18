@@ -43,7 +43,7 @@
     <% if article.published_at %>
       <%= time_ago_in_words(article.published_at) %> ago
     <% else %>
-      <%= time_ago_in_words(article.created_at) %> ago
+      <%= time_ago_in_words(article.updated_at) %> ago
     <% end %>
   </p>
   <% r = article.regionText %>

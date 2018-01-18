@@ -88,6 +88,10 @@ $light-light-gray: #eff2f4;
     top: 0;
     width: 100%;
   }
+
+  &.read-more {
+    margin-left: calc(1rem - 1px);
+  }
 }
 
 .time {
