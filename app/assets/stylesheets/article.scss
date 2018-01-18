@@ -1,3 +1,4 @@
+// Colors for articles
 $blue: #008cff;
 $t-cyan: rgba(0, 203, 255, 0.8);
 $dark-blue: #6f3fff;
@@ -128,7 +129,10 @@ $light-light-gray: #eff2f4;
   }
 }
 
+// Buttons to style buttons for editing and adjusting admin information
+// NOTE these are only visible to logged in users
 .admin-buttons {
+  width: 100%;
   top: 0;
   text-align: right;
 
