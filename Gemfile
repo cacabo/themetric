@@ -9,12 +9,13 @@ end
 
 gem 'rails', '~> 5.1.1'
 
+# Use sqlite 3 in development
 group :development, :test do
-    gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 end
 
 group :development do
-  gem 'rails_real_favicon'
+  gem 'rails_real_favicon', '~> 0.0.7'
 end
 
 group :production do
@@ -28,17 +29,17 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
-gem 'jquery-rails'
-gem 'rails-assets-tether'
+gem 'devise', '~> 4.2'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bootstrap_form', '~> 2.3'
 gem 'paperclip', '~> 5.0.0'
 gem 'aws-sdk', '~> 2.3.0'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
-gem 'mail_form'
-gem 'sendgrid-ruby'
-gem 'trix'
+gem 'mail_form', '~> 1.7'
+gem 'sendgrid-ruby', '~> 5.2'
+gem 'trix', '~> 0.11.1'
 gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
