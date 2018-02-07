@@ -213,3 +213,21 @@ $light-gray: #eff2f4;
     padding-bottom: 0.1rem;
   }
 }
+
+@media screen and (max-width: 984px) {
+  .navbar, .navbar.top {
+    padding: 0rem 1rem !important;
+  }
+
+  .navbar {
+    .navbar-toggler {
+      height: 48px;
+    }
+
+    &.top {
+      .navbar-toggler {
+        height: 64px;
+      }
+    }
+  }
+}

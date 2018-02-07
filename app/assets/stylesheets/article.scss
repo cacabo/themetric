@@ -97,7 +97,6 @@ $light-light-gray: #eff2f4;
 .time {
   color: rgba(0, 0, 0, 0.6);
   font-style: italic;
-  margin-right: 1rem;
   margin-bottom: 0.6rem;
 }
 
@@ -195,6 +194,7 @@ $light-light-gray: #eff2f4;
 .subtitle {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #555;
 
   &.smaller {
     font-size: 1.5rem;
