@@ -14,7 +14,7 @@
 <% end %>
 
 <!-- article title and subtitle -->
-<div class="card-block">
+<div class="card-block preview">
   <% if (article.image.nil? or article.image_file_name.nil?) and article.opinion? %>
     <div class="opinion absolute special">
       OPINION
@@ -36,7 +36,7 @@
   <% if article.image.nil? or article.image_file_name.nil? %>
     <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
   <% end %>
-  <h2 class="subtitle smaller sans"><%= article.subtitle %></h2>
+  <h2 class="subtitle smaller serif"><%= article.subtitle %></h2>
   <div class="space-0"></div>
 
   <p class="time sans inline float-right">
