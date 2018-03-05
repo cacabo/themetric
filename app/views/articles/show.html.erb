@@ -106,13 +106,12 @@
           </div>
         </div>
         <div class="line-0"></div>
-        <div class="space-2"></div>
+
+        <% if not @article.image.nil? and not @article.image_file_name.nil? %>
+          <%= image_tag @article.image.url(:large), class: 'img-fluid full-width' %>
+        <% end %>
 
         <div class="col-12 col-md-10 offset-md-1">
-          <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-            <%= image_tag @article.image.url(:large), class: 'img-fluid full-width' %>
-          <% end %>
-
           <% if @article.caption.present? %>
             <div class="space-05"></div>
             <% captions = @article.caption.split("\n") %>
