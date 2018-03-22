@@ -1,5 +1,5 @@
 $blue: #0275d8;
-$light-gray: #eff2f4;
+$gray: #aab1b7;
 
 .fixed .navbar {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -28,13 +28,15 @@ $light-gray: #eff2f4;
   }
 
   .nav-item a.nav-link {
-    color: black !important;
+    color: $gray !important;
     font-size: 1.25rem;
+    cursor: hand;
+    cursor: pointer;
 
     &:hover,
     &:focus,
     &:active, {
-      color: $blue !important;
+      color: black !important;
     }
   }
 }
