@@ -18,32 +18,36 @@ $dark-blue: #6f3fff;
 .feature {
   background-color: black;
   padding: 4rem 5% 5% 5%;
-  min-height: 40vh;
+  height: 50vh !important;
+  overflow: hidden !important;
   display: flex;
   align-items: flex-end;
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    width: 100%;
+    left: 0;
+    height: 50vh;
+    z-index: 0;
+  }
 
   &:hover .title,
   &:hover .subtitle {
-    transform: translateY(-0.25rem);
-
-    .feature-underline {
-      border-bottom: 6px solid $dark-blue !important;
-    }
+    transform: translateY(-0.25rem) !important;
   }
 
   .content {
     .title, .subtitle {
       color: white;
       display: inline-block;
-      padding: 0.5rem;
       transition: all 0.2s ease;
       line-height: 1.5;
-
-      .feature-underline {
-        background: rgba(0, 0, 0, 0.5);
-        transition: all 0.2s ease;
-        border-bottom: 6px solid $blue;
-      }
+      z-index: 100;
+      transform: translateY(0);
     }
 
     .title {
@@ -71,5 +75,17 @@ $dark-blue: #6f3fff;
   .card {
     border-radius: 0px !important;
     margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  .feature {
+    height: 60vh !important;
+  }
+}
+
+@media screen and (max-device-width: 448px) {
+  .feature {
+    height: 60vh !important;
   }
 }

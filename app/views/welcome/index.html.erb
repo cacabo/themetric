@@ -9,19 +9,16 @@
         <%= link_to @feature do %>
           <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
             <div class="content">
+              <div class="space-2 hidden-md-down"></div>
               <% if @feature.title %>
                 <h1 class="title">
-                  <span class="feature-underline">
-                    <%= @feature.title %>
-                  </span>
+                  <%= @feature.title %>
                 </h1>
               <% end %>
               <div class="space-0"></div>
               <% if @feature.subtitle %>
-                <h2 class="subtitle">
-                  <span class="feature-underline">
-                    <%= @feature.subtitle %>
-                  </span>
+                <h2 class="subtitle serif">
+                  <%= @feature.subtitle %>
                 </h2>
               <% end %>
             </div>
