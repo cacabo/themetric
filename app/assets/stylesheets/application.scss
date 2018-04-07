@@ -25,9 +25,16 @@ $blue-gray: #aab1b7;
 $light-light-gray: #eff2f4;
 $light-light-light-gray: #f4f9fc;
 
+/**
+ * Removing scrolling on mobile in unintended ways
+ */
+body, html {
+  overflow-x: hidden !important;
+}
+
 /*
-** COLORS
-*/
+ * COLORS
+ */
 
 .italic {
   font-style: italic;
@@ -101,8 +108,8 @@ a {
 }
 
 /*
-** GENERAL
-*/
+ * GENERAL
+ */
 .space-05 {
   display: block;
   width: 100%;
@@ -201,8 +208,8 @@ a.full-width {
 }
 
 /*
-** FONTS AND COLORS
-*/
+ * FONTS AND COLORS
+ */
 
 // NOTE only regular, bold, italic
 .serif {
@@ -253,8 +260,8 @@ textarea.bigger {
 }
 
 /*
-** BUTTONS
-*/
+ * BUTTONS
+ */
 
 .btn-blue,
 .btn-white {
@@ -316,8 +323,8 @@ h1 .small {
 }
 
 /*
-** POPUP
-*/
+ * POPUP
+ */
 
 .popup {
   color: white;
