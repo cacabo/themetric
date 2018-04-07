@@ -36,6 +36,10 @@ $t-cyan: rgba(0, 203, 255, 0.8);
       background: linear-gradient(transparent, darken($transparent-blue, 20%), darken($transparent-dark-blue, 35%));
       transition: all 0.2s ease;
     }
+
+    .underline {
+      text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    }
   }
 
   &:hover {
