@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   # Method validations
-  before_action :correct_admin, only: [:edit, :update]
+  before_action :correct_or_super_admin, only: [:edit, :update]
   before_action :super_admin, only: [:super, :unsuper, :guest, :unguest]
 
   # Show a given admin's information
@@ -116,9 +116,9 @@ class AdminsController < ApplicationController
 
   # Ensure that the passed in ID corresponds to the admin or that the admin is
   # a super admin
-  def correct_admin
-    unless (current_admin and
-      (
+  def correct_or_super_admin
+    unless (
+      current_admin and (
         (current_admin.id.to_i == Admin.friendly.find(params[:id]).id.to_i) or
         (current_admin.super or current_admin.id == 1)
       )

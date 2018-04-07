@@ -97,7 +97,7 @@
 
                 <div class="admin-buttons">
                   <% if current_admin and (current_admin.super or current_admin == @admin) %>
-                    <%= link_to 'Edit information', edit_admin_path(current_admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
+                    <%= link_to 'Edit information', edit_admin_path(@admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
                   <% end %>
 
                   <% if current_admin and (current_admin.super or current_admin.id == 1) %>
