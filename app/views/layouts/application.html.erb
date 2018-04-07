@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="The Metric">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <% description = content_for?(:description) ? content_for(:description) : "Measuring what's happening around the world through your voice" %>
     <meta name="description" content="<%= description %>">
     <meta name="keywords" content="<%= content_for?(:keywords) ? content_for(:keywords) : 'metric,themetric,metric,progressive,student,young,diverse,youth,international,politcs,current affairs,foreign pollicy,foreign affairs,ecnomics' %>">
@@ -26,10 +26,14 @@
 
     <!-- title and other tags -->
     <title><%= content_for?(:title) ? content_for(:title) : "The Metric" %></title>
+
+    <!-- built-in rails security tags -->
     <%= csrf_meta_tags %>
 
-    <!-- fonts -->
+    <!-- icons -->
     <script src="https://use.fontawesome.com/297cffcc6b.js"></script>
+
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Palanquin+Dark" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
 
@@ -43,44 +47,49 @@
   </head>
 
   <body>
-
+    <!-- render flash notifications if there are any -->
     <% if notice or alert %>
-    <div id="alert-container" class="hidden <%= notice ? 'green' : 'red' %>">
-      <% if notice %>
-      <div class="info" role="alert">
-        <p><%=notice%></p>
+      <div id="alert-container" class="hidden <%= notice ? 'green' : 'red' %>">
+        <% if notice %>
+          <div class="info" role="alert">
+            <p><%=notice%></p>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="danger" role="alert">
+            <p><%=alert%></p>
+          </div>
+        <% end %>
       </div>
-      <% end %>
-      <% if alert %>
-      <div class="danger" role="alert">
-        <p><%=alert%></p>
-      </div>
-      <% end %>
-    </div>
     <% end %>
 
+    <!-- render the navbar -->
     <%= render 'shared/header' %>
 
+    <!-- render page content -->
     <div class="page-content">
       <%= yield %>
     </div>
 
+    <!-- render the footer -->
     <%= render 'shared/footer' %>
 
+    <!-- render flash notifications for a few seconds on page load -->
     <% if notice or alert %>
-    <script>
-      $(document).ready(function () {
-        // Variables
-        var $spacer = $('.alert-spacer');
-        var $container = $('#alert-container')
+      <script>
+        $(document).ready(function () {
+          // Variables
+          var $spacer = $('.alert-spacer');
+          var $container = $('#alert-container')
 
-        // Transitions
-        $container.delay(200).slideDown(200).delay(4000).slideUp(200);
-        $spacer.delay(200).slideDown(200).delay(4000).slideUp(200);
-      });
-    </script>
+          // Transitions
+          $container.delay(200).slideDown(200).delay(4000).slideUp(200);
+          $spacer.delay(200).slideDown(200).delay(4000).slideUp(200);
+        });
+      </script>
     <% end %>
 
+    <!-- turbolinks for visualizing loading -->
     <script type="text/javascript">
       document.addEventListener('turbolinks:load', function(event) {
         if ((typeof ga) === 'function') {
@@ -90,7 +99,7 @@
       });
     </script>
 
-    <!-- autosize -->
+    <!-- autosize frameowkrs -->
     <script src="https://cdn.jsdelivr.net/jquery.autosize/3.0.20/autosize.min.js"></script>
 
     <!-- initialize autosize on all textarea components -->
@@ -98,10 +107,13 @@
       autosize($('textarea'));
     </script>
 
+    <!-- add styling for forms with labels -->
     <%= javascript_include_tag 'special-label.js' %>
 
     <% if Rails.env.production? %>
       <!-- google analytics -->
+      <!-- NOTE that this only runs in production so that we don't collect
+           analytics while in development -->
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

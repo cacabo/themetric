@@ -233,3 +233,12 @@ $gray: #aab1b7;
     }
   }
 }
+
+#navbar-wrapper {
+  transition: all 0.25s ease;
+  transform: translateY(0px);
+
+  &.up {
+    transform: translateY(-80px);
+  }
+}

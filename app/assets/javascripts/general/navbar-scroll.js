@@ -8,19 +8,26 @@ $(document).ready(function() {
 
 function addNavListener() {
   window.addEventListener('scroll', function() {
-    var current = document.documentElement.scrollTop;
+    var $navbar = $('#navbar');
+    var $navbarWrapper = $('#navbar-wrapper');
 
-    if (current <= 20) {
-      $('.navbar').addClass('top');
+    var current = document.documentElement.scrollTop;
+    if (!current) current = window.pageYOffset;
+
+    if (current <= 150) {
+      $navbar.addClass('top');
     } else {
-      $('.navbar').removeClass('top');
+      $navbar.removeClass('top');
     }
 
-    if (Math.abs(current - last) >= 40) {
+    // If the user scrolled a significant amount
+    if (Math.abs(current - last) >= 50) {
+      // If the user is scrolling down the page,
+      // hide the navbar
       if (current >= 400 && current > last) {
-        $('.fixed.front').slideUp(200);
+        $navbarWrapper.addClass('up');
       } else {
-        $('.fixed.front').slideDown(200);
+        $navbarWrapper.removeClass('up');
       }
       last = current;
     }
