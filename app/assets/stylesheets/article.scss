@@ -1,8 +1,6 @@
 // Colors for articles
-$blue: #008cff;
+@import './colors';
 $t-cyan: rgba(0, 203, 255, 0.8);
-$dark-blue: #6f3fff;
-$light-light-gray: #eff2f4;
 
 .pad-1-special {
   padding: 1rem 2rem;
@@ -33,10 +31,19 @@ $light-light-gray: #eff2f4;
 
   .card-img-top {
     border-radius: 0px !important;
+
+    .gradient {
+      background: linear-gradient(transparent, darken($transparent-blue, 20%), darken($transparent-dark-blue, 35%));
+      transition: all 0.2s ease;
+    }
   }
 
   &:hover {
     box-shadow: 0px 1.5px 2.5px rgba(0, 0, 0, 0.2);
+
+    .gradient {
+      filter: grayscale(50%);
+    }
 
     .underline {
       border-bottom: 4px solid $dark-blue;
@@ -180,10 +187,6 @@ $light-light-gray: #eff2f4;
   &.up {
     padding: 6rem 1rem 1rem 1rem;
     color: white;
-
-    .underline {
-      background: rgba(0, 0, 0, 0.3);
-    }
   }
 }
 

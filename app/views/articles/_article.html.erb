@@ -1,15 +1,17 @@
 <!-- include the image if there is one -->
 <% if not article.image.nil? and not article.image_file_name.nil? %>
   <div class="card-img-top background-image" style="background-image: URL(<%= article.image.url(:large) %>)">
-    <% if article.opinion? %>
-      <div class="opinion special">
-        OPINION
-      </div>
-    <% end %>
-    <div class="space-1 hidden-md-down"></div>
-    <h1 class="sans title smaller up">
-      <span class="underline"><%= article.title %></span>
-    </h1>
+    <div class="gradient">
+      <% if article.opinion? %>
+        <div class="opinion special">
+          OPINION
+        </div>
+      <% end %>
+      <div class="space-1 hidden-md-down"></div>
+      <h1 class="sans title smaller up">
+        <span class="underline"><%= article.title %></span>
+      </h1>
+    </div>
   </div>
 <% end %>
 

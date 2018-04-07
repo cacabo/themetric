@@ -15,15 +15,7 @@
  *= require_tree '.'
  */
 @import "bootstrap"; // general formatting
-$color: #00aeff;
-$blue: #008cff;
-$dark-blue: #6f3fff;
-$darker: #752bff;
-$blush: #FF7085;
-$green: #3ecf8e;
-$blue-gray: #aab1b7;
-$light-light-gray: #eff2f4;
-$light-light-light-gray: #f4f9fc;
+@import './colors';
 
 /**
  * Removing scrolling on mobile in unintended ways

@@ -1,5 +1,4 @@
-$blue: #008cff;
-$dark-blue: #6f3fff;
+@import './colors';
 
 .nav-item {
   .nav-hover {
@@ -16,27 +15,20 @@ $dark-blue: #6f3fff;
 }
 
 .feature {
-  background-color: black;
-  padding: 4rem 5% 5% 5%;
-  height: 50vh !important;
-  overflow: hidden !important;
-  display: flex;
-  align-items: flex-end;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  .content-wrapper {
+    padding: 4rem 5% 5% 5%;
+    background: linear-gradient(transparent 30%, darken($transparent-blue, 20%), darken($transparent-dark-blue, 30%));
     width: 100%;
-    left: 0;
-    height: 50vh;
-    z-index: 0;
-  }
+    transition: all 0.2s ease;
 
-  &:hover .title,
-  &:hover .subtitle {
-    transform: translateY(-0.25rem) !important;
+    &:hover {
+      filter: grayscale(50%);
+
+      .title,
+      .subtitle {
+        transform: translateY(-0.25rem) !important;
+      }
+    }
   }
 
   .content {
