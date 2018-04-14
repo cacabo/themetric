@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   # Method validations
-  before_action :correct_or_super_admin, only: [:edit, :update]
+  before_action :correct_or_super_admin, only: [:edit, :update, :destroy]
   before_action :super_admin, only: [:super, :unsuper, :guest, :unguest]
 
   # Show a given admin's information
