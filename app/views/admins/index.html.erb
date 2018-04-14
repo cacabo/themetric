@@ -4,12 +4,13 @@
       <h2 class="special marg-bot-1">
         Listing all admins
       </h2>
-      <table class="table">
-        <thead>
+      <table class="table table-bordered">
+        <thead class="thead-default">
           <tr>
             <th>#</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -22,11 +23,12 @@
                 <% end %>
               </td>
               <td><%= a.email %></td>
+              <td><%= a.role %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <div className="space-2"></div>git
+      <div className="space-2"></div>
     </div>
   </div>
 </div>

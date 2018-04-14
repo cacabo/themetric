@@ -25,9 +25,9 @@ function addNavListener() {
       // If the user is scrolling down the page,
       // hide the navbar
       if (current >= 400 && current > last) {
-        $navbarWrapper.addClass('up');
+        $navbar.addClass('up');
       } else {
-        $navbarWrapper.removeClass('up');
+        $navbar.removeClass('up');
       }
       last = current;
     }
