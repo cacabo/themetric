@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   resources :referrals, only: [:create, :index, :destroy]
 
   # managing editing, showing, and updating admin information
-  resources :admins, only: [:show, :edit, :update]
+  resources :admins, only: [:show, :edit, :update, :destroy]
 
   # Handle 404
   get '*unmatched_route', to: 'welcome#notfound'

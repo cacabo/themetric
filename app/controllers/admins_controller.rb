@@ -51,6 +51,15 @@ class AdminsController < ApplicationController
     end
   end
 
+  # Delete an admin's account
+  def destroy
+    @admin = Admin.find(params[:id])
+    @admin.destroy
+
+    flash[:notice] = "Successfully deleted admin."
+    redirect_to root_path
+  end
+
   # Make an admin a super admin
   def super
     @admin = Admin.friendly.find(params[:id])

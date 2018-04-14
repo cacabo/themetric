@@ -110,8 +110,15 @@ a {
 
 button,
 button.btn,
+a.btn,
 .btn {
   border-radius: 0px !important;
+
+  &.btn-danger {
+    color: #fff !important;
+    background-color: #d9534f !important;
+    border-color: #d9534f !important;
+  }
 }
 
 .btn-info {

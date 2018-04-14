@@ -68,10 +68,17 @@ $dark-blue-gray: #989fa5;
   }
 }
 
-.admin-icons li a {
-  color: $blue-gray;
+.admin-icons {
+  position: relative;
+  width: 100%;
+  display: block;
+  clear: right;
 
-  &:hover {
-    color: $dark-blue-gray;
+  li a {
+    color: $blue-gray;
+
+    &:hover {
+      color: $dark-blue-gray;
+    }
   }
 }

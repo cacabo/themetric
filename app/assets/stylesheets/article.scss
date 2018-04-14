@@ -148,7 +148,8 @@ $t-cyan: rgba(0, 203, 255, 0.8);
 .admin-buttons {
   width: 100%;
   top: 0;
-  text-align: right;
+  text-align: left;
+  display: block;
 
   form {
     display: inline-block;

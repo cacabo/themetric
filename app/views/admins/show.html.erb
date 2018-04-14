@@ -95,25 +95,60 @@
                   <% end %>
                 </ul>
 
-                <div class="admin-buttons">
-                  <% if current_admin and (current_admin.super or current_admin == @admin) %>
-                    <%= link_to 'Edit information', edit_admin_path(@admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
-                  <% end %>
-
-                  <% if current_admin and (current_admin.super or current_admin.id == 1) %>
-                    <% if not @admin.isGuest %>
-                      <%= link_to 'Make guest contributor', guest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
-                    <% else %>
-                      <%= link_to 'Make non-guest contributor', unguest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                <% if current_admin.present? %>
+                  <div class="space-2"></div>
+                  <div class="admin-buttons">
+                    <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+                      <% if not @admin.isGuest %>
+                        <%= link_to 'Make guest contributor', guest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                      <% else %>
+                        <%= link_to 'Make non-guest contributor', unguest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                      <% end %>
                     <% end %>
-                  <% end %>
 
-                  <% if current_admin and (current_admin.super or current_admin.id == 1) %>
-                    <% if not @admin.super %>
-                      <%= link_to 'Make super admin', super_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                    <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+                      <% if not @admin.super %>
+                        <%= link_to 'Make super admin', super_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </div>
+
+                    <% if current_admin and (current_admin.super or current_admin == @admin) %>
+                      <%= link_to 'Edit info', edit_admin_path(@admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
+                      <button
+                        class="btn btn-danger white-text btn-sm marg-bot-05"
+                        data-toggle="modal"
+                        data-target="#delete-modal">
+                        Delete
+                      </button>
+                      <div
+                        class="modal fade"
+                        id="delete-modal" tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="Delete modal"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Permanently delete user?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              This action cannot be undone. This may delete content which the user has written.
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Cancel
+                              </button>
+                              <%= button_to "Delete user", @admin, method: "delete", type: "button", class: "btn btn-danger" %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
             </div>
             <!-- closing admin -->
