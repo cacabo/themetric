@@ -38,11 +38,11 @@
           </p>
           <div class="card-columns articles two-columns">
             <% @articles.each do |a| %>
-                <%= link_to a do %>
-                  <div class="card article">
-                    <%= render a %>
-                  </div>
-                <% end %>
+              <%= link_to a do %>
+                <div class="card article">
+                  <%= render a %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         <% end %>

@@ -2,7 +2,7 @@
   <head>
     <% title @article.title %>
     <% description @article.subtitle %>
-    <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},the,metric,news" %>
+    <% keywords "#{@article.tag_list.join(',')},#{@article.title.gsub(/\s/,'')},the,metric,themetric,news" %>
     <% image "#{image_url @article.image}" unless @article.image.nil? %>
   </head>
 
@@ -200,14 +200,16 @@
                 <div class="card article marg-bot-1">
                   <% if not article.image.nil? and not article.image_file_name.nil? %>
                     <div class="card-img-top background-image" style="background-image: URL(<%= article.image.url(:large) %>)">
-                      <% if article.opinion? %>
-                        <div class="opinion special">
-                          OPINION
-                        </div>
-                      <% end %>
-                      <h1 class="sans title smaller up">
-                        <span class="underline"><%= article.title %></span>
-                      </h1>
+                      <div class="gradient">
+                        <% if article.opinion? %>
+                          <div class="opinion special">
+                            OPINION
+                          </div>
+                        <% end %>
+                        <h1 class="sans title smaller up">
+                          <span class="underline"><%= article.title %></span>
+                        </h1>
+                      </div>
                     </div>
                   <% end %>
 
@@ -234,7 +236,7 @@
                     <% if article.image.nil? or article.image_file_name.nil? %>
                       <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
                     <% end %>
-                    <h2 class="subtitle smaller sans"><%= article.subtitle %></h2>
+                    <h2 class="subtitle smaller serif"><%= article.subtitle %></h2>
                     <div class="space-0"></div>
 
                     <% r = article.regionText %>
