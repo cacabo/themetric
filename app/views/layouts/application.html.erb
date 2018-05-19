@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <% description = content_for?(:description) ? content_for(:description) : "Measuring what's happening around the world through your voice" %>
     <meta name="description" content="<%= description %>">
-    <meta name="keywords" content="<%= content_for?(:keywords) ? content_for(:keywords) : 'metric,themetric,metric,progressive,student,young,diverse,youth,international,politcs,current affairs,foreign pollicy,foreign affairs,ecnomics' %>">
+    <meta name="keywords" content="<%= content_for?(:keywords) ? content_for(:keywords) : 'metric,themetric,metric,progressive,student,young,diverse,youth,international,politcs,current,affairs,foreign,policy,economics,econ' %>">
 
     <!-- open graph -->
     <meta property="og:image" content="<%= content_for?(:image) ? content_for(:image) : 'https://i.imgur.com/AcbOq2u.png' %>">
@@ -20,9 +20,10 @@
     <!-- twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta property="og:url" content="themetric.org"/>
-    <meta property="og:title" content="<%= content_for?(:title) ? content_for(:title) : 'The Metric' %>"/>
-    <meta property="og:description" content="<%= description %>"/>
-    <meta property="og:image" content="<%= content_for?(:image) ? content_for(:image) : 'https://i.imgur.com/AcbOq2u.png' %>"/>
+    <meta property="twitter:url" content="themetric.org"/>
+    <meta property="twitter:title" content="<%= content_for?(:title) ? content_for(:title) : 'The Metric' %>"/>
+    <meta property="twitter:description" content="<%= description %>"/>
+    <meta property="twitter:image" content="<%= content_for?(:image) ? content_for(:image) : 'https://i.imgur.com/AcbOq2u.png' %>"/>
 
     <!-- title and other tags -->
     <title><%= content_for?(:title) ? content_for(:title) : "The Metric" %></title>
