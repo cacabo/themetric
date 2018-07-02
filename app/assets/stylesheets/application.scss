@@ -12,10 +12,18 @@
  *
  *= require rails_bootstrap_forms
  *= require trix
- *= require_tree '.'
  */
 @import "bootstrap"; // general formatting
+@import './strapper.min';
 @import './colors';
+@import './navbar';
+@import './admins';
+@import './article';
+@import './emails';
+@import './footer';
+@import './form';
+@import './frontpage';
+@import './referrals';
 
 /**
  * Removing scrolling on mobile in unintended ways

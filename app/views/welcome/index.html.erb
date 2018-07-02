@@ -1,33 +1,39 @@
 <!--
   The homepage of the application
 -->
+<% if @feature %>
+  <div class="dark">
+    <div class="space-1"></div>
+    <div class="container">
+      <%= link_to @feature do %>
+        <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
+          <div class="content-wrapper">
+            <div class="content">
+              <div class="space-3 hidden-md-down"></div>
+              <div class="space-2 hidden-lg-down"></div>
+              <% if @feature.title %>
+                <h1 class="title">
+                  <%= @feature.title %>
+                </h1>
+              <% end %>
+              <div class="space-0"></div>
+              <% if @feature.subtitle %>
+                <h2 class="subtitle serif">
+                  <%= @feature.subtitle %>
+                </h2>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
 <div class="container-fluid">
   <div class="row pad-0">
     <div class="col-12 col-xl-9 pad-0 light-light-gray">
       <!-- Render the featured article if there is one -->
-      <% if @feature %>
-        <%= link_to @feature do %>
-          <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
-            <div class="content-wrapper">
-              <div class="content">
-                <div class="space-3 hidden-md-down"></div>
-                <div class="space-2 hidden-lg-down"></div>
-                <% if @feature.title %>
-                  <h1 class="title">
-                    <%= @feature.title %>
-                  </h1>
-                <% end %>
-                <div class="space-0"></div>
-                <% if @feature.subtitle %>
-                  <h2 class="subtitle serif">
-                    <%= @feature.subtitle %>
-                  </h2>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
       <div class="space-1"></div>
 
       <!-- Render additional articles in the main panel of the page -->
