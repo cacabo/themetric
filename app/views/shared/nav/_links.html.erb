@@ -1,0 +1,47 @@
+<div id="links">
+  <a href="<%=root_path%>" class="link">
+    Home
+  </a>
+  <a href="<%= about_path %>" class="link">
+    About
+  </a>
+
+  <%= render '/shared/nav/articles-dropdown' %>
+
+  <a href="<%= new_contact_path %>" class="link">
+    Contact us
+  </a>
+  <% if not current_admin.nil? %>
+    <a class="dropdown-toggle" href="" id="navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Admin
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
+      <%= link_to new_article_path, class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-plus"></i> New article
+      <% end %>
+      <%= link_to current_admin, class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-user"></i> View profile
+      <% end %>
+      <%= link_to edit_admin_path(current_admin), class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-pencil"></i> Edit profile
+      <% end %>
+      <%= link_to info_path, class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-info"></i> Admin info
+      <% end %>
+      <%= link_to emails_path, class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-envelope"></i> Email list
+      <% end %>
+      <%= link_to admins_path, class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-list"></i> Admins
+      <% end %>
+      <% if current_admin.super or current_admin.id == 1 %>
+        <%= link_to referrals_path, class: 'dropdown-item' do %>
+          <i class="fa fa-fw fa-check-circle-o"></i> Referrals
+        <% end %>
+      <% end %>
+      <%= link_to destroy_admin_session_path, method: :delete, class: 'dropdown-item' do %>
+        <i class="fa fa-fw fa-sign-out"></i> Sign out
+      <% end %>
+    </div>
+  <% end %>
+</div>

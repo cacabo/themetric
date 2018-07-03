@@ -14,7 +14,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require tether
-//= require bootstrap-sprockets
-//= require trix
 //= require cable.js
 //= require_tree ./general
