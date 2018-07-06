@@ -5,6 +5,13 @@
     <a class="logo" href="<%= root_path %>">
       <%= image_tag 'logo.svg' %>
     </a>
+
+    <div id="toggle">
+      <span class="bar" id="first"></span>
+      <span class="bar" id="second"></span>
+      <span class="bar" id="third"></span>
+    </div>
+
     <div id="menu">
       <div id="social">
         <a href="https://www.facebook.com/TheMetricHQ/">
@@ -17,7 +24,7 @@
 
       <div id="search">
         <%= form_tag articles_path, method: 'get', class: 'form-inline inline', id: 'search-form' do %>
-          <%= text_field_tag :search, params[:search], class: 'form-control', type: "text", required: true, placeholder: 'Search' %>
+          <%= text_field_tag :search, params[:search], class: 'form-control', type: "text", required: true, placeholder: 'Search...' %>
         <% end %>
       </div>
 
@@ -27,32 +34,11 @@
 </div>
 
 <script type="text/javascript">
-  function scrollingNav() {
-    var $nav = $('.navbar-collapse');
-    var h1 = $(window).height();
-    var h2 = $nav.height();
-    if (h1 < h2 + 82) {
-      $nav.css('overflow-y', 'scroll');
-    } else {
-      $nav.css('overflow-y', 'visible');
-    }
-  }
-
   $(document).ready(function() {
-    scrollingNav();
-
-    // Listeners for changes in nav height
-    $('.navbar-toggler').click(function() {
-      setTimeout(function () {
-        scrollingNav();
-      }, 200);
-    });
-
-    // Listeners for changes in nav height
-    $('#articles-dropdown').click(function() {
-      setTimeout(function () {
-        scrollingNav();
-      }, 100);
+    $('#toggle').click(function() {
+      $(this).toggleClass('active');
+      $('#menu').toggleClass('active');
+      $('#navbar').toggleClass('active');
     });
   });
 </script>

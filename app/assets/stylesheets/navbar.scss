@@ -1,5 +1,7 @@
 $height: 54px;
 $pad-vertical: 0.6rem;
+$breakpoint: 748px;
+$larger-breakpoint: 874px;
 
 #navbar-spacer {
   height: $height;
@@ -25,6 +27,7 @@ $pad-vertical: 0.6rem;
   height: $height;
 
   .logo {
+    z-index: 1;
     transition: all 0.2s ease;
     display: block;
     padding-right: 1rem;
@@ -74,7 +77,7 @@ $pad-vertical: 0.6rem;
       padding-right: 1rem;
 
       .form-control {
-        opacity: 0.8;
+        opacity: 0.6;
         transition: all 0.2s ease;
         border-radius: 16px !important;
         background: $light-light-gray;
@@ -82,9 +85,12 @@ $pad-vertical: 0.6rem;
         padding: 0.4rem 1rem;
 
         &:active,
-        &:focus,
-        &:hover {
+        &:focus {
           opacity: 1;
+        }
+
+        &:hover {
+          opacity: 0.8;
         }
       }
     }
@@ -116,7 +122,7 @@ $pad-vertical: 0.6rem;
 
         &.active {
           .fa {
-            transform: rotate(180deg);
+            transform: rotate(-180deg);
           }
         }
       }
@@ -132,11 +138,11 @@ $pad-vertical: 0.6rem;
         border-bottom: 1px solid $border;
         max-height: 0vh;
         overflow: hidden;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         opacity: 0;
 
         .flex-container {
-          padding: $pad-vertical 1rem;
+          padding: 1rem 0rem;
         }
 
         &.active {
@@ -166,6 +172,10 @@ $pad-vertical: 0.6rem;
   &.up {
     transform: translateY(-80px);
 
+    &.active {
+      transform: translateY(0px);
+    }
+
     .dropdown {
       display: none;
     }
@@ -180,4 +190,140 @@ $pad-vertical: 0.6rem;
 #navbar-wrapper {
   transition: all 0.25s ease;
   transform: translateY(0px);
+}
+
+@media screen and (max-width: $breakpoint) {
+  #navbar-spacer {
+    height: 48px;
+  }
+
+  #navbar {
+    display: block;
+    height: auto;
+    padding: 0;
+
+    .logo {
+      display: inline-block;
+      padding: $pad-vertical 1rem;
+
+      img {
+        height: 28px;
+      }
+    }
+
+    #menu {
+      transition: all 0.3s ease;
+      position: fixed;
+      top: 48px;
+      overflow: hidden !important;
+      background: white;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 0vh;
+      padding: $pad-vertical 1rem;
+
+      &.active {
+        opacity: 1;
+        display: block;
+        height: calc(100vh - 48px);
+        overflow-y: scroll;
+      }
+
+      #social {
+        width: 100%;
+      }
+
+      #links {
+        text-align: left;
+        width: 100%;
+
+        .link {
+          margin-left: 0;
+          width: 100%;
+          display: block;
+          border-bottom: 0px solid transparent !important;
+        }
+
+        .dropdown-toggler {
+          display: none;
+        }
+
+        .dropdown {
+          z-index: auto;
+          top: 0px;
+          display: block;
+          position: relative;
+          width: 100%;
+          height: auto;
+          max-height: none;
+          opacity: 1;
+          border-bottom: 0px solid transparent;
+
+          .container, .flex-container {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  #toggle {
+    width: auto;
+    width: 2rem;
+    cursor: hand;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 1001;
+    top: 12px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      span {
+        background: $blue-gray;
+      }
+    }
+
+    span {
+      width: 100%;
+      background: lighten($dark-blue-gray, 15%);
+      height: 3px;
+      display: block;
+      transition: all 0.2s ease;
+    }
+
+    // Apply a margin top to all bars except the first one
+    span + span {
+      margin-top: 0.5rem;
+    }
+
+    &.active {
+      #first {
+        transform: translateY(11px) translateX(0.2rem) rotate(135deg);
+      }
+
+      #second {
+        transform: rotate(-135deg) translateX(-0.14142rem) translateY(0.14142rem);
+      }
+
+      #third {
+        transform: translateY(-11px) translateX(0.2rem) rotate(135deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $larger-breakpoint) {
+  #search {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+  #toggle {
+    display: none;
+  }
 }
