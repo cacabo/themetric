@@ -95,6 +95,13 @@ $larger-breakpoint: 874px;
       }
     }
 
+    .dropdown-header {
+      opacity: 0.6;
+      padding: 0;
+      color: $blue-gray;
+      margin-bottom: 0.25rem;
+    }
+
     #links {
       padding-top: 2px;
       flex: 1;
@@ -148,13 +155,6 @@ $larger-breakpoint: 874px;
         &.active {
           opacity: 1;
           max-height: 100vh;
-        }
-
-        .dropdown-header {
-          opacity: 0.6;
-          padding: 0;
-          color: $blue-gray;
-          margin-bottom: 0.25rem;
         }
 
         a {
@@ -215,7 +215,8 @@ $larger-breakpoint: 874px;
       transition: all 0.3s ease;
       position: fixed;
       top: 48px;
-      overflow: hidden !important;
+      overflow-x: hidden;
+      overflow-y: scroll;
       background: white;
       left: 0;
       opacity: 0;
@@ -227,11 +228,25 @@ $larger-breakpoint: 874px;
         opacity: 1;
         display: block;
         height: calc(100vh - 48px);
-        overflow-y: scroll;
       }
 
       #social {
         width: 100%;
+      }
+
+      .dropdown-header,
+      .mobile-header {
+        margin-top: 1rem;
+        border-bottom: 1px solid $border;
+        padding: 0;
+        color: black !important;
+        margin-bottom: 0.5rem;
+        opacity: 1 !important;
+        font-size: .875rem;
+
+        &.marg-top-0 {
+          margin-top: 0rem;
+        }
       }
 
       #links {
@@ -314,6 +329,10 @@ $larger-breakpoint: 874px;
       }
     }
   }
+
+  .hidden-mobile {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: $larger-breakpoint) {
@@ -323,7 +342,9 @@ $larger-breakpoint: 874px;
 }
 
 @media screen and (min-width: $breakpoint) {
-  #toggle {
-    display: none;
+  #toggle,
+  .mobile-header,
+  .hidden-desktop {
+    display: none !important;
   }
 }
