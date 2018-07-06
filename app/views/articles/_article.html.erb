@@ -1,57 +1,44 @@
-<!-- include the image if there is one -->
-<% if not article.image.nil? and not article.image_file_name.nil? %>
-  <div class="card-img-top background-image" style="background-image: URL(<%= article.image.url(:large) %>)">
-    <div class="gradient">
-      <% if article.opinion? %>
-        <div class="opinion special">
-          OPINION
-        </div>
+<div class="<%= (article.image.nil? or article.image_file_name.nil?) ? "article" : "article background-image" %>"
+  style="background-image: URL(<%= article.image.url(:large) if not article.image.nil? and not article.image_file_name.nil?%>)">
+  <div class="gradient">
+    <!-- <% if article.opinion? %>
+      <div class="opinion special">
+        OPINION
+      </div>
+    <% end %> -->
+    <div class="space-1 hidden-md-down"></div>
+    <h1 class="sans title smaller up">
+      <%= article.title %>
+    </h1>
+
+    <% if current_admin and not article.published %>
+      <div class="light-gray pad-1 special text-muted marg-bot-1">
+        ARTICLE NOT PUBLISHED
+      </div>
+    <% elsif current_admin and article.featured %>
+      <div class="light-gray pad-1 special text-muted marg-bot-1">
+        ARTICLE FEATURED
+      </div>
+    <% end %>
+
+    <% if article.image.nil? or article.image_file_name.nil? %>
+      <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
+    <% end %>
+    <h2 class="subtitle smaller serif"><%= article.subtitle %></h2>
+    <div class="space-0"></div>
+
+    <p class="time sans inline float-right">
+      <% if article.published_at %>
+        <%= time_ago_in_words(article.published_at) %> ago
+      <% else %>
+        <%= time_ago_in_words(article.updated_at) %> ago
       <% end %>
-      <div class="space-1 hidden-md-down"></div>
-      <h1 class="sans title smaller up">
-        <span class="underline"><%= article.title %></span>
-      </h1>
-    </div>
+    </p>
+    <% r = article.regionText %>
+    <% if r and r.length > 0 %>
+      <%= link_to region_path(article.region), class: "full-width region special marg-bot-0 black-text relative" do %>
+        <%= r %>
+      <% end %>
+    <% end %>
   </div>
-<% end %>
-
-<!-- article title and subtitle -->
-<div class="card-block preview">
-  <% if (article.image.nil? or article.image_file_name.nil?) and article.opinion? %>
-    <div class="opinion absolute special">
-      OPINION
-    </div>
-    <div class="space-1"></div>
-    <div class="space-05"></div>
-  <% end %>
-
-  <% if current_admin and not article.published %>
-    <div class="light-gray pad-1 special text-muted marg-bot-1">
-      ARTICLE NOT PUBLISHED
-    </div>
-  <% elsif current_admin and article.featured %>
-    <div class="light-gray pad-1 special text-muted marg-bot-1">
-      ARTICLE FEATURED
-    </div>
-  <% end %>
-
-  <% if article.image.nil? or article.image_file_name.nil? %>
-    <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
-  <% end %>
-  <h2 class="subtitle smaller serif"><%= article.subtitle %></h2>
-  <div class="space-0"></div>
-
-  <p class="time sans inline float-right">
-    <% if article.published_at %>
-      <%= time_ago_in_words(article.published_at) %> ago
-    <% else %>
-      <%= time_ago_in_words(article.updated_at) %> ago
-    <% end %>
-  </p>
-  <% r = article.regionText %>
-  <% if r and r.length > 0 %>
-    <%= link_to region_path(article.region), class: "full-width region special marg-bot-0 black-text relative" do %>
-      <%= r %>
-    <% end %>
-  <% end %>
 </div>

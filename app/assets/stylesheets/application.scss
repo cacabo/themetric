@@ -14,69 +14,20 @@
  */
 @import './strapper.min';
 @import './colors';
+@import './fonts';
 @import './navbar';
 @import './admins';
 @import './article';
 @import './footer';
 @import './form';
 @import './frontpage';
+@import './bar';
 
 /**
  * Removing scrolling on mobile in unintended ways
  */
 body, html {
   overflow-x: hidden !important;
-}
-
-/*
- * COLORS
- */
-
-.italic {
-  font-style: italic;
-}
-
-.caps {
-  text-transform: uppercase;
-}
-
-::selection {
-  background: $blue !important;
-  color: white;
-}
-
-::-moz-selection {
-  background: $blue !important;
-  color: white;
-}
-
-a {
-  color: $blue;
-
-  &:visited {
-    color: $blue;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $dark-blue;
-  }
-}
-
-.underline {
-  border-bottom: 4px solid $blue;
-  transition: all 0.2s ease;
-
-  &:hover,
-  &:focus,
-  &:active {
-    border-bottom: 4px solid $dark-blue;
-  }
-}
-
-.text-muted {
-  color: $blue-gray !important;
 }
 
 .blue-background-hover:hover {
@@ -208,29 +159,6 @@ a.full-width {
 }
 .card {
   border-radius: 0px !important;
-}
-
-/*
- * FONTS AND COLORS
- */
-
-// NOTE only regular, bold, italic
-.serif {
-  font-family: 'PT Serif', serif;
-}
-
-// NOTE only regular
-.special {
-  font-family: 'Palanquin Dark', sans-serif;
-  font-weight: bold;
-}
-
-.sans {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  color: black;
 }
 
 a {

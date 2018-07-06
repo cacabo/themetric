@@ -165,3 +165,4 @@ __Down the line__
 - [ ] Paginate or scroll to load more articles
 - [ ] Allow super admin to lock / delete other admin accounts
 - [ ] SendGrid for Devise?
+- [ ] Fix opinion labeling
