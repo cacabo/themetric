@@ -1,12 +1,7 @@
-<div class="<%= (article.image.nil? or article.image_file_name.nil?) ? "article" : "article background-image" %>"
-  style="background-image: URL(<%= article.image.url(:large) if not article.image.nil? and not article.image_file_name.nil?%>)">
-  <!-- <div class="gradient"> -->
-    <!-- <% if article.opinion? %>
-      <div class="opinion special">
-        OPINION
-      </div>
-    <% end %> -->
+<% url = (not article.image.nil? and not article.image_file_name.nil?) ? article.image.url(:large) : '' %>
+<%= link_to article, class: (article.image.nil? or article.image_file_name.nil?) ? "article" : "article background-image", style: "background-image: url(#{url})" do %>
 
+  <div class="article-content">
     <h1 class="title serif">
       <%= article.title %>
     </h1>
@@ -16,29 +11,29 @@
     </h2>
 
     <% if current_admin and not article.published %>
-      <div class="light-gray pad-1 special text-muted marg-bot-1">
+      <div class="pad-1 special text-muted marg-bot-1">
         ARTICLE NOT PUBLISHED
       </div>
     <% elsif current_admin and article.featured %>
-      <div class="light-gray pad-1 special text-muted marg-bot-1">
+      <div class="pad-1 special text-muted marg-bot-1">
         ARTICLE FEATURED
       </div>
     <% end %>
 
-
-
-    <!-- <p class="time sans inline float-right">
+    <!-- <p class="time sans">
       <% if article.published_at %>
         <%= time_ago_in_words(article.published_at) %> ago
       <% else %>
         <%= time_ago_in_words(article.updated_at) %> ago
       <% end %>
     </p> -->
+
     <% r = article.regionText %>
     <% if r and r.length > 0 %>
-      <%= link_to region_path(article.region), class: "full-width region special marg-bot-0 black-text relative" do %>
+      <p class="full-width region special marg-bot-0 relative">
         <%= r %>
-      <% end %>
+      </p>
     <% end %>
-  <!-- </div> -->
-</div>
+  </div>
+
+<% end %>
