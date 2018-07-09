@@ -29,10 +29,7 @@
   margin-bottom: 1rem;
   text-align: center;
   font-family: $serif;
-
-  .gradient {
-    padding: 1rem;
-  }
+  padding: 1rem;
 
   &.background-image {
     color: white;
@@ -347,5 +344,22 @@
 @media screen and (max-device-width: 612px) {
   .card-columns {
     column-count: 1 !important;
+  }
+}
+
+.article-cols {
+  display: flex;
+
+  .article {
+    flex: 1;
+    display: block;
+
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+
+    &:last-child {
+      margin-left: 0.5rem;
+    }
   }
 }
