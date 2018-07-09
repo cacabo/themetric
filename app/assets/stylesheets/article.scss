@@ -37,6 +37,9 @@
 
   &.background-image {
     color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     .article-content {
       background: linear-gradient(transparent, darken($transparent-blue, 20%), darken($transparent-dark-blue, 35%));

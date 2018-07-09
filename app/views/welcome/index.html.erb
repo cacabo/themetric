@@ -45,16 +45,7 @@
         Around the World
       </p>
 
-      <% (@articles.each_slice(2).to_a).each do |a| %>
-        <% if a[1].present? %>
-          <div class="article-cols">
-            <%= render a[0] %>
-            <%= render a[1] %>
-          </div>
-        <% else %>
-          <%= render a[0] %>
-        <% end %>
-      <% end %>
+      <%= render 'shared/articles', articles: @articles %>
     <% end %>
   </div>
 </div>
@@ -66,13 +57,7 @@
         Most Read
       </p>
 
-      <div class="articles">
-        <% @popular.each do |a| %>
-          <%= link_to a do %>
-            <%= render a %>
-          <% end %>
-        <% end %>
-      </div>
+      <%= render 'shared/articles', articles: @popular %>
     <% end %>
   </div>
 </div>
@@ -84,13 +69,7 @@
         Read More
       </p>
 
-      <div class="articles">
-        <% @more_popular.each do |a| %>
-          <%= link_to a do %>
-            <%= render a %>
-          <% end %>
-        <% end %>
-      </div>
+      <%= render 'shared/articles', articles: @more_popular %>
     <% end %>
   </div>
 </div>
