@@ -1,5 +1,5 @@
 #footer {
-  background: black;
+  background: $dark;
 
   .footer-logo {
     height: 3rem;
@@ -19,6 +19,7 @@ footer {
       font-size: 1.2rem;
       color: $blue-gray;
       text-decoration: none;
+      font-family: $special;
 
       &:hover {
         color: white;

@@ -3,7 +3,8 @@
     <div class="space-1"></div>
     <div class="container-fluid">
       <%= link_to @feature do %>
-        <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
+        <% url = (not @feature.image_file_name.nil? and not @feature.image.nil?) ? @feature.image.url(:large) : '' %>
+        <div class="background-image feature" style="background-image: url(<%= url %>)">
           <div class="metric-gradient">
             <div class="content-wrapper">
               <div class="content">
@@ -28,8 +29,6 @@
                 <% end %>
               </div>
             </div>
-
-            <%= render '/shared/bar' %>
           </div>
         </div>
       <% end %>

@@ -41,8 +41,8 @@
     background-size: cover;
     background-position: center;
 
-    .article-content {
-      background: linear-gradient(transparent, darken($transparent-blue, 20%), darken($transparent-dark-blue, 35%));
+  .article-content {
+      background: linear-gradient(transparent, darken($transparent-blue, 25%), darken($transparent-dark-blue, 40%));
       transition: all 0.2s ease;
       height: 100%;
 
@@ -121,7 +121,6 @@
 
 .region {
   text-transform: uppercase;
-  font-style: italic;
 }
 
 .tags {

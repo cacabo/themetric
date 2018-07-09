@@ -1,7 +1,8 @@
 /*
  * FONTS AND COLORS
  */
-$serif: 'PT Serif', serif;
+$serif: 'PT Serif', 'Times', serif;
+$special: 'Palanquin Dark', sans-serif;
 
 // NOTE only regular, bold, italic
 .serif {
@@ -10,7 +11,7 @@ $serif: 'PT Serif', serif;
 
 // NOTE only regular
 .special {
-  font-family: 'Palanquin Dark', sans-serif;
+  font-family: $special;
   font-weight: bold;
 }
 
