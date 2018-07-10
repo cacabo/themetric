@@ -8,7 +8,7 @@
 
   <div class="container-fluid serif">
     <div class="row">
-      <div class="col-12 col-lg-8 pad-0 col-xl-9">
+      <div class="col-12 offset-lg-2 col-lg-8">
         <div class="pad-1-special">
           <% if current_admin and not @article.published %>
             <p class="text-muted special pad-1 light-gray">
@@ -187,72 +187,7 @@
       <!-- close col around article -->
 
 
-      <div class="col-12 col-lg-4 col-xl-3 hidden-md-down light-light-gray" id="wrapper">
-        <% if @recommended and @recommended.length > 0 %>
-          <div class="recommended">
-            <div class="space-1"></div>
-            <p class="text-muted bold sans">
-              RECOMMENDED FOR YOU
-            </p>
 
-            <% @recommended.each do |article| %>
-              <%= link_to article do %>
-                <div class="card article marg-bot-1">
-                  <% if not article.image.nil? and not article.image_file_name.nil? %>
-                    <div class="card-img-top background-image" style="background-image: URL(<%= article.image.url(:large) %>)">
-                      <div class="gradient">
-                        <% if article.opinion? %>
-                          <div class="opinion special">
-                            OPINION
-                          </div>
-                        <% end %>
-                        <h1 class="sans title smaller up">
-                          <span class="underline"><%= article.title %></span>
-                        </h1>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <!-- article title and subtitle -->
-                  <div class="card-block">
-                    <% if (article.image.nil? or article.image_file_name.nil?) and article.opinion? %>
-                      <div class="opinion absolute special">
-                        OPINION
-                      </div>
-                      <div class="space-1"></div>
-                      <div class="space-05"></div>
-                    <% end %>
-
-                    <% if current_admin and not article.published %>
-                      <div class="light-gray pad-1 special text-muted marg-bot-1">
-                        ARTICLE NOT PUBLISHED
-                      </div>
-                    <% elsif current_admin and article.featured %>
-                      <div class="light-gray pad-1 special text-muted marg-bot-1">
-                        ARTICLE FEATURED
-                      </div>
-                    <% end %>
-
-                    <% if article.image.nil? or article.image_file_name.nil? %>
-                      <h1 class="sans title smaller"><span class="underline"><%= article.title %></span></h1>
-                    <% end %>
-                    <h2 class="subtitle smaller serif"><%= article.subtitle %></h2>
-                    <div class="space-0"></div>
-
-                    <% r = article.regionText %>
-                    <% if r and r.length > 0 %>
-                      <%= link_to region_path(article.region), class: "full-width region special marg-bot-0 black-text relative" do %>
-                        <%= r %>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-        <div class="space-1"></div>
-      </div>
 
     </div>
     <!-- close row -->
@@ -279,110 +214,71 @@
   </div>
 <% end %>
 
-<div class="light-gray" id="comments">
-  <div class="space-4"></div>
+<div class="light-gray section">
+  <div class="space-1"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
-        <div class="row">
-          <% if @previous %>
-            <div class="col-12 col-md-6">
-              <%= link_to @previous do %>
-                <div class="other white marg-bot-1">
-                  <% if not @previous.image.nil? and not @previous.image_file_name.nil? %>
-                    <%= image_tag @previous.image.url(:large), class: 'img-fluid full-width' %>
-                  <% end %>
-                  <div class="pad-1">
-                    <p class="text-light bold">
-                      PREVIOUS ARTICLE
-                    </p>
-                    <h2 class="sans title smaller">
-                      <%= @previous.title %>
-                    </h2>
-                    <h3 class="sans subtitle smaller">
-                      <%= @previous.subtitle %>
-                    </h3>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% else %>
-            <div class="col-12 col-md-6">
-              <%= link_to articles_path do %>
-                <div class="other white marg-bot-1">
-                  <div class="pad-1">
-                    <p class="description">
-                      Keep reading
-                    </p>
-                    <h2 class="sans title smaller">
-                      Back to all articles
-                    </h2>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-          <% if @next %>
-            <div class="col-12 col-md-6">
-              <%= link_to @next do %>
-                <div class="other white marg-bot-1">
-                  <% if not @next.image.nil? and not @next.image_file_name.nil? %>
-                    <%= image_tag @next.image.url(:large), class: 'img-fluid full-width' %>
-                  <% end %>
-                  <div class="pad-1">
-                    <p class="text-light bold">
-                      NEXT ARTICLE
-                    </p>
-                    <h2 class="sans title smaller">
-                      <%= @next.title %>
-                    </h2>
-                    <h3 class="sans subtitle smaller">
-                      <%= @next.subtitle %>
-                    </h3>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <!-- closing row around other articles -->
-      </div>
-      <!-- close col -->
-    </div>
-    <!-- close row -->
-
-    <div class="space-2"></div>
-
-    <% if @article %>
-      <div class="row">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          <!-- DISQUS -->
-          <div id="disqus_thread"></div>
-          <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-            var disqus_config = function () {
-            this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = '<%= @article.slug %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://chasm-1.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-      </div>
-    <% end %>
-    <!-- end logic checking for article for disqus -->
+    <p class="section-title">
+      Recent Posts
+    </p>
+    <%= render 'shared/articles', articles: [@previous, @next] %>
   </div>
-  <!-- close container -->
-
-  <div class="space-4"></div>
 </div>
-<!-- close gray -->
+
+<% if @article %>
+  <div class="light-gray section" id="comments">
+    <div class="container">
+      <div class="space-1"></div>
+
+        <p class="section-title">
+          Comments
+        </p>
+
+        <div class="row">
+          <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <!-- DISQUS -->
+            <div id="disqus_thread"></div>
+            <script>
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+              var disqus_config = function () {
+              this.page.url = '<%= request.original_url %>';  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = '<%= @article.slug %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://chasm-1.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        </div>
+
+      <!-- end logic checking for article for disqus -->
+    </div>
+    <!-- close container -->
+  </div>
+<% end %>
+
+<div class="light-gray section">
+  <div class="container">
+    <p class="section-title">
+      Recommended for You
+    </p>
+    <%= render 'shared/articles', articles: @recommended %>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="center">
+    <%= link_to root_path, class: 'btn-white shade-3 hover' do %>
+      Back to home
+    <% end %>
+  </div>
+
+  <div class="space-2"></div>
+</div>
