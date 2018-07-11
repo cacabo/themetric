@@ -1,0 +1,34 @@
+<% if current_admin %>
+  <% if article.admin.nil? or (current_admin.id == article.admin.id) or (current_admin and current_admin.super) %>
+    <div class="space-1"></div>
+    <div class="admin-buttons">
+      <% if current_admin.super or current_admin.id == 1 %>
+        <% if article.published %>
+          <%= link_to 'Unpublish article', unpublish_path(article), method: :patch, confirm: 'Unpublish article, are you sure? The article will no longer be visible to all site users, although it can always be re-published.', class: 'btn btn-sm btn-info sans white-text' %>
+          <% if article.featured %>
+            <%= link_to 'Unfeature article', unfeature_path(article), method: :patch, confirm: 'Unfeature article, are you sure? The article will no longer be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans white-text' %>
+          <% else %>
+            <%= link_to 'Feature article', feature_path(article), method: :patch, confirm: 'Feature article, are you sure? The article will be the first thing to come up on the front page.', class: 'btn btn-sm btn-info sans white-text' %>
+          <% end %>
+        <% else %>
+          <%= link_to 'Publish article', publish_path(article), method: :patch, data: { confirm: 'Publish article, are you sure? The article will be visible to all site users.' }, class: 'btn btn-sm btn-info sans white-text' %>
+        <% end %>
+        <%= link_to article_path(article),
+          method: :delete,
+          data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
+            <button class="btn btn-sm btn-danger white-text">Delete</button>
+        <% end %>
+      <% elsif not article.published and (current_admin.super or current_admin.id == article.admin.id) %>
+        <%= link_to article_path(article),
+          method: :delete,
+          data: { confirm: 'Are you sure? The article will be permanantly deleted.' } do %>
+            <button class="btn btn-sm btn-danger white-text">Delete</button>
+        <% end %>
+      <% end %>
+
+      <%= link_to edit_article_path(article) do %>
+      <button class="btn btn-sm btn-primary">Edit</button>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
