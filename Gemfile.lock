@@ -48,8 +48,6 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    autoprefixer-rails (8.4.1)
-      execjs
     aws-sdk (2.3.22)
       aws-sdk-resources (= 2.3.22)
     aws-sdk-core (2.3.22)
@@ -58,10 +56,6 @@ GEM
       aws-sdk-core (= 2.3.22)
     bcrypt (3.1.11)
     bindex (0.5.0)
-    bootstrap (4.0.0)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
     bootstrap_form (2.7.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -144,7 +138,6 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
     pg (0.21.0)
-    popper_js (1.12.9)
     public_suffix (3.0.2)
     puma (3.11.4)
     rack (2.0.5)
@@ -259,7 +252,6 @@ DEPENDENCIES
   acts-as-taggable-on!
   aws-sdk (~> 2.3.0)
   bcrypt (~> 3.1.7)
-  bootstrap (~> 4.0.0.alpha6)
   bootstrap_form (~> 2.3)
   byebug
   capybara (~> 2.13)

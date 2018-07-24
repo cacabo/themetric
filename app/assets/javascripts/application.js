@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require tether
 //= require cable.js
+//= require trix
 //= require_tree ./general

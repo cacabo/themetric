@@ -39,6 +39,7 @@ gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 gem 'mail_form', '~> 1.7'
 gem 'sendgrid-ruby', '~> 5.2'
 gem 'friendly_id', '~> 5.1.0'
+gem 'trix', '~> 0.11.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
