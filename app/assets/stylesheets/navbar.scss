@@ -278,6 +278,8 @@ $larger-breakpoint: 874px;
           .container, .flex-container {
             padding: 0 !important;
             margin: 0 !important;
+            width: 100%;
+            max-width: none;
           }
         }
       }
@@ -285,8 +287,8 @@ $larger-breakpoint: 874px;
   }
 
   #toggle {
-    width: auto;
     width: 2rem;
+    height: 2rem;
     cursor: hand;
     cursor: pointer;
     position: absolute;
