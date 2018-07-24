@@ -1,40 +1,32 @@
-.nav-item {
-  .nav-hover {
-    border-bottom: 4px solid transparent;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    .nav-hover {
-      border-bottom: 4px solid $blue;
+.feature {
+  &:hover {
+    .content {
+      transform: translateY(-0.25rem) !important;
     }
   }
-}
 
-.feature {
-  .content-wrapper {
-    padding: 4rem 5% 5% 5%;
+  .metric-gradient {
     background: linear-gradient(transparent 30%, darken($transparent-blue, 20%), darken($transparent-dark-blue, 30%));
-    width: 100%;
-    transition: all 0.2s ease;
 
     &:hover {
       filter: grayscale(50%);
-
-      .title,
-      .subtitle {
-        transform: translateY(-0.25rem) !important;
-      }
     }
   }
 
+  .content-wrapper {
+    padding: 7.5% 5% 5% 5%;
+    width: 100%;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
   .content {
+    transition: all 0.2s ease;
+
     .title, .subtitle {
       text-shadow: -2px 4px 6px rgba(0, 0, 0, 0.4);
       color: white;
       display: inline-block;
-      transition: all 0.2s ease;
       z-index: 100;
       transform: translateY(0);
     }
@@ -46,9 +38,29 @@
   }
 }
 
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: $dark;
+    font-weight: bold;
+    font-family: $serif;
+  }
+}
+
 @media screen and (min-device-width: 1024px) and (min-width: 720px) {
   .feature .content {
-    width: 60%;
+    margin-left: 10%;
+    width: 80%;
+
+    .title {
+      font-size: 3.5rem;
+    }
   }
 }
 

@@ -1,27 +1,33 @@
-<!--
-  The homepage of the application
--->
 <% if @feature %>
   <div class="dark">
     <div class="space-1"></div>
-    <div class="container">
+    <div class="container-fluid">
       <%= link_to @feature do %>
-        <div class="background-image feature" style="background-image: URL(<%= @feature.image.url(:large) if (not @feature.image_file_name.nil? and not @feature.image.nil?) %>)">
-          <div class="content-wrapper">
-            <div class="content">
-              <div class="space-3 hidden-md-down"></div>
-              <div class="space-2 hidden-lg-down"></div>
-              <% if @feature.title %>
-                <h1 class="title">
-                  <%= @feature.title %>
-                </h1>
-              <% end %>
-              <div class="space-0"></div>
-              <% if @feature.subtitle %>
-                <h2 class="subtitle serif">
-                  <%= @feature.subtitle %>
-                </h2>
-              <% end %>
+        <% url = (not @feature.image_file_name.nil? and not @feature.image.nil?) ? @feature.image.url(:large) : '' %>
+        <div class="background-image feature" style="background-image: url(<%= url %>)">
+          <div class="metric-gradient">
+            <div class="content-wrapper">
+              <div class="content">
+                <div class="space-3 hidden-md-down"></div>
+                <div class="space-2 hidden-lg-down"></div>
+                <% if @feature.title %>
+                  <h1 class="title serif">
+                    <%= @feature.title %>
+                  </h1>
+                <% end %>
+                <div class="space-0"></div>
+                <% if @feature.subtitle %>
+                  <h2 class="subtitle serif">
+                    <%= @feature.subtitle %>
+                  </h2>
+                <% end %>
+                <% r = @feature.regionText %>
+                <% if r and r.length > 0 %>
+                  <p class="white-text special caps">
+                    <%= r %>
+                  </p>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -30,98 +36,39 @@
   </div>
 <% end %>
 
-<div class="container-fluid">
-  <div class="row pad-0">
-    <div class="col-12 col-xl-9 pad-0 light-light-gray">
-      <!-- Render the featured article if there is one -->
-      <div class="space-1"></div>
+<div class="light-gray section">
+  <div class="container-fluid">
+    <!-- Render additional articles in the main panel of the page -->
+    <% if @articles and @articles.length > 0 %>
+      <p class="section-title">
+        Around the World
+      </p>
 
-      <!-- Render additional articles in the main panel of the page -->
-      <div class="container-fluid">
-        <% if @articles and @articles.length > 0 %>
-          <p class="text-muted bold full-width marg-bot-1">
-            AROUND THE WORLD
-          </p>
-          <div class="card-columns articles two-columns">
-            <% @articles.each do |a| %>
-              <%= link_to a do %>
-                <div class="card article">
-                  <%= render a %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div class="space-2"></div>
-    </div>
-    <!-- closing left col -->
+      <%= render 'shared/articles', articles: @articles %>
+    <% end %>
+  </div>
+</div>
 
-    <!-- Render the most read articles on the right sidebar -->
-    <div class="col-12 col-xl-3 pad-top-1 light-gray full-height">
-      <% if @popular and @popular.length > 0 %>
-        <p class="text-muted bold full-width marg-bot-1">
-          MOST READ
-        </p>
-        <div class="row">
-          <% @popular.each do |article| %>
-            <div class="col-12 col-md-6 col-xl-12">
-              <%= link_to article do %>
-                <!-- article image -->
-                <% if not article.image.nil? and not article.image_file_name.nil? %>
-                  <!-- if the article is an opinion piece -->
-                  <% if article.opinion? %>
-                    <div class="opinion absolute special read-more">
-                      OPINION
-                    </div>
-                  <% end %>
+<div class="light-gray section">
+  <div class="container-fluid">
+    <% if @popular and @popular.length > 0 %>
+      <p class="section-title">
+        Most Read
+      </p>
 
-                  <!-- render the image -->
-                  <%= image_tag article.image.url(:large), class: 'img-fluid full-width marg-bot-1' %>
-                <% end %>
+      <%= render 'shared/articles', articles: @popular %>
+    <% end %>
+  </div>
+</div>
 
-                <!-- article title and subtitle -->
-                <h1 class="sans title smaller"><%= article.title %></h1>
-                <h2 class="subtitle smaller serif"><%= article.subtitle %></h2>
-                <% unless article == @popular.last %>
-                  <div class="line-1"></div>
-                <% end %>
-              <% end %>
-              <!-- closing link to article -->
-            </div>
-            <!-- closing col -->
-          <% end %>
-          <!-- close looping over global -->
-        </div>
-        <!-- closing row -->
-      <% end %>
-      <!-- close checking for global -->
+<div class="light-gray section">
+  <div class="container-fluid">
+    <% if @more_popular and @more_popular.length > 0 %>
+      <p class="section-title">
+        Read More
+      </p>
 
-      <div class="space-2"></div>
-
-      <!-- If there are even more articles to show, show them here -->
-      <% if @more_popular and @more_popular.length > 0 %>
-        <p class="full-width bold text-muted">
-          READ MORE
-        </p>
-        <div class="row">
-          <% @more_popular.each do |article| %>
-            <div class="col-12 col-md-6 col-xl-12">
-              <%= link_to article do %>
-                <h3 class="bold">
-                  <%= article.title %>
-                </h3>
-                <% unless article == @more_popular.last %>
-                  <div class="line-1"></div>
-                <% end %>
-              <% end %>
-            </div>
-            <!-- closing col -->
-          <% end %>
-        </div>
-        <!-- closing row -->
-      <% end %>
-    </div>
-    <!-- closing right col -->
+      <%= render 'shared/articles', articles: @more_popular %>
+    <% end %>
   </div>
 </div>

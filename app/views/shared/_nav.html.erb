@@ -1,0 +1,48 @@
+<div id="navbar-spacer"></div>
+<div id="navbar-wrapper">
+  <div class="alert-spacer hidden"></div>
+  <nav id="navbar">
+    <a class="logo" href="<%= root_path %>">
+      <%= image_tag 'logo.svg' %>
+    </a>
+
+    <div id="toggle">
+      <span id="first"></span>
+      <span id="second"></span>
+      <span id="third"></span>
+    </div>
+
+    <div id="menu">
+      <div id="social">
+        <p class="bold mobile-header marg-top-0">
+          SOCIAL
+        </p>
+
+        <a href="https://www.facebook.com/TheMetricHQ/">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/themetrichq">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div id="search">
+        <%= form_tag articles_path, method: 'get', class: 'form-inline inline', id: 'search-form' do %>
+          <%= text_field_tag :search, params[:search], class: 'form-control', type: "text", required: true, placeholder: 'Search...' %>
+        <% end %>
+      </div>
+
+      <%= render 'shared/nav/links' %>
+    </div>
+  </nav>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#toggle').click(function() {
+      $(this).toggleClass('active');
+      $('#menu').toggleClass('active');
+      $('#navbar').toggleClass('active');
+    });
+  });
+</script>

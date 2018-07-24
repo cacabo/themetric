@@ -1,0 +1,22 @@
+<div id="links">
+  <a href="<%=root_path%>" class="link hidden-mobile">
+    Home
+  </a>
+  <a href="<%= about_path %>" class="link hidden-mobile">
+    About
+  </a>
+
+  <%= render '/shared/nav/articles-dropdown' %>
+
+  <p class="bold mobile-header">
+    CONTACT
+  </p>
+
+  <a href="<%= new_contact_path %>" class="link">
+    Contact us
+  </a>
+
+  <% if not current_admin.nil? %>
+    <%= render '/shared/nav/admin-dropdown' %>
+  <% end %>
+</div>

@@ -1,0 +1,60 @@
+/*
+ * FONTS AND COLORS
+ */
+$serif: 'PT Serif', 'Times', serif;
+$special: 'Palanquin Dark', sans-serif;
+
+// NOTE only regular, bold, italic
+.serif {
+  font-family: $serif;
+}
+
+// NOTE only regular
+.special {
+  font-family: $special;
+  font-weight: bold;
+}
+
+.sans {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+::selection {
+  background: $blue !important;
+  color: white;
+}
+
+::-moz-selection {
+  background: $blue !important;
+  color: white;
+}
+
+a {
+  color: $blue;
+
+  &:visited {
+    color: $blue;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-blue;
+  }
+}
+
+.text-muted {
+  color: $blue-gray !important;
+}

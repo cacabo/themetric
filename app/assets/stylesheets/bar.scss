@@ -1,0 +1,10 @@
+.bar {
+  position: absolute;
+  transform: translateX(-3rem);
+  width: 6rem;
+  height: 0.6rem;
+  display: inline-block;
+  margin: 0;
+  background: $blue;
+  background: linear-gradient(to right, $blue, $dark-blue);
+}

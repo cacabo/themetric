@@ -1,0 +1,54 @@
+<a class="link dropdown-toggler" id="admin-dropdown-toggle">
+  Admin&nbsp;
+  <i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
+
+<div id="admin-dropdown" class="dropdown">
+  <div class="container">
+    <div class="flex-container">
+      <div class="flex">
+        <p class="mobile-header">
+          ADMIN
+        </p>
+
+        <%= link_to new_article_path do %>
+          <i class="fa fa-fw fa-plus"></i> New article
+        <% end %>
+        <%= link_to current_admin do %>
+          <i class="fa fa-fw fa-user"></i> View profile
+        <% end %>
+        <%= link_to edit_admin_path(current_admin) do %>
+          <i class="fa fa-fw fa-pencil"></i> Edit profile
+        <% end %>
+        <%= link_to info_path do %>
+          <i class="fa fa-fw fa-info"></i> Admin info
+        <% end %>
+        <%= link_to emails_path do %>
+          <i class="fa fa-fw fa-envelope"></i> Email list
+        <% end %>
+        <%= link_to admins_path do %>
+          <i class="fa fa-fw fa-list"></i> Admins
+        <% end %>
+        <% if current_admin.super or current_admin.id == 1 %>
+          <%= link_to referrals_path do %>
+            <i class="fa fa-fw fa-check-circle-o"></i> Referrals
+          <% end %>
+        <% end %>
+        <%= link_to destroy_admin_session_path, method: :delete do %>
+          <i class="fa fa-fw fa-sign-out"></i> Sign out
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#admin-dropdown-toggle').click(function() {
+      $(this).toggleClass('active');
+      $('#admin-dropdown').toggleClass('active');
+      $('#articles-dropdown-toggle').removeClass('active');
+      $('#articles-dropdown').removeClass('active');
+    });
+  })
+</script>

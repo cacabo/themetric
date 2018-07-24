@@ -1,0 +1,56 @@
+<a class="link dropdown-toggler" id="articles-dropdown-toggle">
+  Articles&nbsp;
+  <i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
+
+
+<div id="articles-dropdown" class="dropdown">
+  <div class="container">
+    <div class="flex-container">
+      <div class="flex">
+        <p class="bold dropdown-header">
+          GENERAL
+        </p>
+
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'All articles', articles_path %>
+        <%= link_to 'About', about_path, class: 'hidden-desktop'%>
+      </div>
+      <div class="flex">
+        <p class="bold dropdown-header">
+          REGIONS
+        </p>
+
+        <%= link_to 'North America', region_path(:north_america) %>
+        <%= link_to 'Latin America', region_path(:latin_america) %>
+        <%= link_to 'Europe', region_path(:europe) %>
+        <%= link_to 'Middle East & North Africa', region_path(:middle_east_and_north_africa) %>
+        <%= link_to 'Africa', region_path(:africa) %>
+        <%= link_to 'Asia & Oceania', region_path(:asia_and_oceania) %>
+      </div>
+      <div class="flex">
+        <p class="bold dropdown-header">
+          TOPICS
+        </p>
+
+        <%= link_to 'Economics & Finance', topic_path(:economics_and_finance) %>
+        <%= link_to 'Security', topic_path(:security) %>
+        <%= link_to 'Politics', topic_path(:politics) %>
+        <%= link_to 'Science & Innovation', topic_path(:science_and_innovation) %>
+        <%= link_to 'Culture', topic_path(:culture) %>
+        <%= link_to 'Opinion', topic_path(:opinion) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#articles-dropdown-toggle').click(function() {
+      $(this).toggleClass('active');
+      $('#articles-dropdown').toggleClass('active');
+      $('admin-dropdown-toggle').removeClass('active');
+      $('#admin-dropdown').removeClass('active');
+    });
+  })
+</script>

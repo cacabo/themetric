@@ -28,16 +28,7 @@
         <% end %>
 
         <% if @articles.length > 0 %>
-          <div class="card-columns articles">
-            <% @articles.each do |article| %>
-              <%= link_to article do %>
-                <div class="card article">
-                  <%= render article %>
-                </div>
-              <% end %>
-            <% end %>
-            <!-- closing loop over articles -->
-          </div>
+          <%= render 'shared/articles', articles: @articles %>
         <% else %>
           <!-- if there are no articles -->
           <div class="white pad-1 shade-1 hover">
