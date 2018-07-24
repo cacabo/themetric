@@ -1,7 +1,7 @@
 <% if @feature %>
   <div class="dark">
     <div class="space-1"></div>
-    <div class="container-fluid">
+    <div class="container">
       <%= link_to @feature do %>
         <% url = (not @feature.image_file_name.nil? and not @feature.image.nil?) ? @feature.image.url(:large) : '' %>
         <div class="background-image feature" style="background-image: url(<%= url %>)">
@@ -37,7 +37,7 @@
 <% end %>
 
 <div class="light-gray section">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Render additional articles in the main panel of the page -->
     <% if @articles and @articles.length > 0 %>
       <p class="section-title">
@@ -50,7 +50,7 @@
 </div>
 
 <div class="light-gray section">
-  <div class="container-fluid">
+  <div class="container">
     <% if @popular and @popular.length > 0 %>
       <p class="section-title">
         Most Read
@@ -62,7 +62,7 @@
 </div>
 
 <div class="light-gray section">
-  <div class="container-fluid">
+  <div class="container">
     <% if @more_popular and @more_popular.length > 0 %>
       <p class="section-title">
         Read More
