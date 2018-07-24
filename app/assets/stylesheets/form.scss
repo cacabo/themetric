@@ -8,6 +8,16 @@ select:not([multiple]) {
     padding-right: 1.5em
 }
 
+.outline {
+  padding: 2rem 1rem 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+
+  label {
+    margin-bottom: 0;
+  }
+}
+
 input.form-control,
 select.form-control,
 textarea.form-control {

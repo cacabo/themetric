@@ -93,6 +93,11 @@ class ArticlesController < ApplicationController
 
   # start making a new article
   def new
+    if current_admin and current_admin.super
+      authors = Admin.all.order('name ASC')
+      @authors = authors.map { |a| [a.name, a.id] }
+    end
+
     @article = current_admin.articles.build
   end
 
@@ -103,8 +108,23 @@ class ArticlesController < ApplicationController
 
   # create an article
   def create
+    author = current_admin
+
+    # if an admin was specified
+    if article_params[:admin].present? and current_admin.super?
+      admin_id = Integer(article_params[:admin])
+      new_author = Admin.find_by_id(admin_id)
+
+      if new_author.present?
+        author = new_author
+      end
+
+      params = article_params.dup
+      params.delete(:admin)
+    end
+
     # update fields
-    @article = current_admin.articles.build(article_params)
+    @article = author.articles.build(params ? params : article_params)
     @article.views_window = Time.now
 
     # try to save the article
@@ -281,7 +301,7 @@ class ArticlesController < ApplicationController
 
   # define article params passed with edits and creates
   def article_params
-    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region, :topic, :caption)
+    params.require(:article).permit(:title, :subtitle, :text, :image, :tag_list, :published, :region, :topic, :caption, :admin)
   end
 
   # Confirms the admin owns the article of focus
