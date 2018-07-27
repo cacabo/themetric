@@ -5,7 +5,7 @@
   <div class="dots"></div>
   <div class="slice-3"></div>
 </div>
-<div class="container-fluid marg-top-2 marg-bot-2">
+<div class="container marg-top-2 marg-bot-2">
   <div class="space-2"></div>
   <div class="row">
     <div class="col-12 col-md-8 offset-md-1 col-lg-6">
@@ -15,7 +15,7 @@
     </div>
     <div class="col-12 col-md-10 offset-md-1 col-lg-8">
       <p class="white pad-1 marg-bot-1 shade-1">
-        The Metric is a student-run organization that publishes content related to global current events. We empower university-aged contributors from around the world to share their unique perspectives and stories that may not be heard outside of their local communities. We represent a variety of geographic locations, cultural experiences, and intellectual interests—we are united by a passion to provide a better measure of what’s happening around the world. 
+        The Metric is a student-run organization that publishes content related to global current events. We empower university-aged contributors from around the world to share their unique perspectives and stories that may not be heard outside of their local communities. We represent a variety of geographic locations, cultural experiences, and intellectual interests—we are united by a passion to provide a better measure of what’s happening around the world.
         <br><br>
         Our platform is a tool for enabling our generation to share their stories with the world. We believe that our diversity of contributors produces a better measure of what’s happening in the world. With this in mind, we provide insights on what matters with the context the modern world demands.
         <br><br>
@@ -57,13 +57,13 @@
                 <div class="card admin-card">
                   <div class="card-block admin">
                     <% if (not a.image_file_name.nil? and not a.image.nil?) %>
-                      <img class="admin-img" src="<%= a.image.url(:large) %>">
+                      <div class="admin-img" style="background-image: url(<%= a.image.url(:large) %>)"></div>
                     <% else %>
-                      <div class="admin-no-img"></div>
+                      <div class="admin-img gray"></div>
                     <% end %>
 
                     <div class="admin-content">
-                      <h3>
+                      <h3 class="special">
                         <%= a.name %>
                       </h3>
 

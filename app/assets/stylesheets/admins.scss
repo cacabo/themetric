@@ -41,26 +41,16 @@
     border-radius: 50%;
     display: inline-block;
     overflow: hidden !important;
-    position: relative;
+    position: absolute;
+    transform: translateY(-2rem);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &.big {
       height: 6rem;
       width: 6rem;
     }
-  }
-
-  .admin-no-img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: $light-light-gray;
-    margin-right: 1rem;
-    display: inline-block;
-    position: relative;
-  }
-
-  .admin-content {
-    flex: 1;
   }
 }
 

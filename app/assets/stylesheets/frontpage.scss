@@ -54,6 +54,10 @@
 }
 
 @media screen and (min-device-width: 1024px) and (min-width: 720px) {
+  .section .section-title {
+    font-size: 2.5rem;
+  }
+  
   .feature .content {
     margin-left: 10%;
     width: 80%;
