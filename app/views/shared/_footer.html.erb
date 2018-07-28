@@ -1,71 +1,77 @@
 <!-- footer -->
 <footer id="footer" class="pad-2">
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">
-      <%= link_to root_path do %>
-        <%= image_tag 'logoWhite.svg', class: 'footer-logo' %>
-      <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= link_to root_path do %>
+          <%= image_tag 'logoWhite.svg', class: 'footer-logo' %>
+        <% end %>
 
-      <p class="white-text bigger">
-        Measuring what&apos;s happening around the world through your voice.
-      </p>
-      <p class="white-text small">
-        Website by
-        <a class="white-text bold" href="http://cameroncabo.com/" target="_blank">Cameron Cabo</a>
-        &copy; 2018, all rights reserved. Made with &hearts; in Los Angeles, Philadelphia, and around the world.
-      </p>
+        <p class="white-text bigger">
+          Measuring what&apos;s happening around the world through your voice.
+        </p>
+        <p class="white-text small">
+          Website by
+          <a class="white-text bold" href="http://cameroncabo.com/" target="_blank">Cameron Cabo</a>
+          &copy; 2018, all rights reserved. Made with &hearts; in Los Angeles, Philadelphia, and around the world.
+        </p>
+      </div>
+
+      <div class="space-1 d-block d-md-none"></div>
+
+      <div class="col-12 col-md-6 offset-lg-1 col-lg-3">
+        <h5 class="white-text marg-bot-05 special">Navigation</h5>
+        <ul class="navigation">
+          <li>
+            <a href="<%= root_path %>">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="<%= about_path %>">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="<%= articles_path %>">
+              Articles
+            </a>
+          </li>
+          <li>
+            <a href="<%= new_contact_path %>">
+              Contact us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="space-1 d-block d-md-none"></div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <h5 class="white-text marg-bot-1 special">Keep in Touch</h5>
+        <ul class="social">
+          <li class="icon">
+            <a href="https://www.facebook.com/TheMetricHQ/" title="Facebook">
+              <i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li class="icon">
+            <a href="https://www.linkedin.com/company/themetrichq" title="Linkedin">
+              <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- close list of icons -->
+
+        <!-- email form -->
+        <% @email = Email.new %>
+        <%= form_with(model: @email) do |f| %>
+          <%= f.text_field :email, class: 'form-control footer-field', required: true, placeholder: 'example@email.com' %>
+          <%= f.submit "Join our email list", class: 'btn-black' %>
+        <% end %>
+      </div>
+      <!-- close col -->
     </div>
-
-    <div class="col-12 offset-lg-1 col-lg-3">
-      <h4 class="white-text marg-bot-05">Navigation</h4>
-      <ul class="navigation">
-        <li>
-          <a href="<%= root_path %>">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="<%= about_path %>">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="<%= articles_path %>">
-            Articles
-          </a>
-        </li>
-        <li>
-          <a href="<%= new_contact_path %>">
-            Contact us
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-12 col-lg-4">
-      <h4 class="white-text marg-bot-1">Keep in touch</h4>
-      <ul class="social">
-        <li class="icon">
-          <a href="https://www.facebook.com/TheMetricHQ/" title="Facebook">
-            <i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
-          </a>
-        </li>
-
-        <li class="icon">
-          <a href="https://www.linkedin.com/company/themetrichq" title="Linkedin">
-            <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
-      <!-- close list of icons -->
-
-      <!-- email form -->
-      <% @email = Email.new %>
-      <%= form_with(model: @email) do |f| %>
-        <%= f.text_field :email, class: 'form-control footer-field', required: true %>
-        <%= f.submit "Join our email list", class: 'btn-black' %>
-      <% end %>
-    </div>
-    <!-- close col -->
   </div>
 </footer>

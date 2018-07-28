@@ -30,8 +30,8 @@ footer {
   }
 
   .form-control.footer-field {
-    background: transparent;
-    border-bottom: 2px solid white !important;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
     color: white !important;
     font-weight: bold;
     max-width: 24rem;
@@ -39,10 +39,12 @@ footer {
     transition: all 0.2s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.15);
     }
 
     &:focus {
+      opacity: 1;
       background: rgba(255, 255, 255, 0.1);
     }
   }
