@@ -77,11 +77,11 @@ $larger-breakpoint: 874px;
       padding-right: 1rem;
 
       .form-control {
-        opacity: 0.6;
+        opacity: 0.8;
         transition: all 0.2s ease;
-        border-radius: 16px !important;
+        border-radius: 0.2rem !important;
         background: $light-light-gray;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 0;
         padding: 0.4rem 1rem;
 
         &:active,
@@ -90,7 +90,7 @@ $larger-breakpoint: 874px;
         }
 
         &:hover {
-          opacity: 0.8;
+          opacity: 0.9;
         }
       }
     }

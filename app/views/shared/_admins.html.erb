@@ -1,0 +1,10 @@
+<% (admins.each_slice(2).to_a).each do |a| %>
+  <% if a[1].present? %>
+    <div class="admin-cols">
+      <%= render a[0] %>
+      <%= render a[1] %>
+    </div>
+  <% else %>
+    <%= render a[0] %>
+  <% end %>
+<% end %>

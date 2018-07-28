@@ -1,0 +1,47 @@
+<div class="admin-card">
+  <%= link_to admin do %>
+    <% if (not admin.image_file_name.nil? and not admin.image.nil?) %>
+      <div class="admin-img" style="background-image: url(<%= admin.image.url(:large) %>)"></div>
+    <% else %>
+      <div class="admin-img gray"></div>
+    <% end %>
+  <% end %>
+
+  <div class="admin-content">
+    <%= link_to admin do %>
+      <h3 class="special">
+        <%= admin.name %>
+      </h3>
+    <% end %>
+
+    <% if current_admin and admin.super %>
+      <p class="bold text-light marg-bot-05">
+        SUPER ADMIN
+      </p>
+    <% elsif current_admin %>
+      <p class="bold text-light marg-bot-05">
+        REGULAR ADMIN
+      </p>
+    <% end %>
+
+    <% if admin.location and admin.location.length > 0 %>
+      <p class="text-muted bold marg-bot-0">
+        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= admin.location %>
+      </p>
+    <% end %>
+
+    <p class="text-muted italic marg-bot-05">
+      <%= admin.role %>
+    </p>
+
+    <ul class="horizontal admin-icons">
+      <li>
+        <a href="mailto:<%= admin.email %>">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </li>
+
+      <%= render 'admins/social-media', admin: admin %>
+    </ul>
+  </div>
+</div>

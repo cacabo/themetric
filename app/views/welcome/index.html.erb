@@ -71,4 +71,10 @@
       <%= render 'shared/articles', articles: @more_popular %>
     <% end %>
   </div>
+
+  <div class="center">
+    <%= link_to articles_path, class: 'btn btn-black white-text shade-3 hover marg-bot-1' do %>
+      View all articles &nbsp;&rarr;
+    <% end %>
+  </div>
 </div>

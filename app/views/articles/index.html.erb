@@ -7,57 +7,52 @@
 <div class="light-gray full-height">
   <div class="space-2"></div>
   <div class="container serif">
-    <div class="row">
-      <div class="col-12 col-md-10 offset-md-1">
-        <% if params[:search] %>
-          <h2 class="marg-bot-2 special region">Search for "<%= params[:search] %>"</h2>
-        <% elsif params[:tag] %>
-          <h2 class="marg-bot-2 special region">Tagged with "<%= params[:tag] %>"</h2>
-        <% elsif params[:topic] %>
-          <% if params[:topic] == 'no_topic' %>
-            <h2 class="marg-bot-2 special region">Topicless Articles</h2>
-          <% else %>
-            <h2 class="marg-bot-2 special region"><%= @topic %></h2>
-          <% end %>
-        <% elsif params[:region] %>
-          <% if params[:region] == 'no_region' %>
-            <h2 class="marg-bot-2 special region">Regionless Articles</h2>
-          <% else %>
-            <h2 class="marg-bot-2 special region"><%= @region %></h2>
-          <% end %>
-        <% end %>
+    <% if params[:search] %>
+      <h2 class="marg-bot-2 special region">Search for "<%= params[:search] %>"</h2>
+    <% elsif params[:tag] %>
+      <h2 class="marg-bot-2 special region">Tagged with "<%= params[:tag] %>"</h2>
+    <% elsif params[:topic] %>
+      <% if params[:topic] == 'no_topic' %>
+        <h2 class="marg-bot-2 special region">Topicless Articles</h2>
+      <% else %>
+        <h2 class="marg-bot-2 special region"><%= @topic %></h2>
+      <% end %>
+    <% elsif params[:region] %>
+      <% if params[:region] == 'no_region' %>
+        <h2 class="marg-bot-2 special region">Regionless Articles</h2>
+      <% else %>
+        <h2 class="marg-bot-2 special region"><%= @region %></h2>
+      <% end %>
+    <% end %>
 
-        <% if @articles.length > 0 %>
-          <%= render 'shared/articles', articles: @articles %>
-        <% else %>
-          <!-- if there are no articles -->
-          <div class="white pad-1 shade-1 hover">
-            <h3 class="sans">Check back soon!</h3>
-            <p class="sans marg-bot-0">
-              There are no articles in the specified parameters at this time, but check back soon—we’re working hard everyday to produce new content.
-            </p>
-          </div>
-        <% end %>
-        <!-- closing check for article length -->
-
-        <div class="space-2"></div>
-
-        <!-- if there is a tag -->
-        <% if params[:tag] %>
-          <%= link_to articles_path do %>
-            <button class="btn-white shade-3 hover">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp;Back to all articles
-            </button>
-          <% end %>
-        <% else %>
-          <%= link_to root_path do %>
-            <button class="btn-white shade-3 hover">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp;Back to home
-            </button>
-          <% end %>
-        <% end %>
+    <% if @articles.length > 0 %>
+      <%= render 'shared/articles', articles: @articles %>
+    <% else %>
+      <!-- if there are no articles -->
+      <div class="white pad-1 shade-1 hover">
+        <h3 class="sans">Check back soon!</h3>
+        <p class="sans marg-bot-0">
+          There are no articles in the specified parameters at this time, but check back soon—we’re working hard everyday to produce new content.
+        </p>
       </div>
+    <% end %>
+    <!-- closing check for article length -->
+
+    <div class="space-1"></div>
+
+    <!-- if there is a tag -->
+    <div class="center">
+      <% if params[:tag] %>
+        <%= link_to articles_path, class: 'btn btn-dark white-text shade-3 hover' do %>
+          &larr; &nbsp;Back to all articles
+        <% end %>
+      <% else %>
+        <%= link_to root_path, class: 'btn btn-black white-text shade-3 hover' do %>
+          &larr; &nbsp;Back to home
+        <% end %>
+      <% end %>
     </div>
+
+    <div class="space-2"></div>
   </div>
-  <div class="space-4"></div>
 </div>

@@ -1,5 +1,7 @@
 <% url = (not article.image.nil? and not article.image_file_name.nil?) ? article.image.url(:large) : '' %>
+
 <%= link_to article, class: (article.image.nil? or article.image_file_name.nil?) ? "article" : "article background-image", style: "background-image: url(#{url})" do %>
+
   <%= render '/shared/bar' %>
 
   <div class="article-content">

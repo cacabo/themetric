@@ -50,111 +50,18 @@
         <div class="space-2"></div>
 
         <!-- <div class="row"> -->
-        <div class="card-columns admins">
-          <% @admins.each do |a| %>
-            <!-- <div class="col-12 col-md-6 marg-bot-1"> -->
-              <%= link_to a do %>
-                <div class="card admin-card">
-                  <div class="card-block admin">
-                    <% if (not a.image_file_name.nil? and not a.image.nil?) %>
-                      <div class="admin-img" style="background-image: url(<%= a.image.url(:large) %>)"></div>
-                    <% else %>
-                      <div class="admin-img gray"></div>
-                    <% end %>
-
-                    <div class="admin-content">
-                      <h3 class="special">
-                        <%= a.name %>
-                      </h3>
-
-                      <% if current_admin %>
-                        <% if a.super %>
-                          <p class="bold text-light marg-bot-05">
-                            SUPER ADMIN
-                          </p>
-                        <% else %>
-                          <p class="bold text-light marg-bot-05">
-                            REGULAR ADMIN
-                          </p>
-                        <% end %>
-                      <% end %>
-
-                      <% if a.location and a.location.length > 0 %>
-                        <p class="text-muted bold marg-bot-05">
-                          <%= a.location %>
-                        </p>
-                      <% end %>
-
-                      <p class="text-muted italic marg-bot-05">
-                        <%= a.role %>
-                      </p>
-                      <ul class="horizontal admin-icons">
-                        <li>
-                          <a href="mailto:<%= a.email %>">
-                            <i class="fa fa-envelope"></i>
-                          </a>
-                        </li>
-                        <% if a.facebook and a.facebook.length > 0 %>
-                          <li>
-                            <a href="<%= a.facebook %>">
-                              <i class="fa fa-facebook"></i>
-                            </a>
-                          </li>
-                        <% end %>
-                        <% if a.twitter and a.twitter.length > 0 %>
-                          <li>
-                            <a href="<%= a.twitter %>">
-                              <i class="fa fa-twitter"></i>
-                            </a>
-                          </li>
-                        <% end %>
-                        <% if a.linkedin and a.linkedin.length > 0 %>
-                          <li>
-                            <a href="<%= a.linkedin %>">
-                              <i class="fa fa-linkedin"></i>
-                            </a>
-                          </li>
-                        <% end %>
-                        <% if a.github and a.github.length > 0 %>
-                          <li>
-                            <a href="<%= a.github %>">
-                              <i class="fa fa-github"></i>
-                            </a>
-                          </li>
-                        <% end %>
-                        <% if a.website and a.website.length > 0 %>
-                          <li>
-                            <a href="<%= a.website %>">
-                              <i class="fa fa-link"></i>
-                            </a>
-                          </li>
-                        <% end %>
-                        <% if a.instagram and a.instagram.length > 0 %>
-                          <li>
-                            <a href="<%= a.instagram %>">
-                              <i class="fa fa-instagram"></i>
-                            </a>
-                          </li>
-                        <% end %>
-                      </ul>
-                    </div>
-                    <!-- close content -->
-                  </div>
-                  <!-- closr card-body -->
-                </div>
-                <!-- close card -->
-              <% end %>
-              <!-- close link to admin -->
-            <!-- </div> -->
-            <!-- close col -->
-          <% end %>
-          <!-- close loop over admins -->
+        <div class="admins">
+          <%= render 'shared/admins', admins: @admins %>
         </div>
         <!-- close row -->
 
-        <div class="space-2"></div>
-        <%= link_to 'Back to home', root_path, class: 'btn-white shade-3 hover' %>
-        <div class="space-2"></div>
+        <div class="space-1"></div>
+
+        <div class="center">
+          <%= link_to root_path, class: 'btn-black shade-3 hover' do %>
+            &larr; &nbsp;Back to home
+          <% end %>
+        </div>
       </div>
       <!-- close col -->
     </div>
@@ -162,6 +69,6 @@
   </div>
   <!-- close container -->
 
-  <div class="space-4"></div>
+  <div class="space-2"></div>
 </div>
 <!-- end admins -->
