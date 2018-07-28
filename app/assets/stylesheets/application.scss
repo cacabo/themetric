@@ -14,7 +14,9 @@
  *= require trix
  */
 @import './strapper.min';
+@import './breakpoints';
 @import './colors';
+@import './container';
 @import './fonts';
 @import './navbar';
 @import './admins';

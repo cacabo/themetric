@@ -1,0 +1,11 @@
+.container {
+  margin: 0 auto;
+  padding: 0 !important;
+  width: calc(100% - 30px);
+}
+
+@media screen and (min-width: $larger-breakpoint) {
+  .container {
+    width: calc(95% - 30px);
+  }
+}

@@ -1,7 +1,5 @@
 $height: 54px;
 $pad-vertical: 0.6rem;
-$breakpoint: 748px;
-$larger-breakpoint: 874px;
 
 #navbar-spacer {
   height: $height;
@@ -19,12 +17,16 @@ $larger-breakpoint: 874px;
 #navbar {
   width: 100%;
   background: white;
-  padding: $pad-vertical 1rem 0rem 1rem;
+  padding: $pad-vertical 0rem 0rem 0rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-family: 'Palanquin Dark', sans-serif;
   transition: all 0.2s ease;
-  display: flex;
   height: $height;
+
+  #nav-container {
+    display: flex;
+    height: 100%;
+  }
 
   .logo {
     z-index: 1;
@@ -204,7 +206,7 @@ $larger-breakpoint: 874px;
 
     .logo {
       display: inline-block;
-      padding: $pad-vertical 1rem;
+      padding: $pad-vertical 0rem;
 
       img {
         height: 28px;
@@ -292,7 +294,7 @@ $larger-breakpoint: 874px;
     cursor: hand;
     cursor: pointer;
     position: absolute;
-    right: 1rem;
+    right: 0;
     z-index: 1001;
     top: 12px;
 

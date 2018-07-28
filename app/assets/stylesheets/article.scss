@@ -19,6 +19,12 @@
     padding: 2rem 1rem;
   }
 
+  .title,
+  .subtitle,
+  p {
+    transition: all 0.2s ease;
+  }
+
   &.background-image {
     color: white;
     background-repeat: no-repeat;
@@ -26,7 +32,7 @@
     background-position: center;
 
   .article-content {
-      background: linear-gradient(transparent, darken($transparent-blue, 25%), darken($transparent-dark-blue, 40%));
+      background: linear-gradient(transparent, darken($transparent-blue, 30%), darken($transparent-dark-blue, 45%));
       transition: all 0.2s ease;
       height: 100%;
 
@@ -34,6 +40,7 @@
       .subtitle,
       p {
         color: white;
+        text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.3);
       }
     }
 
@@ -43,6 +50,14 @@
       .article-content {
         filter: grayscale(50%);
       }
+    }
+  }
+
+  &:hover {
+    .title,
+    .subtitle,
+    p {
+      transform: translateY(-0.2rem);
     }
   }
 }
