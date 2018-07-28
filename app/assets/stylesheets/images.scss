@@ -1,0 +1,11 @@
+.image-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+
+  .img-responsive {
+    max-width: 100% !important;
+    height: auto;
+    overflow: hidden !important;
+  }
+}

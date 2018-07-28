@@ -9,7 +9,7 @@
   <div class="container-fluid serif">
     <div class="row">
       <div class="col-12 offset-lg-2 col-lg-8">
-        <div class="pad-1-special">
+        <div class="article-header">
           <% if current_admin and not @article.published %>
             <p class="text-muted special pad-1 light-gray">
               THIS ARTICLE IS NOT PUBLISHED
@@ -105,51 +105,56 @@
             </ul>
           </div>
         </div>
-        <div class="line-0"></div>
+
+        <% if @article.image.nil? or @article.image_file_name.nil? %>
+          <div class="line-0"></div>
+        <% end %>
+      </div>
 
         <% if not @article.image.nil? and not @article.image_file_name.nil? %>
-          <%= image_tag @article.image.url(:large), class: 'img-fluid full-width' %>
+          <div class="col-12 col-lg-10 offset-lg-1">
+            <%= image_tag @article.image.url(:large), class: 'img-fluid full-width' %>
+          </div>
         <% end %>
 
-        <div class="col-12 col-md-10 offset-md-1">
-          <% if @article.caption.present? %>
-            <div class="space-05"></div>
-            <% captions = @article.caption.split("\n") %>
-            <% captions.each do |c| %>
-              <p class="text-muted italic caption">
-                <%= c %>
-              </p>
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <% if @article.caption.present? %>
+          <div class="space-05"></div>
+          <% captions = @article.caption.split("\n") %>
+          <% captions.each do |c| %>
+            <p class="text-muted italic caption">
+              <%= c %>
+            </p>
+          <% end %>
+        <% end %>
+
+        <div class="space-1"></div>
+
+        <div class="article-wrapper">
+          <% sections = @article.text.split(/\[(.*?)\]/) %>
+          <% sections.each_with_index do |s, index| %>
+            <% if index % 2 != 0 and s and s.length > 2 %>
+              <% image_components = (s[1, s.length - 1]).split(",") %>
+              <% link = image_components[0].split("\"")[1] %>
+              <div class="image-wrapper">
+                <img src="<%= link %>" class="img-responsive">
+              </div>
+              <% image_components.each_with_index do |c, i| %>
+                <% if i != 0 %>
+                  <p class="text-muted italic caption">
+                    <%= c %>
+                  </p>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= s.html_safe %>
             <% end %>
           <% end %>
-
-          <div class="space-1"></div>
-
-          <div class="article-wrapper">
-            <% sections = @article.text.split(/\[(.*?)\]/) %>
-            <% sections.each_with_index do |s, index| %>
-              <% if index % 2 != 0 and s and s.length > 2 %>
-                <% image_components = (s[1, s.length - 1]).split(",") %>
-                <% link = image_components[0].split("\"")[1] %>
-                <div class="image-wrapper">
-                  <img src="<%= link %>" class="img-responsive">
-                </div>
-                <% image_components.each_with_index do |c, i| %>
-                  <% if i != 0 %>
-                    <p class="text-muted italic caption">
-                      <%= c %>
-                    </p>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <%= s.html_safe %>
-              <% end %>
-            <% end %>
-          </div>
-
-          <%= render 'shared/articles/adminoptions', article: @article %>
-
-          <div class="space-4"></div>
         </div>
+
+        <%= render 'shared/articles/adminoptions', article: @article %>
+
+        <div class="space-4"></div>
       </div>
       <!-- close col around article -->
     </div>
