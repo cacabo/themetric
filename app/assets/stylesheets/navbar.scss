@@ -86,13 +86,15 @@ $pad-vertical: 0.6rem;
         border: 0;
         padding: 0.4rem 1rem;
 
-        &:active,
-        &:focus {
-          opacity: 1;
+        &:hover {
+          background: darken($light-light-gray, 5%);
+          opacity: 0.9;
         }
 
-        &:hover {
-          opacity: 0.9;
+        &:active,
+        &:focus {
+          background: darken($light-light-gray, 1.25%);
+          opacity: 1;
         }
       }
     }
