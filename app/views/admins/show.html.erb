@@ -1,212 +1,103 @@
-<% if @admin %>
+<% if @admin.present? %>
   <head>
     <% title 'The Metric | ' + (@admin.name ? @admin.name : 'Admin') %>
   </head>
-  
-  <div class="full-height light-gray">
-    <div class="space-4"></div>
+
+  <div class="full-height light-light-gray">
+    <div class="space-2"></div>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          <div class="white">
-            <div class="admin pad-1">
-              <% if (not @admin.image_file_name.nil? and not @admin.image.nil?) %>
-                <img class="admin-img big" src="<%= @admin.image.url(:medium) %>" />
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <%= render @admin, showBio: true %>
+
+          <% if current_admin.present? %>
+            <div class="space-2"></div>
+            <div class="admin-buttons">
+              <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+                <% if not @admin.isGuest %>
+                  <%= link_to 'Make guest contributor', guest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                <% else %>
+                  <%= link_to 'Make non-guest contributor', unguest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
+                <% end %>
               <% end %>
-              <div class="admin-content">
-                <h1>
-                  <%= @admin.name %>
-                </h1>
 
-                <% if current_admin %>
-                  <% if @admin.super %>
-                    <p class="bold text-light marg-bot-05">
-                      SUPER ADMIN
-                    </p>
-                  <% else %>
-                    <p class="bold text-light marg-bot-05">
-                      ADMIN
-                    </p>
-                  <% end %>
+              <% if current_admin and (current_admin.super or current_admin.id == 1) %>
+                <% if not @admin.super %>
+                  <%= link_to 'Make super admin', super_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
                 <% end %>
+              <% end %>
 
-                <p class="bold text-muted marg-bot-0">
-                  <%= @admin.role %>
-                </p>
-
-                <% if @admin.location %>
-                  <p class="italic text-muted marg-bot-0">
-                    <%= @admin.location %>
-                  </p>
-                <% end %>
-
-                <div class="space-05"></div>
-
-                <p>
-                  <%= @admin.bio %>
-                </p>
-
-                <ul class="horizontal admin-icons">
-                  <li>
-                    <a href="mailto:<%= @admin.email %>">
-                      <i class="fa fa-lg fa-envelope"></i>
-                    </a>
-                  </li>
-                  <% if @admin.facebook and @admin.facebook.length > 0 %>
-                    <li>
-                      <a href="<%= @admin.facebook %>">
-                        <i class="fa fa-lg fa-facebook"></i>
-                      </a>
-                    </li>
-                  <% end %>
-                  <% if @admin.twitter and @admin.twitter.length > 0 %>
-                    <li>
-                      <a href="<%= @admin.twitter %>">
-                        <i class="fa fa-lg fa-twitter"></i>
-                      </a>
-                    </li>
-                  <% end %>
-                  <% if @admin.linkedin and @admin.linkedin.length > 0 %>
-                    <li>
-                      <a href="<%= @admin.linkedin %>">
-                        <i class="fa fa-lg fa-linkedin"></i>
-                      </a>
-                    </li>
-                  <% end %>
-                  <% if @admin.github and @admin.github.length > 0 %>
-                    <li>
-                      <a href="<%= @admin.github %>">
-                        <i class="fa fa-lg fa-github"></i>
-                      </a>
-                    </li>
-                  <% end %>
-                  <% if @admin.website and @admin.website.length > 0 %>
-                    <li>
-                      <a href="<%= @admin.website %>">
-                        <i class="fa fa-lg fa-link"></i>
-                      </a>
-                    </li>
-                  <% end %>
-                  <% if @admin.instagram and @admin.instagram.length > 0 %>
-                    <li>
-                      <a href="<%= @admin.instagram %>">
-                        <i class="fa fa-lg fa-instagram"></i>
-                      </a>
-                    </li>
-                  <% end %>
-                </ul>
-
-                <% if current_admin.present? %>
-                  <div class="space-2"></div>
-                  <div class="admin-buttons">
-                    <% if current_admin and (current_admin.super or current_admin.id == 1) %>
-                      <% if not @admin.isGuest %>
-                        <%= link_to 'Make guest contributor', guest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
-                      <% else %>
-                        <%= link_to 'Make non-guest contributor', unguest_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
-                      <% end %>
-                    <% end %>
-
-                    <% if current_admin and (current_admin.super or current_admin.id == 1) %>
-                      <% if not @admin.super %>
-                        <%= link_to 'Make super admin', super_path(@admin), method: :patch, class: 'btn btn-sm btn-info marg-bot-05' %>
-                      <% end %>
-                    <% end %>
-
-                    <% if current_admin and (current_admin.super or current_admin == @admin) %>
-                      <%= link_to 'Edit info', edit_admin_path(@admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
-                      <button
-                        class="btn btn-danger white-text btn-sm marg-bot-05"
-                        data-toggle="modal"
-                        data-target="#delete-modal">
-                        Delete
-                      </button>
-                      <div
-                        class="modal fade"
-                        id="delete-modal" tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="Delete modal"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Permanently delete user?</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              This action cannot be undone. This may delete content which the user has written.
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                Cancel
-                              </button>
-                              <%= button_to "Delete user", @admin, method: "delete", type: "button", class: "btn btn-danger" %>
-                            </div>
-                          </div>
-                        </div>
+              <% if current_admin and (current_admin.super or current_admin == @admin) %>
+                <%= link_to 'Edit info', edit_admin_path(@admin), class: 'btn btn-sm btn-primary white-text marg-bot-05' %>
+                <button
+                  class="btn btn-danger white-text btn-sm marg-bot-05"
+                  data-toggle="modal"
+                  data-target="#delete-modal">
+                  Delete
+                </button>
+                <div
+                  class="modal fade"
+                  id="delete-modal" tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="Delete modal"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Permanently delete user?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                    <% end %>
+                      <div class="modal-body">
+                        This action cannot be undone. This may delete content which the user has written.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                          Cancel
+                        </button>
+                        <%= button_to "Delete user", @admin, method: "delete", type: "button", class: "btn btn-danger" %>
+                      </div>
+                    </div>
                   </div>
-                <% end %>
-              </div>
-            </div>
-            <!-- closing admin -->
-          </div>
-          <!-- closing white -->
-
-          <div class="space-1"></div>
-
-          <% if @articles and @articles.length > 0 %>
-            <% if current_admin %>
-              <% @articles.each do |a| %>
-                <%= link_to a do %>
-                  <div class="card marg-bot-1 article">
-                    <%= render a %>
-                  </div>
-                <% end %>
+                </div>
               <% end %>
-            <% else %>
-              <% @admin.articles.where(published: true).each do |a| %>
-                <%= link_to a do %>
-                  <div class="card marg-bot-1 article">
+            </div>
+          <% end %>
+
+          <section class="section">
+            <% if @articles and @articles.length > 0 %>
+              <p class="section-title">
+                Articles
+              </p>
+
+              <% if current_admin %>
+                <% @articles.each do |a| %>
+                  <%= link_to a do %>
                     <%= render a %>
-                  </div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <% @admin.articles.where(published: true).each do |a| %>
+                  <%= link_to a do %>
+                    <%= render a %>
+                  <% end %>
                 <% end %>
               <% end %>
             <% end %>
-          <% end %>
+          </section>
 
-          <div class="space-2"></div>
-          <%= link_to 'More about us', about_path, class: 'btn-white shade-3 hover' %>
-          <div class="space-2"></div>
-        </div>
-      </div>
-    </div>
-    <div class="space-4"></div>
-  </div>
-<% else %>
-  <head>
-    <% title 'The Metric | Admin Not Found' %>
-  </head>
-
-  <div class="full-height light-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          <div class="space-4"></div>
-          <div class="three pad-2">
-            <h2 class="marg-bot-1">Admin not found, oh man!</h2>
-            <p>
-              Seems like this the admin that you are looking for does not exist. If you think this is a mistake, please <%= link_to 'contact us', new_contact_path %> with a description of what happened.
-            </p>
-            <div class="space-2"></div>
-            <%= link_to 'Learn more us', about_path, class: 'btn-white shade-3 hover' %>
+          <div class="center">
+            <%= link_to 'More about The Metric', about_path, class: 'btn-black shade-3 hover' %>
           </div>
         </div>
       </div>
     </div>
+    <div class="space-2"></div>
   </div>
+<% else %>
+
+  <%= render 'admins/not-found' %>
+
 <% end %>
 <!-- close admin logic -->

@@ -1,3 +1,6 @@
+<!-- Default props for showing the user's bio -->
+<% showBio = showBio ? showBio : false %>
+
 <div class="admin-card">
   <%= link_to admin do %>
     <% if (not admin.image_file_name.nil? and not admin.image.nil?) %>
@@ -33,6 +36,12 @@
     <p class="text-muted italic marg-bot-05">
       <%= admin.role %>
     </p>
+
+    <% if showBio %>
+      <p class="marg-bot-05">
+        <%= @admin.bio %>
+      </p>
+    <% end %>
 
     <ul class="horizontal admin-icons">
       <li>

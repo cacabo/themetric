@@ -7,10 +7,12 @@ class AdminsController < ApplicationController
   def show
     @admin = Admin.friendly.exists?(params[:id]) ? Admin.friendly.find(params[:id]) : nil
 
-    if current_admin and @admin
-      @articles = @admin.articles
-    else
-      @articles = @admin.articles.where(published: true)
+    if @admin.present?
+      if current_admin
+        @articles = @admin.articles
+      else
+        @articles = @admin.articles.where(published: true)
+      end
     end
   end
 

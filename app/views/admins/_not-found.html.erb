@@ -1,0 +1,22 @@
+<head>
+  <% title 'The Metric | Admin Not Found' %>
+</head>
+
+<div class="full-height light-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="space-2"></div>
+        <div class="three pad-1">
+          <h2 class="marg-bot-1 special">Admin not found, oh man!</h2>
+          <p>
+            It seems like this the admin that you are looking for does not exist. If you think this is a mistake, please <%= link_to 'contact us', new_contact_path %> with a description of what happened.
+          </p>
+          <div class="center">
+            <%= link_to 'More about The Metric', about_path, class: 'btn-black shade-3 hover' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

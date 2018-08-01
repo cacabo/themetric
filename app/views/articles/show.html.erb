@@ -73,7 +73,7 @@
               <div class="author inline">
                 <% if not @author.image.nil? and not @author.image_file_name.nil? %>
                   <%= link_to @author do %>
-                    <%= image_tag @author.image.url(:medium) %>
+                    <%= image_tag @author.image.url %>
                   <% end %>
                 <% end %>
                 <%= link_to @author do %>
@@ -182,7 +182,7 @@
 <div class="light-gray section">
   <div class="container">
     <p class="section-title">
-      Recommended for You
+      Recommended Content
     </p>
     <%= render 'shared/articles', articles: @recommended %>
   </div>
