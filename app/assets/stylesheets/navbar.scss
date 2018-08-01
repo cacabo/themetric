@@ -12,6 +12,19 @@ $pad-vertical: 0.6rem;
   z-index: 1000;
   width: 100%;
   top: 0;
+  box-shadow: 0rem 0.1rem 0.1rem $border;
+
+  &.up {
+    transform: translateY(-80px);
+
+    &.active {
+      transform: translateY(0px);
+    }
+
+    .dropdown {
+      display: none;
+    }
+  }
 }
 
 #navbar {
@@ -100,9 +113,9 @@ $pad-vertical: 0.6rem;
     }
 
     .dropdown-header {
-      opacity: 0.6;
+      opacity: 1;
       padding: 0;
-      color: $blue-gray;
+      color: black;
       margin-bottom: 0.25rem;
     }
 
@@ -141,7 +154,7 @@ $pad-vertical: 0.6rem;
       .dropdown {
         text-align: left;
         width: 100%;
-        position: absolute;
+        position: fixed;
         top: $height;
         left: 0;
         background: white;
@@ -159,6 +172,9 @@ $pad-vertical: 0.6rem;
         &.active {
           opacity: 1;
           max-height: 100vh;
+          overflow-x: hidden;
+          overflow-y: auto;
+          box-shadow: 0rem 0.1rem 0.1rem $border;
         }
 
         a {
@@ -169,20 +185,8 @@ $pad-vertical: 0.6rem;
     }
   }
 
-  &.top {
+  &.dark {
     // TODO
-  }
-
-  &.up {
-    transform: translateY(-80px);
-
-    &.active {
-      transform: translateY(0px);
-    }
-
-    .dropdown {
-      display: none;
-    }
   }
 }
 
@@ -241,7 +245,6 @@ $pad-vertical: 0.6rem;
       .dropdown-header,
       .mobile-header {
         margin-top: 1rem;
-        border-bottom: 1px solid $border;
         padding: 0;
         color: black !important;
         margin-bottom: 0.5rem;
@@ -273,11 +276,14 @@ $pad-vertical: 0.6rem;
           top: 0px;
           display: block;
           position: relative;
-          width: 100%;
           height: auto;
           max-height: none;
           opacity: 1;
           border-bottom: 0px solid transparent;
+
+          .active {
+            box-shadow: 0;
+          }
 
           .container, .flex-container {
             padding: 0 !important;

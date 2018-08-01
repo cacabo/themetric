@@ -8,16 +8,15 @@ $(document).ready(function() {
 
 function addNavListener() {
   window.addEventListener('scroll', function() {
-    var $navbar = $('#navbar');
     var $navbarWrapper = $('#navbar-wrapper');
 
     var current = document.documentElement.scrollTop;
     if (!current) current = window.pageYOffset;
 
     if (current <= 150) {
-      $navbar.addClass('top');
+      $navbarWrapper.addClass('top');
     } else {
-      $navbar.removeClass('top');
+      $navbarWrapper.removeClass('top');
     }
 
     // If the user scrolled a significant amount
@@ -25,9 +24,9 @@ function addNavListener() {
       // If the user is scrolling down the page,
       // hide the navbar
       if (current >= 400 && current > last) {
-        $navbar.addClass('up');
+        $navbarWrapper.addClass('up');
       } else {
-        $navbar.removeClass('up');
+        $navbarWrapper.removeClass('up');
       }
       last = current;
     }
