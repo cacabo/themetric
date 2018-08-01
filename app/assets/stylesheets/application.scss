@@ -394,3 +394,7 @@ h1 .small {
 .card-block.preview {
   padding: 0.5rem 1rem;
 }
+
+.diagonal {
+  background: repeating-linear-gradient(-45deg, white, white 12px, $light-light-gray 12px, $light-light-gray 24px);
+}
