@@ -1,6 +1,7 @@
 <% if @feature %>
   <div class="dark">
     <div class="space-1"></div>
+
     <div class="container">
       <%= link_to @feature do %>
         <% url = (not @feature.image_file_name.nil? and not @feature.image.nil?) ? @feature.image.url : '' %>

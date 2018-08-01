@@ -8,3 +8,17 @@
   background: $blue;
   background: linear-gradient(to right, $blue, $dark-blue);
 }
+
+.metric-line {
+  height: 0.5rem;
+  width: 100%;
+
+  &.purple {
+    background: $dark-blue;
+  }
+
+  .blue {
+    background: $blue;
+    height: 100%;
+  }
+}
