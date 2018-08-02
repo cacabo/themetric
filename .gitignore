@@ -22,3 +22,6 @@
 
 .byebug_history
 sendgrid.env
+
+# Ignore mac directory files
+.DS_Store
