@@ -41,16 +41,16 @@
 .section {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
 
-  .section-title {
-    font-size: 2rem;
-    text-align: center;
-    width: 100%;
-    display: block;
-    color: $dark;
-    font-weight: bold;
-    font-family: $serif;
-  }
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: $dark;
+  font-weight: bold;
+  font-family: $serif;
 }
 
 @media screen and (max-width: $small-breakpoint) {

@@ -1,89 +1,90 @@
 <%= bootstrap_form_for @admin, html: { multipart: true } do |f| %>
 <% if @admin.errors.any? %>
-<div id="error_explanation">
-  <h2>
-    <%= pluralize(@admin.errors.count, "error") %>
-    prohibited this article from being saved:
-  </h2>
-  <ul>
-    <% @admin.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@admin.errors.count, "error") %>
+      prohibited this article from being saved:
+    </h2>
+    <ul>
+      <% @admin.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <div class="space-05"></div>
 
-<div class="field special-label marg-bot-1">
+<div class="field">
   <%= f.text_field :name, label_class: 'hasVal active', required: true, autofocus: true %>
 </div>
 
-<div class="space-05"></div>
-
-<div class="field special-label marg-bot-1">
+<div class="field">
   <%= f.text_field :role, required: true %>
 </div>
 
-<div class="space-05"></div>
-
-<div class="field special-label marg-bot-1">
+<div class="field">
   <%= f.text_field :location, required: true %>
 </div>
 
-<div class="space-05"></div>
-
-<div class="field special-label marg-bot-1">
+<div class="field">
   <%= f.text_field :bio, required: true %>
 </div>
 
-<div class="space-05"></div>
+<div class="field">
+  <%= f.text_field :quote, required: false %>
+</div>
 
 <div class="row">
   <div class="col-6">
-    <div class="field special-label marg-bot-1">
+    <div class="field">
       <%= f.text_field :facebook %>
     </div>
     <div class="space-05"></div>
   </div>
   <div class="col-6">
-    <div class="field special-label marg-bot-1">
+    <div class="field">
       <%= f.text_field :twitter %>
     </div>
     <div class="space-05"></div>
   </div>
   <div class="col-6">
-    <div class="field special-label marg-bot-1">
+    <div class="field">
       <%= f.text_field :github %>
     </div>
     <div class="space-05"></div>
   </div>
   <div class="col-6">
-    <div class="field special-label marg-bot-1">
+    <div class="field">
       <%= f.text_field :website %>
     </div>
     <div class="space-05"></div>
   </div>
   <div class="col-6">
-    <div class="field special-label marg-bot-1">
+    <div class="field">
       <%= f.text_field :instagram %>
     </div>
     <div class="space-05"></div>
   </div>
   <div class="col-6">
-    <div class="field special-label marg-bot-1">
+    <div class="field">
       <%= f.text_field :linkedin %>
     </div>
     <div class="space-05"></div>
   </div>
 </div>
+
 <p class="text-muted">
   All social media links should be in 'https://' format.
 </p>
 
 <div class="space-1"></div>
 
-<%= f.file_field :image, label: 'Image: ', class: 'marg-left-1 marg-bot-1' %>
+<%= f.file_field :image, label: 'Image: ', class: 'marg-left-1' %>
+
+<p class="text-muted">
+  If you already have a profile picture, it will persist unless you upload a new one.
+</p>
 
 <div class="space-05"></div>
 

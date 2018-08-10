@@ -122,7 +122,7 @@ class AdminsController < ApplicationController
 
   # Find all fields for the admin
   def admin_params
-    params.require(:admin).permit(:name, :role, :bio, :image, :email, :facebook, :twitter, :github, :website, :instagram, :linkedin, :location)
+    params.require(:admin).permit(:name, :role, :bio, :image, :email, :facebook, :twitter, :github, :website, :instagram, :linkedin, :location, :quote)
   end
 
   # Ensure that the passed in ID corresponds to the admin or that the admin is

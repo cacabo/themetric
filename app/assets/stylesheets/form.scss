@@ -8,66 +8,30 @@ select:not([multiple]) {
     padding-right: 1.5em
 }
 
-.outline {
-  padding: 2rem 1rem 1rem 1rem;
-  margin-bottom: 1rem;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-
-  label {
-    margin-bottom: 0;
-  }
+label {
+  margin-bottom: 0.2rem;
+  font-family: $special;
+  color: $dark;
 }
 
 input.form-control,
 select.form-control,
 textarea.form-control {
-  color: black !important;
-  border-radius: 0px !important;
-  border-top: 0px solid transparent;
-  border-left: 0px solid transparent;
-  border-right: 0px solid transparent;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-
-  &.has-val {
-    border-bottom: 2px solid black;
-  }
+  color: $dark !important;
+  margin-bottom: 0.5rem;
+  background: $light-light-light-gray;
+  border: 2px solid $border;
+  padding: 0.75rem;
+  transition: all 0.2s ease;
 
   &.has-error:active &.has-error:focus,
   &:active,
   &:focus {
-    border-bottom: 2px solid $blue;
+    border: 2px solid $blue;
   }
 
   &.no-border {
     border: 2px solid transparent !important;
-  }
-}
-
-.field.special-label label {
-  position: absolute;
-  cursor: text;
-  transform: translate(8px, 6px);
-  color: rgba(0, 0, 0, 0.6);
-  transition: all 0.2s ease;
-
-  &.hasVal {
-    transform: translate(0px, -14px);
-    font-size: 0.9rem;
-    color: $blue-gray;
-
-    &.active {
-      color: $blue;
-    }
-  }
-}
-
-.field.special-label.alwaysHasVal label {
-  transform: translate(0px, -14px);
-  font-size: 0.9rem;
-  color: $blue-gray;
-
-  &.active {
-    color: $blue;
   }
 }
 

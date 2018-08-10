@@ -3,111 +3,102 @@
 </head>
 
 <div class="light-light-gray full-height">
-  <div class="space-2"></div>
-  <div class="space-2 hidden-sm-down"></div>
+  <div class="space-1"></div>
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-        <div class="white pad-2 shade-1 hover">
-          <p class="text-muted bold marg-bot-1">REGISTER NEW ADMIN</p>
-
+        <p class="section-title">Admin Registration</p>
+        <div class="white pad-2 hover">
           <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-          <div class="space-05"></div>
+            <%= devise_error_messages! %>
+            <div class="space-05"></div>
 
-          <div class="row">
-            <div class="col-12 col-sm-6 marg-bot-1">
-              <div class="field special-label">
-                <%= f.email_field :email, wrapper: { class: 'marg-bot-0' }, label_class: 'hasVal active', autofocus: true, required: true %>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="field">
+                  <%= f.email_field :email, wrapper: { class: 'marg-bot-0' }, label_class: 'hasVal active', autofocus: true, required: true %>
+                </div>
+                <div class="space-05"></div>
               </div>
-              <div class="space-05"></div>
+
+              <div class="col-12 col-sm-6">
+                <div class="field">
+                  <%= f.text_field :name, wrapper: { class: 'marg-bot-0' }, required: true %>
+                </div>
+                <div class="space-05"></div>
+              </div>
             </div>
 
-            <div class="col-12 col-sm-6 marg-bot-1">
-              <div class="field special-label">
-                <%= f.text_field :name, wrapper: { class: 'marg-bot-0' }, required: true %>
-              </div>
-              <div class="space-05"></div>
+            <div class="field">
+              <%= f.text_area :role, wrapper: { class: 'marg-bot-0' }, required: true, rows: 1 %>
             </div>
-          </div>
 
-          <div class="field special-label marg-bot-1">
-            <%= f.text_area :role, wrapper: { class: 'marg-bot-0' }, required: true, rows: 1 %>
-          </div>
+            <div class="space-05"></div>
 
-          <div class="space-05"></div>
-
-          <div class="field special-label marg-bot-1">
-            <%= f.text_field :location, wrapper: { class: 'marg-bot-0' }, required: true %>
-          </div>
-
-          <div class="space-05"></div>
-
-          <div class="field special-label marg-bot-1">
-            <%= f.text_area :bio, wrapper: { class: 'marg-bot-0' }, required: true, rows: 1 %>
-          </div>
-
-          <div class="space-05"></div>
-
-          <div class="row">
-            <div class="col-12 col-sm-6 marg-bot-1">
-              <div class="field special-label">
-                <%= f.password_field :password, autocomplete: "off", required: true %>
-              </div>
-              <div class="space-05"></div>
+            <div class="field">
+              <%= f.text_field :location, wrapper: { class: 'marg-bot-0' }, required: true %>
             </div>
-            <div class="col-12 col-sm-6 marg-bot-1">
-              <div class="field special-label">
-                <%= f.password_field :password_confirmation, label: 'Re-type password', autocomplete: "off" %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-          </div>
-          <%= f.file_field :image, label: 'Profile picture:', class: 'marg-left-05 marg-bot-1' %>
-          <p class="text-muted" style="transform: translateY(-1rem)"><i>Try to use a square-ish photo!</i></p>
 
-          <div class="row">
-            <div class="col-6">
-              <div class="field special-label marg-bot-1">
-                <%= f.text_field :facebook %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-            <div class="col-6">
-              <div class="field special-label marg-bot-1">
-                <%= f.text_field :twitter %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-            <div class="col-6">
-              <div class="field special-label marg-bot-1">
-                <%= f.text_field :github %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-            <div class="col-6">
-              <div class="field special-label marg-bot-1">
-                <%= f.text_field :website %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-            <div class="col-6">
-              <div class="field special-label marg-bot-1">
-                <%= f.text_field :instagram %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-            <div class="col-6">
-              <div class="field special-label marg-bot-1">
-                <%= f.text_field :linkedin %>
-              </div>
-              <div class="space-05"></div>
-            </div>
-          </div>
+            <div class="space-05"></div>
 
-          <%= button_tag(type: 'submit', class: "btn-blue shade-3 hover") do %>
-          Sign up
-          <% end %>
+            <div class="field">
+              <%= f.text_area :bio, wrapper: { class: 'marg-bot-0' }, required: true, rows: 1 %>
+            </div>
+
+            <div class="space-05"></div>
+
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="field special-label">
+                  <%= f.password_field :password, autocomplete: "off", required: true %>
+                </div>
+                <div class="space-05"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="field special-label">
+                  <%= f.password_field :password_confirmation, label: 'Re-type password', autocomplete: "off" %>
+                </div>
+              </div>
+            </div>
+
+            <%= f.file_field :image, label: 'Profile picture:', class: 'marg-left-05 marg-bot-1' %>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="field">
+                  <%= f.text_field :facebook %>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="field">
+                  <%= f.text_field :twitter %>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="field">
+                  <%= f.text_field :github %>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="field">
+                  <%= f.text_field :website %>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="field">
+                  <%= f.text_field :instagram %>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="field">
+                  <%= f.text_field :linkedin %>
+                </div>
+              </div>
+            </div>
+
+            <%= button_tag(type: 'submit', class: "btn-blue shade-3 hover marg-top-1") do %>
+              Sign up
+            <% end %>
           <% end %>
 
           <div class="space-1"></div>
