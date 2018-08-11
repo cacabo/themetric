@@ -113,9 +113,6 @@
       autosize($('textarea'));
     </script>
 
-    <!-- add styling for forms with labels -->
-    <%= javascript_include_tag 'special-label.js' %>
-
     <% if Rails.env.production? %>
       <!-- google analytics -->
       <!-- NOTE that this only runs in production so that we don't collect

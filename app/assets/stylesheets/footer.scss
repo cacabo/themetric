@@ -2,6 +2,7 @@ $gray: #efefef;
 
 #footer {
   background: $dark;
+  padding: 2rem 0rem;
 
   .footer-logo {
     height: 3rem;
@@ -30,8 +31,7 @@ footer {
   }
 
   .form-control.footer-field {
-    background: rgba(255, 255, 255, 0.1);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    background: $translucent-1;
     color: white !important;
     font-weight: bold;
     max-width: 24rem;
@@ -40,12 +40,12 @@ footer {
 
     &:hover {
       opacity: 1;
-      background: rgba(255, 255, 255, 0.15);
+      background: $translucent-2;
     }
 
     &:focus {
       opacity: 1;
-      background: rgba(255, 255, 255, 0.1);
+      background: $translucent-1;
     }
   }
 

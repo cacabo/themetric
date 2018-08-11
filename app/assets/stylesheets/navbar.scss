@@ -5,6 +5,7 @@ $pad-vertical: 0.6rem;
   height: $height;
   display: block;
   width: 100%;
+  background: $dark;
 }
 
 #navbar-wrapper {
@@ -12,7 +13,7 @@ $pad-vertical: 0.6rem;
   z-index: 1000;
   width: 100%;
   top: 0;
-  box-shadow: 0rem 0.1rem 0.1rem $border;
+  box-shadow: 0rem 0.1rem 0.1rem $shade;
 
   &.up {
     transform: translateY(-80px);
@@ -29,9 +30,8 @@ $pad-vertical: 0.6rem;
 
 #navbar {
   width: 100%;
-  background: white;
+  background: $dark;
   padding: $pad-vertical 0rem 0rem 0rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-family: 'Palanquin Dark', sans-serif;
   transition: all 0.2s ease;
   height: $height;
@@ -69,7 +69,7 @@ $pad-vertical: 0.6rem;
       &:hover,
       &:focus,
       &:active, {
-        color: black;
+        color: lighten($blue-gray, 10%);
       }
     }
 
@@ -92,22 +92,32 @@ $pad-vertical: 0.6rem;
       padding-right: 1rem;
 
       .form-control {
-        opacity: 0.8;
         transition: all 0.2s ease;
         border-radius: 0.2rem !important;
-        background: $light-light-gray;
-        border: 0;
+        background: $translucent-1;
         padding: 0.4rem 1rem;
+        color: white !important;
+        font-family: $special;
+
+        ::placeholder {
+          color: $blue-gray !important;
+        }
+
+        :-ms-input-placeholder {
+          color: $blue-gray !important;
+        }
+
+        ::-ms-input-placeholder {
+          color: $blue-gray !important;
+        }
 
         &:hover {
-          background: darken($light-light-gray, 5%);
-          opacity: 0.9;
+          background: $translucent-2;
         }
 
         &:active,
         &:focus {
-          background: darken($light-light-gray, 1.25%);
-          opacity: 1;
+          background: $translucent-1;
         }
       }
     }
@@ -115,7 +125,7 @@ $pad-vertical: 0.6rem;
     .dropdown-header {
       opacity: 1;
       padding: 0;
-      color: black;
+      color: white;
       margin-bottom: 0.25rem;
     }
 
@@ -133,7 +143,7 @@ $pad-vertical: 0.6rem;
         &:active,
         &:focus,
         &.active {
-          color: black;
+          color: lighten($blue-gray, 10%);
           border-bottom: 4px solid $blue;
         }
       }
@@ -157,9 +167,8 @@ $pad-vertical: 0.6rem;
         position: fixed;
         top: $height;
         left: 0;
-        background: white;
+        background: $dark;
         z-index: -1;
-        border-bottom: 1px solid $border;
         max-height: 0vh;
         overflow: hidden;
         transition: all 0.3s ease;
@@ -225,7 +234,7 @@ $pad-vertical: 0.6rem;
       top: 48px;
       overflow-x: hidden;
       overflow-y: scroll;
-      background: white;
+      background: $dark;
       left: 0;
       opacity: 0;
       width: 100%;
@@ -246,7 +255,7 @@ $pad-vertical: 0.6rem;
       .mobile-header {
         margin-top: 1rem;
         padding: 0;
-        color: black !important;
+        color: white !important;
         margin-bottom: 0.5rem;
         opacity: 1 !important;
         font-size: .875rem;
@@ -306,20 +315,20 @@ $pad-vertical: 0.6rem;
     z-index: 1001;
     top: 12px;
 
+    span {
+      width: 100%;
+      background: darken($blue-gray, 5%);
+      height: 3px;
+      display: block;
+      transition: all 0.2s ease;
+    }
+
     &:hover,
     &:focus,
     &:active {
       span {
-        background: $blue-gray;
+        background: lighten($blue-gray, 10%);
       }
-    }
-
-    span {
-      width: 100%;
-      background: lighten($dark-blue-gray, 15%);
-      height: 3px;
-      display: block;
-      transition: all 0.2s ease;
     }
 
     // Apply a margin top to all bars except the first one
