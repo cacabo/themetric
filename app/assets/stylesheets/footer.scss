@@ -25,7 +25,7 @@ footer {
       font-family: $special;
 
       &:hover {
-        color: white;
+        color: lighten($blue-gray, 10%);
       }
     }
   }
@@ -62,7 +62,7 @@ footer {
         color: $blue-gray;
 
         &:hover {
-          color: white;
+          color: lighten($blue-gray, 10%);
         }
       }
     }

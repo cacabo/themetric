@@ -15,6 +15,9 @@ $pad-vertical: 0.6rem;
   width: 100%;
   top: 0;
   box-shadow: 0rem 0.1rem 0.1rem $shade;
+  transition: all 0.25s ease;
+  transform: translateY(0px);
+  border-bottom: 1px solid $dark;
 
   &.up {
     transform: translateY(-80px);
@@ -203,11 +206,6 @@ $pad-vertical: 0.6rem;
 .alert-spacer {
   height: 40px;
   width: 100%;
-}
-
-#navbar-wrapper {
-  transition: all 0.25s ease;
-  transform: translateY(0px);
 }
 
 @media screen and (max-width: $breakpoint) {

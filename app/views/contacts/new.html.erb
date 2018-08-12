@@ -4,12 +4,12 @@
 </head>
 
 <div class="light-light-gray full-height">
-  <div class="space-2"></div>
-  <div class="space-2 hidden-sm-down"></div>
+  <div class="space-1"></div>
+  <div class="space-1 hidden-sm-down"></div>
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-        <div class="white pad-2 shade-1 hover">
+        <div class="white pad-2 shade-1">
           <h2 class="special">Contact us</h2>
           <p class="marg-bot-0">
             Send us a message and we’ll respond to you soon! Feedback is how we grow, learn, and improve as an organization. Want to get involved? <a href="https://goo.gl/forms/sTQwm18j047KycNw1" target="_blank">Fill this out.</a>
@@ -17,16 +17,13 @@
 
           <%= bootstrap_form_for @contact do |f| %>
             <div class="space-1"></div>
-            <div class="space-05"></div>
-            <div class="field special-label">
+            <div class="field">
               <%= f.text_field :name, wrapper: { class: 'marg-bot-1' }, required: true %>
             </div>
-            <div class="space-05"></div>
-            <div class="field special-label">
+            <div class="field">
               <%= f.email_field :email, wrapper: { class: 'marg-bot-1' }, required: true %>
             </div>
-            <div class="space-05"></div>
-            <div class="field special-label marg-bot-2">
+            <div class="field marg-bot-2">
               <%= f.text_area :message, required: true, rows: 1 %>
             </div>
             <div class="hidden">

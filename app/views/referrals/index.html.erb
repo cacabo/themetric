@@ -6,7 +6,7 @@
       <!-- email form -->
       <div class="card shade-1 hover">
         <div class="card-block">
-          <h4 class="special marg-bot-2">Refer a new contributor</h4>
+          <h4 class="special marg-bot-1">Refer a new contributor</h4>
           <% @referral = Referral.new %>
           <%= bootstrap_form_for(@referral) do |f| %>
             <div class="field special-label marg-bot-1">
@@ -18,9 +18,11 @@
       </div>
 
       <div class="space-2"></div>
-      <h2 class="special marg-bot-1">
-        Listing all referrals provided
-      </h2>
+
+      <h4 class="special marg-bot-1">
+        Existing referrals
+      </h4>
+
       <% if @referrals and @referrals.length > 0 %>
         <table class="table">
           <thead>

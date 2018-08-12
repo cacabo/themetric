@@ -23,6 +23,7 @@ textarea.form-control {
   border: 2px solid $border;
   padding: 0.75rem;
   transition: all 0.2s ease;
+  border-radius: 0px;
 
   &.has-error:active &.has-error:focus,
   &:active,
@@ -68,8 +69,9 @@ textarea.text {
 }
 
 .form-group {
-  margin-bottom: 0.5rem !important;
-}
-.form-group.marg-bot-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: 0.5rem;
+
+  &.marg-bot-0 {
+    margin-bottom: 0rem;
+  }
 }

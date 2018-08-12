@@ -1,10 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <div class="space-2"></div>
-      <h2 class="special marg-bot-1">
-        Listing all emails provided
-      </h2>
+      <div class="space-1"></div>
+      <div class="space-1 hidden-md-down"></div>
+
+      <div class="card shade-1 hover marg-bot-2">
+        <div class="card-block">
+          <h3 class="special marg-bot-1">
+            The Metric email list
+          </h3>
+
+          <p class="marg-bot-0">
+            Users sign up for the email list via our website. If a user asks to be removed from the email list, admins can delete their email off of the list from this page.
+          </p>
+        </div>
+      </div>
+
       <% if @emails and @emails.length > 0 %>
         <table class="table">
           <thead>
