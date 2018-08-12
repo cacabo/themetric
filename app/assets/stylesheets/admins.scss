@@ -29,6 +29,10 @@
   padding: 1rem;
   margin-bottom: 1rem;
 
+  blockquote {
+    font-size: 1rem;
+  }
+
   &:hover {
     box-shadow: 0px 1.5px 2.5px rgba(0, 0, 0, 0.2);
   }

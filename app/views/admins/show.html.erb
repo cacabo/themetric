@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          <%= render @admin, showBio: true %>
+          <%= render @admin, showBio: true, showQuote: true %>
 
           <% if current_admin.present? %>
             <%= render 'admins/admin-buttons' %>

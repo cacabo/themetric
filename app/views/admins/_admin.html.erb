@@ -1,5 +1,6 @@
 <!-- Default props for showing the user's bio -->
 <% showBio = showBio ? showBio : false %>
+<% showQuote = showQuote ? showQuote : false %>
 
 <div class="admin-card">
   <%= link_to admin do %>
@@ -17,14 +18,16 @@
       </h3>
     <% end %>
 
-    <% if current_admin and admin.super %>
-      <p class="bold text-light marg-bot-05">
-        SUPER ADMIN
-      </p>
-    <% elsif current_admin %>
-      <p class="bold text-light marg-bot-05">
-        REGULAR ADMIN
-      </p>
+    <% if current_admin %>
+      <% if admin.super %>
+        <p class="bold text-light marg-bot-05">
+          SUPER ADMIN
+        </p>
+      <% else %>
+        <p class="bold text-light marg-bot-05">
+          REGULAR ADMIN
+        </p>
+      <% end %>
     <% end %>
 
     <% if admin.location and admin.location.length > 0 %>
@@ -41,6 +44,12 @@
       <p class="marg-bot-05">
         <%= @admin.bio %>
       </p>
+    <% end %>
+
+    <% if showQuote and @admin.quote.present? %>
+      <blockquote class="marg-bot-1">
+        <%= @admin.quote %>
+      </blockquote>
     <% end %>
 
     <ul class="horizontal admin-icons">
