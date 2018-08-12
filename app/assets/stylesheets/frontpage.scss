@@ -18,6 +18,7 @@
     width: 100%;
     transition: all 0.2s ease;
     text-align: center;
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.5);
   }
 
   .content {
@@ -39,8 +40,7 @@
 }
 
 .section {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0rem;
 }
 
 .section-title {
