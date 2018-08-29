@@ -260,6 +260,16 @@ blockquote {
 }
 
 @media screen and (max-width: 996px) {
+  .title {
+    word-break: break-word; // Useful with long words or on small screens
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
+    word-break: break-word;
+    font-size: 1.8rem;
+  }
+
   .interact {
     display: block;
     width: 100%;
@@ -274,18 +284,13 @@ blockquote {
   }
 }
 
-@media screen and (max-device-width: 996px) {
-  .interact {
-    display: block;
-    width: 100%;
+@media screen and (max-width: 648px) {
+  .title {
+    font-size: 2.5rem;
+  }
 
-    ul {
-      width: 100%;
-    }
-
-    .article-social {
-      text-align: left !important;
-    }
+  .subtitle {
+    font-size: 1.6rem;
   }
 }
 
@@ -327,19 +332,7 @@ blockquote {
   }
 }
 
-@media screen and (max-device-width: 864px) {
-  .card-columns {
-    column-count: 2 !important;
-  }
-}
-
 @media screen and (max-width: 612px) {
-  .card-columns {
-    column-count: 1 !important;
-  }
-}
-
-@media screen and (max-device-width: 612px) {
   .card-columns {
     column-count: 1 !important;
   }
