@@ -8,20 +8,20 @@
   <div class="space-2"></div>
   <div class="container serif">
     <% if params[:search] %>
-      <p class="section-title">Search for "<%= params[:search] %>"</h2>
+      <p class="section-title">Search for "<%= params[:search] %>"</p>
     <% elsif params[:tag] %>
-      <p class="section-title">Tagged with "<%= params[:tag] %>"</h2>
+      <p class="section-title">Tagged with "<%= params[:tag] %>"</p>
     <% elsif params[:topic] %>
       <% if params[:topic] == 'no_topic' %>
-        <p class="section-title">Topicless Articles</h2>
+        <p class="section-title">Topicless Articles</p>
       <% else %>
-        <p class="section-title"><%= @topic %></h2>
+        <p class="section-title"><%= @topic %></p>
       <% end %>
     <% elsif params[:region] %>
       <% if params[:region] == 'no_region' %>
-        <p class="section-title">Regionless Articles</h2>
+        <p class="section-title">Regionless Articles</p>
       <% else %>
-        <p class="section-title"><%= @region %></h2>
+        <p class="section-title"><%= @region %></p>
       <% end %>
     <% end %>
 
