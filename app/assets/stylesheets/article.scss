@@ -1,6 +1,6 @@
 .caption {
   font-size: 0.8rem !important;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   margin-top: 0.2rem;
   text-align: center;
 }
@@ -8,7 +8,7 @@
 .article {
   display: block;
   transition: all 0.2s ease !important;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   background: white;
   color: black;
   margin-bottom: 1rem;
@@ -19,8 +19,8 @@
     padding: 2rem 1rem;
   }
 
-  .title,
   .subtitle,
+  .title,
   p {
     transition: all 0.2s ease;
   }
@@ -31,13 +31,13 @@
     background-size: cover;
     background-position: center;
 
-  .article-content {
+    .article-content {
       background: linear-gradient(transparent, darken($transparent-blue, 30%), darken($transparent-dark-blue, 45%));
       transition: all 0.2s ease;
       height: 100%;
 
-      .title,
       .subtitle,
+      .title,
       p {
         color: white;
         text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.3);
@@ -45,7 +45,7 @@
     }
 
     &:hover {
-      box-shadow: 0px 1.5px 2.5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1.5px 2.5px rgba(0, 0, 0, 0.2);
 
       .article-content {
         filter: grayscale(50%);
@@ -54,8 +54,8 @@
   }
 
   &:hover {
-    .title,
     .subtitle,
+    .title,
     p {
       transform: translateY(-0.2rem);
     }
@@ -108,14 +108,14 @@
       margin-right: 0.2rem;
       font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-      &:hover,
       &:active,
-      &:focus {
+      &:focus,
+      &:hover {
         color: rgba(0, 0, 0, 0.5);
       }
 
       &::before {
-        content: "#"
+        content: "#";
       }
     }
   }
@@ -141,13 +141,13 @@ blockquote {
   padding-left: 1rem;
   border-left: 4px solid rgba(0, 0, 0, 0.25);
   font-size: 1.2rem;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .article-wrapper {
   h1 {
     font-size: 2rem;
-    margin-bottom: 0rem !important;
+    margin-bottom: 0 !important;
   }
 
   p {
@@ -169,6 +169,12 @@ blockquote {
   img {
     margin-bottom: 0.5rem;
   }
+
+  figure {
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .title {
@@ -182,7 +188,7 @@ blockquote {
   }
 
   &.up {
-    padding: 6rem 1rem 1rem 1rem;
+    padding: 6rem 1rem 1rem;
     color: white;
   }
 }
@@ -205,18 +211,18 @@ blockquote {
 .other {
   border: 1px solid rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 
   &:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
   }
 }
 
 .article-social {
   margin-top: 1rem;
   margin-left: 0;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   padding-left: 0;
   list-style: none;
   width: 100%;
@@ -318,7 +324,7 @@ blockquote {
     color: rgba(0, 0, 0, 0.6) !important;
     margin-left: 4rem;
     display: inline-block;
-    margin-bottom: 0rem;
+    margin-bottom: 0;
   }
 }
 
@@ -357,7 +363,7 @@ blockquote {
 }
 
 .article-header {
-  padding: 1rem 0rem;
+  padding: 1rem 0;
 }
 
 @media screen and (min-width: 1024px) {
