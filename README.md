@@ -8,6 +8,16 @@ You can learn more about the website, its features, and architecture in the sect
 
 --------------------
 
+### Developing
+
+If you made a change to the assets (any of the `scss` files), we have to make a production-ready build of them before re-deploying to Heroku:
+
+```bash
+bundle exec rake assets:precompile
+```
+
+--------------------
+
 ### Stack
 
 * Ruby 2.3
