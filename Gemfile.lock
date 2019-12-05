@@ -139,7 +139,7 @@ GEM
       mimemagic (~> 0.3.0)
     pg (0.21.0)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.2)
     rack (2.0.5)
     rack-protection (2.0.1)
       rack
@@ -263,7 +263,7 @@ DEPENDENCIES
   mail_form (~> 1.7)
   paperclip (~> 5.2.0)
   pg (~> 0.18)
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.1)
   rails-assets-tether (~> 1.1, >= 1.1.1)
   rails_real_favicon (~> 0.0.7)
