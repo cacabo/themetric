@@ -1,0 +1,2357 @@
+.rails-bootstrap-forms-date-select select,
+.rails-bootstrap-forms-time-select select,
+.rails-bootstrap-forms-datetime-select select {
+  display: inline-block;
+  width: auto;
+}
+
+.rails-bootstrap-forms-error-summary {
+  margin-top: 10px;
+}
+
+/*
+Trix 0.11.1
+Copyright © 2017 Basecamp, LLC
+http://trix-editor.org/*/
+
+trix-editor {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0.4em 0.6em;
+  min-height: 5em;
+  outline: none; }
+trix-toolbar * {
+  box-sizing: border-box; }
+trix-toolbar .trix-button-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+trix-toolbar .trix-button-group {
+  display: flex;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-top-color: #ccc;
+  border-bottom-color: #888;
+  border-radius: 3px; }
+trix-toolbar .trix-button {
+  position: relative;
+  float: left;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.75em;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 0.5em;
+  margin: 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  background: transparent; }
+  trix-toolbar .trix-button:not(:first-child) {
+    border-left: 1px solid #ccc; }
+  trix-toolbar .trix-button.trix-active {
+    background: #cbeefa;
+    color: black; }
+  trix-toolbar .trix-button:not(:disabled) {
+    cursor: pointer; }
+  trix-toolbar .trix-button:disabled {
+    color: rgba(0, 0, 0, 0.125); }
+  @media (max-device-width: 768px) {
+    trix-toolbar .trix-button {
+      letter-spacing: -0.01em;
+      padding: 0 0.3em; } }
+trix-toolbar .trix-button--icon {
+  font-size: inherit;
+  width: 2.6em;
+  height: 1.6em;
+  max-width: calc(0.8em + 4vw);
+  text-indent: -9999px; }
+  @media (max-device-width: 768px) {
+    trix-toolbar .trix-button--icon {
+      height: 2em;
+      max-width: calc(0.8em + 3.5vw); } }
+  trix-toolbar .trix-button--icon::before {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; }
+    @media (max-device-width: 768px) {
+      trix-toolbar .trix-button--icon::before {
+        right: 6%;
+        left: 6%; } }
+  trix-toolbar .trix-button--icon.trix-active::before {
+    opacity: 1; }
+  trix-toolbar .trix-button--icon:disabled::before {
+    opacity: 0.125; }
+trix-toolbar .trix-button--icon-bold::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M15.6%2011.8c1-.7%201.6-1.8%201.6-2.8a4%204%200%200%200-4-4H7v14h7c2.1%200%203.7-1.7%203.7-3.8%200-1.5-.8-2.8-2.1-3.4zM10%207.5h3a1.5%201.5%200%201%201%200%203h-3v-3zm3.5%209H10v-3h3.5a1.5%201.5%200%201%201%200%203z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-italic::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M10%205v3h2.2l-3.4%208H6v3h8v-3h-2.2l3.4-8H18V5h-8z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-link::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M9.88%2013.7a4.3%204.3%200%200%201%200-6.07l3.37-3.37a4.26%204.26%200%200%201%206.07%200%204.3%204.3%200%200%201%200%206.06l-1.96%201.72a.91.91%200%201%201-1.3-1.3l1.97-1.71a2.46%202.46%200%200%200-3.48-3.48l-3.38%203.37a2.46%202.46%200%200%200%200%203.48.91.91%200%201%201-1.3%201.3z%22%2F%3E%3Cpath%20d%3D%22M4.25%2019.46a4.3%204.3%200%200%201%200-6.07l1.93-1.9a.91.91%200%201%201%201.3%201.3l-1.93%201.9a2.46%202.46%200%200%200%203.48%203.48l3.37-3.38c.96-.96.96-2.52%200-3.48a.91.91%200%201%201%201.3-1.3%204.3%204.3%200%200%201%200%206.07l-3.38%203.38a4.26%204.26%200%200%201-6.07%200z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-strike::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M12.73%2014l.28.14c.26.15.45.3.57.44.12.14.18.3.18.5%200%20.3-.15.56-.44.75-.3.2-.76.3-1.39.3A13.52%2013.52%200%200%201%207%2014.95v3.37a10.64%2010.64%200%200%200%204.84.88c1.26%200%202.35-.19%203.28-.56.93-.37%201.64-.9%202.14-1.57s.74-1.45.74-2.32c0-.26-.02-.51-.06-.75h-5.21zm-5.5-4c-.08-.34-.12-.7-.12-1.1%200-1.29.52-2.3%201.58-3.02%201.05-.72%202.5-1.08%204.34-1.08%201.62%200%203.28.34%204.97%201l-1.3%202.93c-1.47-.6-2.73-.9-3.8-.9-.55%200-.96.08-1.2.26-.26.17-.38.38-.38.64%200%20.27.16.52.48.74.17.12.53.3%201.05.53H7.23zM3%2013h18v-2H3v2z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-quote::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M6%2017h3l2-4V7H5v6h3zm8%200h3l2-4V7h-6v6h3z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-heading-1::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M12%209v3H9v7H6v-7H3V9h9zM8%204h14v3h-6v12h-3V7H8V4z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-code::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M18.2%2012L15%2015.2l1.4%201.4L21%2012l-4.6-4.6L15%208.8l3.2%203.2zM5.8%2012L9%208.8%207.6%207.4%203%2012l4.6%204.6L9%2015.2%205.8%2012z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-bullet-list::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%204a2%202%200%201%200%200%204%202%202%200%200%200%200-4zm0%206a2%202%200%201%200%200%204%202%202%200%200%200%200-4zm0%206a2%202%200%201%200%200%204%202%202%200%200%200%200-4zm4%203h14v-2H8v2zm0-6h14v-2H8v2zm0-8v2h14V5H8z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-number-list::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M2%2017h2v.5H3v1h1v.5H2v1h3v-4H2v1zm1-9h1V4H2v1h1v3zm-1%203h1.8L2%2013.1v.9h3v-1H3.2L5%2010.9V10H2v1zm5-6v2h14V5H7zm0%2014h14v-2H7v2zm0-6h14v-2H7v2z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-undo::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M12.5%208c-2.6%200-5%201-6.9%202.6L2%207v9h9l-3.6-3.6A8%208%200%200%201%2020%2016l2.4-.8a10.5%2010.5%200%200%200-10-7.2z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-redo::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M18.4%2010.6a10.5%2010.5%200%200%200-16.9%204.6L4%2016a8%208%200%200%201%2012.7-3.6L13%2016h9V7l-3.6%203.6z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-decrease-nesting-level::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M3%2019h19v-2H3v2zm7-6h12v-2H10v2zm-8.3-.3l2.8%202.9L6%2014.2%204%2012l2-2-1.4-1.5L1%2012l.7.7zM3%205v2h19V5H3z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-button--icon-increase-nesting-level::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M3%2019h19v-2H3v2zm7-6h12v-2H10v2zm-6.9-1L1%2014.2l1.4%201.4L6%2012l-.7-.7-2.8-2.8L1%209.9%203.1%2012zM3%205v2h19V5H3z%22%2F%3E%3C%2Fsvg%3E); }
+trix-toolbar .trix-dialogs {
+  position: relative; }
+trix-toolbar .trix-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 15px 10px;
+  background: #fff;
+  box-shadow: 0 0.3em 1em #ccc;
+  border-top: 2px solid #888;
+  border-radius: 5px;
+  z-index: 5; }
+trix-toolbar .trix-input--dialog {
+  font-size: inherit;
+  font-weight: normal;
+  padding: 0.5em 0.8em;
+  margin: 0 10px 0 0;
+  border-radius: 3px;
+  border: 1px solid #bbb;
+  background-color: #fff;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+  trix-toolbar .trix-input--dialog.validate:invalid {
+    box-shadow: #F00 0px 0px 1.5px 1px; }
+trix-toolbar .trix-button--dialog {
+  font-size: inherit;
+  padding: 0.5em;
+  border-bottom: none; }
+trix-toolbar .trix-dialog--link {
+  max-width: 600px; }
+trix-toolbar .trix-dialog__link-fields {
+  display: flex;
+  align-items: baseline; }
+  trix-toolbar .trix-dialog__link-fields .trix-input {
+    flex: 1; }
+  trix-toolbar .trix-dialog__link-fields .trix-button-group {
+    flex: 0 0 content;
+    margin: 0; }
+trix-editor [data-trix-mutable=true] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  trix-editor [data-trix-mutable=true] img {
+    box-shadow: 0 0 0 2px highlight; }
+  trix-editor [data-trix-mutable=true].attachment.attachment--file {
+    box-shadow: 0 0 0 2px highlight;
+    border-color: transparent; }
+trix-editor [data-trix-mutable=true]::-moz-selection,
+trix-editor [data-trix-cursor-target]::-moz-selection {
+  background: none; }
+trix-editor [data-trix-mutable=true]::selection,
+trix-editor [data-trix-cursor-target]::selection {
+  background: none; }
+trix-editor .attachment:hover {
+  cursor: default; }
+trix-editor .attachment--preview .attachment__caption:hover {
+  cursor: text; }
+trix-editor .attachment__progress {
+  position: absolute;
+  z-index: 1;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: 5%;
+  width: 90%;
+  opacity: 0.9;
+  transition: opacity 200ms ease-in; }
+  trix-editor .attachment__progress[value="100"] {
+    opacity: 0; }
+trix-editor .attachment__caption-editor {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: center;
+  vertical-align: top;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+trix-editor .attachment__remove {
+  cursor: pointer; }
+trix-editor .attachment__remove--icon {
+  text-indent: -9999px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  top: -1.1em;
+  left: calc(50% - 0.8em);
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8em;
+  border-radius: 50%;
+  text-indent: -9999px;
+  background-color: #fff;
+  border: 2px solid highlight;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25); }
+  trix-editor .attachment__remove--icon::before {
+    display: inline-block;
+    position: absolute;
+    top: 0.1em;
+    right: 0.1em;
+    bottom: 0.1em;
+    left: 0.1em;
+    opacity: 0.75;
+    content: "";
+    background-image: url(data:image/svg+xml,%3Csvg%20height%3D%2224%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M19%206.4L17.6%205%2012%2010.6%206.4%205%205%206.4l5.6%205.6L5%2017.6%206.4%2019l5.6-5.6%205.6%205.6%201.4-1.4-5.6-5.6z%22%2F%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; }
+  trix-editor .attachment__remove--icon:hover {
+    border-color: #333; }
+    trix-editor .attachment__remove--icon:hover::before {
+      opacity: 1; }
+@charset "UTF-8";
+.trix-content {
+  line-height: 1.5; }
+  .trix-content * {
+    box-sizing: border-box; }
+  .trix-content h1 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin: 0; }
+  .trix-content blockquote {
+    margin: 0 0 0 0.3em;
+    padding: 0 0 0 0.6em;
+    border-left: 0.3em solid #ccc; }
+  .trix-content pre {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    font-family: monospace;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0.5em;
+    white-space: pre;
+    background-color: #eee;
+    overflow-x: auto; }
+  .trix-content ul, .trix-content ol, .trix-content li {
+    margin: 0;
+    padding: 0; }
+    .trix-content ul li, .trix-content ol li, .trix-content li li {
+      margin-left: 1em; }
+  .trix-content img {
+    max-width: 100%;
+    height: auto; }
+  .trix-content a[data-trix-attachment] {
+    color: inherit;
+    text-decoration: none; }
+    .trix-content a[data-trix-attachment]:hover, .trix-content a[data-trix-attachment]:visited:hover {
+      color: inherit; }
+  .trix-content .attachment {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 0; }
+  .trix-content .attachment__caption {
+    padding: 0;
+    text-align: center; }
+    .trix-content .attachment__caption .attachment__name + .attachment__size::before {
+      content: ' · '; }
+  .trix-content .attachment--preview {
+    width: 100%;
+    text-align: center; }
+    .trix-content .attachment--preview .attachment__caption {
+      color: #666;
+      font-size: 0.9em;
+      line-height: 1.2; }
+  .trix-content .attachment--file {
+    color: #333;
+    line-height: 1;
+    margin: 0 2px 2px 0;
+    padding: 0.4em 1em;
+    border: 1px solid #bbb;
+    border-radius: 5px; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-0 {
+  padding: 0 !important;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-1 {
+  padding: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-2 {
+  padding: 2rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-0-1 {
+  padding: 0 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-0-2 {
+  padding: 0 2rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-1-0 {
+  padding: 1rem 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-2-0 {
+  padding: 2rem 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-1-2 {
+  padding: 1rem 2rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.pad-2-1 {
+  padding: 2rem 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.space-0, .space-1, .space-2, .space-3, .space-4 {
+  display: block;
+  width: 100%;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.space-0 {
+  height: 0rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.space-1 {
+  height: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.space-2 {
+  height: 2rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.space-3 {
+  height: 3rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.space-4 {
+  height: 4rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-0 {
+  margin: 0 !important;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-top-0 {
+  margin-top: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-top-1 {
+  margin-top: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-top-2 {
+  margin-top: 2rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-bot-0 {
+  margin-bottom: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-bot-1 {
+  margin-bottom: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-bot-2 {
+  margin-bottom: 2rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-bot-3 {
+  margin-bottom: 3rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-right-0 {
+  margin-right: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-right-05 {
+  margin-right: .5rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-right-1 {
+  margin-right: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-left-0 {
+  margin-left: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-left-05 {
+  margin-left: .5rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.marg-left-1 {
+  margin-left: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.border {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.light-border {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.round-1 {
+  border-radius: .25rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.round-2 {
+  border-radius: .5rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.round-3 {
+  border-radius: .75rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.round-4 {
+  border-radius: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.line-0, .line-1, .line-2 {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.line-0.light-line, .line-1.light-line, .line-2.light-line {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.line-0 {
+  margin: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.line-1 {
+  margin: 1rem 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.line-2 {
+  margin: 2rem 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.black {
+  background: #000;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.white {
+  background: #fff;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.light-gray {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.gray {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.black-text, a.black-text {
+  color: #000;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.white-text, a.white-text {
+  color: #fff;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.no-decoration, a.no-decoration, a.no-decoration:hover {
+  text-decoration: none;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.bold {
+  font-weight: 700;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.hover {
+  transition: all .2s ease;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-1 {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-1.hover:hover {
+  box-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.175);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-2 {
+  box-shadow: 0 0.1875rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-2.hover:hover {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.225);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-3 {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-3.hover:hover {
+  box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.275);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-4 {
+  box-shadow: 0 0.3125rem 0.875rem rgba(0, 0, 0, 0.25);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.shade-4.hover:hover {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.325);
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.cursor, button {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.animate {
+  transition: all .2s ease;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.absolute {
+  position: absolute;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.absolute.right {
+  right: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.fixed {
+  position: fixed;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.relative {
+  position: relative;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.inline {
+  display: inline-block;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.block {
+  display: block;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.full-width {
+  width: 100%;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.left {
+  text-align: left;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.float-left {
+  float: left;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.right {
+  text-align: right;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.float-right {
+  float: right;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.center {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+.background-image.parallax {
+  background-attachment: fixed;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  /* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+  .background-image.parallax {
+    background-attachment: scroll;
+  }
+}
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+ul.horizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+ul.horizontal li {
+  float: left;
+  margin-right: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/strapper.min.css */
+ul.horizontal.right li {
+  float: right;
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* line 28, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/colors.scss */
+.dark {
+  background: #232323;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/container.scss */
+.container {
+  margin: 0 auto;
+  padding: 0 !important;
+  width: calc(100% - 30px);
+}
+
+@media screen and (min-width: 1008px) {
+  /* line 8, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/container.scss */
+  .container {
+    width: calc(95% - 30px);
+  }
+}
+/*
+ * FONTS AND COLORS
+ */
+/* line 8, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+.serif {
+  font-family: "PT Serif", "Times", serif;
+}
+
+/* line 13, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+.special {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: bold;
+}
+
+/* line 18, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+.sans {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* line 22, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+p, h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+
+/* line 26, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+.italic {
+  font-style: italic;
+}
+
+/* line 30, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+.caps {
+  text-transform: uppercase;
+}
+
+/* line 34, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+::selection {
+  background: #008cff !important;
+  color: white;
+}
+
+/* line 39, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+::-moz-selection {
+  background: #008cff !important;
+  color: white;
+}
+
+/* line 44, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+a {
+  color: #008cff;
+}
+/* line 47, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+a:visited {
+  color: #008cff;
+}
+/* line 51, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+a:hover, a:active, a:focus {
+  color: #6f3fff;
+}
+
+/* line 58, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/fonts.scss */
+.text-muted {
+  color: #aab1b7 !important;
+}
+
+/* line 5, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar-spacer {
+  height: 53px;
+  display: block;
+  width: 100%;
+  background: #232323;
+}
+
+/* line 12, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar-wrapper {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  box-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  transform: translateY(0px);
+}
+/* line 21, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar-wrapper.up {
+  transform: translateY(-80px);
+}
+/* line 24, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar-wrapper.up.active {
+  transform: translateY(0px);
+}
+/* line 28, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar-wrapper.up .dropdown {
+  display: none;
+}
+
+/* line 34, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar {
+  width: 100%;
+  background: #232323;
+  padding: 0.6rem 0rem 0rem 0rem;
+  font-family: "Palanquin Dark", sans-serif;
+  transition: all 0.2s ease;
+  height: 53px;
+}
+/* line 42, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #nav-container {
+  display: flex;
+  height: 100%;
+}
+/* line 47, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar .logo {
+  z-index: 1;
+  transition: all 0.2s ease;
+  display: block;
+  padding-right: 1rem;
+  width: auto;
+  height: 100%;
+  padding-bottom: 0.6rem;
+}
+/* line 56, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar .logo img {
+  height: 100%;
+  width: auto;
+}
+/* line 62, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu {
+  flex: 1;
+  display: flex;
+}
+/* line 66, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu a {
+  color: #aab1b7;
+  font-size: 1.25rem;
+  cursor: hand;
+  cursor: pointer;
+}
+/* line 72, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu a:hover, #navbar #menu a:focus, #navbar #menu a:active {
+  color: #c6cace;
+}
+/* line 79, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #social,
+#navbar #menu #search,
+#navbar #menu #links {
+  display: inline-block;
+}
+/* line 85, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #social {
+  padding-top: 2px;
+  padding-right: 0.5rem;
+}
+/* line 89, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #social a {
+  padding-right: 0.5rem;
+}
+/* line 94, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search {
+  padding-right: 1rem;
+}
+/* line 97, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search .form-control {
+  transition: all 0.2s ease;
+  border-radius: 0.2rem !important;
+  background: rgba(255, 255, 255, 0.125);
+  padding: 0.4rem 1rem;
+  color: white !important;
+  font-family: "Palanquin Dark", sans-serif;
+}
+/* line 105, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search .form-control ::placeholder {
+  color: #aab1b7 !important;
+}
+/* line 109, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search .form-control :-ms-input-placeholder {
+  color: #aab1b7 !important;
+}
+/* line 113, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search .form-control ::-ms-input-placeholder {
+  color: #aab1b7 !important;
+}
+/* line 117, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search .form-control:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+/* line 121, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #search .form-control:active, #navbar #menu #search .form-control:focus {
+  background: rgba(255, 255, 255, 0.125);
+}
+/* line 128, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu .dropdown-header {
+  opacity: 1;
+  padding: 0;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+/* line 135, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links {
+  padding-top: 2px;
+  flex: 1;
+  text-align: right;
+}
+/* line 140, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .link {
+  margin-left: 1rem;
+  padding-bottom: 5px;
+  border-bottom: 4px solid transparent;
+}
+/* line 145, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .link:hover, #navbar #menu #links .link:active, #navbar #menu #links .link:focus, #navbar #menu #links .link.active {
+  color: #c6cace;
+  border-bottom: 4px solid #008cff;
+}
+/* line 155, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .dropdown-toggler .fa {
+  transition: all 0.2s ease;
+  transform: rotate(0deg);
+}
+/* line 161, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .dropdown-toggler.active .fa {
+  transform: rotate(-180deg);
+}
+/* line 167, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .dropdown {
+  text-align: left;
+  width: 100%;
+  position: fixed;
+  top: 53px;
+  left: 0;
+  background: #232323;
+  z-index: -1;
+  max-height: 0vh;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+/* line 180, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .dropdown .flex-container {
+  padding: 1rem 0rem;
+}
+/* line 184, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .dropdown.active {
+  opacity: 1;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+/* line 192, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+#navbar #menu #links .dropdown a {
+  display: block;
+  width: auto;
+}
+
+/* line 201, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+.alert-spacer {
+  height: 40px;
+  width: 100%;
+}
+
+@media screen and (max-width: 748px) {
+  /* line 207, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar-spacer {
+    height: 47px;
+  }
+
+  /* line 211, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+  /* line 216, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar .logo {
+    display: inline-block;
+    padding: 0.6rem 0rem;
+  }
+  /* line 220, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar .logo img {
+    height: 28px;
+  }
+  /* line 225, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu {
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 47px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #232323;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 0vh;
+    padding: 0.6rem 1rem;
+  }
+  /* line 238, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu.active {
+    opacity: 1;
+    display: block;
+    height: calc(100vh - 47px);
+  }
+  /* line 244, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #social {
+    width: 100%;
+  }
+  /* line 248, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu .dropdown-header,
+  #navbar #menu .mobile-header {
+    margin-top: 1rem;
+    padding: 0;
+    color: white !important;
+    margin-bottom: 0.5rem;
+    opacity: 1 !important;
+    font-size: 0.875rem;
+  }
+  /* line 257, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu .dropdown-header.marg-top-0,
+  #navbar #menu .mobile-header.marg-top-0 {
+    margin-top: 0rem;
+  }
+  /* line 262, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #links {
+    text-align: left;
+    width: 100%;
+  }
+  /* line 266, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #links .link {
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    border-bottom: 0px solid transparent !important;
+  }
+  /* line 273, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #links .dropdown-toggler {
+    display: none;
+  }
+  /* line 277, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #links .dropdown {
+    z-index: auto;
+    top: 0px;
+    display: block;
+    position: relative;
+    height: auto;
+    max-height: none;
+    opacity: 1;
+    border-bottom: 0px solid transparent;
+  }
+  /* line 287, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #links .dropdown .active {
+    box-shadow: 0;
+  }
+  /* line 291, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #navbar #menu #links .dropdown .container,
+  #navbar #menu #links .dropdown .flex-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* line 303, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle {
+    width: 2rem;
+    height: 2rem;
+    cursor: hand;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    z-index: 1001;
+    top: 12px;
+  }
+  /* line 313, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle span {
+    width: 100%;
+    background: #9ca4ab;
+    height: 3px;
+    display: block;
+    transition: all 0.2s ease;
+  }
+  /* line 324, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle:hover span, #toggle:focus span, #toggle:active span {
+    background: #c6cace;
+  }
+  /* line 330, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle span + span {
+    margin-top: 0.5rem;
+  }
+  /* line 335, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle.active #first {
+    transform: translateY(11px) translateX(0.2rem) rotate(135deg);
+  }
+  /* line 339, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle.active #second {
+    transform: rotate(-135deg) translateX(-0.14142rem) translateY(0.14142rem);
+  }
+  /* line 344, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle.active #third {
+    transform: translateY(-11px) translateX(0.2rem) rotate(135deg);
+  }
+
+  /* line 350, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1008px) {
+  /* line 356, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #search {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 748px) {
+  /* line 362, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/navbar.scss */
+  #toggle,
+  .mobile-header,
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.card-columns.admins {
+  column-count: 1;
+}
+/* line 4, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.card-columns.admins .card {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-device-width: 1204px) and (min-width: 848px) {
+  /* line 10, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+  .card-columns.admins {
+    column-count: 2;
+  }
+}
+@media screen and (min-device-width: 1204px) and (min-width: 1204px) {
+  /* line 16, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+  .card-columns.admins {
+    column-count: 3;
+  }
+}
+/* line 21, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  transition: all 0.2s ease !important;
+  border: 0px solid transparent;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+/* line 32, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-card blockquote {
+  font-size: 1rem;
+}
+/* line 36, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-card:hover {
+  box-shadow: 0px 1.5px 2.5px rgba(0, 0, 0, 0.2);
+}
+/* line 40, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-card .admin-img {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 52, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-card .admin-img.big {
+  height: 6rem;
+  width: 6rem;
+}
+/* line 58, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-card .admin-content {
+  flex: 1;
+}
+
+/* line 63, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-icons {
+  position: relative;
+  width: 100%;
+  display: block;
+  clear: right;
+}
+/* line 69, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-icons li a {
+  color: #aab1b7;
+}
+/* line 72, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+.admin-icons li a:hover {
+  color: #989fa5;
+}
+
+@media screen and (min-width: 472px) {
+  /* line 79, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+  .admin-cols {
+    display: flex;
+  }
+  /* line 82, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+  .admin-cols .admin-card {
+    flex: 1;
+  }
+  /* line 85, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+  .admin-cols .admin-card:first-child {
+    margin-right: 0.5rem;
+  }
+  /* line 89, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/admins.scss */
+  .admin-cols .admin-card:last-child {
+    margin-left: 0.5rem;
+  }
+}
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.caption {
+  font-size: 0.8rem !important;
+  margin-bottom: 0;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+/* line 8, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article {
+  display: block;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+  color: black;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "PT Serif", "Times", serif;
+}
+/* line 18, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article .article-content {
+  padding: 2rem 1rem;
+}
+/* line 22, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article .subtitle,
+.article .title,
+.article p {
+  transition: all 0.2s ease;
+}
+/* line 28, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article.background-image {
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* line 34, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article.background-image .article-content {
+  background: linear-gradient(transparent, rgba(0, 56, 102, 0.4), rgba(22, 0, 89, 0.4));
+  transition: all 0.2s ease;
+  height: 100%;
+}
+/* line 39, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article.background-image .article-content .subtitle,
+.article.background-image .article-content .title,
+.article.background-image .article-content p {
+  color: white;
+  text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+/* line 47, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article.background-image:hover {
+  box-shadow: 0 1.5px 2.5px rgba(0, 0, 0, 0.2);
+}
+/* line 50, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article.background-image:hover .article-content {
+  filter: grayscale(50%);
+}
+/* line 57, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article:hover .subtitle,
+.article:hover .title,
+.article:hover p {
+  transform: translateY(-0.2rem);
+}
+
+/* line 65, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.opinion {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 203, 255, 0.8);
+  background: -webkit-linear-gradient(120deg, rgba(0, 203, 255, 0.8) 50%, transparent 50%);
+  background: -o-linear-gradient(120deg, rgba(0, 203, 255, 0.8) 50%, transparent 50%);
+  background: -moz-linear-gradient(120deg, rgba(0, 203, 255, 0.8) 50%, transparent 50%);
+  background: linear-gradient(120deg, rgba(0, 203, 255, 0.8) 50%, transparent 50%);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+}
+/* line 75, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.opinion.absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+/* line 82, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.opinion.read-more {
+  margin-left: calc(1rem - 1px);
+}
+
+/* line 87, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.time {
+  color: rgba(0, 0, 0, 0.6);
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+/* line 93, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.region {
+  text-transform: uppercase;
+}
+
+/* line 97, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.tags {
+  margin-bottom: 0.6rem;
+}
+/* line 100, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.tags a {
+  padding-bottom: 0.2rem;
+  display: inline-block;
+}
+/* line 104, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.tags a .tag {
+  color: rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 0.2rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+/* line 111, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.tags a .tag:active, .tags a .tag:focus, .tags a .tag:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+/* line 117, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.tags a .tag::before {
+  content: "#";
+}
+
+/* line 126, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.admin-buttons {
+  width: 100%;
+  top: 0;
+  text-align: left;
+  display: block;
+}
+/* line 132, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.admin-buttons form {
+  display: inline-block;
+  width: auto;
+}
+
+/* line 138, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+blockquote {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 1rem;
+  border-left: 4px solid rgba(0, 0, 0, 0.25);
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+/* line 148, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper h1 {
+  font-size: 2rem;
+  margin-bottom: 0 !important;
+}
+/* line 153, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+/* line 158, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper h2,
+.article-wrapper h3 {
+  margin-bottom: 1rem;
+}
+/* line 163, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper h4,
+.article-wrapper h5,
+.article-wrapper h6 {
+  margin-bottom: 0.5rem;
+}
+/* line 169, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper img {
+  margin-bottom: 0.5rem;
+}
+/* line 174, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-wrapper figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 181, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+/* line 187, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.title.smaller {
+  font-size: 2rem;
+}
+/* line 191, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.title.up {
+  padding: 6rem 1rem 1rem;
+  color: white;
+}
+
+/* line 197, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.background-image .title {
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* line 202, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+/* line 207, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.subtitle.smaller {
+  font-size: 1.25rem;
+}
+
+/* line 212, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.other {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+/* line 217, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.other:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* line 223, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social {
+  margin-top: 1rem;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+  text-align: right;
+}
+/* line 232, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social p {
+  margin-bottom: 0;
+}
+/* line 236, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social .fa-facebook {
+  color: #3b5998;
+}
+/* line 240, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social .fa-twitter {
+  color: #1da1f2;
+}
+/* line 244, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social .fa-envelope {
+  color: #0099ff;
+}
+/* line 248, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social .fa-linkedin {
+  color: #0077b5;
+}
+/* line 252, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social li {
+  display: inline-block;
+}
+/* line 256, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-social .fa {
+  margin-right: 0.75rem;
+}
+
+/* line 261, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.interact {
+  display: flex;
+}
+/* line 264, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.interact ul {
+  flex: 1;
+}
+
+@media screen and (max-width: 996px) {
+  /* line 270, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .title {
+    word-break: break-word;
+    font-size: 2.8rem;
+  }
+
+  /* line 275, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .subtitle {
+    word-break: break-word;
+    font-size: 1.8rem;
+  }
+
+  /* line 280, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .interact {
+    display: block;
+    width: 100%;
+  }
+  /* line 284, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .interact ul {
+    width: 100%;
+  }
+  /* line 288, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .interact .article-social {
+    text-align: left !important;
+  }
+}
+@media screen and (max-width: 648px) {
+  /* line 295, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .title {
+    font-size: 2.5rem;
+  }
+
+  /* line 299, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .subtitle {
+    font-size: 1.6rem;
+  }
+}
+/* line 305, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.author img {
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden !important;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+/* line 314, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.author .no-img {
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden !important;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  background: #eff2f4;
+}
+/* line 324, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.author p {
+  color: rgba(0, 0, 0, 0.6) !important;
+  margin-left: 4rem;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+/* line 332, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.card-columns.two-columns {
+  column-count: 2;
+}
+
+@media screen and (max-width: 864px) {
+  /* line 337, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .card-columns {
+    column-count: 2 !important;
+  }
+}
+@media screen and (max-width: 612px) {
+  /* line 343, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .card-columns {
+    column-count: 1 !important;
+  }
+}
+@media screen and (min-width: 472px) {
+  /* line 349, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .article-cols {
+    display: flex;
+  }
+  /* line 352, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .article-cols .article {
+    flex: 1;
+  }
+  /* line 355, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .article-cols .article:first-child {
+    margin-right: 0.5rem;
+  }
+  /* line 359, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .article-cols .article:last-child {
+    margin-left: 0.5rem;
+  }
+}
+/* line 366, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+.article-header {
+  padding: 1rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 371, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/article.scss */
+  .article-wrapper {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+/* line 3, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+#footer {
+  background: #232323;
+  padding: 2rem 0rem;
+}
+/* line 7, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+#footer .footer-logo {
+  height: 3rem;
+  margin-bottom: 1rem;
+  width: auto;
+  display: block;
+}
+
+/* line 16, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.navigation {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 21, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.navigation li a {
+  font-size: 1.2rem;
+  color: #aab1b7;
+  text-decoration: none;
+  font-family: "Palanquin Dark", sans-serif;
+}
+/* line 27, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.navigation li a:hover {
+  color: #c6cace;
+}
+/* line 33, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer .form-control.footer-field {
+  background: rgba(255, 255, 255, 0.125);
+  color: white !important;
+  font-weight: bold;
+  max-width: 24rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+/* line 41, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer .form-control.footer-field:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+/* line 46, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer .form-control.footer-field:focus {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.125);
+}
+/* line 52, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.social {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+/* line 57, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.social li {
+  margin-right: 1rem;
+  display: inline;
+}
+/* line 61, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.social li a {
+  color: #aab1b7;
+}
+/* line 64, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/footer.scss */
+footer ul.social li a:hover {
+  color: #c6cace;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+label {
+  margin-bottom: 0.2rem;
+  font-family: "Palanquin Dark", sans-serif;
+  color: #232323;
+}
+
+/* line 7, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.form-control,
+select.form-control,
+textarea.form-control {
+  color: #232323 !important;
+  margin-bottom: 0.5rem;
+  background: #f4f9fc;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+/* line 17, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.form-control.has-error:active input.form-control.has-error:focus, input.form-control:active, input.form-control:focus,
+select.form-control.has-error:active input.form-control.has-error:focus,
+select.form-control:active,
+select.form-control:focus,
+textarea.form-control.has-error:active input.form-control.has-error:focus,
+textarea.form-control:active,
+textarea.form-control:focus,
+input.form-control.has-error:active select.form-control.has-error:focus,
+select.form-control.has-error:active select.form-control.has-error:focus,
+textarea.form-control.has-error:active select.form-control.has-error:focus,
+input.form-control.has-error:active textarea.form-control.has-error:focus,
+select.form-control.has-error:active textarea.form-control.has-error:focus,
+textarea.form-control.has-error:active textarea.form-control.has-error:focus {
+  border: 2px solid #008cff;
+}
+/* line 23, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.form-control.no-border,
+select.form-control.no-border,
+textarea.form-control.no-border {
+  border: 2px solid transparent !important;
+  background: transparent;
+}
+
+/* line 29, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.title,
+textarea.title {
+  font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* line 37, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.subtitle,
+textarea.subtitle {
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* line 44, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+textarea.text {
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+/* line 49, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.title,
+textarea.subtitle,
+textarea.text {
+  padding: 0 0 0.5rem 0px;
+  border-radius: 0px !important;
+  transition: all 0.2s ease;
+}
+/* line 56, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+input.title.no-border:focus,
+textarea.subtitle.no-border:focus,
+textarea.text.no-border:focus {
+  border-bottom: 2px solid #008cff !important;
+}
+
+/* line 61, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+.form-group {
+  margin-bottom: 0.5rem;
+}
+/* line 64, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/form.scss */
+.form-group.marg-bot-0 {
+  margin-bottom: 0rem;
+}
+
+/* line 3, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature:hover .content {
+  transform: translateY(-0.25rem) !important;
+}
+/* line 8, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature .metric-gradient {
+  background: linear-gradient(transparent 30%, rgba(0, 84, 153, 0.4), rgba(41, 0, 165, 0.4));
+}
+/* line 11, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature .metric-gradient:hover {
+  filter: grayscale(50%);
+}
+/* line 16, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature .content-wrapper {
+  padding: 7.5% 5% 5% 5%;
+  width: 100%;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.5);
+}
+/* line 24, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature .content {
+  transition: all 0.2s ease;
+}
+/* line 27, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature .content .title, .feature .content .subtitle {
+  text-shadow: -2px 4px 6px rgba(0, 0, 0, 0.4);
+  color: white;
+  display: inline-block;
+  z-index: 100;
+  transform: translateY(0);
+}
+/* line 35, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.feature .content .title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* line 42, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.section {
+  padding: 1rem 0rem;
+}
+
+/* line 46, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: #232323;
+  font-weight: bold;
+  font-family: "PT Serif", "Times", serif;
+}
+
+@media screen and (max-width: 720px) {
+  /* line 57, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+  .section .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* line 62, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+  .feature .content .title {
+    font-size: 2.5rem;
+  }
+  /* line 66, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+  .feature .content .subtitle {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-device-width: 1024px) and (min-width: 720px) {
+  /* line 73, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+  .section .section-title {
+    font-size: 2.5rem;
+  }
+
+  /* line 77, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+  .feature .content {
+    margin-left: 10%;
+    width: 80%;
+  }
+  /* line 81, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+  .feature .content .title {
+    font-size: 3.5rem;
+  }
+}
+/* line 87, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.three {
+  background: white;
+  box-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+/* line 91, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.three .content {
+  padding: 1rem;
+}
+
+/* line 97, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/frontpage.scss */
+.articles.card-columns .card {
+  border-radius: 0px !important;
+  margin-bottom: 1rem;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/bar.scss */
+.bar {
+  position: absolute;
+  transform: translateX(-3rem);
+  width: 6rem;
+  height: 0.6rem;
+  display: inline-block;
+  margin: 0;
+  background: #008cff;
+  background: linear-gradient(to right, #008cff, #6f3fff);
+}
+
+/* line 12, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/bar.scss */
+.metric-line {
+  height: 0.5rem;
+  width: 100%;
+}
+/* line 16, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/bar.scss */
+.metric-line.purple {
+  background: #6f3fff;
+}
+/* line 20, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/bar.scss */
+.metric-line .blue {
+  background: #008cff;
+  height: 100%;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/images.scss */
+.image-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+/* line 6, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/images.scss */
+.image-wrapper .img-responsive {
+  max-width: 100% !important;
+  height: auto;
+  overflow: hidden !important;
+}
+
+/* line 1, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/about.scss */
+#about-feature {
+  background-image: url("earth.jpg");
+}
+
+/**
+ * Removing scrolling on mobile in unintended ways
+ */
+/* line 35, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+body, html {
+  overflow-x: hidden !important;
+}
+
+/* line 39, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.blue-background-hover:hover {
+  background: #008cff;
+}
+
+/* line 43, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.light-light-gray {
+  background: #eff2f4 !important;
+}
+
+/* line 47, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.light-gray {
+  background: #e3e7ea !important;
+}
+
+/* line 51, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.cyan {
+  background: cyan !important;
+}
+
+/* line 55, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.cyan-text {
+  color: cyan !important;
+}
+
+/* line 59, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.text-light {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/*
+ * GENERAL
+ */
+/* line 66, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.space-05 {
+  display: block;
+  width: 100%;
+  height: 0.5rem;
+}
+
+/* line 72, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+button,
+button.btn,
+a.btn,
+.btn {
+  border-radius: 0px !important;
+}
+/* line 78, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+button.btn-danger,
+button.btn.btn-danger,
+a.btn.btn-danger,
+.btn.btn-danger {
+  color: #fff !important;
+  background-color: #d9534f !important;
+  border-color: #d9534f !important;
+}
+
+/* line 85, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-info {
+  color: white !important;
+}
+/* line 88, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-info:active, .btn-info:hover, .btn-info:focus, .btn-info:visited {
+  color: white;
+}
+
+/* line 96, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn {
+  cursor: hand;
+  cursor: pointer;
+}
+
+/* line 101, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 105, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.container.full-width {
+  width: 100% !important;
+}
+
+/* line 109, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+a.black-text,
+a.black-text:hover {
+  color: black;
+}
+
+/* line 114, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+a.full-width {
+  position: relative;
+  width: 100% !important;
+  display: block;
+}
+
+/* line 120, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.pad-top-1 {
+  padding-top: 1rem;
+}
+
+/* line 124, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.marg-0 {
+  margin: 0 !important;
+}
+
+/* line 128, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.marg-bot-05 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* line 132, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.fixed {
+  position: fixed;
+}
+
+/* line 136, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.recommended {
+  position: relative;
+}
+/* line 139, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.recommended h1 {
+  font-size: 1.8rem;
+}
+/* line 143, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.recommended h2 {
+  font-size: 1.4rem;
+}
+
+/* line 148, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.space-0 {
+  display: block;
+  width: 100%;
+  height: 0px;
+}
+
+/* line 154, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.page-content,
+.full-height {
+  min-height: calc(100vh - 50px);
+}
+
+/* line 159, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.hidden {
+  display: none;
+}
+
+/* line 163, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.front {
+  z-index: 1030;
+}
+
+/* line 166, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.card {
+  border-radius: 0px !important;
+}
+
+/* line 170, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+a {
+  text-decoration: none;
+}
+/* line 173, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+a:hover, a:focus, a:active, a:visited {
+  text-decoration: none;
+}
+
+/* line 181, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+p.bigger,
+input.bigger,
+textarea.bigger {
+  font-size: 1.2rem;
+}
+
+/* line 187, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.black-diag {
+  background: black;
+  background: -webkit-linear-gradient(20deg, white 50%, black 50%);
+  background: -o-linear-gradient(20deg, white 50%, black 50%);
+  background: -moz-linear-gradient(20deg, white 50%, black 50%);
+  background: linear-gradient(20deg, white 50%, black 50%);
+}
+
+/* line 195, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.bord-top-thick {
+  border-top: 10px solid black;
+}
+
+/*
+ * BUTTONS
+ */
+/* line 203, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-blue,
+.btn-white {
+  cursor: hand;
+  cursor: pointer;
+  border: 0px solid transparent;
+  border-radius: 0rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+/* line 216, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-blue {
+  color: white;
+  background: #008cff;
+}
+/* line 220, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-blue:hover {
+  background: #00aeff;
+}
+
+/* line 225, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-white {
+  color: #008cff;
+  background: white;
+}
+/* line 229, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-white:hover {
+  background: #f4f9fc;
+}
+
+/* line 234, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-black {
+  cursor: hand;
+  cursor: pointer;
+  border: 0px solid transparent;
+  border-radius: 0rem;
+  color: white !important;
+  transition: all 0.2s ease;
+  background: #333333;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+/* line 247, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.btn-black:hover {
+  background: #444444;
+}
+
+/* line 252, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+a.white-text,
+a.white-text:focus,
+a.white-text:hover {
+  color: white !important;
+}
+
+/* line 258, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+h1 .small {
+  font-size: 1.5rem;
+}
+
+/*
+ * POPUP
+ */
+/* line 266, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.popup {
+  color: white;
+  padding: 2rem;
+}
+/* line 270, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.popup h1, .popup h2, .popup h3, .popup h4, .popup h5, .popup h6, .popup p, .popup .fa {
+  color: white;
+}
+/* line 274, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.popup .x {
+  position: absolute;
+  z-index: 1000;
+  color: white;
+  right: 1.5rem;
+  padding: 0.25rem;
+  cursor: hand;
+  cursor: pointer;
+}
+
+/*
+** ERRORS
+*/
+/* line 289, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#error_explanation {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 2px solid #ebcccc;
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+/* line 296, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#error_explanation h2 {
+  color: #a94442;
+  font-size: 1.25rem;
+}
+/* line 301, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#error_explanation ul {
+  margin-bottom: 0px;
+}
+
+/* line 306, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.has-error .form-control {
+  border-bottom: 2px solid #a94442;
+}
+
+/* line 310, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.help-block {
+  color: #a94442;
+  margin-top: 0.5rem;
+}
+
+/* line 315, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.help-block::first-letter {
+  text-transform: uppercase;
+}
+
+/* line 319, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#alert-container {
+  z-index: 1031;
+  padding: 0 1rem;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  font-weight: bold;
+  color: white;
+  background: black;
+}
+/* line 330, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#alert-container p {
+  margin: 0.5rem 0;
+  color: white;
+}
+/* line 335, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#alert-container.red {
+  background: #FF7085;
+}
+/* line 339, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+#alert-container.green {
+  background: #3ecf8e;
+}
+
+/* line 344, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.no-display {
+  display: none !important;
+}
+
+/* line 348, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.inline {
+  display: inline-block;
+  width: auto !important;
+}
+/* line 352, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.inline.nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+/* line 356, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.inline.nav-link:first-child {
+  padding-left: 0rem;
+}
+
+/* line 362, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.margin-0 {
+  margin: 0 !important;
+}
+
+/* line 366, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.flex-container {
+  display: flex;
+  width: 100%;
+}
+/* line 370, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.flex-container .flex {
+  flex: 1;
+}
+
+@media screen and (max-device-width: 998px) {
+  /* line 376, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+  .flex-container {
+    display: block;
+  }
+  /* line 379, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+  .flex-container .flex {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 696px) {
+  /* line 386, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+  .flex-container {
+    display: block;
+  }
+  /* line 389, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+  .flex-container .flex {
+    width: 100%;
+  }
+}
+/* line 395, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.card-block.preview {
+  padding: 0.5rem 1rem;
+}
+
+/* line 399, /Users/cameroncabo/projects/themetric/app/assets/stylesheets/application.scss */
+.diagonal {
+  background: repeating-linear-gradient(-45deg, white, white 12px, #eff2f4 12px, #eff2f4 24px);
+}

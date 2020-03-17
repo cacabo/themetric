@@ -17,7 +17,6 @@ $pad-vertical: 0.6rem;
   box-shadow: 0rem 0.1rem 0.1rem $shade;
   transition: all 0.25s ease;
   transform: translateY(0px);
-  border-bottom: 1px solid $dark;
 
   &.up {
     transform: translateY(-80px);
@@ -36,7 +35,7 @@ $pad-vertical: 0.6rem;
   width: 100%;
   background: $dark;
   padding: $pad-vertical 0rem 0rem 0rem;
-  font-family: 'Palanquin Dark', sans-serif;
+  font-family: "Palanquin Dark", sans-serif;
   transition: all 0.2s ease;
   height: $height;
 
@@ -72,7 +71,7 @@ $pad-vertical: 0.6rem;
 
       &:hover,
       &:focus,
-      &:active, {
+      &:active {
         color: lighten($blue-gray, 10%);
       }
     }
@@ -197,10 +196,6 @@ $pad-vertical: 0.6rem;
       }
     }
   }
-
-  &.dark {
-    // TODO
-  }
 }
 
 .alert-spacer {
@@ -257,7 +252,7 @@ $pad-vertical: 0.6rem;
         color: white !important;
         margin-bottom: 0.5rem;
         opacity: 1 !important;
-        font-size: .875rem;
+        font-size: 0.875rem;
 
         &.marg-top-0 {
           margin-top: 0rem;
@@ -293,7 +288,8 @@ $pad-vertical: 0.6rem;
             box-shadow: 0;
           }
 
-          .container, .flex-container {
+          .container,
+          .flex-container {
             padding: 0 !important;
             margin: 0 !important;
             width: 100%;
@@ -341,7 +337,8 @@ $pad-vertical: 0.6rem;
       }
 
       #second {
-        transform: rotate(-135deg) translateX(-0.14142rem) translateY(0.14142rem);
+        transform: rotate(-135deg) translateX(-0.14142rem)
+          translateY(0.14142rem);
       }
 
       #third {

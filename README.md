@@ -4,7 +4,7 @@ A scalable web application to house diverse content by a wide range of editors, 
 
 ![Website screenshot](https://s3-us-west-1.amazonaws.com/ccabo/metric-screenshot.png)
 
---------------------------------------------------------------------------------
+---
 
 ### Local development
 
@@ -14,13 +14,13 @@ To run the application locally, first clone the repository. From the repository 
 bundle install
 ```
 
-This installs of the ruby gems (or packages) in the `gemfile.rb` file. Once this is done, you are ready to begin developing:
+This installs of the ruby gems (or packages) specified in the `gemfile.rb` file. Once this is done, you are ready to begin developing:
 
 ```bash
 rails s
 ```
 
---------------------------------------------------------------------------------
+---
 
 ### Deploying to production
 
@@ -36,30 +36,30 @@ The application is hosted on Heroku. Heroku effectively has its own git server f
 git push heroku master
 ```
 
---------------------------------------------------------------------------------
+---
 
 ### Technical Stack
 
-__Backend:__
+**Backend:**
 
-* Ruby on Rails
-* Devise: helper gem for user model and security
-* Sendgrid: sending emails to users
-* AWS S3: image storage
-* Paperclip gem: image uploading
-* Trix: in-browser text editor
-* PostgreSQL: database
+- Ruby on Rails
+- Devise: helper gem for user model and security
+- Sendgrid: sending emails to users
+- AWS S3: image storage
+- Paperclip gem: image uploading
+- Trix: in-browser text editor
+- PostgreSQL: database
 
-__Frontend:__
+**Frontend:**
 
-* JavaScript
-* jQuery
-* Bootstrap 4
-* [Strapper](https://github.com/ccabo1/strapper)
-* SCSS
-* HTML/ERB
+- JavaScript
+- jQuery
+- Bootstrap 4
+- [Strapper](https://github.com/ccabo1/strapper)
+- SCSS
+- HTML/ERB
 
---------------------------------------------------------------------------------
+---
 
 ### Security and admins
 
@@ -73,7 +73,7 @@ We thus delineate between an `admin` and a `superAdmin`, where only a `superAdmi
 
 _Down the line, we should send emails to referred users with tokens for registering such that we can confirm they are in control of their email addresses._
 
---------------------------------------------------------------------------------
+---
 
 ### Articles and organization
 
@@ -86,12 +86,14 @@ While editing articles, authors can also add a comma-separated `tags-list` to ad
 A `superAdmin` also has the option to `feature` a post, meaning that it will show up as the main article on the homepage of the site. In featuring one article, if some other article were featured at that time, it would be un-featured.
 
 The body of articles is written using the [Trix editor](https://trix-editor.org/) with additional support for parsing images with captions of the form:
+
 ```
 [http://link.com/to-image.jpg,caption line 1,caption line 2]
 ```
+
 This gives writers an intuitive interface while also providing all of the functionality needed to produce powerful content.
 
---------------------------------------------------------------------------------
+---
 
 ### Recommending articles and organizing the homepage
 
@@ -102,10 +104,11 @@ All articles keep track of the number of `views` on the article over two-week pe
 These "most read" articles are displayed on the sidebar on the front page. Apart from the featured article, the remaining articles are conglomerated loosely by chronological order.
 
 When a user is viewing an article, we also aim to provide meaningful recommendations for next reads in two ways:
+
 1. Having next and previous articles based on chronology at the bottom of the article page.
 2. Having randomly chosen recent articles from either the same region or same topic as the current article in a right sidebar.
 
---------------------------------------------------------------------------------
+---
 
 ### Creating a meaningful user experience
 
@@ -113,7 +116,7 @@ Our content brings a fresh perspective, thus we want our site to convey and exte
 
 It's a fully responsive, mobile-first site which puts content first.
 
---------------------------------------------------------------------------------
+---
 
 ### Feature tracking
 

@@ -8,12 +8,15 @@
       <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
         <div class="space-4"></div>
         <div class="white pad-2 shade-1 hover">
-          <h2 class="marg-bot-1">404 error, oh man!</h2>
+          <h2 class="marg-bot-1 special">Not Found (404)</h2>
           <p>
-            Seems like this page was either moved or doesn't exist. If you think this is a mistake, please <%= link_to 'contact us', new_contact_path %> with a description of what happened.
+            It seems like this page was either moved or doesn't exist. If you
+            think this is a mistake, please <%= link_to 'contact us',
+            new_contact_path %> with a description of what happened.
           </p>
           <div class="space-1"></div>
-          <%= link_to 'Back to home', root_path, class: 'btn-blue white-text shade-3 hover' %>
+          <%= link_to 'Back to home', root_path, class: 'btn-blue white-text
+          shade-3 hover' %>
         </div>
       </div>
     </div>
